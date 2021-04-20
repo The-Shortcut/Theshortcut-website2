@@ -9,6 +9,7 @@ import { CssBaseline } from '@material-ui/core';
 // Layout Components
 import Home from './components/layout/home/index';
 import Event from './components/layout/Event';
+import NotFound from './components/layout/NotFound';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/event' component={Event} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );
