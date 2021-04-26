@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 //Routing
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './Routes';
 
 // Material-UI
 import { CssBaseline } from '@material-ui/core';
 
 // Layout Components
-import Home from './components/layout/home/index';
-import Event from './components/layout/Event';
-import NotFound from './components/layout/NotFound';
+import NavBar from './components/layout/navBar';
 
 const App = () => {
+  const [pageH, setPageH] = useState(null);
+  useEffect(() => {
+    window.addEventListener('scroll', () => setPageH(window.scrollY));
+  }, []);
   return (
     <Router>
       <CssBaseline />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/event' component={Event} />
-        <Route component={NotFound} />
-      </Switch>
+      <NavBar pageHeight={pageH} />
+      <Routes />
     </Router>
   );
 };
