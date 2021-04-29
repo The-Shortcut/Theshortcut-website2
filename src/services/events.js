@@ -41,7 +41,6 @@ const getEvents = async () => {
     };
     return modifiedData.push(dataObj);
   });
-
   const allEvents = [...modifiedData, ...response].sort((a, b) =>
     new Date(a.start.local).getTime() < new Date(b.start.local).getTime() ? 1 : -1
   );

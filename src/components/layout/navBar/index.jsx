@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 
 // logo
-import TopLogo from '../../../assets/logo/logo The Shortcut_white on transparent.png';
+import TopLogo from '../../../assets/logo/shortcut/logo The Shortcut_white on transparent.png';
 
 function ElevationScroll(props) {
   const { children, window } = props;
