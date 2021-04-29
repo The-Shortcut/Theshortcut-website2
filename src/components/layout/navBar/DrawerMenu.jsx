@@ -12,7 +12,7 @@ import { navBarData } from './navBarData';
 import MenuItem from './MenuItem';
 
 // LOGO
-import drawerLogo from '../../../assets/logo/Emblem The Shortcut_emblem green.png'
+import drawerLogo from '../../../assets/logo/shortcut/Emblem The Shortcut_emblem green.png'
 const useStyles = makeStyles((theme) => ({
   drawer: {
     flexShrink: 0,
@@ -58,7 +58,6 @@ const DrawerMenu = ({ toggleDrawer, menuOpen }) => {
     }
   }, [menuOpen]);
   
-  console.log({menuOpen, checked});
   const MenuItems = () => {
     return (
       <div role='presentation' onClick={toggleDrawer} onKeyDown={toggleDrawer}>
