@@ -6,7 +6,6 @@ import { Button } from '@material-ui/core';
 
 // Children
 import Title from '../../custom/Title';
-import { ImportExportRounded } from '@material-ui/icons';
 
 const partnersData = [
   {
@@ -59,7 +58,6 @@ const OurPatrners = () => {
       <Title>Our Partners</Title>
       <div className={classes.items}>
         {partnersData.map((part, index) => (
-          // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <Button
             href={part.url}
             key={index}
@@ -98,8 +96,8 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
   },
   logoButton: {
-      background: '#ddd',
-      maxHeight:'120px',
+    background: '#ddd',
+    maxHeight: '120px',
     margin: '1em',
     transition: 'transform 1s',
     '&:hover': {

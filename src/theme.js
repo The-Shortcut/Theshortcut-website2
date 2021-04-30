@@ -64,12 +64,21 @@ const theme = createMuiTheme({
   },
 });
 theme.typography.h1 = {
-  fontSize: '2.5rem',
+  fontSize: '1.8rem',
   '@media (min-width:600px)': {
-    fontSize: '2.7rem',
+    fontSize: '2rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '3rem',
+    fontSize: '2.4rem',
+  },
+};
+theme.typography.h2 = {
+  fontSize: '1.5rem',
+  '@media (min-width:600px)': {
+    fontSize: '1.7rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2.2rem',
   },
 };
 theme.typography.h3 = {
@@ -78,31 +87,31 @@ theme.typography.h3 = {
     fontSize: '1.5rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
+    fontSize: '2rem',
   },
 };
 theme.typography.h4 = {
   fontSize: '1rem',
   '@media (min-width:600px)': {
-    fontSize: '1.2rem',
+    fontSize: '1.3rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '2rem',
+    fontSize: '1.8rem',
   },
 };
 theme.typography.h5 = {
   fontSize: '0.8rem',
   '@media (min-width:600px)': {
-    fontSize: '1rem',
+    fontSize: '1.1rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '1.2rem',
+    fontSize: '1.6rem',
   },
 };
 theme.typography.h6 = {
-  fontSize: '1rem',
+  fontSize: '0.6rem',
   '@media (min-width:600px)': {
-    fontSize: '1.1rem',
+    fontSize: '0.9rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '1.4rem',

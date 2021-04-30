@@ -30,7 +30,7 @@ const MenuItem = ({ item, toggleDrawer }) => {
           style={{ textDecoration: 'none', position: 'relative', zIndex: 1 }}
           onClick={item.subNav && handleClick}>
           <ListItem button className={classes.listItem}>
-            <ListItemText primary={<Typography variant='h5'>{item.title}</Typography>} />
+            <ListItemText primary={<Typography variant='body1' style={{fontWeight: 'bold'}}>{item.title}</Typography>} />
             <div>{item.subNav && subnav ? item.icon : item.subNav ? item.iconClosed : null}</div>
           </ListItem>
         </Link>
@@ -39,7 +39,7 @@ const MenuItem = ({ item, toggleDrawer }) => {
             <Link to={nav.path} key={index} style={{ textDecoration: 'none' }}>
               <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
               <ListItem button className={classes.subItem}>
-                <ListItemText primary={<Typography variant='h6'>{nav.title}</Typography>} />
+                <ListItemText primary={<Typography variant='body2'>{nav.title}</Typography>} />
               </ListItem>
               </Slide>
             </Link>

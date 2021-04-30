@@ -11,14 +11,16 @@ import { allEvents } from '../../../actions/eventActions';
 import Title from '../../custom/Title';
 import EventCard from '../../custom/EventCard';
 import SingleEventCard from '../../custom/SingleEventCard';
+import SkeletonEvent from '../../functional/SkeletonEvent';
 
 const UpcomingEvents = () => {
   const classes = useStyles();
   const events = useSelector((state) => state.events.allEvents);
-
+  const { isLoading } = useSelector((state) => state.events);
+  console.log(isLoading);
   let upcoming = events?.filter((event) => event.status === 'upcoming');
   if (upcoming?.length < 1) {
-    upcoming = events.slice(0,1)
+    upcoming = events.slice(0, 1);
   }
 
   const dispatch = useDispatch();
@@ -29,30 +31,38 @@ const UpcomingEvents = () => {
   return (
     <div className={classes.root}>
       <Title>Upcoming Events</Title>
-      <div
-        className={
-          upcoming?.length === 1
-            ? classes.singleEvent
-            : upcoming?.length > 1 && window.innerWidth > 1240
-            ? classes.events
-            : window.innerWidth < 960
-            ? classes.eventsXS
-            : classes.eventsSM
-        }>
-        {upcoming
-          ? upcoming.length === 1 && window.innerWidth > 960
-            ? upcoming.map((ev) => (
-                <div key={ev.id} className={classes.event}>
-                  <SingleEventCard event={ev} />
-                </div>
-              ))
-            : upcoming.map((ev) => (
-                <div key={ev.id} className={classes.event}>
-                  <EventCard event={ev} />
-                </div>
-              ))
-          : null}
-      </div>
+      {isLoading ? (
+        <div className={classes.skeleton}>
+          {[1, 2, 3].map((i) => (
+            <SkeletonEvent key={i} />
+          ))}
+        </div>
+      ) : (
+        <div
+          className={
+            upcoming?.length === 1
+              ? classes.singleEvent
+              : upcoming?.length > 1 && window.innerWidth > 1240
+              ? classes.events
+              : window.innerWidth < 960
+              ? classes.eventsXS
+              : classes.eventsSM
+          }>
+          {upcoming
+            ? upcoming.length === 1 && window.innerWidth > 960
+              ? upcoming.map((ev) => (
+                  <div key={ev.id} className={classes.event}>
+                    <SingleEventCard event={ev} />
+                  </div>
+                ))
+              : upcoming.map((ev) => (
+                  <div key={ev.id} className={classes.event}>
+                    <EventCard event={ev} />
+                  </div>
+                ))
+            : null}
+        </div>
+      )}
     </div>
   );
 };
@@ -60,7 +70,7 @@ const UpcomingEvents = () => {
 export default UpcomingEvents;
 
 const useStyles = makeStyles((theme) => ({
-  root: {   
+  root: {
     margin: 'auto',
     marginTop: '20em',
     maxWidth: '80%',
@@ -71,6 +81,11 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '10em',
       maxWidth: '90%',
     },
+  },
+  skeleton: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
   },
   singleEvent: {
     margin: 'auto',

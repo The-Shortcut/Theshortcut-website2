@@ -12,7 +12,7 @@ const Game = ({ data }) => {
         <CardMedia className={classes.media} image={data.photo} title={data.title} />
         <div className={classes.iconContainer}>{data.icon}</div>
         <CardContent>
-          <Typography variant='h5' className={classes.title}>
+          <Typography variant='h6' className={classes.title}>
             {data.title}
           </Typography>
         </CardContent>
