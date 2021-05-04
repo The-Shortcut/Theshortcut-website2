@@ -6,11 +6,15 @@ import thunk from 'redux-thunk';
 import eventsReducer from './reducers/eventsReducer';
 import teamsReducer from './reducers/teamsReducer';
 import postsReducer from './reducers/postsReducer';
+import storiesReducer from './reducers/storiesReducer';
+import faqReducer from './reducers/faqReducer';
 
 const reducer = combineReducers({
   events: eventsReducer,
   team: teamsReducer,
   posts: postsReducer,
+  stories: storiesReducer,
+  faq: faqReducer,
 });
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 export default store;

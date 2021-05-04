@@ -17,7 +17,7 @@ const UpcomingEvents = () => {
   const classes = useStyles();
   const events = useSelector((state) => state.events.allEvents);
   const { isLoading } = useSelector((state) => state.events);
-  console.log(isLoading);
+
   let upcoming = events?.filter((event) => event.status === 'upcoming');
   if (upcoming?.length < 1) {
     upcoming = events.slice(0, 1);

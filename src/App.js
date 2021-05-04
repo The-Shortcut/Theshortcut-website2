@@ -9,6 +9,8 @@ import { CssBaseline } from '@material-ui/core';
 
 // Layout Components
 import NavBar from './components/layout/navBar';
+import FollowMedia from './components/layout/newsLetter';
+import Footer from './components/layout/footer';
 
 const App = () => {
   const [pageH, setPageH] = useState(null);
@@ -20,6 +22,8 @@ const App = () => {
       <CssBaseline />
       <NavBar pageHeight={pageH} />
       <Routes />
+      <FollowMedia />
+      <Footer />
     </Router>
   );
 };

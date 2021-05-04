@@ -35,7 +35,7 @@ const theme = createMuiTheme({
       main: '#ef5350',
     },
     background: {
-      default: '#fff',
+      default: '#000000',
     },
   },
   typography: {

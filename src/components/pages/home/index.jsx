@@ -36,8 +36,7 @@ const LandingPage = () => {
 
   /* console.log({ events, posts, teammates, board }); */
   return (
-    <div style={{ background: '#f9f9f9' }}>
-      {/* <div className={classes.hero}/> */}
+    <div>
       <img src={heroImage} alt='home_hero_image' className={classes.hero} />
       <div className={classes.title}>
         <Typography variant='h1'>The Shortcut</Typography>
@@ -64,7 +63,6 @@ export default LandingPage;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: '#f9f9f9',
     minHeight: '100%',
   },
   hero: {
