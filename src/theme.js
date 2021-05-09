@@ -75,43 +75,43 @@ theme.typography.h1 = {
 theme.typography.h2 = {
   fontSize: '1.5rem',
   '@media (min-width:600px)': {
-    fontSize: '1.7rem',
+    fontSize: '1.8rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '2.2rem',
   },
 };
 theme.typography.h3 = {
-  fontSize: '1.2rem',
+  fontSize: '1.5rem',
   '@media (min-width:600px)': {
-    fontSize: '1.5rem',
+    fontSize: '1.8rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '2rem',
   },
 };
 theme.typography.h4 = {
-  fontSize: '1rem',
+  fontSize: '1.3rem',
   '@media (min-width:600px)': {
-    fontSize: '1.3rem',
+    fontSize: '1.5rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '1.8rem',
   },
 };
 theme.typography.h5 = {
-  fontSize: '0.8rem',
+  fontSize: '1.2rem',
   '@media (min-width:600px)': {
-    fontSize: '1.1rem',
+    fontSize: '1.4rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '1.6rem',
   },
 };
 theme.typography.h6 = {
-  fontSize: '0.6rem',
+  fontSize: '1rem',
   '@media (min-width:600px)': {
-    fontSize: '0.9rem',
+    fontSize: '1.2rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '1.4rem',

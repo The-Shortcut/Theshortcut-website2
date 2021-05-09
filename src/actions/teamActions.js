@@ -5,7 +5,7 @@ export const teamMembers = () => async (dispatch) => {
   const teamMembers = await teamServices.getTeamMembers();
   dispatch({
     type: INIT_TEAM_MEMBERS,
-    payload: teamMembers,
+    payload: teamMembers.reverse(),
   });
 };
 

@@ -76,15 +76,15 @@ export const navBarData = [
     subNav: [
       {
         title: 'Get in Touch',
-        path: '/contact-us',
+        path: '#getInTouch',
       },
       {
         title: 'Our Team',
-        path: '/contact-us/team',
+        path: '#ourTeam',
       },
       {
         title: 'Board',
-        path: '/conact-us/board',
+        path: '#ourBoard',
       },
     ],
   },

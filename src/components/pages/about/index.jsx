@@ -2,7 +2,6 @@ import React from 'react';
 
 // Image
 import heroImage from '../../../assets/photos/aboutHero.jpeg';
-import heroImage2 from '../../../assets/photos/aboutHero2.jpg';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
