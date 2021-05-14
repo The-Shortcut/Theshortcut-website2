@@ -38,13 +38,13 @@ const getEvents = async () => {
       status: item.status,
       online_event: item.online_event,
       isVideo: item.video,
+      duration: item.duration
     };
     return modifiedData.push(dataObj);
   });
   const allEvents = [...modifiedData, ...response].sort((a, b) =>
     new Date(a.start.local).getTime() < new Date(b.start.local).getTime() ? 1 : -1
   );
-  allEvents.forEach((event) => event.status === 'live' && 'upcoming');
   return allEvents;
 };
 

@@ -9,8 +9,6 @@ export const INIT_POSTS = 'INIT_POSTS';
 export const INIT_EVENTS = "INIT_EVENTS";
 export const SEARCH_EVENTS = "SEARCH_EVENTS";
 export const PAGINATION = "PAGINATION";
-export const NEXT_PAGE = "NEXT_PAGE";
-export const PREV_PAGE = "PREV_PAGE";
 
 export const INIT_SUCCESS_STORIES = 'INIT_SUCCESS_STORIES';
 export const INIT_FAQ = 'INIT_FAQ';

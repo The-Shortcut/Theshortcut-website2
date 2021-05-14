@@ -5,9 +5,6 @@ import ReactPlayer from 'react-player';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 
-// Image-
-import aboutUsPhoto from '../../../assets/photos/aboutUs.jpeg';
-
 //Children
 import Title from '../../custom/Title';
 
@@ -46,7 +43,6 @@ const AboutUs = () => {
             controls={true}
             className={classes.player}
           />
-          {/* <img src={aboutUsPhoto} alt='about-us' className={classes.photo} /> */}
         </div>
       </div>
       <div id='successStories' />

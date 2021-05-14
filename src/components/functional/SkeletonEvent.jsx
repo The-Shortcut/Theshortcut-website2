@@ -75,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
     card: {
       minWidth: 335,
       maxWidth: 335,
+      minHeight: 600,
+      maxHeight: 600,
       border: '1px solid #ddd',
       borderRadius: '10px',
       margin: '2em auto',

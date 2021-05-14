@@ -28,12 +28,14 @@ const UpcomingEvents = () => {
   useEffect(() => {
     dispatch(allEvents());
   }, [dispatch]);
+
+  let arr = window.innerWidth < 770 ? [1] : [1, 2, 3];
   return (
     <div className={classes.root}>
       <Title>Upcoming Events</Title>
       {isLoading ? (
         <div className={classes.skeleton}>
-          {[1, 2, 3].map((i) => (
+          {arr.map((i) => (
             <SkeletonEvent key={i} />
           ))}
         </div>

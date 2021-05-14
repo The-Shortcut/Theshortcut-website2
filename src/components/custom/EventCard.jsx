@@ -47,17 +47,19 @@ const EventCard = ({ event }) => {
   };
   const setStatus = (status) => {
     if (status.includes('Video')) {
-      return 'watch now';
+      return 'WATCH NOW';
     } else if (status.includes('completed') || status.includes('canceled')) {
-      return 'Learn more ';
+      return 'LEARN MORE';
+    } else if (status.includes('Audio')) {
+      return 'LISTEN NOW';
     } else {
-      return 'register ';
+      return 'REGISTER';
     }
   };
   return (
     <Card className={classes.card}>
       <CardMedia style={{ padding: '5px' }}>
-        <img src={image} alt={title} width='100%' style={{ borderRadius: '5px' }} />
+        <img src={image} alt={title} width='100%' height='210px' style={{ borderRadius: '5px' }} />
       </CardMedia>
       <CardContent className={classes.info}>
         <div
@@ -76,7 +78,7 @@ const EventCard = ({ event }) => {
             alignItems: 'center',
             justifyContent: 'flex-start',
           }}>
-          <TodayIcon style={{ marginRight: '5px' }} /> {formatDate(event.start.local)}
+          <TodayIcon style={{ marginRight: '5px' }} /> {event.isVideo ? 'always available': formatDate(event.start.local)}
         </div>
         <div
           style={{
@@ -94,7 +96,7 @@ const EventCard = ({ event }) => {
             alignItems: 'center',
             justifyContent: 'flex-start',
           }}>
-          <AccessTimeIcon style={{ marginRight: '5px' }} /> {formatTime(event)}
+          <AccessTimeIcon style={{ marginRight: '5px' }} /> {event.isVideo ? event.duration : formatTime(event)}
         </div>
       </CardContent>
       <Divider />
@@ -114,7 +116,7 @@ const EventCard = ({ event }) => {
           rel='noopener noreferrer'>
           {setStatus(event.status)}
         </Button>
-        <ShareButton event={event}/>
+        <ShareButton event={event} />
       </CardActions>
     </Card>
   );
@@ -126,6 +128,8 @@ const useStyles = makeStyles((theme) => ({
   card: {
     minWidth: 335,
     maxWidth: 335,
+    minHeight: 600,
+    maxHeight: 600,
     border: '1px solid #434343',
     borderRadius: '10px',
     margin: '2em auto',
@@ -146,7 +150,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gridTemplateRows: '1fr 1fr',
-    rowGap: '10px',
+    rowGap: '5px',
   },
   action: {
     display: 'flex',

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, TextField, FormHelperText, Typography, Button } from '@material-ui/core';
+import { TextField, Typography, Button } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -13,7 +13,7 @@ const FollowMedia = () => {
   const [email, setEmail] = useState('');
   const [emailErr, setEmailErr] = useState(false);
 
-  const emailRegex = RegExp(/^\w+([-\.]?\w+)\.*@\w+([-]?\w+)*(\.\w{2,3})+$/);
+  const emailRegex = RegExp(/^\w+([-.]?\w+)\.*@\w+([-]?\w+)*(\.\w{2,3})+$/);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -90,8 +90,11 @@ const useStyles = makeStyles((theme) => ({
     [`& fieldset`]: {
       borderRadius: '4px 0 0 4px',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.only('sm')]: {
       minWidth: '18em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '14em',
     },
   },
   submitBtn: {
