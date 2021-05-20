@@ -78,7 +78,8 @@ const EventCard = ({ event }) => {
             alignItems: 'center',
             justifyContent: 'flex-start',
           }}>
-          <TodayIcon style={{ marginRight: '5px' }} /> {event.isVideo ? 'always available': formatDate(event.start.local)}
+          <TodayIcon style={{ marginRight: '5px' }} />{' '}
+          {event.isVideo ? 'always available' : formatDate(event.start.local)}
         </div>
         <div
           style={{
@@ -96,7 +97,8 @@ const EventCard = ({ event }) => {
             alignItems: 'center',
             justifyContent: 'flex-start',
           }}>
-          <AccessTimeIcon style={{ marginRight: '5px' }} /> {event.isVideo ? event.duration : formatTime(event)}
+          <AccessTimeIcon style={{ marginRight: '5px' }} />{' '}
+          {event.isVideo ? event.duration : formatTime(event)}
         </div>
       </CardContent>
       <Divider />

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
@@ -21,6 +20,15 @@ const variantIcon = {
 const useStyles1 = makeStyles((theme) => ({
   success: {
     backgroundColor: theme.palette.primary.main,
+  },
+  error: {
+    backgroundColor: theme.palette.error.main,
+  },
+  warning: {
+    backgroundColor: theme.palette.warning.main,
+  },
+  info: {
+    backgroundColor: theme.palette.info.main,
   },
   icon: {
     fontSize: 20,
@@ -61,30 +69,20 @@ function MySnackbarContentWrapper(props) {
   );
 }
 
-MySnackbarContentWrapper.propTypes = {
-  className: PropTypes.string,
-  message: PropTypes.string,
-  onClose: PropTypes.func,
-  variant: PropTypes.oneOf(['success']).isRequired,
-};
 
-const SnackBar = ({ open, handleClose }) => {
+const SnackBar = ({ open, handleClose, status, msg }) => {
   return (
     <div>
       <Snackbar
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: 'bottom',
+          horizontal: 'left',
         }}
         open={open}
         autoHideDuration={3000}
         // onClose={this.handleClose}
       >
-        <MySnackbarContentWrapper
-          onClose={handleClose}
-          variant='success'
-          message='Thank you for your message!'
-        />
+        <MySnackbarContentWrapper onClose={handleClose} variant={status} message={msg} />
       </Snackbar>
     </div>
   );

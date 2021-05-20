@@ -32,7 +32,13 @@ const theme = createMuiTheme({
       main: '#434343',
     },
     error: {
-      main: '#ef5350',
+      main: '#dc3545',
+    },
+    warning: {
+      main:'#ffc107'
+    },
+    info: {
+      main:'#2196f3'
     },
     background: {
       default: '#000000',

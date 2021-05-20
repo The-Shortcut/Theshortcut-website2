@@ -51,7 +51,7 @@ const ContactForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-     formData(state);
+    formData(state);
     let errors = Object.values(error);
     if (!errors.includes(false)) {
       setOpen((prev) => !prev);
@@ -89,7 +89,7 @@ const ContactForm = () => {
           </Typography>
         )}
         <TextField
-          label='Your Email ID'
+          label='Your Email'
           className={classes.textField}
           type='email'
           name='email'
@@ -103,7 +103,7 @@ const ContactForm = () => {
         />
         {error.email === false && (
           <Typography variant='caption' color='error'>
-            your email ID is not valid! *
+            your email is not valid! *
           </Typography>
         )}
         <TextField
@@ -142,7 +142,12 @@ const ContactForm = () => {
           className={classes.button}>
           SUBMIT
           <SendIcon className={classes.rightIcon} />
-          <SnackBar open={open} handleClose={handleClose} />
+          <SnackBar
+            open={open}
+            handleClose={handleClose}
+            status='success'
+            msg='Thank you for your message!'
+          />
         </Button>
       </form>
     </div>

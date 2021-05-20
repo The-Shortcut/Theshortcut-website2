@@ -30,12 +30,12 @@ const GetInTouch = () => {
             <Typography variant='body1'>+358 46 640 3900</Typography>
             <EmailIcon />
             <Typography variant='body1'>info@theshortcut.org</Typography>
-            <LocationOnIcon />
+            <LocationOnIcon style={{marginTop:'-15px'}}/>
             <Typography variant='body1'>
               Maria01 (entrance 15B),
               <br /> Lapinlahdenkatu 16, 00180, Helsinki
             </Typography>
-            <InfoIcon />
+            <InfoIcon style={{marginTop:'-15px'}}/>
             <Typography variant='body1'>
               Open Monday &mdash; Friday, 9am &mdash; 5pm <br /> (or until the last event of the day
               is over)

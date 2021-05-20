@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,22 +9,115 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
+// Snackbar
+import SnackBar from '../../functional/SnackBar';
+
 const FollowMedia = () => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [emailErr, setEmailErr] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [alert, setAlert] = useState({ state: false, msg: '' });
+  const [added, setAdded] = useState({ status: false, email: null });
+
+  const API_TOKEN = `${process.env.REACT_APP_SEND_IN_BLUE_TOKEN}`;
 
   const emailRegex = RegExp(/^\w+([-.]?\w+)\.*@\w+([-]?\w+)*(\.\w{2,3})+$/);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEmailErr(!emailRegex.test(email));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const addToList = async (emailID) => {
+    let addToListConfig = {
+      method: 'post',
+      url: 'https://api.sendinblue.com/v3/smtp/email',
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': API_TOKEN,
+      },
+      data: JSON.stringify({
+        sender: {
+          name: 'The Shortcut',
+          email: 'theshortcut@theshortcut.org',
+        },
+        to: [{ email: emailID }],
+        templateId: 17,
+      }),
+    };
+    try {
+      const listRes = await axios(addToListConfig);
+
+      setAlert({ state: 'info', msg: 'Your will recieve welcome email!' });
+      setTimeout(() => {
+        setOpen(false);
+      }, 5000);
+      return listRes;
+    } catch (error) {
+      setOpen((prev) => !prev);
+      setAlert({ state: 'error', msg: 'Something wrong, try again!' });
+      setTimeout(() => {
+        setOpen(false);
+      }, 5000);
+    }
   };
-  /* console.log(email, emailErr); */
+  useEffect(() => {
+    setEmailErr(!emailRegex.test(email));
+    if (added.status) {
+      addToList(added.email);
+      setAdded({ status: false, email: '' });
+    }
+  }, [addToList, added, email, emailRegex]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let config = {
+      method: 'post',
+      url: 'https://api.sendinblue.com/v3/contacts',
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key': API_TOKEN,
+      },
+      data: JSON.stringify({ email: email }),
+    };
+
+    console.log(emailErr);
+    if (emailErr) {
+      setOpen((prev) => !prev);
+      setAlert({ state: 'error', msg: 'Please enter valid email ID!' });
+      setTimeout(() => {
+        setOpen(false);
+      }, 5000);
+    } else {
+      try {
+        const res = await axios(config);
+        console.log(res);
+        setOpen((prev) => !prev);
+        setAlert({ state: 'success', msg: 'Your email is added!' });
+        setTimeout(() => {
+          setOpen(false);
+        }, 5000);
+        if (!open) {
+          setAdded({ status: true, email: email });
+          setEmail('');
+        }
+        return res;
+      } catch (error) {
+        console.log(error);
+        setOpen((prev) => !prev);
+        setAlert({ state: 'warning', msg: 'This email ID is already exist, try another one!' });
+        setTimeout(() => {
+          setOpen(false);
+        }, 5000);
+      }
+    }
+  };
+  const handleClose = (event, reason) => {
+    console.log(reason);
+  };
+
   return (
     <div className={classes.div}>
       <form className={classes.form}>
-        <div>
+        <div className={classes.inputSection}>
           <TextField
             label='What is your email address ?'
             className={classes.textField}
@@ -34,15 +128,11 @@ const FollowMedia = () => {
             autoComplete='email'
             variant='outlined'
           />
-          {emailErr ? (
-            <Typography variant='subtitle2' color='error' id='email'>
-              Your email is not valid!
-            </Typography>
-          ) : (
-            <Typography variant='subtitle2' color='inherit' id='email'>
-              We'll never share your email.
-            </Typography>
-          )}
+
+          <Typography variant='subtitle2' color='inherit' id='email'>
+            Join our monthly newsletter to get exclusive offers and information on what’s happening
+            at The Shortcut.
+          </Typography>
         </div>
         <Button
           type='submit'
@@ -53,6 +143,7 @@ const FollowMedia = () => {
           disableElevation={true}
           onClick={handleSubmit}>
           Subscribe
+          <SnackBar open={open} handleClose={handleClose} status={alert.state} msg={alert.msg} />
         </Button>
       </form>
       <div className={classes.mediaIcons}>
@@ -83,7 +174,11 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     display: 'flex',
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: '15px',
+    },
   },
   textField: {
     minWidth: '35em',
@@ -91,13 +186,20 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: '4px 0 0 4px',
     },
     [theme.breakpoints.only('sm')]: {
-      minWidth: '18em',
+      minWidth: '29.5em',
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '14em',
+      minWidth: '18em',
     },
   },
+  inputSection: {
+    flexBasis: '60%',
+  },
   submitBtn: {
+    flexBasis: '15%',
+    [theme.breakpoints.down('xs')]: {
+      flexBasis: '25%',
+    },
     minHeight: '3.99em',
     color: '#fff',
     borderRadius: '0 4px 4px 0',

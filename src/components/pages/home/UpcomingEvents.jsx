@@ -31,6 +31,7 @@ const UpcomingEvents = () => {
 
   let arr = window.innerWidth < 770 ? [1] : [1, 2, 3];
   return (
+    <div className={classes.main}>
     <div className={classes.root}>
       <Title>Upcoming Events</Title>
       {isLoading ? (
@@ -65,16 +66,20 @@ const UpcomingEvents = () => {
             : null}
         </div>
       )}
-    </div>
+      </div>
+      </div>
   );
 };
 
 export default UpcomingEvents;
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    background: '#DDDDDD',
+    border:'2px solid #DDDDDD'
+  },
   root: {
-    margin: 'auto',
-    marginTop: '20em',
+    margin: '7em auto',
     maxWidth: '80%',
     [theme.breakpoints.only('md')]: {
       marginTop: '18em',

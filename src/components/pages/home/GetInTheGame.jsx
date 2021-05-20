@@ -12,8 +12,9 @@ import { gameData } from './gameData';
 
 const GetInTheGame = () => {
   const classes = useStyles();
+  
   return (
-    <div className={classes.main}>
+    <div  id='title' className={classes.main}>
       <div className={classes.root}>
         <Title>We Get You In The Game</Title>
         <div className={classes.section}>
@@ -32,9 +33,12 @@ export default GetInTheGame;
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    background: '#DDDDDD',
+    marginTop: '15em',
     paddingTop: '5px',
     paddingBottom: '5px',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5em',
+    },
   },
   root: {
     minWidth: '70%',

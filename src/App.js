@@ -9,7 +9,7 @@ import { CssBaseline } from '@material-ui/core';
 
 // Layout Components
 import NavBar from './components/layout/navBar';
-import FollowMedia from './components/layout/newsLetter';
+import Media from './components/layout/newsLetter';
 import Footer from './components/layout/footer';
 
 const App = () => {
@@ -21,9 +21,9 @@ const App = () => {
     <Router>
       <CssBaseline />
       <NavBar pageHeight={pageH} />
-      <Routes />
-      <FollowMedia />
-      <Footer />
+        <Routes />
+        <Media />
+        <Footer />
     </Router>
   );
 };

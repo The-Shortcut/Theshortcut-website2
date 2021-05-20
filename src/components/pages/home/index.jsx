@@ -14,26 +14,27 @@ import OurPatrners from './OurPatrners';
 
 const LandingPage = () => {
   const classes = useStyles();
-
   return (
     <div>
-      <img src={heroImage} alt='home_hero_image' className={classes.hero} />
-      <div className={classes.title}>
-        <Typography variant='h1'>The Shortcut</Typography>
-        <Typography variant='h3'>
-          Accelerating talent through tech startups & high growth companies
-        </Typography>
-      </div>
-      <div className={classes.buttons}>
-        <Button variant='contained' color='primary' className={classes.button}>
-          CONTACT US
-        </Button>
-        <Button variant='contained' color='default' className={classes.button}>
-          LEARN MORE
-        </Button>
-      </div>
-      <UpcomingEvents />
+        <div>
+          <img src={heroImage} alt='home_hero_image' className={classes.hero} />
+          <div className={classes.title}>
+            <Typography variant='h1'>The Shortcut</Typography>
+            <Typography variant='h3'>
+              Accelerating talent through tech startups & high growth companies
+            </Typography>
+          </div>
+          <div className={classes.buttons}>
+            <Button variant='contained' color='primary' className={classes.button}>
+              CONTACT US
+            </Button>
+            <Button variant='contained' color='default' className={classes.button}>
+              LEARN MORE
+            </Button>
+          </div>
+        </div>
       <GetInTheGame />
+      <UpcomingEvents />
       <OurPatrners />
     </div>
   );
