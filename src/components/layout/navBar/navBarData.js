@@ -29,7 +29,7 @@ export const navBarData = [
   },
   {
     title: 'EVENTS',
-    path: '/events/all',
+/*     path: null, */
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [

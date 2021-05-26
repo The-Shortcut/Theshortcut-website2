@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Typography, Button } from '@material-ui/core';
+import { TextField, Typography, Button, Link } from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -149,10 +149,38 @@ const FollowMedia = () => {
       <div className={classes.mediaIcons}>
         <Typography>Follow us</Typography>
         <div className={classes.icons}>
-          <FacebookIcon style={{ fontSize: '30px' }} />
-          <InstagramIcon style={{ fontSize: '30px' }} />
-          <TwitterIcon style={{ fontSize: '30px' }} />
-          <LinkedInIcon style={{ fontSize: '30px' }} />
+          <Link
+            component='a'
+            color='secondary'
+            href='https://www.facebook.com/theshortcut/community/'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <FacebookIcon style={{ fontSize: '30px' }} />
+          </Link>
+          <Link
+            component='a'
+            color='secondary'
+            href='https://www.instagram.com/theshortcutorg/'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <InstagramIcon style={{ fontSize: '30px' }} />
+          </Link>
+          <Link
+            component='a'
+            color='secondary'
+            href='https://twitter.com/theshortcutorg?lang=en'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <TwitterIcon style={{ fontSize: '30px' }} />
+          </Link>
+          <Link
+            component='a'
+            color='secondary'
+            href='https://www.linkedin.com/company/theshortcut/'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <LinkedInIcon style={{ fontSize: '30px' }} />
+          </Link>
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
 // IMAGE
-import hero from '../../assets/illustrations/1.png';
+import Image404 from '../../assets/illustrations/404.png';
+
 const NotFound = () => {
   const [seconds, setSeconds] = useState(10);
 
@@ -22,15 +23,12 @@ const NotFound = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        minHeight:'100vh'
       }}>
-      <img src={hero} alt='not found page' width='30%' />
+      <img src={Image404} alt='not found page' width='40%' />
       <h1 style={{ maxWidth: '80%' }}>
-        Oh nooooooo, we hoped that this would never happen, but it did! Maybe this page decided to
-        attend one of our fantastic events…even 404 error pages also have career goals!
-      </h1>
-      <h1>
-        Not to worry, your career goals will be back on track soon try the search bar on our home
-        page to find what you are looking for!
+        Oops, try the search bar on our home page to find what you are looking for!
       </h1>
       <p>Reload automatically after {seconds} seconds ...</p>
     </div>

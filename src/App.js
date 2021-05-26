@@ -11,6 +11,7 @@ import { CssBaseline } from '@material-ui/core';
 import NavBar from './components/layout/navBar';
 import Media from './components/layout/newsLetter';
 import Footer from './components/layout/footer';
+import ScrollToTop from './ScrollToTop';
 
 const App = () => {
   const [pageH, setPageH] = useState(null);
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <Router>
       <CssBaseline />
+      <ScrollToTop />
       <NavBar pageHeight={pageH} />
         <Routes />
         <Media />

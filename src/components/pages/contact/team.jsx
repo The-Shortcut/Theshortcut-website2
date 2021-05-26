@@ -55,13 +55,13 @@ const Team = () => {
                     <Typography variant='subtitle2'>{acf.position}</Typography>
                   </CardContent>
                   <div className={classes.icons}>
-                    <a href={`mailto:${acf.email}`}>
+                    <a href={`mailto:${acf.email}`} target="_blank" rel="noopener noreferrer">
                       <EmailIcon color='primary' />
                     </a>
-                    <a href={acf.linkedin}>
+                    <a href={acf.linkedin} target="_blank" rel="noopener noreferrer">
                       <LinkedInIcon color='primary' />
                     </a>
-                    <a href={acf.twitter}>
+                    <a href={acf.twitter} target="_blank" rel="noopener noreferrer">
                       <TwitterIcon color='primary' />
                     </a>
                   </div>
