@@ -15,11 +15,13 @@ const ImpactGoals = () => {
   return (
     <div className={classes.root}>
       <Title>Impact Goals</Title>
-      {impactGoals.map((goal, index) => (
-        <div key={index}>
-          <Goal data={goal} />
-        </div>
-      ))}
+      <div className={classes.container}>
+        {impactGoals.map((goal, index) => (
+          <div key={index}>
+            <Goal data={goal} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -27,5 +29,25 @@ const ImpactGoals = () => {
 export default ImpactGoals;
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    margin: '5em auto 10em',
+  },
+  container: {
+    minWidth: '80%',
+    maxWidth: '80%',
+    [theme.breakpoints.only('sm')]: {
+      minWidth: '90%',
+      maxWidth: '90%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
+    /*   border: '2px solid red', */
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    alignItmes: 'center',
+    margin: '5em auto',
+  },
 }));

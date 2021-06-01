@@ -66,7 +66,7 @@ export const impactGoals = [
       'We activate untapped potential and optimise under-utilised skills',
       'We enable people to find a sense of belonging and empowerment',
     ],
-    icon: <HowToRegIcon />,
+    icon: <HowToRegIcon style={{ fontSize: 60 }} color='primary' />,
   },
   {
     target: 'Business',
@@ -76,7 +76,7 @@ export const impactGoals = [
       'We contribute to the internationalisation of businesses',
       'We help integrate spouses and families of foreign talents and help get them employed inhigh-growth companies',
     ],
-    icon: <MovieFilterIcon />,
+    icon: <MovieFilterIcon style={{ fontSize: 60 }} color='primary' />,
   },
   {
     target: 'Society',
@@ -86,6 +86,6 @@ export const impactGoals = [
       'We test new models for societal impact',
       'We give back to Finnish society',
     ],
-    icon: <GroupIcon />,
+    icon: <GroupIcon style={{ fontSize: 60 }} color='primary' />,
   },
 ];

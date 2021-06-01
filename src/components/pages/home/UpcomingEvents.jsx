@@ -99,7 +99,8 @@ const useStyles = makeStyles((theme) => ({
   },
   events: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridGap: '10px',
+    gridTemplateColumns: 'repeat(auto-fill, 380px)',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
