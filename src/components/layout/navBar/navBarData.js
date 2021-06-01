@@ -9,27 +9,27 @@ export const navBarData = [
   },
   {
     title: 'ABOUT',
-    path: '/about',
+/*     path: '/about', */
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
       {
         title: 'About Us',
-        path: '#aboutUs',
+        path: '/about/#aboutUs',
       },
       {
         title: 'Success Stories',
-        path: '#successStories',
+        path: '/about/#successStories',
       },
       {
         title: 'FAQ',
-        path: '#faq',
+        path: '/about/#faq',
       },
     ],
   },
   {
     title: 'EVENTS',
-/*     path: null, */
+    /*     path: null, */
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -54,7 +54,7 @@ export const navBarData = [
     icon: null,
   },
   {
-    title: 'CUMMUNITY',
+    title: 'COMMUNITY',
     path: '/community',
     icon: null,
   },
@@ -70,21 +70,21 @@ export const navBarData = [
   },
   {
     title: 'CONTACT US',
-    path: '/contact-us',
+    /* path: '/contact-us', */
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
       {
         title: 'Get in Touch',
-        path: '#getInTouch',
+        path: '/contact-us/#getInTouch',
       },
       {
         title: 'Our Team',
-        path: '#ourTeam',
+        path: '/contact-us/#ourTeam',
       },
       {
         title: 'Board',
-        path: '#ourBoard',
+        path: '/contact-us/#ourBoard',
       },
     ],
   },

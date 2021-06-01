@@ -21,7 +21,7 @@ const LandingPage = () => {
           <div className={classes.title}>
             <Typography variant='h1'>The Shortcut</Typography>
             <Typography variant='h3'>
-              Accelerating talent through tech startups & high growth companies
+            The place for social and professional integration in Finland
             </Typography>
           </div>
           <div className={classes.buttons}>

@@ -86,11 +86,11 @@ const useStyles = makeStyles((theme) => ({
   player: {
     minWidth: '640px',
     maxWidth: '640px',
-    minHeight: '480px',
-    maxHeight: '480px',
+    minHeight: '360px',
+    maxHeight: '360px',
     [theme.breakpoints.down('xs')]: {
-      minWidth: '320px',
-      maxWidth: '320px',
+      minWidth: '100%',
+      maxWidth: '100%',
       minHeight: '280px',
       maxHeight: '280px',
     },

@@ -40,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 180,
       margin: '1em auto',
     },
+    '@media (min-width: 320px)': {
+      minWidth: 300,
+      maxWidth: 300,
+    },
   },
   media: {
     height: 260,

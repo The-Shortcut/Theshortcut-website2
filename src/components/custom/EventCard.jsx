@@ -140,6 +140,12 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 360,
       margin: '1em auto',
     },
+    '@media (max-width: 320px)': {
+      minWidth: 300,
+      maxWidth: 300,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

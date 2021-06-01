@@ -196,16 +196,23 @@ const useStyles = makeStyles((theme) => ({
     margin: '4em auto 0',
     padding: '3em 0 1em',
     display: 'flex',
-    flexWrap: 'wrap',
+    /* flexWrap: 'wrap', */
     justifyContent: 'space-evenly',
     alignItems: 'flex-start',
+    [theme.breakpoints.down('xs')]: {
+      margin: 'auto',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   },
   form: {
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     [theme.breakpoints.down('xs')]: {
-      paddingLeft: '15px',
+      justifyContent: 'center',
+      alignItems: 'flex-start',
     },
   },
   textField: {
@@ -217,7 +224,7 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '29.5em',
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '18em',
+      minWidth: '16em',
     },
   },
   inputSection: {
@@ -226,7 +233,7 @@ const useStyles = makeStyles((theme) => ({
   submitBtn: {
     flexBasis: '15%',
     [theme.breakpoints.down('xs')]: {
-      flexBasis: '25%',
+      flexBasis: '24%',
     },
     minHeight: '3.99em',
     color: '#fff',

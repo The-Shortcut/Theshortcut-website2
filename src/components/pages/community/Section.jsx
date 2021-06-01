@@ -82,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
       minHeight: 480,
       maxHeight: 480,
     },
+    '@media (min-width: 320px)': {
+      minWidth: 300,
+      maxWidth: 300,
+    },
   },
   imageContainer: {
     borderRadius: '150%',
