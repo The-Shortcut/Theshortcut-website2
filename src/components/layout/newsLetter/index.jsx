@@ -127,12 +127,10 @@ const FollowMedia = () => {
             onChange={({ target }) => setEmail(target.value)}
             autoComplete='email'
             variant='outlined'
+            fullWidth
+            helperText="Join our monthly newsletter to get exclusive offers and information on what’s happening
+            at The Shortcut."
           />
-
-          <Typography variant='subtitle2' color='inherit' id='email'>
-            Join our monthly newsletter to get exclusive offers and information on what’s happening
-            at The Shortcut.
-          </Typography>
         </div>
         <Button
           type='submit'

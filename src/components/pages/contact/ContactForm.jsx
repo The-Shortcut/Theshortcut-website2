@@ -10,7 +10,7 @@ import SnackBar from '../../functional/SnackBar';
 import { formData } from '../../../helpers/formData';
 
 // Validations
-const nameRegex = RegExp(/^[a-zA-Z\s]{3,15}$/);
+const nameRegex = RegExp(/^[a-zA-Z\s]{3,25}$/);
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 const msgRegex = RegExp(/^[a-zA-Z0-9\s.:()#$&*+=-?@""''_]{3,250}$/);
 

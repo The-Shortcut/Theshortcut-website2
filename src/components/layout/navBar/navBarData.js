@@ -45,7 +45,7 @@ export const navBarData = [
   },
   {
     title: 'PARTNERS',
-    path: '/for-partners',
+    path: '/partners',
     icon: null,
   },
   {
@@ -58,11 +58,11 @@ export const navBarData = [
     path: '/community',
     icon: null,
   },
-  {
+ /*  {
     title: 'TALENT POOL',
     path: '/talent-pool',
     icon: null,
-  },
+  }, */
   {
     title: 'OUR IMPACT',
     path: '/our-impact',
@@ -88,11 +88,11 @@ export const navBarData = [
       },
     ],
   },
-  {
+ /*  {
     title: 'CAREER',
     path: '/career',
     icon: null,
-  },
+  }, */
   {
     title: 'BOOK A VISIT',
     path: '/visit',

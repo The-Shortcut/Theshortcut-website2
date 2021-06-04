@@ -25,7 +25,7 @@ const Routes = () => {
       <Route exact path='/about' component={About} />
       <Route exact path='/events/all' component={AllEvents} />
       <Route exact path='/events/byob' component={BYOB} />
-      <Route exact path='/for-partners' component={Partners} />
+      <Route exact path='/partners' component={Partners} />
       <Route exact path='/talent-pool' component={TalentPool} />
       <Route exact path='/career' component={Career} />
       <Route exact path='/community' component={Community} />

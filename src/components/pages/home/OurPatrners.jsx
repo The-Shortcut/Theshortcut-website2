@@ -10,14 +10,12 @@ import Title from '../../custom/Title';
 const partnersData = [
   {
     name: 'mege',
-    logo:
-      'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_EU-logos-600x424.png',
+    logo: 'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_EU-logos-600x424.png',
     url: 'https://www.mege.fi/',
   },
   {
     name: 'helsinki city',
-    logo:
-      'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Helsinki-logo-600x424.png',
+    logo: 'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Helsinki-logo-600x424.png',
     url: 'https://www.hel.fi/helsinki/en',
   },
   {
@@ -27,26 +25,22 @@ const partnersData = [
   },
   {
     name: 'mario 01',
-    logo:
-      'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Maria-01-logo-1.png',
+    logo: 'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Maria-01-logo-1.png',
     url: 'https://maria.io/directories/ecosystem-builders/',
   },
   {
     name: 'slush',
-    logo:
-      'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Slush-logo-1.png',
+    logo: 'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Slush-logo-1.png',
     url: 'https://www.slush.org/',
   },
   {
     name: 'junction',
-    logo:
-      'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Junction-logo.png',
+    logo: 'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Junction-logo.png',
     url: 'https://www.hackjunction.com/',
   },
   {
     name: 'wave ventures',
-    logo:
-      'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Wave-Ventures-logo-2.png',
+    logo: 'https://theshortcut.org/wp-content/uploads/2019/08/About-Us-section-logos_Wave-Ventures-logo-2.png',
     url: 'https://wave.ventures/',
   },
 ];
@@ -77,7 +71,7 @@ export default OurPatrners;
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '70%',
-    margin: '1em auto',
+    margin: '7em auto',
     [theme.breakpoints.down('sm')]: {
       maxWidth: '90%',
     },
