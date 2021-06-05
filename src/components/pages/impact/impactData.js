@@ -14,29 +14,24 @@ import MovieFilterIcon from '@material-ui/icons/MovieFilter';
 
 export const ImpactStatData = [
   {
-    title: 'evetns & activity',
-    amount: '220',
+    title: 'number of events',
+    amount: '205',
     icon: <LocalActivityIcon style={{ fontSize: 40 }} color='primary' />,
   },
   {
-    title: 'programs, participants',
-    amount: '5,376',
+    title: 'number of participants',
+    amount: '1,969',
     icon: <AssignmentIndIcon style={{ fontSize: 40 }} color='primary' />,
   },
   {
-    title: 'hours of impact',
-    amount: '33,871',
+    title: 'number of supporting companies',
+    amount: '251',
     icon: <HourglassFullIcon style={{ fontSize: 40 }} color='primary' />,
   },
   {
-    title: 'online reach',
-    amount: '252K',
+    title: 'feedback',
+    amount: '8.4 / 10',
     icon: <PublicIcon style={{ fontSize: 40 }} color='primary' />,
-  },
-  {
-    title: 'community growth',
-    amount: '59%',
-    icon: <GroupAddIcon style={{ fontSize: 40 }} color='primary' />,
   },
   {
     title: 'nationalities',
@@ -44,13 +39,18 @@ export const ImpactStatData = [
     icon: <FlagIcon style={{ fontSize: 40 }} color='primary' />,
   },
   {
-    title: 'F / M',
-    amount: '53% / 47%',
+    title: 'gender distribution',
+    amount: 'F 54% / M 45% / other1%',
     icon: <WcIcon style={{ fontSize: 40 }} color='primary' />,
   },
   {
-    title: 'get career opportunities',
-    amount: '72%',
+    title: 'new entrepreneurs',
+    amount: '75',
+    icon: <GroupAddIcon style={{ fontSize: 40 }} color='primary' />,
+  },
+  {
+    title: ' new employments',
+    amount: '191',
     icon: <BusinessCenterIcon style={{ fontSize: 40 }} color='primary' />,
   },
 ];

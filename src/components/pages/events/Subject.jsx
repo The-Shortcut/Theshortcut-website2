@@ -3,19 +3,22 @@ import React from 'react';
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+/* import EventAvailableIcon from '@material-ui/icons/EventAvailable'; */
+
+import Title from '../../custom/Title';
 
 const Subject = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <div className={classes.mark}>
+      {/* <div className={classes.mark}>
         <EventAvailableIcon color='primary' style={{ fontSize: '4rem', margin: 'auto' }} />
-      </div>
+      </div> */}
+      <Title>The Shortcut Events</Title>
       <Typography variant='body1' className={classes.text}>
         The Shortcut organizes many events for entrepreneurs, upskillers, and job seekers.
         Workshops, training programs, talks, webinars, and more are organized to connect you with
-        local experts to help you with your professional integration in Finland. All for free!{' '}
+        local experts to help you with your professional integration in Finland. All for free!
         <br />
         Here you can search our upcoming events and our past events. The past events that were
         recorded, are also available here.
@@ -28,13 +31,14 @@ export default Subject;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '63%',
-    maxWidth: '63%',
+    minWidth: '80%',
+    maxWidth: '80%',
     margin: '4em auto',
     display: 'flex',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
-    [theme.breakpoints.down('md')]: {
+   /*  [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
     },
@@ -46,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       display: 'block',
-    },
+    }, */
   },
   mark: {
     borderRadius: '50%',

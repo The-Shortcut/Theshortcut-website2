@@ -25,31 +25,14 @@ export default Game;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 320,
-    maxWidth: 320,
-    border: '1px solid #434343',
-    borderRadius: '10px',
-    margin: '2em auto',
-    [theme.breakpoints.up('md')]: {
-      minWidth: 320,
-      maxWidth: 320,
-      margin: '1em auto',
-    },
-    [theme.breakpoints.only('sm')]: {
-      minWidth: 180,
-      maxWidth: 180,
-      margin: '1em auto',
-    },
-    '@media (min-width: 320px)': {
-      minWidth: 300,
-      maxWidth: 300,
-    },
+    minHeight: 410,
+    maxHeight: 410,
   },
   media: {
-    height: 260,
+    height: 180,
     [theme.breakpoints.only('sm')]: {
-      height: 140
-    }
+      height: 140,
+    },
   },
   iconContainer: {
     minWidth: 120,
@@ -58,9 +41,9 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: 120,
     [theme.breakpoints.only('sm')]: {
       minWidth: 110,
-    maxWidth: 110,
-    minHeight: 110,
-    maxHeight: 110,
+      maxWidth: 110,
+      minHeight: 110,
+      maxHeight: 110,
     },
     border: '1px solid #888',
     borderRadius: '50%',
@@ -72,6 +55,6 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     textAlign: 'center',
-    margin: '2em auto',
+    margin: 'auto',
   },
 }));

@@ -14,6 +14,7 @@ import Blog from './components/pages/blog';
 import Career from './components/pages/career';
 import Community from './components/pages/community';
 import OurImpact from './components/pages/impact';
+import Couching from './components/pages/couching';
 import ContactUs from './components/pages/contact';
 import Visit from './components/pages/visit';
 import NotFound from './components/layout/NotFound';
@@ -30,6 +31,7 @@ const Routes = () => {
       <Route exact path='/career' component={Career} />
       <Route exact path='/community' component={Community} />
       <Route exact path='/our-impact' component={OurImpact} />
+      <Route exact path="/couching" component={Couching} />
       <Route exact path='/contact-us' component={ContactUs} />
       <Route exact path='/visit' component={Visit} />
       {/* Resources */}

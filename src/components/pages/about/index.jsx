@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
   hero: {
     minWidth: '100%',
     maxWidth: '100%',
-    minHeight: '70vh',
-    maxHeight: '70vh',
+    minHeight: '85vh',
+    maxHeight: '85vh',
     background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImage}) center/cover fixed no-repeat`,
   },
 }));

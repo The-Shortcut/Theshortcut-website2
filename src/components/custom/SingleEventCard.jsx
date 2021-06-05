@@ -118,7 +118,7 @@ const SingleEventCard = ({ event }) => {
             rel='noopener noreferrer'>
             {setStatus(event.status)}
           </Button>
-          <ShareButton event={event}/>
+          <ShareButton event={event} />
         </CardActions>
       </Box>
     </Card>
@@ -129,8 +129,12 @@ export default SingleEventCard;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    maxWidth: 900,
-    minWidth: 900,
+    maxWidth: '90%',
+    minWidth: '90%',
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '70%',
+      minWidth: '70%',
+    },
     border: '1px solid #434343',
     borderRadius: '10px',
     margin: '2em auto',

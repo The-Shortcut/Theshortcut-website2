@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '70%',
     maxWidth: '70%',
-    margin: '8em auto 5em',
+    margin: '5em auto',
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',

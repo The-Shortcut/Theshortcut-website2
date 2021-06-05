@@ -9,7 +9,7 @@ export const navBarData = [
   },
   {
     title: 'ABOUT',
-/*     path: '/about', */
+    path: '/about',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -58,7 +58,7 @@ export const navBarData = [
     path: '/community',
     icon: null,
   },
- /*  {
+  /*  {
     title: 'TALENT POOL',
     path: '/talent-pool',
     icon: null,
@@ -70,7 +70,7 @@ export const navBarData = [
   },
   {
     title: 'CONTACT US',
-    /* path: '/contact-us', */
+    path: '/contact-us',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -88,7 +88,7 @@ export const navBarData = [
       },
     ],
   },
- /*  {
+  /*  {
     title: 'CAREER',
     path: '/career',
     icon: null,

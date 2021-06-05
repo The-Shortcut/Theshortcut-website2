@@ -47,7 +47,7 @@ const EventsList = () => {
 
   console.log(currentItems.length);
   return (
-    <div className={currentItems.length === 1 ? classes.container2 : classes.container}>
+    <div className={currentItems.length < 3 ? classes.container2 : classes.container}>
       {currentItems.map((event, index) => (
         <div key={index}>
           <EventCard event={event} />
@@ -69,6 +69,8 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
   },
   container2: {
+    maxWidth: '60%',
+    margin:'auto',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',

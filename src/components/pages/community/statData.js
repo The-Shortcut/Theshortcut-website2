@@ -57,19 +57,19 @@ export const sections = [
   {
     title: 'EVENTS',
     image: events,
-    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. ',
+    text: 'By participating in our Events, you will become a member and experience why becoming a member of this diverse community is so rewarding. Head over to the Events Page to see what is happening now that you can participate in to become an instant member! Join an Event!',
     redirect: { path: '/events/all', name: 'search events' },
   },
   {
     title: 'VISIT US',
     image: visitUs,
-    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. ',
+    text: 'The Shortcut Lab, as well as our online community, is a bustling physical space where we, and others, host events, have reservable working rooms, and where you can meet like-minded people from the community. Join us in The Shortcut Lab!',
     redirect: { path: '/visit', name: 'book a visit' },
   },
   {
     title: 'SOCIAL MEDIA',
     image: socialMedia,
-    text: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. ',
+    text: 'We have active channels on LinkedIn, Facebook, and Instagram where we share news and upcoming events, host conversations, share knowledge and help each other, host online events, as well as letting you know about useful events around our network. Join us Online!',
     links: [
       {
         name: 'facebook',

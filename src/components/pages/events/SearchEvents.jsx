@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { searchEvents, paginate } from '../../../actions/eventActions';
 
 //Children
-import Title from '../../custom/Title';
+/* import Title from '../../custom/Title'; */
 import SearchBox from '../../custom/SearchBox';
 
 const SearchEvents = () => {
@@ -22,50 +22,55 @@ const SearchEvents = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     dispatch(searchEvents(event.target.innerText.toLowerCase()));
-    dispatch(paginate(1))
+    dispatch(paginate(1));
   };
-  /* console.log({ value, isLoading }) */;
 
   return (
+    <div className={classes.main}>
     <div className={classes.root}>
-      <Title>Search Events</Title>
+      {/* <Title>The Shortcut Events</Title> */}
       <SearchBox />
       <Collapse in={!isLoading}>
-      <Tabs
-        value={value}
-        onChange={(event, newValue) => handleChange(event, newValue)}
-        indicatorColor='primary'
-        textColor='primary'
-        classes={{ indicator: classes.shortIndicator }}
-        centered>
-        {searchTags.map((tag, index) => (
-          <Tab key={index} label={tag.label} className={classes.tab} />
-        ))}
+        <Tabs
+          value={value}
+          onChange={(event, newValue) => handleChange(event, newValue)}
+          indicatorColor='primary'
+          textColor='primary'
+          classes={{ indicator: classes.shortIndicator }}
+          centered>
+          {searchTags.map((tag, index) => (
+            <Tab key={index} label={tag.label} className={classes.tab} />
+          ))}
         </Tabs>
-        </Collapse>
-    </div>
+      </Collapse>
+      </div>
+      </div>
   );
 };
 
 export default SearchEvents;
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    minWidth:'100%',
+    border: '1px solid #DDDDDD',
+    background: '#DDDDDD',
+  },
   root: {
-    /* border: '1px solid red', */
-    minWidth: '70%',
-    maxWidth: '70%',
+    minWidth: '60%',
+    maxWidth: '60%',
     margin: '4em auto',
     [theme.breakpoints.only('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
     },
     [theme.breakpoints.down('sm')]: {
-      minWidth: '90%',
-      maxWidth: '90%',
-      margin: '2em auto',
+      minWidth: '80%',
+      maxWidth: '80%',
     },
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   shortIndicator: {

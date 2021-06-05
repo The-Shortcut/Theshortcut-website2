@@ -128,8 +128,8 @@ const FollowMedia = () => {
             autoComplete='email'
             variant='outlined'
             fullWidth
-            helperText="Join our monthly newsletter to get exclusive offers and information on what’s happening
-            at The Shortcut."
+            helperText='Join our monthly newsletter to get exclusive offers and information on what’s happening
+            at The Shortcut.'
           />
         </div>
         <Button
@@ -153,7 +153,7 @@ const FollowMedia = () => {
             href='https://www.facebook.com/theshortcut/community/'
             target='_blank'
             rel='noopener noreferrer'>
-            <FacebookIcon style={{ fontSize: '30px' }} />
+            <FacebookIcon className={classes.icon} />
           </Link>
           <Link
             component='a'
@@ -161,7 +161,7 @@ const FollowMedia = () => {
             href='https://www.instagram.com/theshortcutorg/'
             target='_blank'
             rel='noopener noreferrer'>
-            <InstagramIcon style={{ fontSize: '30px' }} />
+            <InstagramIcon className={classes.icon} />
           </Link>
           <Link
             component='a'
@@ -169,7 +169,7 @@ const FollowMedia = () => {
             href='https://twitter.com/theshortcutorg?lang=en'
             target='_blank'
             rel='noopener noreferrer'>
-            <TwitterIcon style={{ fontSize: '30px' }} />
+            <TwitterIcon className={classes.icon} />
           </Link>
           <Link
             component='a'
@@ -177,7 +177,7 @@ const FollowMedia = () => {
             href='https://www.linkedin.com/company/theshortcut/'
             target='_blank'
             rel='noopener noreferrer'>
-            <LinkedInIcon style={{ fontSize: '30px' }} />
+            <LinkedInIcon className={classes.icon} />
           </Link>
         </div>
       </div>
@@ -246,5 +246,13 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '180px',
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  icon: {
+    fontSize: 30,
+    transition: 'transform 0.5s',
+    '&:hover': {
+      color: theme.palette.primary.main,
+      transform: 'scale(1.5)',
+    },
   },
 }));

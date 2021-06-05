@@ -12,9 +12,9 @@ import { gameData } from './gameData';
 
 const GetInTheGame = () => {
   const classes = useStyles();
-  
+
   return (
-    <div  id='title' className={classes.main}>
+    <div id='title' className={classes.main}>
       <div className={classes.root}>
         <Title>We Get You In The Game</Title>
         <div className={classes.section}>
@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   root: {
-    minWidth: '70%',
-    maxWidth: '70%',
+    minWidth: '80%',
+    maxWidth: '80%',
     margin: '8em auto 5em',
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
@@ -55,11 +55,23 @@ const useStyles = makeStyles((theme) => ({
   },
   section: {
     display: 'flex',
-    flexBasis: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    /*  [theme.breakpoints.up('md')]: {
+      flexWrap: 'nowrap',
+    }, */
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center',
+    },
   },
   link: {
     textDecoration: 'none',
-    margin: 'auto',
+/*     border: '2px solid red', */
+    flexBasis: '23%',
+    [theme.breakpoints.down('xs')]: {
+      flexBasis: '90%',
+      marginTop: theme.spacing(4),
+    },
+    '@media (max-width: 320px)': {},
   },
 }));

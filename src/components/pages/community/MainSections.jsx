@@ -6,6 +6,7 @@ import Section from './Section';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
 
 const MainSections = () => {
   const classes = useStyles();
@@ -14,6 +15,14 @@ const MainSections = () => {
     <div className={classes.main}>
       <div className={classes.root}>
         <Title>Welcome To Our Community!</Title>
+        <Typography
+          variant='body1'
+          style={{ margin: 'auto', textAlign: 'center', maxWidth: '80%' }}>
+          There is no Shortcut without the community! <br />
+          The reason we create events, design trainings, negotiate partnership deals, etc is because
+          we want the best for our community and those who will benefit from joining it. There are
+          many ways for you to become a part of this supportive, creative, and driven community!
+        </Typography>
         <div className={classes.container}>
           {sections.map((section, index) => (
             <Section key={index} section={section} />

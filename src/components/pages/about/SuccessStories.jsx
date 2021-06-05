@@ -21,7 +21,7 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  nextArrow: (
+  /* nextArrow: (
     <div>
       <PlayCircleOutlineIcon color='inherit' style={{ fontSize: '2rem', color: '#434343' }} />
     </div>
@@ -37,7 +37,7 @@ const settings = {
         }}
       />
     </div>
-  ),
+  ), */
 };
 
 const SuccessStories = () => {
@@ -51,35 +51,37 @@ const SuccessStories = () => {
   }, [dispatch]);
 
   return (
-    <div className={classes.root}>
-      <Title>Success Stories</Title>
-      {successStories && (
-        <Slider {...settings}>
-          {successStories.map(({ acf }, index) => (
-            <div key={index}>
-              <div className={classes.item}>
-                <img src={acf.image.url} alt={acf.participant_name} className={classes.photo} />
-                <section>
-                  {/* <Typography variant='body1' className={classes.story}>
+    <div className={classes.main}>
+      <div className={classes.root}>
+        <Title>Success Stories</Title>
+        {successStories && (
+          <Slider {...settings}>
+            {successStories.map(({ acf }, index) => (
+              <div key={index}>
+                <div className={classes.item}>
+                  <img src={acf.image.url} alt={acf.participant_name} className={classes.photo} />
+                  <section>
+                    {/* <Typography variant='body1' className={classes.story}>
                     {acf.story}
                   </Typography> */}
-                  <Typography variant='body2' style={{ padding: '1em' }}>
-                    <span style={{ fontSize: '3rem' }}>&#8220;</span>
-                    {acf.quote}
-                  </Typography>
-                  <Typography variant='subtitle2' style={{ textAlign: 'center' }}>
-                    {acf.participant_name}
-                  </Typography>
-                  <Button variant='outlined' color='primary' className={classes.button}>
-                    Read Story
-                  </Button>
-                </section>
+                    <Typography variant='body2' style={{ padding: '1em' }}>
+                      <span style={{ fontSize: '3rem' }}>&#8220;</span>
+                      {acf.quote}
+                    </Typography>
+                    <Typography variant='subtitle2' style={{ textAlign: 'center' }}>
+                      {acf.participant_name}
+                    </Typography>
+                    <Button variant='outlined' color='primary' className={classes.button}>
+                      Read Story
+                    </Button>
+                  </section>
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      )}
-      <div id='faq' />
+            ))}
+          </Slider>
+        )}
+        <div id='faq' />
+      </div>
     </div>
   );
 };
@@ -87,9 +89,14 @@ const SuccessStories = () => {
 export default SuccessStories;
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    background: '#DDDDDD',
+    border: '1px solid #DDDDDD',
+    margin:'5em auto'
+  },
   root: {
     maxWidth: '70%',
-    margin: '10em auto',
+    margin: '5em auto',
   },
   item: {
     display: 'flex',

@@ -32,42 +32,42 @@ const UpcomingEvents = () => {
   let arr = window.innerWidth < 770 ? [1] : [1, 2, 3];
   return (
     <div className={classes.main}>
-    <div className={classes.root}>
-      <Title>Upcoming Events</Title>
-      {isLoading ? (
-        <div className={classes.skeleton}>
-          {arr.map((i) => (
-            <SkeletonEvent key={i} />
-          ))}
-        </div>
-      ) : (
-        <div
-          className={
-            upcoming?.length === 1
-              ? classes.singleEvent
-              : upcoming?.length > 1 && window.innerWidth > 1240
-              ? classes.events
-              : window.innerWidth < 960
-              ? classes.eventsXS
-              : classes.eventsSM
-          }>
-          {upcoming
-            ? upcoming.length === 1 && window.innerWidth > 960
-              ? upcoming.map((ev) => (
-                  <div key={ev.id} className={classes.event}>
-                    <SingleEventCard event={ev} />
-                  </div>
-                ))
-              : upcoming.map((ev) => (
-                  <div key={ev.id} className={classes.event}>
-                    <EventCard event={ev} />
-                  </div>
-                ))
-            : null}
-        </div>
-      )}
+      <div className={classes.root}>
+        <Title>Upcoming Events</Title>
+        {isLoading ? (
+          <div className={classes.skeleton}>
+            {arr.map((i) => (
+              <SkeletonEvent key={i} />
+            ))}
+          </div>
+        ) : (
+          <div
+            className={
+              upcoming?.length < 3
+                ? classes.singleEvent
+                : upcoming?.length > 1 && window.innerWidth > 1240
+                ? classes.events
+                : window.innerWidth < 960
+                ? classes.eventsXS
+                : classes.eventsSM
+            }>
+            {upcoming
+              ? upcoming.length < 3 && window.innerWidth > 960
+                ? upcoming.map((ev) => (
+                    <div key={ev.id} className={classes.event}>
+                      <SingleEventCard event={ev} />
+                    </div>
+                  ))
+                : upcoming.map((ev) => (
+                    <div key={ev.id} className={classes.event}>
+                      <EventCard event={ev} />
+                    </div>
+                  ))
+              : null}
+          </div>
+        )}
       </div>
-      </div>
+    </div>
   );
 };
 
@@ -76,7 +76,7 @@ export default UpcomingEvents;
 const useStyles = makeStyles((theme) => ({
   main: {
     background: '#DDDDDD',
-    border:'2px solid #DDDDDD'
+    border: '2px solid #DDDDDD',
   },
   root: {
     margin: '7em auto',

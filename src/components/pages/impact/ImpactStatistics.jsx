@@ -59,8 +59,8 @@ const useStyles = makeStyles((theme) => ({
   item: {
     alignSelf: 'center',
     justifySelf: 'center',
-    minWidth: '16em',
-    maxWidth: '16em',
+    minWidth: '19em',
+    maxWidth: '19em',
     minHeight: 'auto',
     [theme.breakpoints.down('xs')]: {
       justifySelf: 'start',

@@ -22,7 +22,7 @@ const Map = () => {
       onViewportChange={(nextViewport) => {
         setViewport(nextViewport);
       }}
-      style={{margin:'auto', minWidth:'100%', maxHeight:'180px'}}>
+      style={{margin:'auto', minWidth:'100%', maxHeight:'210px'}}>
       <Marker latitude={60.16723} longitude={24.92175}>
         <img src={pinIcon} alt='logo' width='30px' />
       </Marker>

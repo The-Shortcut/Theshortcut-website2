@@ -8,31 +8,6 @@ import { Pagination, PaginationItem } from '@material-ui/lab';
 import { useSelector, useDispatch } from 'react-redux';
 import { paginate } from '../../actions/eventActions';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    '& > *': {
-      marginTop: theme.spacing(2),
-    },
-  },
-  button: {
-    fontFamily: 'trispace',
-    borderRadius: '16px',
-    fontWeight: '900',
-    fontSize: '0.7rem',
-    color: '#505050',
-    backgroundColor: '#ffffff',
-  },
-  selectedItem: {
-    backgroundColor: '#00A99D !important',
-    color: '#ffffff !important',
-  },
-  focusedItem: {
-    backgroundColor: '#00A99D !important',
-  },
-}));
-
 const PaginationOutlined = () => {
   const classes = useStyles();
 
@@ -50,7 +25,7 @@ const PaginationOutlined = () => {
         top: 640,
         behavior: 'smooth',
       });
-      }
+    }
     dispatch(paginate(value));
   };
 
@@ -77,3 +52,28 @@ const PaginationOutlined = () => {
   );
 };
 export default PaginationOutlined;
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& > *': {
+      margin: '1em auto',
+    },
+  },
+  button: {
+    fontFamily: 'trispace',
+    borderRadius: '16px',
+    fontWeight: '900',
+    fontSize: '0.7rem',
+    color: '#505050',
+    backgroundColor: '#ffffff',
+  },
+  selectedItem: {
+    backgroundColor: '#00A99D !important',
+    color: '#ffffff !important',
+  },
+  focusedItem: {
+    backgroundColor: '#00A99D !important',
+  },
+}));

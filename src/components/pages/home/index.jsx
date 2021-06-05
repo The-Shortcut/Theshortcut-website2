@@ -5,7 +5,7 @@ import heroImage from '../../../assets/photos/home_hero.jpg';
 
 //Materail-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, Link } from '@material-ui/core';
 
 // Children
 import UpcomingEvents from './UpcomingEvents';
@@ -16,23 +16,27 @@ const LandingPage = () => {
   const classes = useStyles();
   return (
     <div>
-        <div>
-          <img src={heroImage} alt='home_hero_image' className={classes.hero} />
-          <div className={classes.title}>
-            <Typography variant='h1'>The Shortcut</Typography>
-            <Typography variant='h3'>
+      <div>
+        <img src={heroImage} alt='home_hero_image' className={classes.hero} />
+        <div className={classes.title}>
+          <Typography variant='h1'>The Shortcut</Typography>
+          <Typography variant='h3'>
             The place for social and professional integration in Finland
-            </Typography>
-          </div>
-          <div className={classes.buttons}>
+          </Typography>
+        </div>
+        <div className={classes.buttons}>
+          <Link href='/contact-us' style={{ textDecoration: 'none' }}>
             <Button variant='contained' color='primary' className={classes.button}>
               CONTACT US
             </Button>
+          </Link>
+          <Link href='/about' style={{ textDecoration: 'none' }}>
             <Button variant='contained' color='default' className={classes.button}>
               LEARN MORE
             </Button>
-          </div>
+          </Link>
         </div>
+      </div>
       <GetInTheGame />
       <UpcomingEvents />
       <OurPatrners />
@@ -56,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#FFFFFF',
     margin: '-32em 12em 0',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.only('md')]: {
       margin: '-35em 10em 0',
     },
     [theme.breakpoints.down('sm')]: {
@@ -64,20 +68,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   buttons: {
+    border: '2px solid #FFF',
     display: 'flex',
     justifyContent: 'space-around',
-    maxWidth: '30%',
+    maxWidth: '40%',
     margin: '6em auto',
     [theme.breakpoints.down('md')]: {
-      maxWidth: '40%',
-      margin: '6em auto',
-    },
-    [theme.breakpoints.down('sm')]: {
-      maxWidth: '50%',
-      margin: '4em auto',
+      maxWidth: '60%',
+      margin: '5em auto',
     },
     [theme.breakpoints.down('xs')]: {
-      maxWidth: '80%',
+      maxWidth: '90%',
       margin: '4em auto',
     },
   },

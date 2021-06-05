@@ -26,8 +26,8 @@ const GetInTouch = () => {
         <div className={classes.info}>
           <Typography variant='h6'>The Shortcut Lab</Typography>
           <div className={classes.address}>
-            <PhoneIcon />
-            <Typography variant='body1'>+358 46 640 3900</Typography>
+            {/* <PhoneIcon />
+            <Typography variant='body1'>+358 46 640 3900</Typography> */}
             <EmailIcon />
             <Typography variant='body1'>info@theshortcut.org</Typography>
             <LocationOnIcon style={{marginTop:'-15px'}}/>
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '63%',
     maxWidth: '63%',
-    margin: '8em auto 5em',
+    margin: '4em auto',
     [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
