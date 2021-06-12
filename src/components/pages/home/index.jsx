@@ -2,12 +2,14 @@ import React from 'react';
 
 // image
 import heroImage from '../../../assets/photos/home_hero.jpg';
+import ourPartners from '../../../assets/photos/ourPartners.png';
 
 //Materail-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button, Link } from '@material-ui/core';
 
 // Children
+import Title from '../../custom/Title';
 import UpcomingEvents from './UpcomingEvents';
 import GetInTheGame from './GetInTheGame';
 import OurPatrners from './OurPatrners';
@@ -39,7 +41,11 @@ const LandingPage = () => {
       </div>
       <GetInTheGame />
       <UpcomingEvents />
-      <OurPatrners />
+      {/* <OurPatrners /> */}
+      <div>
+    <Title>We Have Worked With ...</Title>
+        <img src={ourPartners} width="100%" height="400vh" alt="our partners we have worked with" />
+      </div>
     </div>
   );
 };

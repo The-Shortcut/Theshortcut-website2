@@ -28,9 +28,11 @@ const Links = () => {
             Code of Conduct
           </Typography>
         </Link>
-        <Typography variant='body2' className={classes.item}>
-          Values & Principles
-        </Typography>
+        <a href='/about/#core-values' className={classes.link}>
+          <Typography variant='body2' className={classes.item}>
+            Core Values
+          </Typography>
+        </a>
         <Link to='/terms' className={classes.link}>
           <Typography
             variant='body2'

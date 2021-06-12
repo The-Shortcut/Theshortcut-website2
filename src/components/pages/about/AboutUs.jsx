@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 //Material-UI
@@ -32,12 +33,14 @@ const AboutUs = () => {
             5000+ event and activity participants. So what are you waiting for? Join our community,
             we may just be the shortcut you need to a meaningful career in Finland.
           </Typography>
+          <Link to="/community" style={{textDecoration: 'none'}}>
           <Button
             variant='contained'
             color='primary'
             style={{ color: '#FFFFFF', marginTop: '2em' }}>
             Join Community
           </Button>
+          </Link>
         </div>
         <div className={classes.media}>
           <ReactPlayer
@@ -47,7 +50,7 @@ const AboutUs = () => {
           />
         </div>
       </div>
-      <div id='successStories' />
+      <div  id="core-values" />
     </div>
   );
 };
@@ -73,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
-    textAlign: 'justify',
+    /* textAlign: 'center', */
     paddingRight: '3em',
     [theme.breakpoints.down('md')]: {
       paddingRight: 0,

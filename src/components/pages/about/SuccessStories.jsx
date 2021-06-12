@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 //Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 // REDUX
 import { getStories } from '../../../actions/storiesAction';
@@ -20,7 +21,7 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  /* nextArrow: (
+  nextArrow: (
     <div>
       <PlayCircleOutlineIcon color='inherit' style={{ fontSize: '2rem', color: '#434343' }} />
     </div>
@@ -36,7 +37,7 @@ const settings = {
         }}
       />
     </div>
-  ), */
+  ),
 };
 
 const SuccessStories = () => {
@@ -67,7 +68,7 @@ const SuccessStories = () => {
                       <span style={{ fontSize: '3rem' }}>&#8220;</span>
                       {acf.quote}
                     </Typography>
-                    <Typography variant='subtitle2' style={{ textAlign: 'center' }}>
+                    <Typography variant='subtitle2' style={{ textAlign: 'center', fontWeight: 'bold'}}>
                       {acf.participant_name}
                     </Typography>
                     <Button variant='outlined' color='primary' className={classes.button}>
@@ -89,13 +90,11 @@ export default SuccessStories;
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    background: '#DDDDDD',
-    border: '1px solid #DDDDDD',
-    margin:'5em auto'
+    margin: '3em auto',
   },
   root: {
     maxWidth: '70%',
-    margin: '5em auto',
+    margin: '11em auto',
   },
   item: {
     display: 'flex',

@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Children
 import AboutUs from './AboutUs';
+import CoreValues from './CoreValues';
 import SuccessStories from './SuccessStories';
 import FAQ from './FAQ';
 
@@ -27,6 +28,7 @@ const About = () => {
         <div className={classes.hero} />
       )}
       <AboutUs />
+      <CoreValues />
       <SuccessStories />
       <FAQ />
     </div>
