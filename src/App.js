@@ -23,9 +23,9 @@ const App = () => {
       <CssBaseline />
       <ScrollToTop />
       <NavBar pageHeight={pageH} />
-        <Routes />
-        <Media />
-        <Footer />
+      <Routes />
+      <Media />
+      <Footer />
     </Router>
   );
 };

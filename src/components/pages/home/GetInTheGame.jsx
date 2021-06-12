@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
+
 // Children
 import Title from '../../custom/Title';
 import Game from './Game';
@@ -14,9 +16,14 @@ const GetInTheGame = () => {
   const classes = useStyles();
 
   return (
-    <div id='title' className={classes.main}>
+    <div id='games' className={classes.main}>
       <div className={classes.root}>
         <Title>We Get You In The Game</Title>
+        <Typography variant='body1' className={classes.text}>
+          Welcome to The Shortcut! Take your next step to reach your professional goals with us. You
+          can upskill and pivot your career through events, coaching, and training in our vibrant
+          community!
+        </Typography>
         <div className={classes.section}>
           {gameData.map((data, index) => (
             <Link to={data.path} className={classes.link} key={index}>
@@ -66,12 +73,22 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: 'none',
-/*     border: '2px solid red', */
+    /*     border: '2px solid red', */
     flexBasis: '23%',
     [theme.breakpoints.down('xs')]: {
       flexBasis: '90%',
       marginTop: theme.spacing(4),
     },
     '@media (max-width: 320px)': {},
+  },
+  text: {
+    margin: '0 auto 3em',
+    minWidth: '50%',
+    maxWidth: '50%',
+    textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '80%',
+      maxWidth: '80%',
+    },
   },
 }));

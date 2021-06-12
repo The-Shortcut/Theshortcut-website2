@@ -45,7 +45,6 @@ const EventsList = () => {
     );
   }
 
-  console.log(currentItems.length);
   return (
     <div className={currentItems.length < 3 ? classes.container2 : classes.container}>
       {currentItems.map((event, index) => (

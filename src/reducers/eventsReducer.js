@@ -10,7 +10,6 @@ const initState = {
     { value: 'upcoming', label: 'Upcoming' },
     { value: 'recorded', label: 'Recorded' },
     { value: 'past', label: 'Past' },
-    { value: 'Partner', label: 'Partner' },
   ],
   // for pagination
   currentPage: 1,

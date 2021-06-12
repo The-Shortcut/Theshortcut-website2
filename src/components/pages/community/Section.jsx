@@ -19,7 +19,7 @@ const Section = ({ section }) => {
     <Box className={classes.card}>
       <CardActionArea style={{minHeight:'100%'}}>
         <CardContent>
-          <img src={section.image} alt={section.title} className={classes.imageContainer} />
+          <div className={classes.iconContainer}>{section.icon}</div>
           <Typography variant='h6' className={classes.title}>
             {section.title}
           </Typography>
@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 300,
     },
   },
-  imageContainer: {
+  iconContainer: {
     borderRadius: '150%',
     boxShadow: ' 0px 0px 22px -5px #434343',
     maxWidth: '9em',

@@ -137,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
     },
     border: '1px solid #434343',
     borderRadius: '10px',
-    margin: '2em auto',
+    margin: '2em auto 0',
     display: 'flex',
   },
   info: {

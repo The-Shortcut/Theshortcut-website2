@@ -8,7 +8,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 
 // REDUX
 import { useSelector, useDispatch } from 'react-redux';
-import { getFAQ } from '../../../actions/faqActions';
+import { getFAQ } from '../../../actions/docActions';
 
 // Children
 import Title from '../../custom/Title';
@@ -16,7 +16,7 @@ const FAQ = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
-  const { faq_about } = useSelector((state) => state.faq);
+  const { faq_about } = useSelector((state) => state.docs);
 
   const dispatch = useDispatch();
 

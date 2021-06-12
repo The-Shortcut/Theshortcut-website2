@@ -15,20 +15,22 @@ const AboutUs = () => {
       <Title>About Us</Title>
       <div className={classes.container}>
         <div className={classes.text}>
-          <Typography variant='body1'>
-            The Shortcut is the largest talent accelerator in the Nordics. We equip talent with the
-            skills and networks they need to drive growth and innovation, and to kickstart their
-            entry into the Finnish startup world. Owned by Startup Foundation, The Shortcut is a
-            non-profit organization dedicated to enhancing and expanding the startup community in
-            the Nordics.
+          <Typography variant='h6' style={{ marginBottom: 25 }}>
+            The solution to educated unemployment in Finland
           </Typography>
-          <Typography variant='body1'>
-            We are committed to helping fill the talent gap by addressing the needs of the ecosystem
-            and creating programs that feed talent into high-growth companies. Through our workshops
-            and training sessions, we help our community achieve personal growth through upskilling,
-            reskilling, and expanding their personal networks. The Shortcut has already helped
-            thousands of people accelerate their entry into the startup world; so what are you
-            waiting for? Join our community – we just might be the shortcut to your dream career.
+          <Typography variant='body1' style={{ lineHeight: '1.4em' }}>
+            Owned by the Startup Foundation, The Shortcut is an impact-driven non-profit
+            organization dedicated to career transformation. We bridge the gap between job seekers
+            and companies in Finland by providing in-demand training and fostering a growth mindset
+            in the community, where educated individuals can upskill and build a meaningful career.
+          </Typography>
+          <br />
+          <Typography variant='body1' style={{ lineHeight: '1.4em' }}>
+            We support you to accelerate your professional integration in Finland through training,
+            entrepreneurship, and community. We began as an entrepreneurial initiative in 2016 and
+            have evolved into a diverse training and events hub, with over 130 nationalities and
+            5000+ event and activity participants. So what are you waiting for? Join our community,
+            we may just be the shortcut you need to a meaningful career in Finland.
           </Typography>
           <Button
             variant='contained'
@@ -65,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'flex-start',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
     },
@@ -78,7 +81,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   media: {
-    margin: 'auto',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
     },
@@ -86,8 +88,8 @@ const useStyles = makeStyles((theme) => ({
   player: {
     minWidth: '640px',
     maxWidth: '640px',
-    minHeight: '360px',
-    maxHeight: '360px',
+    minHeight: '480px',
+    maxHeight: '480px',
     [theme.breakpoints.down('xs')]: {
       minWidth: '100%',
       maxWidth: '100%',

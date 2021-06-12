@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Material-UI
 import {
@@ -23,12 +23,28 @@ import defaultImage from '../../assets/photos/defaultImage.png';
 
 const EventCard = ({ event }) => {
   const classes = useStyles();
+  const [eventID, setEventID] = useState(null);
   let image = event.logo ? event.logo.original.url : defaultImage;
   let title = event.name.text;
   let summary = event.summary;
   let availability = event.status;
   let people = event.capacity;
   let link = event.url;
+/*   console.log(eventID); */
+
+  const exampleCallback = function () {
+    console.log('Order complete!');
+  };
+
+  useEffect(() => {
+    window.EBWidgets.createWidget({
+      widgetType: 'checkout',
+      eventId: eventID,
+      modal: true,
+      modalTriggerElementId: `example-widget-trigger-${eventID}`,
+      onOrderComplete: exampleCallback,
+    });
+  }, [eventID]);
 
   const formatDate = (evDate) => {
     let dateArr = evDate.split(/\D/);
@@ -106,18 +122,32 @@ const EventCard = ({ event }) => {
         <Typography variant='h6'>{title}</Typography>
         <br />
         <Typography variant='body2'>{summary}</Typography>
+        {/* <Link to={{ pathname: `/events/all/${event.id}`, state: { data: event } }}>event page</Link> */}
       </CardContent>
       <CardActions className={classes.action}>
-        <Button
-          variant='outlined'
-          color='primary'
-          size='medium'
-          endIcon={<TrendingFlatIcon />}
-          href={link}
-          target='_blank'
-          rel='noopener noreferrer'>
-          {setStatus(event.status)}
-        </Button>
+        {availability === 'upcoming' ? (
+          <Button
+            variant='outlined'
+            color='primary'
+            size='medium'
+            onClick={() => setEventID(event.id)}
+            endIcon={<TrendingFlatIcon />}
+            id={`example-widget-trigger-${eventID}`}
+            type='button'>
+            Register
+          </Button>
+        ) : (
+          <Button
+            variant='outlined'
+            color='primary'
+            size='medium'
+            endIcon={<TrendingFlatIcon />}
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'>
+            {setStatus(event.status)}
+          </Button>
+        )}
         <ShareButton event={event} />
       </CardActions>
     </Card>
@@ -144,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
       minWidth: 300,
       maxWidth: 300,
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     display: 'flex',
     flexDirection: 'column',

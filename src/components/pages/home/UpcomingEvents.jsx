@@ -18,7 +18,9 @@ const UpcomingEvents = () => {
   const events = useSelector((state) => state.events.allEvents);
   const { isLoading } = useSelector((state) => state.events);
 
-  let upcoming = events?.filter((event) => event.status === 'upcoming');
+  let upcoming = events?.filter(
+    (event) => event.status === 'upcoming' || event.status === 'Application Open'
+  );
   if (upcoming?.length < 1) {
     upcoming = events.slice(0, 1);
   }
@@ -91,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
   },
   skeleton: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     flexWrap: 'wrap',
   },
   singleEvent: {
@@ -104,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
+    margin: 'auto',
   },
   eventsSM: {
     display: 'grid',

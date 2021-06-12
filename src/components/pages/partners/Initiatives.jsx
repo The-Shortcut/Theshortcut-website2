@@ -18,7 +18,7 @@ const Initiatives = () => {
       <div className={classes.container}>
         {initiativesData.map((data, index) => (
           <Card className={classes.card}>
-            <CardActionArea>
+            <CardActionArea disabled>
               <CardMedia className={classes.media} image={data.photo} title={data.title} />
               <div style={{ backgroundColor: '#00A99D', height: '5px' }} />
               <CardContent className={classes.content}>
@@ -41,26 +41,31 @@ export default Initiatives;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '80%',
+    maxWidth: '90%',
     margin: '10em auto',
     /*  border: '1px solid red', */
   },
   container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    [theme.breakpoints.down('sm')]: {
-      flexWrap: 'wrap',
-      justifyContent: 'center'
-    },
+    display: 'grid',
+    gridGap: '10px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gridTemplateRows: 'none',
+    justifyContent: 'center',
+    alignContent: 'center',
+    minWidth: '90%',
+    maxWidth: '90%',
+/*     border: '2px solid red', */
+    margin:'auto'
   },
   card: {
+    margin: '1em auto',
     maxWidth: 280,
-    minHeight: 440,
-    [theme.breakpoints.only('md')]: {
-      maxWidth: 200,
-    },
+    minHeight: 490,
+    maxHeight: 490,
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(3),
+      minHeight: 510,
+      maxHeight: 510,
     },
   },
   title: {

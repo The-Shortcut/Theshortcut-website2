@@ -25,14 +25,14 @@ const LandingPage = () => {
           </Typography>
         </div>
         <div className={classes.buttons}>
-          <Link href='/contact-us' style={{ textDecoration: 'none' }}>
+          <Link href='#games' style={{ textDecoration: 'none' }}>
             <Button variant='contained' color='primary' className={classes.button}>
-              CONTACT US
+              For Individuals
             </Button>
           </Link>
-          <Link href='/about' style={{ textDecoration: 'none' }}>
+          <Link href='/partners' style={{ textDecoration: 'none' }}>
             <Button variant='contained' color='default' className={classes.button}>
-              LEARN MORE
+              Collaborate With Us
             </Button>
           </Link>
         </div>
@@ -87,8 +87,9 @@ const useStyles = makeStyles((theme) => ({
     width: '12em',
     fontSize: '1rem',
     fontWeight: 'bold',
+    textTransform:'none',
     [theme.breakpoints.down('md')]: {
-      width: '10em',
+      width: '12em',
       fontSize: '0.8rem',
     },
   },

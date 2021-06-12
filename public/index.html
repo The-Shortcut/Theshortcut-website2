@@ -5,10 +5,7 @@
     <link rel="icon" href="%PUBLIC_URL%/ts.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="The second version of Theshortcut website"
-    />
+    <meta name="description" content="The second version of Theshortcut website" />
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="The Shortcut" />
     <meta itemprop="description" content="Website of The Shortcut" />
@@ -50,18 +47,36 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v6.1.13/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v6.1.13/mapbox-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
     <title>The Shortcut</title>
     <style>
-			html {
-				scroll-behavior: smooth;
-			}
-		</style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body style="background-color: #f9f9f9">
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+
+    <!-- <script type="text/javascript">
+      var exampleCallback = function () {
+        console.log('Order complete!');
+      };
+
+      window.EBWidgets.createWidget({
+        widgetType: 'checkout',
+        eventId: '52766401728',
+        modal: true,
+        modalTriggerElementId: 'example-widget-trigger',
+        onOrderComplete: exampleCallback,
+      });
+    </script> -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

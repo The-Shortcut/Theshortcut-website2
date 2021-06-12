@@ -59,8 +59,8 @@ const useStyles = makeStyles((theme) => ({
   item: {
     alignSelf: 'center',
     justifySelf: 'center',
-    minWidth: '19em',
-    maxWidth: '19em',
+    minWidth: '18em',
+    maxWidth: '18em',
     minHeight: 'auto',
     [theme.breakpoints.down('xs')]: {
       justifySelf: 'start',
@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid #00A99D',
     display: 'flex',
     justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   icon: {
     marginRight: '1em',

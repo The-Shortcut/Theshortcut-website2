@@ -12,7 +12,7 @@ import { navBarData } from './navBarData';
 import MenuItem from './MenuItem';
 
 // LOGO
-import drawerLogo from '../../../assets/logo/shortcut/Emblem The Shortcut_emblem green.png'
+import drawerLogo from '../../../assets/logo/shortcut/Emblem The Shortcut_emblem green.png';
 const useStyles = makeStyles((theme) => ({
   drawer: {
     flexShrink: 0,
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    margin:'1.5em'
+    margin: '1.5em',
   },
   drawerPaper: {
     width: 360,
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     maxWidth: '8em',
     maxHeight: '3em',
-  }
+  },
 }));
 
 const DrawerMenu = ({ toggleDrawer, menuOpen }) => {
@@ -54,10 +54,10 @@ const DrawerMenu = ({ toggleDrawer, menuOpen }) => {
         setChecked((prev) => !prev);
       }, 100);
     } else {
-      setChecked(false)
+      setChecked(false);
     }
   }, [menuOpen]);
-  
+
   const MenuItems = () => {
     return (
       <div role='presentation' onClick={toggleDrawer} onKeyDown={toggleDrawer}>
@@ -67,7 +67,7 @@ const DrawerMenu = ({ toggleDrawer, menuOpen }) => {
         </div>
         <Divider />
         {navBarData.map((item, index) => (
-          <Slide key={index} direction="down" in={checked} mountOnEnter unmountOnExit>
+          <Slide key={index} direction='down' in={checked}>
             <List>
               <MenuItem item={item} toggleDrawer={toggleDrawer} />
             </List>

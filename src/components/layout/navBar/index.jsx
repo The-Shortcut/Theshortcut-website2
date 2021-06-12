@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Children
 import Search from './Search';
@@ -31,11 +31,25 @@ function ElevationScroll(props) {
 const NavBar = ({ pageHeight }) => {
   const classes = useStyles();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [path, setPath] = useState('/')
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const changeMenuIconColor = () => {
+    // eslint-disable-next-line no-unused-expressions
+    if (path === '/privacy' || path === '/code' || path === '/terms') {
+      document.getElementById('menuIcon').style.backgroundColor = '#FFF';
+    } else {
+      document.getElementById('menuIcon').style.backgroundColor = 'inherit';
+    }
+  };
 
+  useEffect(() => {
+    setPath(window.location.pathname)
+    changeMenuIconColor()
+  }, [changeMenuIconColor, path])
+console.log(path)
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
-
   return (
     <header className={classes.root}>
       <ElevationScroll>
@@ -47,6 +61,7 @@ const NavBar = ({ pageHeight }) => {
           <Toolbar className={classes.toolBar}>
             <div className={classes.title}>
               <IconButton
+                id="menuIcon"
                 className={classes.menuButton}
                 onClick={toggleMenu}
                 color='primary'

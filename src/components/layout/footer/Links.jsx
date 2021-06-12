@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,35 +10,64 @@ const Links = () => {
   return (
     <div className={classes.root}>
       <div className={classes.aboutSection}>
-        <Typography variant='h6' className={classes.headTitle}>
-          About Us
-        </Typography>
-        <Typography variant='body2' className={classes.item}>
-          FAQ
-        </Typography>
-        <Typography variant='body2' className={classes.item}>
-          Code of Conduct
-        </Typography>
+        <Link to='/about' className={classes.link}>
+          <Typography variant='h6' className={classes.headTitle}>
+            About Us
+          </Typography>
+        </Link>
+        <a href='/about/#faq' className={classes.link}>
+          <Typography variant='body2' className={classes.item}>
+            FAQ
+          </Typography>
+        </a>
+        <Link to='/code' className={classes.link}>
+          <Typography
+            variant='body2'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            Code of Conduct
+          </Typography>
+        </Link>
         <Typography variant='body2' className={classes.item}>
           Values & Principles
         </Typography>
-        <Typography variant='body2' className={classes.item}>
-          Terms of use
-        </Typography>
-        <Typography variant='body2' className={classes.item}>
-          Privacy Policy
-        </Typography>
+        <Link to='/terms' className={classes.link}>
+          <Typography
+            variant='body2'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            Terms of use
+          </Typography>
+        </Link>
+        <Link to='/privacy' className={classes.link}>
+          <Typography
+            variant='body2'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            Privacy Policy
+          </Typography>
+        </Link>
       </div>
       <div className={classes.joinSection}>
         <Typography variant='h6' className={classes.headTitle}>
           Join Us
         </Typography>
-        <Typography variant='body2' className={classes.item}>
-          Events
-        </Typography>
-        <Typography variant='body2' className={classes.item}>
-          Join Community
-        </Typography>
+        <Link to='/events/all' className={classes.link}>
+          <Typography
+            variant='body2'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            Events
+          </Typography>
+        </Link>
+        <Link to='/community' className={classes.link}>
+          <Typography
+            variant='body2'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            Join Community
+          </Typography>
+        </Link>
         <Typography variant='body2' className={classes.item}>
           Work with Us
         </Typography>
@@ -46,9 +76,14 @@ const Links = () => {
         <Typography variant='h6' className={classes.headTitle}>
           Resources
         </Typography>
-        <Typography variant='body2' className={classes.item}>
-          For Partners
-        </Typography>
+        <Link to='/partners' className={classes.link}>
+          <Typography
+            variant='body2'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            For Partners
+          </Typography>
+        </Link>
         <Typography variant='body2' className={classes.item}>
           Blogs
         </Typography>
@@ -78,6 +113,10 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'space-between',
       marginTop: '1em',
     },
+  },
+  link: {
+    color: '#FFFFFF',
+    textDecoration: 'none',
   },
   headTitle: {
     marginBottom: '1em',

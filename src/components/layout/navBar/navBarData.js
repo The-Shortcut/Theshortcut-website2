@@ -9,7 +9,7 @@ export const navBarData = [
   },
   {
     title: 'ABOUT',
-    path: '/about',
+    /*    path: '/about', */
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -44,15 +44,27 @@ export const navBarData = [
     ],
   },
   {
+    title: 'OUR SERVICES',
+    /*     path: null, */
+    icon: <KeyboardArrowUpIcon />,
+    iconClosed: <KeyboardArrowDownIcon />,
+    subNav: [
+      {
+        title: 'Training',
+        path: '/services/#training',
+      },
+      {
+        title: 'Coaching',
+        path: '/services/#coaching',
+      },
+    ],
+  },
+  {
     title: 'PARTNERS',
     path: '/partners',
     icon: null,
   },
-  {
-    title: 'BLOG',
-    path: '/blog',
-    icon: null,
-  },
+
   {
     title: 'COMMUNITY',
     path: '/community',
@@ -69,8 +81,13 @@ export const navBarData = [
     icon: null,
   },
   {
+    title: 'BLOG',
+    path: '/blog',
+    icon: null,
+  },
+  {
     title: 'CONTACT US',
-    path: '/contact-us',
+    /*   path: '/contact-us', */
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [

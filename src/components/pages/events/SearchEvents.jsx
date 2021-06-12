@@ -36,7 +36,8 @@ const SearchEvents = () => {
           onChange={(event, newValue) => handleChange(event, newValue)}
           indicatorColor='primary'
           textColor='primary'
-          classes={{ indicator: classes.shortIndicator }}
+            classes={{ indicator: classes.shortIndicator }}
+            className={classes.tabs}
           centered>
           {searchTags.map((tag, index) => (
             <Tab key={index} label={tag.label} className={classes.tab} />
