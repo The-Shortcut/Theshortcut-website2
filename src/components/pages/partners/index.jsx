@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import PartnersStatistics from './PartnersStatistics';
 import ActivePartners from './ActivePartners';
 import Initiatives from './Initiatives';
-import OurPatrners from '../home/OurPatrners';
+import OurPatrnersLogos from '../../custom/OurPartnersLogos';
 import GetPartnerForm from './GetPartnerForm';
 
 const Partners = () => {
@@ -32,7 +32,7 @@ const Partners = () => {
       <ActivePartners />
       <Initiatives />
       <div style={{ backgroundColor: '#DDDDDD', border: '1px solid #DDDDDD' }}>
-        <OurPatrners />
+        <OurPatrnersLogos />
       </div>
       <GetPartnerForm />
     </div>

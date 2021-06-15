@@ -17,7 +17,7 @@ const Section = ({ section }) => {
 
   return (
     <Box className={classes.card}>
-      <CardActionArea style={{minHeight:'100%'}}>
+      <CardActionArea style={{ minHeight: '100%' }}>
         <CardContent>
           <div className={classes.iconContainer}>{section.icon}</div>
           <Typography variant='h6' className={classes.title}>
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 335,
     minHeight: 410,
     maxHeight: 410,
-    background:'#F9F9F9',
+    background: '#F9F9F9',
     border: '1px solid #888888',
     borderRadius: '10px',
     margin: '2em auto',
@@ -88,6 +88,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: '150%',
     boxShadow: ' 0px 0px 22px -5px #434343',
     maxWidth: '9em',
@@ -102,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
     },
     marginTop: -90,
     [theme.breakpoints.down('sm')]: {
-      margin: 0
+      margin: 0,
     },
     backgroundColor: '#fff',
   },

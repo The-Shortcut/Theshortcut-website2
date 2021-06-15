@@ -58,7 +58,7 @@ export const statData = [
 export const sections = [
   {
     title: 'EVENTS',
-    icon: <FaCalendarDay color='#00A99D' style={{ fontSize: 70, margin: '24px' }} />,
+    icon: <FaCalendarDay color='#00A99D' style={{ fontSize: 45, margin: '24px' }} />,
     text: 'By participating in our Events, you will become a member and experience why becoming a member of this diverse community is so rewarding. Head over to the Events Page to see what is happening now that you can participate in to become an instant member! Join an Event!',
     redirect: { path: '/events/all', name: 'search events' },
   },

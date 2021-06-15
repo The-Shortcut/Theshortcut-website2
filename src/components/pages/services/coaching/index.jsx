@@ -6,23 +6,20 @@ import { Typography } from '@material-ui/core';
 
 // Children
 import Title from '../../../custom/Title';
-import MainSections from './MainSections';
+import CoachingSections from './CoachingSections';
 
 const Coaching = () => {
   const classes = useStyles();
   return (
-      <section className={classes.intro}>
-        <Title>COACHING</Title>
-        <Typography variant='body1' className={classes.text}>
-        It is a long established fact that a reader will be distracted by the readable content of
-        a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-        more-or-less normal distribution of letters, as opposed to using 'Content here, content
-        here', making it look like readable English. Many desktop publishing packages and web page
-        editors now use Lorem Ipsum as their default model text,
-        </Typography>
-      <MainSections />
-      </section>
-
+    <section className={classes.intro}>
+      <Title>COACHING</Title>
+      <Typography variant='body1' className={classes.text}>
+        All-access coaching resources are open to all and available free for everyone to utilize.
+        These include pre-recorded material, live events, and self-directed learning and work.
+      </Typography>
+      <CoachingSections />
+      <div id='training' />
+    </section>
   );
 };
 
@@ -39,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
       minWidth: '80%',
-    maxWidth: '80%',
-    }
+      maxWidth: '80%',
+    },
   },
 }));

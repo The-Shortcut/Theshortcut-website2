@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
 
 // ICONS
 import EmailIcon from '@material-ui/icons/Email';
@@ -102,7 +102,7 @@ const Team = () => {
                         </a>
                       </CardContent>
                     )}
-                    <img className={classes.media} src={item.acf.image} alt={item.acf.name} />
+                    <CardMedia component="img" className={classes.media} image={item.acf.image} alt={item.acf.name} />
                     <CardContent>
                       <Typography variant='subtitle1' style={{ fontWeight: 'bold' }}>
                         {item.acf.name}
@@ -157,7 +157,8 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     maxWidth: '13em',
     minWidth: '13em',
-    minHeight: '23em',
+    minHeight: '24em',
+    maxHeight: '24em',
     margin: '0 auto 1em',
     borderRadius: '15px',
     [theme.breakpoints.down('xs')]: {
@@ -203,7 +204,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     width: '100%',
-    height: 200,
+    height: 240,
     borderRadius: '15px 15px 0 0',
     [theme.breakpoints.down('xs')]: {
       borderRadius: 0,

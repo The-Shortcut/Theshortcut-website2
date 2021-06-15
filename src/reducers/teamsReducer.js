@@ -13,7 +13,7 @@ const reducer = (state = initState, action) => {
       return { ...state, isLoading: false, teammates: payload };
 
     case INIT_BOARD_MEMBERS:
-      return { ...state, board: payload };
+      return { ...state, board: payload.reverse() };
 
     case INIT_BYOB_SPEAKERS:
       return { ...state, speakers: payload };

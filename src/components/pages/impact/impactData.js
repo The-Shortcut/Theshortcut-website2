@@ -38,7 +38,7 @@ export const ImpactStatData = [
   },
   {
     title: 'gender distribution',
-    amount: 'F 54% / M 45% / other1%',
+    amount: 'F54%/M45%/other1%',
     icon: <FaTransgenderAlt style={{ fontSize: 35, color: '00A99D' }} />,
   },
   {
@@ -59,30 +59,27 @@ export const impactGoals = [
   {
     target: 'Individual',
     description: [
-      'We build opportunities for employment and mobility in the tech community',
-      'We activate new entrepreneurs with a can-do attitude to build confidence and adopt a high-growth mindset',
-      'We activate untapped potential and optimise under-utilised skills',
-      'We enable people to find a sense of belonging and empowerment',
+      'We enable people to find a sense of professional belonging and empowerment ',
+      'We activate untapped potential and optimize under-utilized skills',
+      'We support new entrepreneurs with a can-do attitude to build confidence and adopt a high-growth mindset',
     ],
     icon: <BsPersonBoundingBox style={{ fontSize: 60, color: '#00A99D' }} />,
   },
   {
     target: 'Business',
     description: [
-      'We encourage new startups to emerge and help companies find the talent they need',
-      'We increase diversity in the tech community',
-      'We contribute to the internationalisation of businesses',
-      'We help integrate spouses and families of foreign talents and help get them employed inhigh-growth companies',
+      'We help companies access new markets through diversity',
+      'We leverage and promote diversity to help companies improve company results',
+      'We upskill and re-skill talent to meet the changing needs of modern business',
     ],
     icon: <BsBriefcaseFill style={{ fontSize: 60, color: '#00A99D' }} />,
   },
   {
     target: 'Society',
     description: [
-      'We reverse integration failures',
-      'We accelerate employment bringing systemic economic benefits to Finland',
-      'We test new models for societal impact',
-      'We give back to Finnish society',
+      'We leverage untapped talent potential to minimize labour shortages and help modernize the workforce',
+      'We lower unemployment payouts while creating more taxpayers',
+      'We work towards improving the structural and bureaucratic inefficiencies in the immigration and integration frameworks',
     ],
     icon: <RiCommunityFill style={{ fontSize: 60, color: '#00A99D' }} />,
   },

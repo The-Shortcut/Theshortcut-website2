@@ -20,14 +20,12 @@ const ImpactStatistics = () => {
         {ImpactStatData.map((item, index) => (
           <div key={index} className={classes.item}>
             <div className={classes.icon}>{item.icon}</div>
-            <div className={classes.values}>
               <Typography variant='subtitle1' style={{ fontWeight: 'bold' }}>
                 {item.amount}
               </Typography>
               <Typography variant='subtitle2' style={{ fontWeight: 'bold' }}>
                 {item.title}
               </Typography>
-            </div>
           </div>
         ))}
       </div>
@@ -39,7 +37,7 @@ export default ImpactStatistics;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '80%',
+    maxWidth: '70%',
     margin: 'auto',
   },
   container: {
@@ -59,9 +57,10 @@ const useStyles = makeStyles((theme) => ({
   item: {
     alignSelf: 'center',
     justifySelf: 'center',
-    minWidth: '18em',
-    maxWidth: '18em',
-    minHeight: 'auto',
+    minWidth: '11em',
+    maxWidth: '11em',
+    minHeight: '11em',
+    maxHeight: '11em',
     [theme.breakpoints.down('xs')]: {
       justifySelf: 'start',
       alignSelf: 'start',
@@ -70,8 +69,10 @@ const useStyles = makeStyles((theme) => ({
       minHeight: '5.2em',
     },
     border: '1px solid #00A99D',
+    borderRadius: '100%',
     display: 'flex',
-    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   icon: {

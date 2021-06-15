@@ -25,7 +25,6 @@ const Services = () => {
         <div className={classes.hero} />
       )}
       <Coaching />
-      <div id='training' />
       <Training />
     </div>
   );

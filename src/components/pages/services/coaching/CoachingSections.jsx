@@ -1,33 +1,36 @@
 import React from 'react';
 
 // DATA
-import { mainData } from './coachingData';
+import { coachingData } from '../servicesData';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, CardActionArea, Typography, Button } from '@material-ui/core';
 
-const MainSections = () => {
+const CoachingSections = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        {mainData.map((item, index) => (
+        {coachingData.map((item, index) => (
           <Card variant='outlined' key={index} className={classes.card}>
             <CardActionArea disabled={!item.active}>
-              <CardContent className={classes.cardAction}>
+              <CardContent className={classes.cardContent}>
                 <img className={classes.imageContainer} src={item.image} alt={item.title} />
-                <Typography component='p' className={classes.title}>
+                <Typography variant="h6">
                   {item.title}
                 </Typography>
                 <Typography variant='subtitle1' className={classes.text}>
-                  It is a long established fact that a reader will be distracted by the readable
-                  content of a page when looking at its layout. as opposed to using 'Content here,
-                  content here', making it look like readable English.
+                  {item.description}
                 </Typography>
                 {item.active && (
-                  <Button variant='outlined' color='primary' className={classes.btn}>
+                  <Button
+                    variant='outlined'
+                    color='primary'
+                    className={classes.btn}
+                    href={item.link}
+                    target='_blank'>
                     Find Out More
                   </Button>
                 )}
@@ -40,7 +43,7 @@ const MainSections = () => {
   );
 };
 
-export default MainSections;
+export default CoachingSections;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,21 +66,19 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     minWidth: '80%',
     maxWidth: '80%',
-   /*  border: '2px solid red', */
-    margin:'auto'
+    /*  border: '2px solid red', */
+    margin: 'auto',
   },
   card: {
     margin: '1em auto',
     maxWidth: 280,
-    minHeight: 490,
-    maxHeight: 490,
+    minHeight: 460,
+    maxHeight: 460,
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(3),
-      minHeight: 510,
-      maxHeight: 510,
     },
   },
-  cardAction: {
+  cardContent: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -104,11 +105,11 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     textAlign: 'center',
-    maxWidth: '80%',
     lingHeight: 'normal',
+    minHeight: '200px',
   },
   btn: {
-    marginTop: 15,
+    margin: 0,
   },
   line: {
     minWidth: '1em',
