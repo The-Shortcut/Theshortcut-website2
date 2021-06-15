@@ -15,35 +15,41 @@ const MenuItem = ({ item, toggleDrawer }) => {
         setChecked((prev) => !prev);
       }, 100);
     } else {
-      setChecked(false)
+      setChecked(false);
     }
   }, [subnav]);
   const handleClick = () => {
     setSubnav((prev) => !prev);
     toggleDrawer();
   };
-
+console.log({subnav})
   return (
     <Fragment>
-        <Link
-          to={item.path && item.path}
-          style={{ textDecoration: 'none', position: 'relative', zIndex: 1 }}
-          onClick={item.subNav && handleClick}>
-          <ListItem button className={classes.listItem}>
-            <ListItemText primary={<Typography variant='body1' style={{fontWeight: 'bold'}}>{item.title}</Typography>} />
-            <div>{item.subNav && subnav ? item.icon : item.subNav ? item.iconClosed : null}</div>
-          </ListItem>
-        </Link>
-        {subnav &&
-          item.subNav.map((nav, index) => (
-            <Button href={nav.path} key={index} style={{minWidth:'100%'}}>
-              <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
+      <Link
+        to={(item.mainPath && subnav) ? item.mainPath : item.path}
+        style={{ textDecoration: 'none', position: 'relative', zIndex: 1 }}
+        onClick={item.subNav && handleClick}>
+        <ListItem button className={classes.listItem}>
+          <ListItemText
+            primary={
+              <Typography variant='body1' style={{ fontWeight: 'bold' }}>
+                {item.title}
+              </Typography>
+            }
+          />
+          <div>{item.subNav && subnav ? item.icon : item.subNav ? item.iconClosed : null}</div>
+        </ListItem>
+      </Link>
+      {subnav &&
+        item.subNav.map((nav, index) => (
+          <Button href={nav.path} key={index} style={{ minWidth: '100%' }}>
+            <Slide direction='right' in={checked} mountOnEnter unmountOnExit>
               <ListItem button className={classes.subItem}>
                 <ListItemText primary={<Typography variant='body2'>{nav.title}</Typography>} />
               </ListItem>
-              </Slide>
-            </Button>
-          ))}
+            </Slide>
+          </Button>
+        ))}
     </Fragment>
   );
 };
