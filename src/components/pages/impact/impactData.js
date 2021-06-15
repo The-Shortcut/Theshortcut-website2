@@ -38,7 +38,7 @@ export const ImpactStatData = [
   },
   {
     title: 'gender distribution',
-    amount: 'F54%/M45%/other1%',
+    amount: 'F54/M45/other1%',
     icon: <FaTransgenderAlt style={{ fontSize: 35, color: '00A99D' }} />,
   },
   {

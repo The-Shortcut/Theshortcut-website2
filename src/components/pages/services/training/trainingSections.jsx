@@ -12,7 +12,7 @@ const trainingSections = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography variant='h6' style={{ textAlign: 'center', marginBottom: 40 }}>
+      <Typography variant='h4' style={{ textAlign: 'center', margin: '2em auto' }}>
         Previous Training Programs Completed
       </Typography>
       <div className={classes.container}>
@@ -27,13 +27,10 @@ const trainingSections = () => {
             />
             <img src={item.partnerLogo} alt='partner logo' className={classes.logoContainer} />
             <CardContent className={classes.cardContent}>
-              <Typography
-                variant='body1'
-                component='h3'
-                style={{ fontWeight: 'bold', marginBottom: 20 }}>
+              <Typography variant='h4' className={classes.title}>
                 {item.title}
               </Typography>
-              <Typography variant='subtitle2' component='p'>
+              <Typography variant='subtitle1' component='p'>
                 {item.description}
               </Typography>
             </CardContent>
@@ -57,20 +54,23 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
-    minWidth: '80%',
-    maxWidth: '80%',
+    minWidth: '90%',
+    maxWidth: '90%',
     /*  border: '2px solid red', */
     margin: 'auto',
   },
   card: {
     margin: '1em auto',
+    borderRadius: '10px',
     maxWidth: 280,
-    minHeight: 460,
-    maxHeight: 460,
+    minHeight: 540,
+    maxHeight: 540,
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(3),
-      minHeight: 490,
-      maxHeight: 490,
+      minHeight: 620,
+      maxHeight: 620,
+      minWidth: 320,
+      maxWidth: 320,
     },
   },
   cardContent: {
@@ -89,5 +89,9 @@ const useStyles = makeStyles((theme) => ({
     margin: '-2.3em 0 0 14em',
     backgroundColor: '#EEE',
     boxShadow: ' 0px 0px 22px -5px #434343',
+  },
+  title: {
+    minHeight: '3em',
+    maxHeight: '3em',
   },
 }));

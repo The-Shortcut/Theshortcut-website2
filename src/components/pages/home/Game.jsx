@@ -12,7 +12,7 @@ const Game = ({ data }) => {
         <CardMedia className={classes.media} image={data.photo} title={data.title} />
         <div className={classes.iconContainer}>{data.icon}</div>
         <CardContent>
-          <Typography variant='h6' className={classes.title}>
+          <Typography variant='h4' className={classes.title}>
             {data.title}
           </Typography>
         </CardContent>
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   card: {
     minHeight: 410,
     maxHeight: 410,
+    borderRadius: '10px',
   },
   media: {
     height: 180,
@@ -55,6 +56,6 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     textAlign: 'center',
-    margin: 'auto',
+    margin: '1.4em auto 0',
   },
 }));

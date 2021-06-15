@@ -37,9 +37,9 @@ const AllEvents = () => {
       {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
       <EventsList />
       {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
-      <Typography component='p' className={classes.text}>
+      <Typography variant='subtitle1' component='p' className={classes.text}>
         If you didn’t find the kind of event you were looking for or you have an idea for an event,
-        then contact us at <a href="mailto:info@theshortcut.org">info@theshortcut.org</a>
+        then contact us at <a href='mailto:info@theshortcut.org'>info@theshortcut.org</a>
       </Typography>
     </div>
   );
@@ -58,6 +58,6 @@ const useStyles = makeStyles((theme) => ({
   text: {
     textAlign: 'center',
     fontSize: '1rem',
-    margin:'1em'
-  }
+    margin: '1em',
+  },
 }));

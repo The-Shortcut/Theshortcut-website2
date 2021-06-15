@@ -16,8 +16,9 @@ import drawerLogo from '../../../assets/logo/shortcut/Emblem The Shortcut_emblem
 const useStyles = makeStyles((theme) => ({
   drawer: {
     flexShrink: 0,
-    [theme.breakpoints.up('sm')]: {
-      width: 360,
+    width: 360,
+    [theme.breakpoints.down('xs')]: {
+      width: 290,
     },
   },
   // necessary for conent to be below app bar
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: 360,
     [theme.breakpoints.down('xs')]: {
-      width: 240,
+      width: 290,
     },
   },
   menuIcon: {

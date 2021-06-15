@@ -2,10 +2,7 @@ import React from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Box,
-  Typography,
-} from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 const Goal = ({ data }) => {
   const classes = useStyles();
@@ -13,17 +10,22 @@ const Goal = ({ data }) => {
   return (
     <Box className={classes.card}>
       <div style={{ minHeight: '100%' }}>
-        <div style={window.innerWidth < 600 ? {display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end'} : null}>
+        <div
+          style={
+            window.innerWidth < 600
+              ? { display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end' }
+              : null
+          }>
           <div className={classes.iconContainer}>{data.icon}</div>
-        <Typography variant='h5' className={classes.title} style={{textAlign:'center'}}>
+          <Typography variant='h4' className={classes.title}>
             {data.target}
           </Typography>
-          </div>
-          {data.description.map((desc, i) => (
-            <p key={i} className={classes.text}>
-              {desc}
-            </p>
-          ))}
+        </div>
+        {data.description.map((desc, i) => (
+          <Typography variant='subtitle1' component='p' key={i} className={classes.text}>
+            {desc}
+          </Typography>
+        ))}
       </div>
     </Box>
   );
@@ -42,10 +44,14 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '10px',
     boxShadow: ' 0px 0px 22px -5px #434343',
     margin: '2em auto',
-   [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('md')]: {
       minWidth: 380,
       maxWidth: 380,
       margin: '1em auto',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 510,
+      maxHeight: 510,
     },
     /*[theme.breakpoints.only('md')]: {
       minWidth: 290,
@@ -82,6 +88,5 @@ const useStyles = makeStyles((theme) => ({
   text: {
     margin: '1.5em 1em',
     textAlign: 'center',
-    fontSize: '0.9rem',
-  }
+  },
 }));

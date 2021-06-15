@@ -21,6 +21,14 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+      },
+    },
+  ],
   nextArrow: (
     <div>
       <PlayCircleOutlineIcon color='inherit' style={{ fontSize: '2rem', color: '#434343' }} />
@@ -64,11 +72,11 @@ const SuccessStories = () => {
                     {/* <Typography variant='body1' className={classes.story}>
                     {acf.story}
                   </Typography> */}
-                    <Typography variant='body2' style={{ padding: '1em' }}>
+                    <Typography variant='subtitle1' component='p' className={classes.quote}>
                       <span style={{ fontSize: '3rem' }}>&#8220;</span>
                       {acf.quote}
                     </Typography>
-                    <Typography variant='subtitle2' style={{ textAlign: 'center' }}>
+                    <Typography variant='subtitle1' style={{ textAlign: 'center' }}>
                       {acf.participant_name}
                     </Typography>
                     <Button variant='outlined' color='primary' className={classes.button}>
@@ -129,4 +137,10 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '5.5em',
     },
   },
+  quote: {
+    margin: 'auto',
+    [theme.breakpoints.up('sm')]: {
+      margin:'auto 2em'
+    }
+  }
 }));

@@ -119,8 +119,9 @@ const FollowMedia = () => {
       <form className={classes.form}>
         <div className={classes.inputSection}>
           <TextField
-            label='What is your email address ?'
+            label='Your email address ?'
             className={classes.textField}
+            /* inputProps={{ style: { fontSize: '1.2rem' } }} */
             type='email'
             name='email'
             value={email}
@@ -232,8 +233,9 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: '15%',
     [theme.breakpoints.down('xs')]: {
       flexBasis: '24%',
+    minHeight: '4.5em',
     },
-    minHeight: '3.99em',
+    minHeight: '4.7em',
     color: '#fff',
     borderRadius: '0 4px 4px 0',
   },

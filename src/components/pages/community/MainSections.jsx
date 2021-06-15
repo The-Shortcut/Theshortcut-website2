@@ -18,7 +18,7 @@ const MainSections = () => {
         <Typography
           variant='body1'
           style={{ margin: 'auto', textAlign: 'center', maxWidth: '80%' }}>
-          There is no Shortcut without the community! <br />
+          There is no Shortcut without the community! <br /><br />
           The reason we create events, design trainings, negotiate partnership deals, etc is because
           we want the best for our community and those who will benefit from joining it. There are
           many ways for you to become a part of this supportive, creative, and driven community!
@@ -51,15 +51,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   container: {
+    display: 'grid',
+    gridGap: '10px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+    gridTemplateRows: 'none',
+    justifyContent: 'center',
+    alignContent: 'center',
     minWidth: '100%',
-    display: 'flex',
-    marginTop: theme.spacing(10),
-    [theme.breakpoints.down('sm')]: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: theme.spacing(4),
-    },
+    maxWidth: '100%',
+    margin:'5em auto'
   },
 }));

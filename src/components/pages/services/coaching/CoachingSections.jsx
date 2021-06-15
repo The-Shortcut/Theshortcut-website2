@@ -18,10 +18,10 @@ const CoachingSections = () => {
             <CardActionArea disabled={!item.active}>
               <CardContent className={classes.cardContent}>
                 <img className={classes.imageContainer} src={item.image} alt={item.title} />
-                <Typography variant="h6">
+                <Typography variant='h4' className={classes.title}>
                   {item.title}
                 </Typography>
-                <Typography variant='subtitle1' className={classes.text}>
+                <Typography variant='subtitle1' component='p' className={classes.text}>
                   {item.description}
                 </Typography>
                 {item.active && (
@@ -50,14 +50,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '5em auto',
   },
   container: {
-    /* display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: '5em auto',
-    minWidth: '80%',
-    maxWidth: '80%',
-    border: '2px solid red', */
     display: 'grid',
     gridGap: '10px',
     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -71,12 +63,16 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     margin: '1em auto',
+    borderRadius:'10px',
     maxWidth: 280,
-    minHeight: 460,
-    maxHeight: 460,
+    minHeight: 520,
+    maxHeight: 520,
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(3),
+      minHeight: 560,
+      maxHeight: 560,
     },
+
   },
   cardContent: {
     display: 'flex',
@@ -99,22 +95,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: '1rem',
-    fontWeight: 'bold',
+    minHeight: '40px',
+    maxHeight: '40px',
     margin: '1em auto',
+    textAlign: 'center',
   },
   text: {
-    textAlign: 'center',
-    lingHeight: 'normal',
-    minHeight: '200px',
+    minHeight: '190px',
+    maxHeight: '190px',
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '270px',
+      maxHeight: '270px',
+    },
+    lineHeight: '1.5em',
   },
   btn: {
-    margin: 0,
-  },
-  line: {
-    minWidth: '1em',
-    maxWidth: '1em',
-    height: '10em',
-    backgroundColor: '#434343',
+    marginTop: 10,
   },
 }));

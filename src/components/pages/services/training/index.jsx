@@ -12,7 +12,7 @@ const Training = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id='training'>
       <Title>TRAINING</Title>
       <Typography variant='body1' className={classes.text}>
         <strong>Current opportunities</strong>
@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: '11em auto',
     background: '#DDDDDD',
+    border: '1px solid #DDD',
   },
   text: {
     margin: 'auto',

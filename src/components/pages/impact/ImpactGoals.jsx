@@ -43,11 +43,13 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '95%',
       maxWidth: '95%',
     },
-    /*   border: '2px solid red', */
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    alignItmes: 'center',
-    margin: '5em auto',
+      display: 'grid',
+      gridGap: '10px',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
+      gridTemplateRows: 'none',
+      justifyContent: 'center',
+      alignContent: 'center',
+  /*     border: '2px solid red', */
+      margin:'5em auto'
   },
 }));

@@ -22,7 +22,7 @@ const MenuItem = ({ item, toggleDrawer }) => {
     setSubnav((prev) => !prev);
     toggleDrawer();
   };
-console.log({subnav})
+
   return (
     <Fragment>
       <Link
@@ -32,7 +32,7 @@ console.log({subnav})
         <ListItem button className={classes.listItem}>
           <ListItemText
             primary={
-              <Typography variant='body1' style={{ fontWeight: 'bold' }}>
+              <Typography variant='subtitle1' style={{ fontWeight: 'bold' }}>
                 {item.title}
               </Typography>
             }

@@ -19,13 +19,11 @@ const ImpactStatistics = () => {
       <div className={classes.container}>
         {ImpactStatData.map((item, index) => (
           <div key={index} className={classes.item}>
-            <div className={classes.icon}>{item.icon}</div>
-              <Typography variant='subtitle1' style={{ fontWeight: 'bold' }}>
-                {item.amount}
-              </Typography>
-              <Typography variant='subtitle2' style={{ fontWeight: 'bold' }}>
-                {item.title}
-              </Typography>
+            <div style={{display: 'flex'}}>
+              <div className={classes.icon}>{item.icon}</div>
+              <Typography variant='body1'>{item.amount}</Typography>
+            </div>
+            <Typography variant='subtitle1'>{item.title}</Typography>
           </div>
         ))}
       </div>
@@ -55,12 +53,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'start',
   },
   item: {
+ /*    border: '1px solid red', */
     alignSelf: 'center',
     justifySelf: 'center',
-    minWidth: '11em',
-    maxWidth: '11em',
-    minHeight: '11em',
-    maxHeight: '11em',
+    minWidth: '16em',
+    maxWidth: '16em',
+    minHeight: '6em',
+    maxHeight: '6em',
     [theme.breakpoints.down('xs')]: {
       justifySelf: 'start',
       alignSelf: 'start',
@@ -68,15 +67,9 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '12em',
       minHeight: '5.2em',
     },
-    border: '1px solid #00A99D',
-    borderRadius: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   icon: {
     marginRight: '1em',
-    marginLeft:'0.5em'
+    marginLeft: '0.5em',
   },
 }));

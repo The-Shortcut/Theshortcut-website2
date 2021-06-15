@@ -35,10 +35,10 @@ const theme = createMuiTheme({
       main: '#dc3545',
     },
     warning: {
-      main:'#ffc107'
+      main: '#ffc107',
     },
     info: {
-      main:'#2196f3'
+      main: '#2196f3',
     },
     background: {
       default: '#000000',
@@ -70,17 +70,17 @@ const theme = createMuiTheme({
   },
 });
 theme.typography.h1 = {
-  fontSize: '1.8rem',
-  '@media (min-width:600px)': {
-    fontSize: '2rem',
+  fontSize: '5.5rem',
+  '@media (max-width:600px)': {
+    fontSize: '3.5rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '2.4rem',
+    fontSize: '5.8rem',
   },
 };
 theme.typography.h2 = {
-  fontSize: '1.5rem',
-  '@media (min-width:600px)': {
+  fontSize: '2rem',
+  '@media (max-width:600px)': {
     fontSize: '1.8rem',
   },
   [theme.breakpoints.up('md')]: {
@@ -88,26 +88,26 @@ theme.typography.h2 = {
   },
 };
 theme.typography.h3 = {
-  fontSize: '1.5rem',
-  '@media (min-width:600px)': {
-    fontSize: '1.8rem',
+  fontSize: '1.8rem',
+  '@media (max-width:600px)': {
+    fontSize: '1.6rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '2rem',
   },
 };
 theme.typography.h4 = {
-  fontSize: '1.3rem',
-  '@media (min-width:600px)': {
-    fontSize: '1.5rem',
+  fontSize: '1.4rem',
+  '@media (max-width:600px)': {
+    fontSize: '1.3rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '1.8rem',
+    fontSize: '1.5rem',
   },
 };
 theme.typography.h5 = {
   fontSize: '1.2rem',
-  '@media (min-width:600px)': {
+  '@media (max-width:600px)': {
     fontSize: '1.4rem',
   },
   [theme.breakpoints.up('md')]: {
@@ -116,11 +116,23 @@ theme.typography.h5 = {
 };
 theme.typography.h6 = {
   fontSize: '1rem',
-  '@media (min-width:600px)': {
+  '@media (max-width:600px)': {
     fontSize: '1.2rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '1.4rem',
+  },
+};
+theme.typography.body1 = {
+  fontSize: '1.5rem',
+  '@media (max-width:600px)': {
+    fontSize: '1.5rem',
+  },
+};
+theme.typography.subtitle1 = {
+  fontSize: '1.3rem',
+  '@media (min-width:600px)': {
+    fontSize: '1rem',
   },
 };
 export default theme;

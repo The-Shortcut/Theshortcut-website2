@@ -9,7 +9,7 @@ const Title = ({ children }) => {
 
   return (
     <Box>
-      <Typography variant='h4' className={classes.text}>
+      <Typography variant='h3' className={classes.text}>
         {children}
       </Typography>
     </Box>

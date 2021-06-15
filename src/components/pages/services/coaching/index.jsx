@@ -18,7 +18,7 @@ const Coaching = () => {
         These include pre-recorded material, live events, and self-directed learning and work.
       </Typography>
       <CoachingSections />
-      <div id='training' />
+      <div id='training'/>
     </section>
   );
 };
@@ -27,7 +27,7 @@ export default Coaching;
 
 const useStyles = makeStyles((theme) => ({
   intro: {
-    /* border:'2px solid red' */
+    margin:'7em 1em'
   },
   text: {
     margin: 'auto',
@@ -35,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '50%',
     textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
-      minWidth: '80%',
-      maxWidth: '80%',
+      minWidth: '90%',
+      maxWidth: '90%',
     },
   },
 }));

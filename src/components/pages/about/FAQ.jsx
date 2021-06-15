@@ -50,7 +50,7 @@ const FAQ = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography
-                variant='subtitle2'
+                variant='subtitle1'
                 component='p'
                 dangerouslySetInnerHTML={{ __html: faq.content.rendered }}
               />

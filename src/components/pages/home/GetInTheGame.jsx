@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,11 +11,11 @@ import Game from './Game';
 // Data
 import { gameData } from './gameData';
 
-const GetInTheGame = () => {
+const GetInTheGame = ({ gamesRef }) => {
   const classes = useStyles();
 
   return (
-    <div id='games' className={classes.main}>
+    <div ref={gamesRef} className={classes.main}>
       <div className={classes.root}>
         <Title>We Get You In The Game</Title>
         <Typography variant='body1' className={classes.text}>
@@ -26,9 +25,9 @@ const GetInTheGame = () => {
         </Typography>
         <div className={classes.section}>
           {gameData.map((data, index) => (
-            <Link to={data.path} className={classes.link} key={index}>
+            <a href={data.path} className={classes.link} key={index}>
               <Game data={data} />
-            </Link>
+            </a>
           ))}
         </div>
       </div>
@@ -40,17 +39,13 @@ export default GetInTheGame;
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    marginTop: '15em',
-    paddingTop: '5px',
-    paddingBottom: '5px',
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '5em',
-    },
+    margin: '10em auto 7em',
+    border: '1px solid #FFFFFF',
   },
   root: {
     minWidth: '80%',
     maxWidth: '80%',
-    margin: '8em auto 5em',
+    margin: '1em auto',
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -58,19 +53,20 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       minWidth: '95%',
       maxWidth: '95%',
-      marginTop:'3em'
+      marginTop: '3em',
     },
   },
   section: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    /*  [theme.breakpoints.up('md')]: {
-      flexWrap: 'nowrap',
-    }, */
-    [theme.breakpoints.down('xs')]: {
-      justifyContent: 'center',
-    },
+    display: 'grid',
+    gridGap: '10px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+    gridTemplateRows: 'none',
+    justifyContent: 'center',
+    alignContent: 'center',
+    minWidth: '100%',
+    maxWidth: '100%',
+    /*     border: '2px solid red', */
+    margin: 'auto',
   },
   link: {
     textDecoration: 'none',

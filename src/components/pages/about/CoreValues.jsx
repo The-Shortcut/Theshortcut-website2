@@ -20,7 +20,7 @@ const CoreValues = () => {
           {values.map((value, index) => (
             <div key={index} className={classes.item}>
               <div className={classes.icon}>{value.icon}</div>
-              <Typography variant='h6' className={classes.title}>
+              <Typography variant='h4' className={classes.title}>
                 {value.title}
               </Typography>
               <Typography variant='body1' className={classes.text}>

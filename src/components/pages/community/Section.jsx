@@ -20,10 +20,10 @@ const Section = ({ section }) => {
       <CardActionArea style={{ minHeight: '100%' }}>
         <CardContent>
           <div className={classes.iconContainer}>{section.icon}</div>
-          <Typography variant='h6' className={classes.title}>
+          <Typography variant='h4' className={classes.title}>
             {section.title}
           </Typography>
-          <Typography variant='body1' className={classes.text}>
+          <Typography variant='subtitle1' component='p' className={classes.text}>
             {section.text}
           </Typography>
           <CardActions>
@@ -60,30 +60,26 @@ export default Section;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 335,
-    maxWidth: 335,
+    minWidth: 340,
+    maxWidth: 340,
     minHeight: 410,
     maxHeight: 410,
     background: '#F9F9F9',
     border: '1px solid #888888',
     borderRadius: '10px',
     margin: '2em auto',
-    [theme.breakpoints.up('md')]: {
-      minWidth: 360,
-      maxWidth: 360,
-      margin: '1em auto',
-    },
     [theme.breakpoints.only('md')]: {
-      minWidth: 290,
-      maxWidth: 290,
-      margin: '1em auto',
+      minWidth: 310,
+      maxWidth: 310,
     },
+
     [theme.breakpoints.down('sm')]: {
-      minHeight: 480,
-      maxHeight: 480,
+      minWidth: 380,
+      maxWidth: 380,
+      minHeight: 580,
+      maxHeight: 580,
     },
     '@media (min-width: 320px)': {
-      minWidth: 300,
       maxWidth: 300,
     },
   },
@@ -110,11 +106,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#fff',
   },
   title: {
-    float: 'right',
+    margin: 'auto',
+    textAlign: 'center',
   },
   text: {
-    margin: ' 3em auto',
-    textAlign: 'justify',
+    minHeight: '11em',
+    maxHeight: '11em',
+    margin: ' 3em 1em',
+    lineHeight: '28px',
+    textAlign: 'left',
   },
   button: {
     display: 'inline',
@@ -132,5 +132,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     minWidth: '60%',
+    margin:'auto'
   },
 }));

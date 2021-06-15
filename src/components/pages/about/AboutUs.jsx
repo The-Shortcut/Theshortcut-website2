@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
+import aboutUs from '../../../assets/photos/aboutUs.jpeg';
+
 //Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
@@ -11,12 +13,13 @@ import Title from '../../custom/Title';
 
 const AboutUs = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <Title>About Us</Title>
       <div className={classes.container}>
         <div className={classes.text}>
-          <Typography variant='h6' style={{ marginBottom: 25 }}>
+          <Typography variant='h4' style={{ marginBottom: 25 }}>
             The solution to educated unemployment in Finland
           </Typography>
           <Typography variant='body1' style={{ lineHeight: '1.4em' }}>
@@ -33,13 +36,13 @@ const AboutUs = () => {
             5000+ event and activity participants. So what are you waiting for? Join our community,
             we may just be the shortcut you need to a meaningful career in Finland.
           </Typography>
-          <Link to="/community" style={{textDecoration: 'none'}}>
-          <Button
-            variant='contained'
-            color='primary'
-            style={{ color: '#FFFFFF', marginTop: '2em' }}>
-            Join Community
-          </Button>
+          <Link to='/community' style={{ textDecoration: 'none' }}>
+            <Button
+              variant='contained'
+              color='primary'
+              style={{ color: '#FFFFFF', marginTop: '2em' }}>
+              Join Community
+            </Button>
           </Link>
         </div>
         <div className={classes.media}>
@@ -48,9 +51,10 @@ const AboutUs = () => {
             controls={true}
             className={classes.player}
           />
+          <img src={aboutUs} alt='about us' className={classes.player} />
         </div>
       </div>
-      <div  id="core-values" />
+      <div id='core-values' />
     </div>
   );
 };
@@ -71,12 +75,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
   },
   text: {
     /* textAlign: 'center', */
+    flex: 2,
     paddingRight: '3em',
     [theme.breakpoints.down('md')]: {
       paddingRight: 0,
@@ -84,15 +89,22 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   media: {
+    flex: 1,
+    minHeight: '45em',
+    maxHeight: '45em',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
     },
   },
   player: {
-    minWidth: '640px',
-    maxWidth: '640px',
-    minHeight: '480px',
-    maxHeight: '480px',
+    minWidth: '480px',
+    maxWidth: '480px',
+    minHeight: '320px',
+    maxHeight: '320px',
     [theme.breakpoints.down('xs')]: {
       minWidth: '100%',
       maxWidth: '100%',

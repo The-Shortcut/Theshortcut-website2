@@ -14,6 +14,7 @@ import FAQ from './FAQ';
 
 const About = () => {
   const classes = useStyles();
+
   return (
     <div id='aboutUs'>
       {window.innerWidth < 960 ? (

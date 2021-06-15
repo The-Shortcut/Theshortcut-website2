@@ -228,6 +228,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoContainer: {
     border: 'none',
+    padding:'1em'
   },
   logo: {
     minWidth: '20%',

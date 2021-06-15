@@ -22,10 +22,10 @@ const Initiatives = () => {
               <CardMedia className={classes.media} image={data.photo} title={data.title} />
               <div style={{ backgroundColor: '#00A99D', height: '5px' }} />
               <CardContent className={classes.content}>
-                <Typography gutterBottom variant='h6' component='h6' className={classes.title}>
+                <Typography gutterBottom variant='h4' className={classes.title}>
                   {data.title}
                 </Typography>
-                <Typography variant='body1' color='textSecondary' component='p'>
+                <Typography variant='subtitle1' component='p' className={classes.text}>
                   {data.description}
                 </Typography>
               </CardContent>
@@ -59,18 +59,29 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     margin: '1em auto',
+    borderRadius: '10px',
     maxWidth: 280,
-    minHeight: 490,
-    maxHeight: 490,
+    minHeight: 540,
+    maxHeight: 540,
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(3),
-      minHeight: 510,
-      maxHeight: 510,
+      minHeight: 580,
+      maxHeight: 580,
+      minWidth: 320,
+      maxWidth: 320,
     },
   },
   title: {
+    minHeight:'2em',
+    maxHeight:'2em',
     textAlign: 'center',
-    height: theme.spacing(7),
+  },
+  text: {
+    minHeight: '11em',
+    maxHeight: '11em',
+    margin: '1em',
+    lineHeight: '28px',
+    textAlign: 'left',
   },
   media: {
     height: 140,
