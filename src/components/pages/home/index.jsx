@@ -36,12 +36,12 @@ const LandingPage = () => {
             color='primary'
             className={classes.button}
             onClick={executeScroll}>
-            For Individuals
+            FOR INDIVIDUALS
           </Button>
           {/* </Link> */}
           <Link href='/partners' style={{ textDecoration: 'none' }}>
-            <Button variant='contained' color='default' className={classes.button}>
-              Collaborate With Us
+            <Button variant='contained' size='large' color='default' className={classes.button}>
+              COLLABORATE WITH US
             </Button>
           </Link>
         </div>
@@ -62,44 +62,53 @@ const useStyles = makeStyles((theme) => ({
   hero: {
     minWidth: '100%',
     maxWidth: '100%',
+    minHeight: '100vh',
     maxHeight: '100vh',
     [theme.breakpoints.down('xs')]: {
-      height: '40em',
+      minHeight: '40em',
+      maxHeight: '40em',
     },
-    /* background: `url(${heroImage}) center/cover fixed no-repeat`, */
   },
   title: {
     textAlign: 'center',
     color: '#FFFFFF',
-    margin: '-32em 12em 0',
+    margin: '-35em 12em 0',
     [theme.breakpoints.only('md')]: {
-      margin: '-35em 10em 0',
+      margin: '-40em 10em 0',
     },
     [theme.breakpoints.down('sm')]: {
-      margin: '-24em 1em 0',
+      margin: '-45em 3em 0',
+    },
+    [theme.breakpoints.down('xs')]: {
+      margin: '-34em 1em 0',
     },
   },
   buttons: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     maxWidth: '40%',
     margin: '6em auto 0',
-    [theme.breakpoints.down('md')]: {
-      margin: '5em auto',
+    [theme.breakpoints.only('md')]: {
+      maxWidth: '45%',
+      margin: '5em auto 0',
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '55%',
+      margin: '4em auto 0',
     },
     [theme.breakpoints.down('xs')]: {
-      maxWidth: '60%',
-      margin: '4em auto',
+      justifyContent: 'center',
+      
     },
   },
   button: {
     display: 'inline',
-    width: '12em',
-    fontSize: '1rem',
+    width: '12.5em',
+    fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',
-    margin: '1em',
+    margin: '1em 0',
     [theme.breakpoints.down('sm')]: {
       width: '14em',
       fontSize: '0.8rem',

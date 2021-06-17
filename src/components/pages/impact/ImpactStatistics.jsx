@@ -21,7 +21,7 @@ const ImpactStatistics = () => {
           <div key={index} className={classes.item}>
             <div style={{display: 'flex'}}>
               <div className={classes.icon}>{item.icon}</div>
-              <Typography variant='body1'>{item.amount}</Typography>
+              <Typography variant='h5'>{item.amount}</Typography>
             </div>
             <Typography variant='subtitle1'>{item.title}</Typography>
           </div>

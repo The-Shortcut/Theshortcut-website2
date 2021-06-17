@@ -32,7 +32,7 @@ const MenuItem = ({ item, toggleDrawer }) => {
         <ListItem button className={classes.listItem}>
           <ListItemText
             primary={
-              <Typography variant='subtitle1' style={{ fontWeight: 'bold' }}>
+              <Typography variant='body1' style={{ fontWeight: 'bold' }}>
                 {item.title}
               </Typography>
             }
@@ -45,7 +45,7 @@ const MenuItem = ({ item, toggleDrawer }) => {
           <Button href={nav.path} key={index} style={{ minWidth: '100%' }}>
             <Slide direction='right' in={checked} mountOnEnter unmountOnExit>
               <ListItem button className={classes.subItem}>
-                <ListItemText primary={<Typography variant='body2'>{nav.title}</Typography>} />
+                <ListItemText primary={<Typography variant='subtitle1'>{nav.title}</Typography>} />
               </ListItem>
             </Slide>
           </Button>

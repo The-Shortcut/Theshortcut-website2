@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Children
 import PartnersStatistics from './PartnersStatistics';
-import ActivePartners from './ActivePartners';
+/* import ActivePartners from './ActivePartners'; */
 import Initiatives from './Initiatives';
 import OurPatrnersLogos from '../../custom/OurPartnersLogos';
 import GetPartnerForm from './GetPartnerForm';
@@ -29,12 +29,12 @@ const Partners = () => {
         <div className={classes.hero} />
       )}
       <PartnersStatistics />
-      <ActivePartners />
-      <Initiatives />
+      {/* <ActivePartners /> */}
       <div style={{ backgroundColor: '#DDDDDD', border: '1px solid #DDDDDD' }}>
-        <OurPatrnersLogos />
+        <Initiatives />
       </div>
-      <GetPartnerForm />
+      <OurPatrnersLogos />
+        <GetPartnerForm />
     </div>
   );
 };

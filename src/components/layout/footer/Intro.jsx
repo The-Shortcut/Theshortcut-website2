@@ -19,24 +19,26 @@ const Intro = () => {
     <div style={{ flex: 1 }}>
       <div className={classes.info}>
         <img src={logo} alt='TheShortcut footer logo' className={classes.logo} />
-        <Typography variant='body1'>
-          We equip talent with the skills and networks they need to become an entrepreneur or work
-          for a high-growth company/startup.
+        <Typography variant='h4'>
+          The place for professional and social integration in Finland.
         </Typography>
         <div className={classes.address}>
           <PhoneIcon />
-          <Typography variant='body2'>+358 46 640 3900</Typography>
+          <Typography variant='subtitle1' component='p'>
+            +358 46 640 3900
+          </Typography>
           <EmailIcon />
-          <Typography variant='body2'>info@theshortcut.org</Typography>
+          <Typography variant='subtitle1' component='p'>
+            info@theshortcut.org
+          </Typography>
           <LocationOnIcon style={{ marginTop: '-15px' }} />
-          <Typography variant='body2'>
+          <Typography variant='subtitle1' component='p'>
             Maria01 (entrance 15B),
             <br /> Lapinlahdenkatu 16, 00180, Helsinki
           </Typography>
           <InfoIcon style={{ marginTop: '-15px' }} />
-          <Typography variant='body2'>
-            Open Monday &mdash; Friday, 9am &mdash; 5pm <br /> (or until the last event of the day
-            is over)
+          <Typography variant='subtitle1' component='p'>
+            Open Wednesday & Thursday, 10am &mdash; 4pm <br />
           </Typography>
         </div>
       </div>

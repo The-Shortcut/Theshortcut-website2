@@ -42,7 +42,7 @@ export default Initiatives;
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '90%',
-    margin: '10em auto',
+    margin: '7em auto',
     /*  border: '1px solid red', */
   },
   container: {

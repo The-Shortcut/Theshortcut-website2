@@ -124,7 +124,7 @@ export default Team;
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    background: '#DDDDDD',
+   /*  background: '#DDDDDD', */
     paddingTop: '5px',
     paddingBottom: '5px'
   },

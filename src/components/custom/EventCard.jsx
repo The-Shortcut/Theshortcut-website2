@@ -30,7 +30,7 @@ const EventCard = ({ event }) => {
   let availability = event.status;
   let people = event.capacity;
   let link = event.url;
-/*   console.log(eventID); */
+  /*   console.log(eventID); */
 
   const exampleCallback = function () {
     console.log('Order complete!');
@@ -75,12 +75,12 @@ const EventCard = ({ event }) => {
   return (
     <Card className={classes.card}>
       <CardMedia style={{ padding: '5px' }}>
-        <img src={image} alt={title} width='100%' height='210px' style={{ borderRadius: '5px' }} />
+        <img src={image} alt={title} width='100%' height='30%' style={{ borderRadius: '5px' }} />
       </CardMedia>
       <CardContent className={classes.info}>
         <div
           style={{
-            width: '110px',
+            width: '140px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'flex-start',
@@ -170,11 +170,19 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 360,
       margin: '1em auto',
     },
-    '@media (max-width: 320px)': {
-      minWidth: 300,
-      maxWidth: 300,
-      justifyContent: 'center',
+    '@media (max-width: 690px)': {
+      minWidth: '90%',
+      maxWidth: '90%',
+      justifyContent: 'space-between',
       alignItems: 'center',
+    },
+    '@media (max-width: 769px)': {
+      minWidth: '90%',
+      maxWidth: '90%',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      minHeight: 710,
+      maxHeight: 710,
     },
     display: 'flex',
     flexDirection: 'column',
@@ -195,5 +203,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-between',
     bottom: 0,
+    minWidth:'100%',
   },
 }));

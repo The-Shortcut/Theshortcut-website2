@@ -14,7 +14,7 @@ const PartnersStatistics = () => {
       {partnersStat.map((stat, index) => (
         <div key={index} className={classes.container}>
           <div>{stat.icon}</div>
-          <Typography variant='h6'>{stat.title}</Typography>
+          <Typography variant='h5'>{stat.title}</Typography>
           <Typography variant='subtitle1'>{stat.description}</Typography>
         </div>
       ))}

@@ -7,9 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import heroImage from '../../../assets/photos/contactHero.jpg';
 
 // Children
-import Team from './Team';
-import Board from './Board';
+/* import Team from './Team';
+import Board from './Board'; */
 import GetInTouch from './GetInTouch';
+import FAQ from '../about/FAQ';
 
 const ContactUs = () => {
   const classes = useStyles();
@@ -28,8 +29,9 @@ const ContactUs = () => {
       )}
       <div id='getInTouch' />
       <GetInTouch />
-      <Team />
-      <Board />
+      <FAQ />
+      {/* <Team />
+      <Board /> */}
     </div>
   );
 };

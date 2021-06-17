@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // Children
 import Search from './Search';
@@ -69,7 +70,9 @@ console.log(path)
                 aria-label='open drawer'>
                 <MenuIcon fontSize='large' />
               </IconButton>
+              <Link to="/">
               <img src={TopLogo} alt='The Shortcut Logo' className={classes.logo} />
+              </Link>
             </div>
             <Search />
           </Toolbar>

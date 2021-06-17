@@ -10,7 +10,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import AboutUs from './AboutUs';
 import CoreValues from './CoreValues';
 import SuccessStories from './SuccessStories';
-import FAQ from './FAQ';
+/* import FAQ from './FAQ'; */
+import Team from '../contact/Team';
+import Board from '../contact/Board';
 
 const About = () => {
   const classes = useStyles();
@@ -30,8 +32,10 @@ const About = () => {
       )}
       <AboutUs />
       <CoreValues />
-      <SuccessStories />
-      <FAQ />
+      {/* <SuccessStories /> */}
+      {/* <FAQ /> */}
+      <Team />
+      <Board />
     </div>
   );
 };

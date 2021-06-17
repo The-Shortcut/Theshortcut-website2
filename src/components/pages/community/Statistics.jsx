@@ -14,8 +14,8 @@ const Statistics = () => {
         <div key={index} className={classes.container}>
           <div className={classes.icon}>{item.icon}</div>
           <div className={classes.values}>
-            <Typography variant='h6'>{item.amount}</Typography>
-            <Typography variant='h6'>{item.title}</Typography>
+            <Typography variant='h5'>{item.amount}</Typography>
+            <Typography variant='subtitle1'>{item.title}</Typography>
           </div>
         </div>
       ))}

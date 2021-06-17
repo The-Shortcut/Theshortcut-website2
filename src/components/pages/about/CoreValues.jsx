@@ -23,7 +23,7 @@ const CoreValues = () => {
               <Typography variant='h4' className={classes.title}>
                 {value.title}
               </Typography>
-              <Typography variant='body1' className={classes.text}>
+              <Typography variant='subtitle1' component='p' className={classes.text}>
                 {value.description}
               </Typography>
             </div>

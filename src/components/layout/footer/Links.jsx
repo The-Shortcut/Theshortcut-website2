@@ -11,31 +11,33 @@ const Links = () => {
     <div className={classes.root}>
       <div className={classes.aboutSection}>
         <Link to='/about' className={classes.link}>
-          <Typography variant='h6' className={classes.headTitle}>
+          <Typography variant='h4' className={classes.headTitle}>
             About Us
           </Typography>
         </Link>
         <a href='/about/#faq' className={classes.link}>
-          <Typography variant='body2' className={classes.item}>
+          <Typography variant='subtitle1' component='p' className={classes.item}>
             FAQ
           </Typography>
         </a>
         <Link to='/code' className={classes.link}>
           <Typography
-            variant='body2'
+            variant='subtitle1'
+            component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
             Code of Conduct
           </Typography>
         </Link>
         <a href='/about/#core-values' className={classes.link}>
-          <Typography variant='body2' className={classes.item}>
+          <Typography variant='subtitle1' component='p' className={classes.item}>
             Core Values
           </Typography>
         </a>
         <Link to='/terms' className={classes.link}>
           <Typography
-            variant='body2'
+            variant='subtitle1'
+            component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
             Terms of use
@@ -43,7 +45,8 @@ const Links = () => {
         </Link>
         <Link to='/privacy' className={classes.link}>
           <Typography
-            variant='body2'
+            variant='subtitle1'
+            component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
             Privacy Policy
@@ -51,12 +54,13 @@ const Links = () => {
         </Link>
       </div>
       <div className={classes.joinSection}>
-        <Typography variant='h6' className={classes.headTitle}>
+        <Typography variant='h4' className={classes.headTitle}>
           Join Us
         </Typography>
         <Link to='/events/all' className={classes.link}>
           <Typography
-            variant='body2'
+            variant='subtitle1'
+            component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
             Events
@@ -64,35 +68,37 @@ const Links = () => {
         </Link>
         <Link to='/community' className={classes.link}>
           <Typography
-            variant='body2'
+            variant='subtitle1'
+            component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
             Join Community
           </Typography>
         </Link>
-        <Typography variant='body2' className={classes.item}>
+        <Typography variant='subtitle1' component='p' className={classes.item}>
           Work with Us
         </Typography>
       </div>
       <div className={classes.resources}>
-        <Typography variant='h6' className={classes.headTitle}>
+        <Typography variant='h4' className={classes.headTitle}>
           Resources
         </Typography>
         <Link to='/partners' className={classes.link}>
           <Typography
-            variant='body2'
+            variant='subtitle1'
+            component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
             For Partners
           </Typography>
         </Link>
-        <Typography variant='body2' className={classes.item}>
+        <Typography variant='subtitle1' component='p' className={classes.item}>
           Blogs
         </Typography>
-        <Typography variant='body2' className={classes.item}>
+        <Typography variant='subtitle1' component='p' className={classes.item}>
           For media
         </Typography>
-        <Typography variant='body2' className={classes.item}>
+        <Typography variant='subtitle1' component='p' className={classes.item}>
           White paper
         </Typography>
       </div>

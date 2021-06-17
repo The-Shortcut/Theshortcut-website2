@@ -60,16 +60,18 @@ export default EventsList;
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    maxWidth:'90%',
     display: 'grid',
-    gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fill, 380px)',
+    /* gridGap: '5px', */
+    gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
+    margin:'auto'
   },
   container2: {
     maxWidth: '60%',
-    margin:'auto',
+    margin: 'auto',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
@@ -90,6 +92,6 @@ const useStyles = makeStyles((theme) => ({
     },
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 }));

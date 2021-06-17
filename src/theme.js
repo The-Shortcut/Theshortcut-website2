@@ -70,69 +70,63 @@ const theme = createMuiTheme({
   },
 });
 theme.typography.h1 = {
-  fontSize: '5.5rem',
-  '@media (max-width:600px)': {
-    fontSize: '3.5rem',
+  fontSize: '3.5rem',
+  '@media (min-width:600px)': {
+    fontSize: '4rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '5.8rem',
+    fontSize: '5rem',
   },
 };
 theme.typography.h2 = {
-  fontSize: '2rem',
-  '@media (max-width:600px)': {
-    fontSize: '1.8rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.2rem',
-  },
-};
-theme.typography.h3 = {
-  fontSize: '1.8rem',
-  '@media (max-width:600px)': {
+  fontSize: '1.3rem',
+  '@media (min-width:600px)': {
     fontSize: '1.6rem',
   },
   [theme.breakpoints.up('md')]: {
     fontSize: '2rem',
   },
 };
-theme.typography.h4 = {
-  fontSize: '1.4rem',
-  '@media (max-width:600px)': {
-    fontSize: '1.3rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '1.5rem',
-  },
-};
-theme.typography.h5 = {
-  fontSize: '1.2rem',
-  '@media (max-width:600px)': {
-    fontSize: '1.4rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '1.6rem',
-  },
-};
-theme.typography.h6 = {
+theme.typography.h3 = {
   fontSize: '1rem',
-  '@media (max-width:600px)': {
-    fontSize: '1.2rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '1.4rem',
-  },
-};
-theme.typography.body1 = {
-  fontSize: '1.5rem',
-  '@media (max-width:600px)': {
-    fontSize: '1.5rem',
-  },
-};
-theme.typography.subtitle1 = {
-  fontSize: '1.3rem',
   '@media (min-width:600px)': {
     fontSize: '1rem',
   },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.4rem',
+  },
+};
+theme.typography.h4 = {
+  fontSize: '1rem',
+  '@media (min-width:600px)': {
+    fontSize: '1rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.2rem',
+  },
+};
+theme.typography.h5 = {
+  fontSize: '0.8rem',
+  '@media (min-width:600px)': {
+    fontSize: '0.9rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.1rem',
+  },
+};
+/* theme.typography.h6 = {
+  fontSize: '1rem',
+  '@media (min-width:600px)': {
+    fontSize: '1.2rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '1.5rem',
+  },
+}; */
+theme.typography.body1 = {
+  fontSize: '1.2rem',
+};
+theme.typography.subtitle1 = {
+  fontSize: '1rem',
 };
 export default theme;

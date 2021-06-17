@@ -66,7 +66,7 @@ const SingleEventCard = ({ event }) => {
         <CardContent className={classes.info}>
           <div
             style={{
-              width: '110px',
+              width: '140px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'flex-start',
@@ -105,7 +105,9 @@ const SingleEventCard = ({ event }) => {
         <CardContent>
           <Typography variant='h6'>{title}</Typography>
           <br />
-          <Typography variant='body2'>{summary}</Typography>
+          <Typography variant='body1' component='p'>
+            {summary}
+          </Typography>
         </CardContent>
         <CardActions className={classes.action}>
           <Button
@@ -132,8 +134,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '90%',
     minWidth: '90%',
     [theme.breakpoints.up('md')]: {
-      maxWidth: '70%',
-      minWidth: '70%',
+      maxWidth: '80%',
+      minWidth: '80%',
     },
     border: '1px solid #434343',
     borderRadius: '10px',

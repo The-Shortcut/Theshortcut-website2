@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-   /*  [theme.breakpoints.down('md')]: {
+    /*  [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
     },
@@ -72,9 +72,10 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     marginLeft: '25px',
+    textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       marginLeft: '10px',
-      textAlign: 'justify',
+     /*  textAlign: 'justify', */
     },
   },
 }));
