@@ -70,7 +70,7 @@ const theme = createMuiTheme({
   },
 });
 theme.typography.h1 = {
-  fontSize: '3.5rem',
+  fontSize: '3rem',
   '@media (min-width:600px)': {
     fontSize: '4rem',
   },
@@ -88,12 +88,12 @@ theme.typography.h2 = {
   },
 };
 theme.typography.h3 = {
-  fontSize: '1rem',
+  fontSize: '1.2rem',
   '@media (min-width:600px)': {
-    fontSize: '1rem',
+    fontSize: '1.4rem',
   },
   [theme.breakpoints.up('md')]: {
-    fontSize: '1.4rem',
+    fontSize: '1.8rem',
   },
 };
 theme.typography.h4 = {

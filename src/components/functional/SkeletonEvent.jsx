@@ -103,21 +103,17 @@ export default SkeletonEvent;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 335,
-    maxWidth: 335,
     minHeight: 600,
     maxHeight: 600,
     border: '1px solid #ddd',
     borderRadius: '10px',
     margin: '2em auto',
-    [theme.breakpoints.up('md')]: {
-      minWidth: 360,
-      maxWidth: 360,
-      margin: '1em auto',
-    },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 660,
+    },
   },
   info: {
     display: 'grid',

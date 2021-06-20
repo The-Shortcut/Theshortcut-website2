@@ -68,20 +68,21 @@ const SuccessStories = () => {
               <div key={index}>
                 <div className={classes.item}>
                   <img src={acf.image.url} alt={acf.participant_name} className={classes.photo} />
-                  <section>
+                  <section className={classes.section}>
                     {/* <Typography variant='body1' className={classes.story}>
                     {acf.story}
                   </Typography> */}
                     <Typography variant='subtitle1' component='p' className={classes.quote}>
-                      <span style={{ fontSize: '3rem' }}>&#8220;</span>
+                      {/* <span style={{ fontSize: '3rem' }}>&#8220;</span> */}
                       {acf.quote}
                     </Typography>
+                    <br />
                     <Typography variant='subtitle1' style={{ textAlign: 'center' }}>
                       {acf.participant_name}
                     </Typography>
-                    <Button variant='outlined' color='primary' className={classes.button}>
+                    {/* <Button variant='outlined' color='primary' className={classes.button}>
                       Read Story
-                    </Button>
+                    </Button> */}
                   </section>
                 </div>
               </div>
@@ -104,6 +105,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '70%',
     margin: '10em auto',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '85%',
+    },
   },
   item: {
     display: 'flex',
@@ -132,15 +136,23 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '5em',
   },
   button: {
-    marginLeft: '1em',
+    marginLeft: '2.5em',
     [theme.breakpoints.down('xs')]: {
-      marginLeft: '5.5em',
+      margin: 0,
+    },
+  },
+  section: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   },
   quote: {
-    margin: 'auto',
+    margin: 'auto 1em',
     [theme.breakpoints.up('sm')]: {
-      margin:'auto 2em'
-    }
-  }
+      margin: 'auto 2em',
+    },
+  },
 }));

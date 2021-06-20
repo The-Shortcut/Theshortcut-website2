@@ -2,20 +2,21 @@ import React from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
 
 // Hero Image
-import heroImage from '../../../assets/photos/contactHero.jpg';
+import heroImage from '../../../assets/photos/contactHero2.jpg';
 
 // Children
 /* import Team from './Team';
 import Board from './Board'; */
 import GetInTouch from './GetInTouch';
-import FAQ from '../about/FAQ';
+import FAQ from './FAQ';
 
 const ContactUs = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div  id='getInTouch'>
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
@@ -27,7 +28,9 @@ const ContactUs = () => {
       ) : (
         <div className={classes.hero} />
       )}
-      <div id='getInTouch' />
+      <Typography variant='h1' className={classes.title}>
+        Contact Us
+      </Typography>
       <GetInTouch />
       <FAQ />
       {/* <Team />
@@ -42,8 +45,26 @@ const useStyles = makeStyles((theme) => ({
   hero: {
     minWidth: '100%',
     maxWidth: '100%',
-    minHeight: '80vh',
-    maxHeight: '80vh',
+    minHeight: '100vh',
+    maxHeight: '100vh',
     background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImage}) center/cover fixed no-repeat`,
+  },
+  title: {
+    minWidth:'100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    maxWidth: '80%',
+    textAlign: 'center',
+    color: '#FFFFFF',
+    marginTop: '-5.2em',
+    zIndex: 10,
+    [theme.breakpoints.down('md')]: {
+      margin: '-6em 0 0 1.8em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '-2em',
+    },
   },
 }));

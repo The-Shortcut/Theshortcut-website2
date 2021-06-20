@@ -1,7 +1,6 @@
 // ICONS
-import { GiSwapBag } from 'react-icons/gi';
-import { RiUserStarFill } from 'react-icons/ri';
-import { FaAsterisk, FaCogs } from 'react-icons/fa';
+import { GiPayMoney, GiWantedReward, GiCoins } from 'react-icons/gi';
+import { BiNoEntry } from 'react-icons/bi';
 
 // IMAGES
 import partner1 from '../../../assets/photos/partner1.jpg';
@@ -15,24 +14,24 @@ import skills from '../../../assets/photos/skills-workshop.jpg';
 
 export const partnersStat = [
   {
-    title: '€19 million / year',
+    title: '€19m/yr',
     description: 'Unemployment cost of highly skilled immigrants',
-    icon: <RiUserStarFill style={{ fontSize: '3rem', color: '#00A99D' }} />,
+    icon: <GiPayMoney style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: '€50 million / year',
-    description: 'Total cost of international student brain drain',
-    icon: <GiSwapBag style={{ fontSize: '3rem', color: '#00A99D' }} />,
+    title: '€50m/yr',
+    description: 'Cost of international students brain drain',
+    icon: <GiCoins style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: '20% at risk of marginalisation',
-    description: 'Multicultural youth and the indirect costs of exclusion',
-    icon: <FaAsterisk style={{ fontSize: '3rem', color: '#00A99D' }} />,
+    title: '20%',
+    description: 'Multicultural youth at risk of marginalization',
+    icon: <BiNoEntry style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: '53,000 tech experts needed by 2025',
-    description: 'Talent gap in tech',
-    icon: <FaCogs style={{ fontSize: '3rem', color: '#00A99D' }} />,
+    title: '53,000',
+    description: 'Tech experts needed to fill the gap by 2025',
+    icon: <GiWantedReward style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
 ];
 
@@ -57,27 +56,27 @@ export const partnersData = [
 
 export const initiativesData = [
   {
-    title: 'Integration',
+    title: 'Digitalization Training Program',
     description:
-      'Do you want to get experience in Events, improve your skills with support, grow your personal and professional network, and take on meaningful work If you answered yes, check out our Events Intern position to join The Shortcut team! We look forward to hearing from you!',
+      'An in-depth training program covering many skills and tools from Google digital marketing tools to growth hacking and aimed at building the next generation of digital marketing professionals.',
     photo: integration,
   },
   {
-    title: 'Entrepreneurship Mindset',
+    title: 'Entrepreneurship Training',
     description:
-      'Do you want to get experience in Events, improve your skills with support, grow your personal and professional network, and take on meaningful work If you answered yes, check out our Events Intern position to join The Shortcut team! We look forward to hearing from you!',
+      'The goal of these training programs is to give participants the fundamental tools to create a viable company (Tmi/Oy/etc). The training is divided into workshops that allow them to develop their business ideas, put into practice the teachings, and navigate the ecosystem.',
     photo: entrepreneurshipMindset,
   },
   {
-    title: 'Tech Training',
+    title: 'Future/Technical skills training & Certifications',
     description:
-      'Do you want to get experience in Events, improve your skills with support, grow your personal and professional network, and take on meaningful work If you answered yes, check out our Events Intern position to join The Shortcut team! We look forward to hearing from you!',
+      'We always work with a partner to create and deliver programs and workshops that cover highly in-demand skills to cultivate talent, improve employability, and support entrepreneurship know-how.',
     photo: techTraining,
   },
   {
-    title: 'Skills, workshops & Webinars',
+    title: 'Career Clinics',
     description:
-      'Do you want to get experience in Events, improve your skills with support, grow your personal and professional network, and take on meaningful work If you answered yes, check out our Events Intern position to join The Shortcut team! We look forward to hearing from you!',
+      'The Career Clinic training is customizable training for participants who are more interested in employment opportunities. A multi-session training over several weeks with topics ranging from job searching to LinkedIn and time management, CVs, cover letters, and networking.',
     photo: skills,
   },
 ];

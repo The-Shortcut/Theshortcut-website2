@@ -15,10 +15,8 @@ const MainSections = () => {
     <div className={classes.main}>
       <div className={classes.root}>
         <Title>Welcome To Our Community!</Title>
-        <Typography
-          variant='body1'
-          style={{ margin: 'auto', textAlign: 'center', maxWidth: '80%' }}>
-          There is no Shortcut without the community! <br /><br />
+        <Typography variant='body1' className={classes.intro}>
+          There is no Shortcut without the community! <br />
           The reason we create events, design trainings, negotiate partnership deals, etc is because
           we want the best for our community and those who will benefit from joining it. There are
           many ways for you to become a part of this supportive, creative, and driven community!
@@ -43,22 +41,34 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '80%',
     maxWidth: '80%',
-    margin: '8em auto',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
-      margin: '4em auto',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
+    margin: '5em auto',
+  },
+  intro: {
+    margin: 'auto',
+    textAlign: 'center',
+    maxWidth: '80%',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '90%',
     },
   },
   container: {
     display: 'grid',
-    gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+    gridGap: '20px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
     minWidth: '100%',
     maxWidth: '100%',
-    margin:'5em auto'
+    /*     border: '2px solid red', */
+    margin: '5em auto',
   },
 }));

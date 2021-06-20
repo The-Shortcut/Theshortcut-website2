@@ -30,9 +30,6 @@ export default ImpactGoals;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '5em auto 10em',
-  },
-  container: {
     minWidth: '80%',
     maxWidth: '80%',
     [theme.breakpoints.only('sm')]: {
@@ -43,13 +40,18 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '95%',
       maxWidth: '95%',
     },
-      display: 'grid',
-      gridGap: '10px',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
-      gridTemplateRows: 'none',
-      justifyContent: 'center',
-      alignContent: 'center',
-  /*     border: '2px solid red', */
-      margin:'5em auto'
+    margin: '5em auto',
+  },
+  container: {
+    display: 'grid',
+    gridGap: '10px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gridTemplateRows: 'none',
+    justifyContent: 'center',
+    alignContent: 'center',
+    minWidth: '100%',
+    maxWidth: '100%',
+    /*     border: '2px solid red', */
+    margin: '5em auto',
   },
 }));

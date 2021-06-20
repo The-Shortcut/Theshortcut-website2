@@ -19,11 +19,11 @@ const ImpactStatistics = () => {
       <div className={classes.container}>
         {ImpactStatData.map((item, index) => (
           <div key={index} className={classes.item}>
-            <div style={{display: 'flex'}}>
-              <div className={classes.icon}>{item.icon}</div>
-              <Typography variant='h5'>{item.amount}</Typography>
-            </div>
-            <Typography variant='subtitle1'>{item.title}</Typography>
+            <div className={classes.icon}>{item.icon}</div>
+            <Typography variant='h4' style={{marginTop: 10}}>{item.amount}</Typography>
+            <Typography variant='body1' style={{ textAlign: 'center' }}>
+              {item.title}
+            </Typography>
           </div>
         ))}
       </div>
@@ -35,41 +35,56 @@ export default ImpactStatistics;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '70%',
-    margin: 'auto',
+    minWidth: '80%',
+    maxWidth: '80%',
+    margin: '7em auto',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '90%',
+      maxWidth: '90%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
   },
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(4 , 1fr)',
-    [theme.breakpoints.only('sm')]: {
-      gridTemplateColumns: 'repeat(3, 1fr)',
-    },
+    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
     [theme.breakpoints.down('xs')]: {
-      gridTemplateColumns: 'repeat(2, 1fr)',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
     },
     gridTemplateRows: 'none',
     justifyContent: 'center',
-    alignItems: 'start',
+    alignContent: 'center',
+    minWidth: '100%',
+    maxWidth: '100%',
+    margin: 'auto',
   },
   item: {
- /*    border: '1px solid red', */
-    alignSelf: 'center',
-    justifySelf: 'center',
-    minWidth: '16em',
-    maxWidth: '16em',
-    minHeight: '6em',
-    maxHeight: '6em',
-    [theme.breakpoints.down('xs')]: {
-      justifySelf: 'start',
-      alignSelf: 'start',
-      minWidth: '12em',
-      maxWidth: '12em',
-      minHeight: '5.2em',
-    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20
   },
   icon: {
-    marginRight: '1em',
-    marginLeft: '0.5em',
+    minWidth: 70,
+    maxWidth: 70,
+    minHeight: 70,
+    maxHeight: 70,
+    [theme.breakpoints.down('sm')]: {
+      minWidth: 60,
+      maxWidth: 60,
+      minHeight: 60,
+      maxHeight: 60,
+    },
+    border: '1px solid #888',
+    borderRadius: '50%',
+    boxShadow: ' 0px 0px 22px -5px #434343',
+    background: theme.palette.primary.main,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 }));

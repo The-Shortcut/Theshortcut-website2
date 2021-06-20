@@ -13,18 +13,17 @@ const MissionVision = () => {
       <div className={classes.container}>
         <div className={classes.mission}>
           <Title>Our Mission</Title>
-          <Typography variant='body1' component='p' className={classes.text}>
-            To equip our community with insights and skills to build meaningful careers and
-            integrate professionally.
+          <Typography variant='h4' className={classes.text}>
+          To equip our community members to build meaningful careers
           </Typography>
         </div>
-        <div className={classes.vision}>
+        {/* <div className={classes.vision}>
           <Title>Our Vision</Title>
           <Typography variant='body1' component='p' className={classes.text}>
             To become Finland’s most highly regarded and effective platform for professional
             identity- and prospect-building.
           </Typography>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '6em auto',
   },
   container: {
-    margin: '6em auto',
+    margin: '6em auto 7em',
   },
   vision: {
     marginTop: theme.spacing(10),

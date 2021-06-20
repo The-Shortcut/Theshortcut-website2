@@ -49,7 +49,7 @@ const reducer = (state = initState, action) => {
         filterEvents = state.events.filter((event) => event.status.includes('record'));
       }
       if (payload === 'upcoming') {
-        filterEvents = state.events.filter((event) => event.status.includes('upcoming'));
+        filterEvents = state.events.filter((event) => event.status === 'upcoming' || event.status === 'Application Open');
       }
       if (payload === '') {
         filterEvents = state.events

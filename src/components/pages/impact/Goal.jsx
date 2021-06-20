@@ -35,8 +35,7 @@ export default Goal;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 345,
-    maxWidth: 345,
+
     minHeight: 410,
     maxHeight: 410,
     background: '#F9F9F9',
@@ -44,28 +43,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '10px',
     boxShadow: ' 0px 0px 22px -5px #434343',
     margin: '2em auto',
-    [theme.breakpoints.up('md')]: {
-      minWidth: 380,
-      maxWidth: 380,
-      margin: '1em auto',
+    [theme.breakpoints.down('xs')]: {
+      minHeight: 385,
+      maxHeight: 385,
     },
-    [theme.breakpoints.down('sm')]: {
-      minHeight: 510,
-      maxHeight: 510,
-    },
-    /*[theme.breakpoints.only('md')]: {
-      minWidth: 290,
-      maxWidth: 290,
-      margin: '1em auto',
-    },
-    [theme.breakpoints.down('sm')]: {
-      minHeight: 480,
-      maxHeight: 480,
-    },
-    '@media (min-width: 320px)': {
-      minWidth: 300,
-      maxWidth: 300,
-    }, */
   },
   iconContainer: {
     display: 'flex',
@@ -78,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '7em',
     margin: '-3em auto 1.5em',
     [theme.breakpoints.down('xs')]: {
-      margin: 0,
+      margin: '1em 0 0 0',
     },
     backgroundColor: '#fff',
   },

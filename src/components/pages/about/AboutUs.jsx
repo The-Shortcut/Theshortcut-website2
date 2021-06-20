@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
-import aboutUs from '../../../assets/photos/aboutUs.jpeg';
-
 //Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
@@ -16,12 +14,9 @@ const AboutUs = () => {
 
   return (
     <div className={classes.root}>
-      <Title>About Us</Title>
+      <Title>The solution to educated unemployment in Finland</Title>
       <div className={classes.container}>
         <div className={classes.text}>
-          <Typography variant='h4' style={{ marginBottom: 25 }}>
-            The solution to educated unemployment in Finland
-          </Typography>
           <Typography variant='body1' style={{ lineHeight: '1.4em' }}>
             Owned by the Startup Foundation, The Shortcut is an impact-driven non-profit
             organization dedicated to career transformation. We bridge the gap between job seekers
@@ -51,7 +46,7 @@ const AboutUs = () => {
             controls={true}
             className={classes.player}
           />
-          <img src={aboutUs} alt='about us' className={classes.player} />
+          {/* <img src={aboutUs} alt='about us' className={classes.player} /> */}
         </div>
       </div>
       <div id='core-values' />
@@ -63,9 +58,10 @@ export default AboutUs;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '70%',
-    maxWidth: '70%',
-    margin: 'auto',
+    minWidth: '80%',
+    maxWidth: '80%',
+    margin: '5em auto',
+    border: '1px solid #f9f9f9',
     [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -77,37 +73,40 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-start',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
+      alignItems: 'center',
     },
   },
   text: {
     /* textAlign: 'center', */
     flex: 2,
-    paddingRight: '3em',
+    paddingRight: '1em',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '2em',
+    },
+    /* paddingRight: '0.3em',
     [theme.breakpoints.down('md')]: {
       paddingRight: 0,
       paddingBottom: '2em',
-    },
+    }, */
   },
   media: {
     flex: 1,
-    minHeight: '45em',
-    maxHeight: '45em',
-    display: 'flex',
-    flexDirection: 'column',
+    /*  flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
-    },
+    }, */
   },
   player: {
     minWidth: '480px',
     maxWidth: '480px',
-    minHeight: '320px',
-    maxHeight: '320px',
+    height: '100%',
+    /*  minHeight: '320px',
+    maxHeight: '320px', */
     [theme.breakpoints.down('xs')]: {
-      minWidth: '100%',
-      maxWidth: '100%',
+      minWidth: '320px',
+      maxWidth: '320px',
       minHeight: '280px',
       maxHeight: '280px',
     },

@@ -72,15 +72,15 @@ const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: 'center',
     color: '#FFFFFF',
-    margin: '-35em 12em 0',
-    [theme.breakpoints.only('md')]: {
-      margin: '-40em 10em 0',
-    },
+    margin: '-30em 11em 0',
+   /*  [theme.breakpoints.up('md')]: {
+      margin: '-30em 10em 0',
+    }, */
     [theme.breakpoints.down('sm')]: {
-      margin: '-45em 3em 0',
+      margin: '-28em 3em 0',
     },
     [theme.breakpoints.down('xs')]: {
-      margin: '-34em 1em 0',
+      margin: '-24em 1em 0',
     },
   },
   buttons: {
@@ -90,11 +90,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '40%',
     margin: '6em auto 0',
     [theme.breakpoints.only('md')]: {
-      maxWidth: '45%',
+      maxWidth: '55%',
       margin: '5em auto 0',
     },
     [theme.breakpoints.down('sm')]: {
-      maxWidth: '55%',
+      maxWidth: '50%',
       margin: '4em auto 0',
     },
     [theme.breakpoints.down('xs')]: {

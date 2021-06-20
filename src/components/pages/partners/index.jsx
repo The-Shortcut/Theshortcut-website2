@@ -5,6 +5,7 @@ import heroImage from '../../../assets/photos/partnersHero2.jpeg';
 
 // Material-IU
 import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
 
 // Children
 import PartnersStatistics from './PartnersStatistics';
@@ -28,13 +29,14 @@ const Partners = () => {
       ) : (
         <div className={classes.hero} />
       )}
+      <Typography variant='h1' className={classes.title}>For Partners</Typography>
       <PartnersStatistics />
       {/* <ActivePartners /> */}
       <div style={{ backgroundColor: '#DDDDDD', border: '1px solid #DDDDDD' }}>
         <Initiatives />
       </div>
       <OurPatrnersLogos />
-        <GetPartnerForm />
+      <GetPartnerForm />
     </div>
   );
 };
@@ -49,5 +51,20 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '75vh',
     maxHeight: '75vh',
     background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImage}) center/cover fixed no-repeat`,
+  },
+  title: {
+    minWidth:'100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    maxWidth: '80%',
+    textAlign: 'center',
+    color: '#FFFFFF',
+    marginTop: '-3.2em',
+    zIndex: 10,
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '-2em',
+    },
   },
 }));

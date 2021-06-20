@@ -17,7 +17,7 @@ const GetInTouch = () => {
 
   return (
     <div className={classes.root}>
-      <Title>Contact Us</Title>
+      <Title>Get In Touch</Title>
       <div className={classes.contact}>
         <div className={classes.info}>
           <ContactForm />
@@ -29,15 +29,14 @@ const GetInTouch = () => {
             <Typography variant='body1'>+358 46 640 3900</Typography> */}
             <EmailIcon />
             <Typography variant='body1'>info@theshortcut.org</Typography>
-            <LocationOnIcon style={{ marginTop: '-15px' }} />
+            <LocationOnIcon style={{ marginTop: '-20px' }} />
             <Typography variant='body1'>
               Maria01 (entrance 15B),
               <br /> Lapinlahdenkatu 16, 00180, Helsinki
             </Typography>
-            <InfoIcon style={{ marginTop: '-15px' }} />
+            <InfoIcon />
             <Typography variant='body1'>
-              Open Monday &mdash; Friday, 9am &mdash; 5pm <br /> (or until the last event of the day
-              is over)
+              Open Wednesday & Thursday, 10am &mdash; 4pm
             </Typography>
           </div>
           <div className={classes.map}>
@@ -45,7 +44,7 @@ const GetInTouch = () => {
           </div>
         </div>
       </div>
-      <div id='ourTeam' />
+      <div id='faq' />
     </div>
   );
 };
@@ -54,9 +53,9 @@ export default GetInTouch;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '63%',
-    maxWidth: '63%',
-    margin: '4em auto',
+    minWidth: '70%',
+    maxWidth: '70%',
+    margin: '6em auto',
     [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',

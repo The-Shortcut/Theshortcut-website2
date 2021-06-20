@@ -68,7 +68,6 @@ const ContactForm = () => {
   /* console.log(state, error); */
   return (
     <div>
-      <Typography variant='h6'>Get In Touch</Typography>
       <form className={classes.form}>
         <TextField
           label='Your Full Name'

@@ -26,9 +26,9 @@ const MenuItem = ({ item, toggleDrawer }) => {
   return (
     <Fragment>
       <Link
-        to={(item.mainPath && subnav) ? item.mainPath : item.path}
+        to={item.mainPath && subnav ? item.mainPath : item.path}
         style={{ textDecoration: 'none', position: 'relative', zIndex: 1 }}
-        onClick={item.subNav && handleClick}>
+        onClick={(item.subNav || subnav) && handleClick}>
         <ListItem button className={classes.listItem}>
           <ListItemText
             primary={

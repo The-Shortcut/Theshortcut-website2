@@ -5,6 +5,7 @@ import heroImage from '../../../assets/photos/communityHero.jpg';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
 
 // Children
 import Statistics from './Statistics';
@@ -26,6 +27,9 @@ const Community = () => {
       ) : (
         <div className={classes.hero} />
       )}
+      <Typography variant='h1' className={classes.title}>
+        Our Community
+      </Typography>
       <Statistics />
       <MainSections />
       <SuccessStories />
@@ -42,5 +46,23 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '85vh',
     maxHeight: '85vh',
     background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImage}) center/cover fixed no-repeat`,
+  },
+  title: {
+    minWidth:'100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    maxWidth: '80%',
+    textAlign: 'center',
+    color: '#FFFFFF',
+    marginTop: '-4em',
+    zIndex: 10,
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '-2em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '-3em',
+    },
   },
 }));

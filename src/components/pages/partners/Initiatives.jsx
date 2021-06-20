@@ -14,6 +14,19 @@ const Initiatives = () => {
 
   return (
     <div className={classes.root}>
+      <section style={{ marginBottom: '6em' }}>
+        <Title>How We Work</Title>
+        <Typography
+          variant='body1'
+          style={{ margin: 'auto', textAlign: 'center', maxWidth: '80%' }}>
+          We partner with both private and public organizations to provide much-needed professional
+          training and integration programs. While many of the services that we offer are open to
+          our entire community, some, like specialized training and coaching, are limited by many
+          factors entirely determined by our partner organization requirements.
+          <br /> If you would like to partner with us to offer training or services, use the contact
+          form at the bottom of this page.
+        </Typography>
+      </section>
       <Title>Initiative Examples</Title>
       <div className={classes.container}>
         {initiativesData.map((data, index) => (
@@ -23,7 +36,7 @@ const Initiatives = () => {
               <div style={{ backgroundColor: '#00A99D', height: '5px' }} />
               <CardContent className={classes.content}>
                 <Typography gutterBottom variant='h4' className={classes.title}>
-                  {data.title}
+                  {data.title.toLocaleUpperCase()}
                 </Typography>
                 <Typography variant='subtitle1' component='p' className={classes.text}>
                   {data.description}
@@ -41,49 +54,53 @@ export default Initiatives;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '90%',
+    minWidth: '80%',
+    maxWidth: '80%',
     margin: '7em auto',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '90%',
+      maxWidth: '90%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
     /*  border: '1px solid red', */
   },
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
-    minWidth: '90%',
-    maxWidth: '90%',
-/*     border: '2px solid red', */
-    margin:'auto'
+    minWidth: '100%',
+    maxWidth: '100%',
+    /*     border: '2px solid red', */
+    margin: 'auto',
   },
   card: {
     margin: '1em auto',
     borderRadius: '10px',
-    maxWidth: 280,
-    minHeight: 540,
-    maxHeight: 540,
-    [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(3),
-      minHeight: 580,
-      maxHeight: 580,
-      minWidth: 320,
-      maxWidth: 320,
-    },
   },
   title: {
-    minHeight:'2em',
-    maxHeight:'2em',
+    minHeight: '3.5em',
+    maxHeight: '3.5em',
     textAlign: 'center',
   },
   text: {
-    minHeight: '11em',
-    maxHeight: '11em',
+/*     minHeight: '11em',
+    maxHeight: '11em', */
     margin: '1em',
     lineHeight: '28px',
-    textAlign: 'left',
+    textAlign: 'center',
   },
   media: {
-    height: 140,
+    minHeight: '12em',
+    maxHeight: '12em',
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '16em',
+    maxHeight: '16em',
+    }
   },
 }));

@@ -107,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
   item: {
     display: 'flex',
     justifyContent: 'space-around',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       justifyContent: 'center',
@@ -131,7 +131,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '5em',
   },
   button: {
-    marginLeft: '1em',
+    border:'1px solid red',
+    marginLeft: '2em',
     [theme.breakpoints.down('xs')]: {
       marginLeft: '5.5em',
     },

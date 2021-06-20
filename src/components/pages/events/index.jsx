@@ -1,6 +1,6 @@
 import React from 'react';
 
-import heroImage from '../../../assets/photos/eventsHero.jpg';
+import heroImage from '../../../assets/photos/eventsHero2.JPG';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -32,6 +32,9 @@ const AllEvents = () => {
       ) : (
         <div className={classes.hero} />
       )}
+      <Typography variant='h1' className={classes.title}>
+        Events
+      </Typography>
       <Subject />
       <SearchEvents />
       {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
@@ -51,13 +54,34 @@ const useStyles = makeStyles((theme) => ({
   hero: {
     minWidth: '100%',
     maxWidth: '100%',
-    minHeight: '70vh',
-    maxHeight: '70vh',
+    minHeight: '100vh',
+    maxHeight: '100vh',
     background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImage}) center/cover fixed no-repeat`,
+  },
+  title: {
+    minWidth: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    maxWidth: '80%',
+    textAlign: 'center',
+    color: '#FFFFFF',
+    marginTop: '-5.2em',
+    zIndex: 10,
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '-2em',
+    },
   },
   text: {
     textAlign: 'center',
     fontSize: '1rem',
     margin: '1em',
+    minWidth: '80%',
+    maxWidth: '80%',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '90%',
+      maxWidth: '90%',
+    },
   },
 }));

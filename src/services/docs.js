@@ -22,5 +22,10 @@ const getTermsData = async () => {
   return response.data;
 };
 
+const getServicesFAQData = async () => {
+  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/services_faq/');
+  return response.data;
+}
+
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getFAQData, getPrivacyPoliciesData, getCodeOfDConductData, getTermsData };
+export default { getFAQData, getPrivacyPoliciesData, getCodeOfDConductData, getTermsData, getServicesFAQData };

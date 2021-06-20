@@ -1,4 +1,10 @@
-import { INIT_FAQ, INIT_PRIVACY_POLICIES, INIT_CODE_OF_CONDUCT, INIT_TERMS } from './types';
+import {
+  INIT_FAQ,
+  INIT_PRIVACY_POLICIES,
+  INIT_CODE_OF_CONDUCT,
+  INIT_TERMS,
+  SERVICES_FAQ_DATA,
+} from './types';
 
 import docServices from '../services/docs';
 
@@ -31,5 +37,13 @@ export const getTerms = () => async (dispatch) => {
   dispatch({
     type: INIT_TERMS,
     payload: terms,
+  });
+};
+
+export const getServicesFAQ = () => async (dispatch) => {
+  const services_faq = await docServices.getServicesFAQData();
+  dispatch({
+    type: SERVICES_FAQ_DATA,
+    payload: services_faq,
   });
 };

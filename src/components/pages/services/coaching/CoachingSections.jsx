@@ -47,24 +47,34 @@ export default CoachingSections;
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    minWidth: '80%',
+    maxWidth: '80%',
+    [theme.breakpoints.only('sm')]: {
+      minWidth: '90%',
+      maxWidth: '90%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
     margin: '5em auto',
   },
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
-    minWidth: '80%',
-    maxWidth: '80%',
-    /*  border: '2px solid red', */
+    minWidth: '100%',
+    maxWidth: '100%',
+   /*  border: '2px solid red', */
     margin: 'auto',
   },
   card: {
     margin: '1em auto',
-    borderRadius:'10px',
-    maxWidth: 280,
+    borderRadius: '10px',
+    /* maxWidth: 280, */
     minHeight: 520,
     maxHeight: 520,
     [theme.breakpoints.down('sm')]: {
@@ -72,7 +82,6 @@ const useStyles = makeStyles((theme) => ({
       minHeight: 560,
       maxHeight: 560,
     },
-
   },
   cardContent: {
     display: 'flex',
@@ -110,6 +119,6 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '1.5em',
   },
   btn: {
-    marginTop: 10,
+    marginTop: 35,
   },
 }));

@@ -75,9 +75,9 @@ const Links = () => {
             Join Community
           </Typography>
         </Link>
-        <Typography variant='subtitle1' component='p' className={classes.item}>
+        {/* <Typography variant='subtitle1' component='p' className={classes.item}>
           Work with Us
-        </Typography>
+        </Typography> */}
       </div>
       <div className={classes.resources}>
         <Typography variant='h4' className={classes.headTitle}>
@@ -93,14 +93,14 @@ const Links = () => {
           </Typography>
         </Link>
         <Typography variant='subtitle1' component='p' className={classes.item}>
-          Blogs
+          Blog
         </Typography>
-        <Typography variant='subtitle1' component='p' className={classes.item}>
+       {/*  <Typography variant='subtitle1' component='p' className={classes.item}>
           For media
         </Typography>
         <Typography variant='subtitle1' component='p' className={classes.item}>
           White paper
-        </Typography>
+        </Typography> */}
       </div>
     </div>
   );

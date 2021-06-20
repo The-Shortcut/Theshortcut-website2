@@ -29,8 +29,8 @@ const CoreValues = () => {
             </div>
           ))}
         </div>
+      <div id='team' />
       </div>
-      <div id='successStories' />
     </section>
   );
 };
@@ -40,11 +40,11 @@ export default CoreValues;
 const useStyles = makeStyles((theme) => ({
   section: {
     background: '#DDDDDD',
-    margin: '7em auto',
-    border: '1px solid #DDD',
+    margin: 'auto',
+    border: '1px solid #DDDDDD',
   },
   root: {
-    maxWidth: '70%',
+    maxWidth: '80%',
     [theme.breakpoints.down('sm')]: {
       maxWidth: '90%',
       marginBottom: theme.spacing(5),

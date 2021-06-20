@@ -18,18 +18,22 @@ export const navBarData = [
         path: '/about/#aboutUs',
       },
       {
-        title: 'Success Stories',
-        path: '/about/#successStories',
+        title: 'Core Values',
+        path: '/about/#core-values',
       },
       {
-        title: 'FAQ',
-        path: '/about/#faq',
+        title: 'Our Team',
+        path: '/about/#team',
+      },
+      {
+        title: 'Our Board',
+        path: '/about/#board',
       },
     ],
   },
   {
     title: 'EVENTS',
-    /*     path: null, */
+    mainPath: '/events/all',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -96,12 +100,8 @@ export const navBarData = [
         path: '/contact-us/#getInTouch',
       },
       {
-        title: 'Our Team',
-        path: '/contact-us/#ourTeam',
-      },
-      {
-        title: 'Board',
-        path: '/contact-us/#ourBoard',
+        title: 'FAQ',
+        path: '/contact-us/#faq',
       },
     ],
   },

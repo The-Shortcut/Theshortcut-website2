@@ -14,42 +14,42 @@ export const ImpactStatData = [
   {
     title: 'events & activities',
     amount: '205',
-    icon: <FaCalendarCheck style={{ fontSize: 35, color: '00A99D' }} />,
+    icon: <FaCalendarCheck style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
     title: 'participants',
     amount: '1,969',
-    icon: <HiUserGroup style={{ fontSize: 35, color: '00A99D' }} />,
+    icon: <HiUserGroup style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
     title: 'supporting companies',
     amount: '251',
-    icon: <MdBusiness style={{ fontSize: 35, color: '00A99D' }} />,
+    icon: <MdBusiness style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
     title: 'feedback',
     amount: '8.4 / 10',
-    icon: <FeedbackIcon style={{ fontSize: 40 }} color='primary' />,
+    icon: <FeedbackIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
     title: 'nationalities',
     amount: '102',
-    icon: <FlagIcon style={{ fontSize: 40 }} color='primary' />,
+    icon: <FlagIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
     title: 'gender distribution',
     amount: 'F54/M45/other1%',
-    icon: <FaTransgenderAlt style={{ fontSize: 35, color: '00A99D' }} />,
+    icon: <FaTransgenderAlt style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
     title: 'new entrepreneurs',
     amount: '75',
-    icon: <FaUserNinja style={{ fontSize: 35, color: '00A99D' }} />,
+    icon: <FaUserNinja style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
     title: ' new employments',
     amount: '191',
-    icon: <GiStairsGoal style={{ fontSize: 35, color: '00A99D' }} />,
+    icon: <GiStairsGoal style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
 ];
 
@@ -57,7 +57,7 @@ export const ImpactStatData = [
 
 export const impactGoals = [
   {
-    target: 'Individual',
+    target: 'INDIVIDUAL',
     description: [
       'We enable people to find a sense of professional belonging and empowerment ',
       'We activate untapped potential and optimize under-utilized skills',
@@ -66,7 +66,7 @@ export const impactGoals = [
     icon: <BsPersonBoundingBox style={{ fontSize: 60, color: '#00A99D' }} />,
   },
   {
-    target: 'Business',
+    target: 'BUSINESS',
     description: [
       'We help companies access new markets through diversity',
       'We leverage and promote diversity to help companies improve company results',
@@ -75,7 +75,7 @@ export const impactGoals = [
     icon: <BsBriefcaseFill style={{ fontSize: 60, color: '#00A99D' }} />,
   },
   {
-    target: 'Society',
+    target: 'SOCIETY',
     description: [
       'We leverage untapped talent potential to minimize labour shortages and help modernize the workforce',
       'We lower unemployment payouts while creating more taxpayers',

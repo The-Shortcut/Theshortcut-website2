@@ -74,9 +74,9 @@ const EventCard = ({ event }) => {
   };
   return (
     <Card className={classes.card}>
-      <CardMedia style={{ padding: '5px' }}>
-        <img src={image} alt={title} width='100%' height='30%' style={{ borderRadius: '5px' }} />
-      </CardMedia>
+      <CardMedia className={classes.media} image={image} title={title} />
+{/*         <img src={image} alt={title} width='100%' className={classes.media} />
+      </CardMedia> */}
       <CardContent className={classes.info}>
         <div
           style={{
@@ -158,39 +158,22 @@ export default EventCard;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 335,
-    maxWidth: 335,
     minHeight: 600,
     maxHeight: 600,
+    background: '#F9F9F9',
     border: '1px solid #434343',
     borderRadius: '10px',
     margin: '2em auto',
-    [theme.breakpoints.up('md')]: {
-      minWidth: 360,
-      maxWidth: 360,
-      margin: '1em auto',
-    },
-    '@media (max-width: 690px)': {
-      minWidth: '90%',
-      maxWidth: '90%',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-    '@media (max-width: 769px)': {
-      minWidth: '90%',
-      maxWidth: '90%',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      minHeight: 710,
-      maxHeight: 710,
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 660,
     },
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
   media: {
-    width: '100%',
-    height: '40%',
+    height: 0,
+    paddingTop: '56.25%', // 16:9
   },
   info: {
     display: 'grid',
@@ -203,6 +186,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-between',
     bottom: 0,
-    minWidth:'100%',
+    minWidth: '100%',
   },
 }));

@@ -25,7 +25,6 @@ const trainingSections = () => {
               image={item.image}
               title={item.title}
             />
-            <img src={item.partnerLogo} alt='partner logo' className={classes.logoContainer} />
             <CardContent className={classes.cardContent}>
               <Typography variant='h4' className={classes.title}>
                 {item.title}
@@ -33,6 +32,7 @@ const trainingSections = () => {
               <Typography variant='subtitle1' component='p'>
                 {item.description}
               </Typography>
+            {/* <img src={item.partnerLogo} alt='partner logo' className={classes.logoContainer} /> */}
             </CardContent>
           </Card>
         ))}
@@ -45,33 +45,43 @@ export default trainingSections;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: ' 8em auto',
+    minWidth: '80%',
+    maxWidth: '80%',
+    [theme.breakpoints.only('sm')]: {
+      minWidth: '90%',
+      maxWidth: '90%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
+    margin: '3em auto 7em',
+    border:'1px solid #DDDDDD'
   },
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
-    minWidth: '90%',
-    maxWidth: '90%',
-    /*  border: '2px solid red', */
+    minWidth: '98%',
+    maxWidth: '98%',
+    /* border: '2px solid red', */
     margin: 'auto',
   },
   card: {
     margin: '1em auto',
     borderRadius: '10px',
-    maxWidth: 280,
-    minHeight: 540,
-    maxHeight: 540,
+    /* maxWidth: 280, */
+    minHeight: 520,
+    maxHeight: 520,
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(3),
-      minHeight: 620,
-      maxHeight: 620,
-      minWidth: 320,
-      maxWidth: 320,
+      minHeight: 560,
+      maxHeight: 560,
     },
+    zIndex: 1,
   },
   cardContent: {
     display: 'flex',
@@ -80,15 +90,24 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   logoContainer: {
-    borderRadius: '150%',
     maxWidth: '5em',
     minWidth: '5em',
     maxHeight: '5em',
     minHeight: '5em',
-    display: 'absolute',
+    /* borderRadius: '150%',
+    maxWidth: '5em',
+    minWidth: '5em',
+    maxHeight: '5em',
+    minHeight: '5em',
     margin: '-2.3em 0 0 14em',
     backgroundColor: '#EEE',
     boxShadow: ' 0px 0px 22px -5px #434343',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 'auto',
+    marginTop: '-2.3em',
+    zIndex: 10, */
   },
   title: {
     minHeight: '3em',

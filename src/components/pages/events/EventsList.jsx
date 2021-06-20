@@ -30,11 +30,13 @@ const EventsList = () => {
   let skeletonArr = window.innerWidth < 770 ? [1] : [1, 2, 3];
   if (isLoading) {
     return (
+      <div className={classes.root}>
       <div className={classes.container}>
         {skeletonArr.map((i) => (
           <SkeletonEvent key={i} />
         ))}
-      </div>
+        </div>
+        </div>
     );
   } else if (currentItems.length === 0) {
     return (
@@ -46,12 +48,14 @@ const EventsList = () => {
   }
 
   return (
-    <div className={currentItems.length < 3 ? classes.container2 : classes.container}>
+    <div className={classes.root}>
+    <div className={classes.container}>
       {currentItems.map((event, index) => (
         <div key={index}>
           <EventCard event={event} />
         </div>
       ))}
+    </div>
     </div>
   );
 };
@@ -59,23 +63,30 @@ const EventsList = () => {
 export default EventsList;
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    minWidth: '80%',
+    maxWidth: '80%',
+    [theme.breakpoints.only('sm')]: {
+      minWidth: '90%',
+      maxWidth: '90%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
+    margin: '5em auto',
+  },
   container: {
-    maxWidth:'90%',
     display: 'grid',
-    /* gridGap: '5px', */
-    gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))',
+    gridGap: '20px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
-    margin:'auto'
-  },
-  container2: {
-    maxWidth: '60%',
-    margin: 'auto',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+    minWidth: '100%',
+    maxWidth: '100%',
+    /*     border: '2px solid red', */
+    margin: '5em auto',
   },
   noMatched: {
     minWidth: 335,

@@ -233,9 +233,8 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: '15%',
     [theme.breakpoints.down('xs')]: {
       flexBasis: '24%',
-    minHeight: '4.5em',
     },
-    minHeight: '4.7em',
+    minHeight: '4.3em',
     color: '#fff',
     borderRadius: '0 4px 4px 0',
   },

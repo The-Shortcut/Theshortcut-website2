@@ -17,41 +17,42 @@ const Section = ({ section }) => {
 
   return (
     <Box className={classes.card}>
-      <CardActionArea style={{ minHeight: '100%' }}>
-        <CardContent>
-          <div className={classes.iconContainer}>{section.icon}</div>
-          <Typography variant='h4' className={classes.title}>
-            {section.title}
-          </Typography>
-          <Typography variant='subtitle1' component='p' className={classes.text}>
-            {section.text}
-          </Typography>
-          <CardActions>
-            {section.links ? (
-              <div className={classes.links}>
-                {section.links.map((link, index) => (
-                  <Link
-                    href={link.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    component='a'
-                    key={index}>
-                    {link.icon}
-                  </Link>
-                ))}
-              </div>
-            ) : (
-              <Button
-                variant='contained'
-                color='primary'
-                href={section.redirect.path}
-                className={classes.button}>
-                {section.redirect.name}
-              </Button>
-            )}
-          </CardActions>
-        </CardContent>
-      </CardActionArea>
+      <CardContent>
+        <div className={classes.iconContainer}>{section.icon}</div>
+        <Typography variant='h4' className={classes.title}>
+          {section.title}
+        </Typography>
+        <Typography variant='subtitle1' component='p' className={classes.text}>
+          {section.text}
+        </Typography>
+        <Typography variant='body1' style={{ textAlign: 'center' }}>
+          {section.target}
+        </Typography>
+        <CardActions>
+          {section.links ? (
+            <div className={classes.links}>
+              {section.links.map((link, index) => (
+                <Link
+                  href={link.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  component='a'
+                  key={index}>
+                  {link.icon}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <Button
+              variant='contained'
+              color='primary'
+              href={section.redirect.path}
+              className={classes.button}>
+              {section.redirect.name}
+            </Button>
+          )}
+        </CardActions>
+      </CardContent>
     </Box>
   );
 };
@@ -60,27 +61,14 @@ export default Section;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    minWidth: 340,
-    maxWidth: 340,
-    minHeight: 410,
-    maxHeight: 410,
+    minHeight: 480,
+    maxHeight: 480,
     background: '#F9F9F9',
     border: '1px solid #888888',
     borderRadius: '10px',
     margin: '2em auto',
-    [theme.breakpoints.only('md')]: {
-      minWidth: 310,
-      maxWidth: 310,
-    },
-
-    [theme.breakpoints.down('sm')]: {
-      minWidth: 380,
-      maxWidth: 380,
-      minHeight: 580,
-      maxHeight: 580,
-    },
-    '@media (min-width: 320px)': {
-      maxWidth: 300,
+    [theme.breakpoints.down('xs')]: {
+      minHeight: 430,
     },
   },
   iconContainer: {
@@ -93,28 +81,57 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '9em',
     maxHeight: '9em',
     minHeight: '9em',
+    marginTop: -90,
     [theme.breakpoints.only('md')]: {
       maxWidth: '7em',
       minWidth: '7em',
       maxHeight: '7em',
       minHeight: '7em',
+      marginTop: -70,
     },
-    marginTop: -90,
     [theme.breakpoints.down('sm')]: {
+      maxWidth: '7em',
+      minWidth: '7em',
+      maxHeight: '7em',
+      minHeight: '7em',
+      marginTop: -70,
+    },
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: '5em',
+      minWidth: '5em',
+      maxHeight: '5em',
+      minHeight: '5em',
       margin: 0,
+      float: 'left',
     },
     backgroundColor: '#fff',
   },
   title: {
     margin: 'auto',
     textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(3),
+    },
   },
   text: {
-    minHeight: '11em',
-    maxHeight: '11em',
-    margin: ' 3em 1em',
+    margin: ' 3em 1em 1em',
     lineHeight: '28px',
     textAlign: 'left',
+    minHeight: '12em',
+    maxHeight: '12em',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '2em',
+      minHeight: '15em',
+      maxHeight: '15em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '15em',
+      maxHeight: '15em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '16em',
+      maxHeight: '16em',
+    },
   },
   button: {
     display: 'inline',
@@ -123,6 +140,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     color: '#FFFFFF',
     textAlign: 'center',
+    margin: '1em auto 0',
     [theme.breakpoints.down('md')]: {
       width: '12em',
       fontSize: '0.8rem',
@@ -132,6 +150,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     minWidth: '60%',
-    margin:'auto'
+    margin: '1em auto 0',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '1em',
+    },
   },
 }));
