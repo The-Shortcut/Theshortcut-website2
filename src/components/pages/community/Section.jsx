@@ -67,8 +67,14 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid #888888',
     borderRadius: '10px',
     margin: '2em auto',
+    [theme.breakpoints.down('md')]: {
+      minHeight: 520,
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: 520,
+    },
     [theme.breakpoints.down('xs')]: {
-      minHeight: 430,
+      margin: 'auto',
     },
   },
   iconContainer: {
@@ -117,6 +123,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '1em 1em',
     lineHeight: '28px',
     textAlign: 'center',
+    minWidth: '90%',
     minHeight: '12em',
     maxHeight: '12em',
     [theme.breakpoints.down('md')]: {
@@ -132,6 +139,7 @@ const useStyles = makeStyles((theme) => ({
       minHeight: '16em',
       maxHeight: '16em',
     },
+/*     border: '1px solid red', */
   },
   button: {
     display: 'inline',

@@ -22,7 +22,7 @@ const Goal = ({ data }) => {
           </Typography>
         </div>
         {data.description.map((desc, i) => (
-          <Typography variant='subtitle1' component='p' key={i} className={classes.text}>
+          <Typography variant='body1' key={i} className={classes.text}>
             {desc}
           </Typography>
         ))}
@@ -35,17 +35,24 @@ export default Goal;
 
 const useStyles = makeStyles((theme) => ({
   card: {
-
-    minHeight: 410,
-    maxHeight: 410,
+    minHeight: 460,
+    maxHeight: 460,
     background: '#F9F9F9',
     border: '1px solid #EEEEEE',
     borderRadius: '10px',
     boxShadow: ' 0px 0px 22px -5px #434343',
     margin: '2em auto',
+    [theme.breakpoints.down('md')]: {
+      minHeight: 540,
+      maxHeight: 540,
+    },
+    [theme.breakpoints.down('md')]: {
+      minHeight: 510,
+      maxHeight: 510,
+    },
     [theme.breakpoints.down('xs')]: {
-      minHeight: 385,
-      maxHeight: 385,
+      minHeight: 460,
+      maxHeight: 460,
     },
   },
   iconContainer: {

@@ -16,7 +16,7 @@ const LandingPage = () => {
   const classes = useStyles();
 
   const gamesRef = useRef(null);
-  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 120);
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 90);
   const executeScroll = () => scrollToRef(gamesRef);
 
   return (
@@ -73,6 +73,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#FFFFFF',
     margin: '-30em 11em 0',
+    minWidth: '4em',
+    
    /*  [theme.breakpoints.up('md')]: {
       margin: '-30em 10em 0',
     }, */

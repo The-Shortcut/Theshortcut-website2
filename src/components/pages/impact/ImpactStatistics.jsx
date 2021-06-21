@@ -10,11 +10,11 @@ import Title from '../../custom/Title';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
-const ImpactStatistics = () => {
+const ImpactStatistics = ({drivenRef}) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div ref={drivenRef} className={classes.root}>
       <Title>Driven by Impact</Title>
       <div className={classes.container}>
         {ImpactStatData.map((item, index) => (
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '80%',
     maxWidth: '80%',
-    margin: '7em auto',
+    margin: '9em auto 7em',
     [theme.breakpoints.down('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',

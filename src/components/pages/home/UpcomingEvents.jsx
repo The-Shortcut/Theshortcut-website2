@@ -81,13 +81,10 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #DDDDDD',
   },
   root: {
-    margin: '7em auto',
+    margin: '6em auto',
     maxWidth: '80%',
-    [theme.breakpoints.only('md')]: {
-      marginTop: '18em',
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '6em',
+    [theme.breakpoints.down('md')]: {
+      margin: '5em auto',
       maxWidth: '90%',
     },
   },

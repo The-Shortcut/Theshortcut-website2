@@ -10,10 +10,10 @@ import { values } from './valuesData';
 // Children
 import Title from '../../custom/Title';
 
-const CoreValues = () => {
+const CoreValues = ({coreValuesRef}) => {
   const classes = useStyles();
   return (
-    <section className={classes.section}>
+    <section ref={coreValuesRef} className={classes.section}>
       <div className={classes.root}>
         <Title>Core Values</Title>
         <div className={classes.container}>
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '90%',
       marginBottom: theme.spacing(5),
     },
-    margin: '5em auto',
+    margin: '6em auto',
   },
   container: {
     display: 'grid',

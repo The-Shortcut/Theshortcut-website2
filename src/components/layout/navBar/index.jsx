@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // Children
 import Search from './Search';
 import DrawerMenu from './DrawerMenu';
+import CovidBanner from './CovidBanner';
 
 // Material-UI
 import { AppBar, Toolbar, IconButton, useScrollTrigger } from '@material-ui/core';
@@ -57,7 +58,7 @@ console.log(path)
         <AppBar
           position='fixed'
           style={
-            pageHeight > 100 ? { backgroundColor: '#434343' } : { backgroundColor: 'transparent' }
+            pageHeight > 100 ? { backgroundColor: '#434343' } : { backgroundColor: path === '/visit' ? '#434343' : 'transparent' }
           }>
           <Toolbar className={classes.toolBar}>
             <div className={classes.title}>
@@ -74,7 +75,8 @@ console.log(path)
               <img src={TopLogo} alt='The Shortcut Logo' className={classes.logo} />
               </Link>
             </div>
-            <Search />
+            <CovidBanner />
+           {/*  <Search /> */}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
@@ -92,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
   toolBar: {
     margin: '1em 8em',
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
       margin: 0,

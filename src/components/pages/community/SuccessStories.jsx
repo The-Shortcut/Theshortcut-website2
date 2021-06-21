@@ -48,7 +48,7 @@ const settings = {
   ),
 };
 
-const SuccessStories = () => {
+const SuccessStories = ({ storyRef }) => {
   const classes = useStyles();
   const { successStories } = useSelector((state) => state.stories);
 
@@ -59,7 +59,7 @@ const SuccessStories = () => {
   }, [dispatch]);
 
   return (
-    <div className={classes.main}>
+    <div ref={storyRef} className={classes.main}>
       <div className={classes.root}>
         <Title>Success Stories</Title>
         {successStories && (
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '180px',
     minHeight: '220px',
     maxHeight: '220px',
-    objectFit:'cover',
+    objectFit: 'cover',
     [theme.breakpoints.down('sm')]: {
       minWidth: '90px',
       maxWidth: '90px',

@@ -8,11 +8,11 @@ import Section from './Section';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
-const MainSections = () => {
+const MainSections = ({welcomeRef}) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.main}>
+    <div ref={welcomeRef} className={classes.main}>
       <div className={classes.root}>
         <Title>Welcome To Our Community!</Title>
         <Typography variant='body1' className={classes.intro}>
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '95%',
       maxWidth: '95%',
     },
-    margin: '5em auto',
+    margin: '6em auto',
   },
   intro: {
     margin: 'auto',

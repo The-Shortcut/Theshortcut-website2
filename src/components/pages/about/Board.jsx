@@ -28,7 +28,7 @@ const settings = {
   arrows: false,
 };
 
-const Board = () => {
+const Board = ({boardRef}) => {
   const classes = useStyles();
   const [state, setState] = useState(-1);
   const { board } = useSelector((state) => state.team);
@@ -40,7 +40,7 @@ const Board = () => {
   }, [dispatch]);
 
   return (
-    <div className={classes.root}>
+    <div ref={boardRef} className={classes.root}>
       <Title>Our Board</Title>
       {window.innerWidth < 600 ? (
         <Slider {...settings} style={{ margin: 'auto' }}>
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '80%',
     maxWidth: '80%',
-    margin: '10em auto 5em',
+    margin: '6em auto 5em',
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',

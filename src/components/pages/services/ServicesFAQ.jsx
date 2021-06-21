@@ -9,7 +9,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 // Children
 import Title from '../../custom/Title';
 
-const ServicesFAQ = ({ servicesFaqLoaded, coachingFAQ, trainingFAQ }) => {
+const ServicesFAQ = ({ servicesFaqLoaded, coachingFAQ, trainingFAQ, faqRef }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
@@ -22,7 +22,7 @@ const ServicesFAQ = ({ servicesFaqLoaded, coachingFAQ, trainingFAQ }) => {
   }
 
   return (
-    <div className={classes.root}>
+    <div ref={faqRef} className={classes.root}>
       <Title>FAQ</Title>
       <div>
         <Typography variant='h4' className={classes.sectionTitle}>
@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '90%',
       marginBottom: theme.spacing(5),
     },
-    margin: '7em auto',
+    margin: '5em auto',
     border: '1px solid #f9f9f9',
   },
   sectionTitle: {

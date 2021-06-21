@@ -221,7 +221,7 @@ export default OurPartnersLogos;
 const useStyles = makeStyles((theme) => ({
   wrapper: {
     maxWidth:'100%',
-    margin: '5em auto',
+    margin: '6em auto',
   },
   title: {
     marginBottom: theme.spacing(12)

@@ -14,7 +14,7 @@ const nameRegex = RegExp(/^[a-zA-Z\s]{3,25}$/);
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 const msgRegex = RegExp(/^[a-zA-Z0-9\s.:()#$&*+=-?@""''_]{3,250}$/);
 
-const GetPartnerForm = () => {
+const GetPartnerForm = ({ intRef }) => {
   const classes = useStyles();
   const [state, setState] = useState({ name: '', company: '', email: '', phone: '', message: '' });
   const [error, setError] = useState({ name: '', company: '', email: '', phone: '', message: '' });
@@ -66,7 +66,7 @@ const GetPartnerForm = () => {
   console.log({ open });
   /* console.log(state, error); */
   return (
-    <div className={classes.root}>
+    <div ref={intRef} className={classes.root}>
       <Title>Interested in partnering with us ?</Title>
       <Grid container spacing={3} className={classes.form}>
         <Grid item xs={12} sm={6}>

@@ -10,10 +10,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Title from '../../custom/Title';
 import Goal from './Goal';
 
-const ImpactGoals = () => {
+const ImpactGoals = ({goalsRef}) => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div ref={goalsRef} className={classes.root}>
       <Title>Impact Goals</Title>
       <div className={classes.container}>
         {impactGoals.map((goal, index) => (
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '95%',
       maxWidth: '95%',
     },
-    margin: '5em auto',
+    margin: '6em auto',
   },
   container: {
     display: 'grid',

@@ -6,10 +6,10 @@ import { Typography } from '@material-ui/core';
 
 // Children
 import Title from '../../custom/Title';
-const MissionVision = () => {
+const MissionVision = ({missionRef}) => {
   const classes = useStyles();
   return (
-    <div className={classes.main}>
+    <div ref={missionRef} className={classes.main}>
       <div className={classes.container}>
         <div className={classes.mission}>
           <Title>Our Mission</Title>

@@ -28,7 +28,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     /* border: '2px solid red', */
     maxWidth: '80%',
-    margin: '1em auto',
+    margin: '4em auto 1.5em',
+    [theme.breakpoints.down('xs')]: {
+      margin: '2em auto',
+    },
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
@@ -44,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: '22%',
     [theme.breakpoints.down('xs')]: {
       flexBasis: '40%',
-      marginTop: '1em',
     },
   },
   icon: {

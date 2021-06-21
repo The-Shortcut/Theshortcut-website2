@@ -9,12 +9,12 @@ import { Typography, Button } from '@material-ui/core';
 //Children
 import Title from '../../custom/Title';
 
-const AboutUs = () => {
+const AboutUs = ({ aboutusRef }) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Title>The solution to educated unemployment in Finland</Title>
+    <div ref={aboutusRef} className={classes.root}>
+      <Title>The solution to educated unemployment</Title>
       <div className={classes.container}>
         <div className={classes.text}>
           <Typography variant='body1' style={{ lineHeight: '1.4em' }}>
@@ -36,7 +36,7 @@ const AboutUs = () => {
               variant='contained'
               color='primary'
               style={{ color: '#FFFFFF', marginTop: '2em' }}>
-              Join Community
+              See Community
             </Button>
           </Link>
         </div>
@@ -60,12 +60,19 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '80%',
     maxWidth: '80%',
-    margin: '5em auto',
+    margin: '10em auto 6em',
     border: '1px solid #f9f9f9',
     [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
+      marginTop:'8em'
     },
+    [theme.breakpoints.down('sm')]: {
+      margin:'6em auto'
+    },
+    [theme.breakpoints.down('xs')]: {
+      margin:'2.5em auto 4em'
+    }
   },
   container: {
     display: 'flex',

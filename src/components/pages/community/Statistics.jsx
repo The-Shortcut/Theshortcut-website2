@@ -27,15 +27,14 @@ export default Statistics;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    /* border: '1px solid red', */
-    minHeight: '15vh',
-    backgroundColor: '#FFFFFF',
+    minHeight: '7em',
+    marginTop: theme.spacing(5),
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    [theme.breakpoints.down('md')]: {
-      marginTop: -7,
+    [theme.breakpoints.down('sm')]: {
+      marginTop: theme.spacing(1),
     },
     [theme.breakpoints.down('xs')]: {
       minHeight: '160px',

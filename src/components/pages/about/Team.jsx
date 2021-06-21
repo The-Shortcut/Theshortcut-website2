@@ -27,7 +27,7 @@ const settings = {
   slidesToScroll: 1,
   arrows: false,
 };
-const Team = () => {
+const Team = ({teamRef}) => {
   const classes = useStyles();
   const [state, setState] = useState(-1);
   const { teammates } = useSelector((state) => state.team);
@@ -39,7 +39,7 @@ const Team = () => {
   }, [dispatch]);
 
   return (
-    <div className={classes.section}>
+    <div ref={teamRef} className={classes.section}>
       <div className={classes.root}>
         <Title>Our Team</Title>
         {window.innerWidth < 600 ? (
@@ -124,7 +124,7 @@ export default Team;
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    margin:'10em auto 5em'
+    margin:'6em auto 5em'
   },
   root: {
     minWidth: '80%',

@@ -9,7 +9,9 @@ export const navBarData = [
   },
   {
     title: 'ABOUT',
-    mainPath: '/about',
+    path: '/about',
+    icon: null,
+   /*  mainPath: '/about',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -29,11 +31,12 @@ export const navBarData = [
         title: 'Our Board',
         path: '/about/#board',
       },
-    ],
+    ], */
   },
   {
     title: 'EVENTS',
-    mainPath: '/events/all',
+    path:'/events'
+    /* mainPath: '/events/all',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -45,11 +48,12 @@ export const navBarData = [
         title: 'B.Y.O.B',
         path: '/events/byob',
       },
-    ],
+    ], */
   },
   {
     title: 'OUR SERVICES',
-    mainPath: '/services',
+    path: '/services'
+    /* mainPath: '/services',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -61,7 +65,7 @@ export const navBarData = [
         title: 'Training',
         path: '/services/#training',
       },
-    ],
+    ], */
   },
   {
     title: 'PARTNERS',
@@ -91,7 +95,8 @@ export const navBarData = [
   },
   {
     title: 'CONTACT US',
-    mainPath: '/contact-us',
+    path:'/contact-us'
+    /* mainPath: '/contact-us',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -103,7 +108,7 @@ export const navBarData = [
         title: 'FAQ',
         path: '/contact-us/#faq',
       },
-    ],
+    ], */
   },
   /*  {
     title: 'CAREER',

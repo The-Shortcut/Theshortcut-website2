@@ -9,24 +9,12 @@ import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mater
 
 // Children
 import Title from '../../custom/Title';
-const Initiatives = () => {
+
+const Initiatives = ({initRef}) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <section style={{ marginBottom: '6em' }}>
-        <Title>How We Work</Title>
-        <Typography
-          variant='body1'
-          style={{ margin: 'auto', textAlign: 'center', maxWidth: '80%' }}>
-          We partner with both private and public organizations to provide much-needed professional
-          training and integration programs. While many of the services that we offer are open to
-          our entire community, some, like specialized training and coaching, are limited by many
-          factors entirely determined by our partner organization requirements.
-          <br /> If you would like to partner with us to offer training or services, use the contact
-          form at the bottom of this page.
-        </Typography>
-      </section>
+    <div ref={initRef} className={classes.root}>
       <Title>Initiative Examples</Title>
       <div className={classes.container}>
         {initiativesData.map((data, index) => (
@@ -56,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '80%',
     maxWidth: '80%',
-    margin: '7em auto',
+    margin: '6em auto',
     [theme.breakpoints.down('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',

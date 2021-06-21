@@ -22,10 +22,13 @@ const Services = () => {
 
   const coachingRef = useRef(null);
   const trainingRef = useRef(null);
+  const faqRef = useRef(null);
   const scrollToRefC = (ref) => window.scrollTo(0, ref.current.offsetTop - 130);
   const scrollToRefT = (ref) => window.scrollTo(0, ref.current.offsetTop - 30);
+  const scrollToRefFAQ = (ref) => window.scrollTo(0, ref.current.offsetTop - 100);
   const executeScrollCoaching = () => scrollToRefC(coachingRef);
   const executeScrollTraining = () => scrollToRefT(trainingRef);
+  const executeScrollFAQ = () => scrollToRefFAQ(faqRef);
 
   const { servicesFaqLoaded, coachingFAQ, trainingFAQ } = useSelector((state) => state.docs);
 
@@ -53,7 +56,6 @@ const Services = () => {
           Our Services
         </Typography>
         <div className={classes.buttons}>
-          {/* <Link href='#games' style={{ textDecoration: 'none' }}> */}
           <Button
             variant='contained'
             color='primary'
@@ -61,17 +63,20 @@ const Services = () => {
             onClick={executeScrollCoaching}>
             COACHING
           </Button>
-          {/* </Link> */}
-          <Link href='/partners' style={{ textDecoration: 'none' }}>
-            <Button
-              variant='contained'
-              size='large'
-              color='default'
-              className={classes.button}
-              onClick={executeScrollTraining}>
-              TRAINING
-            </Button>
-          </Link>
+          <Button
+            variant='contained'
+            color='primary'
+            className={classes.button}
+            onClick={executeScrollTraining}>
+            TRAINING
+          </Button>
+          <Button
+            variant='contained'
+            color='primary'
+            className={classes.button}
+            onClick={executeScrollFAQ}>
+            FAQ
+          </Button>
         </div>
       </div>
       <div className={classes.loc} id='coaching' />
@@ -81,6 +86,7 @@ const Services = () => {
         servicesFaqLoaded={servicesFaqLoaded}
         coachingFAQ={coachingFAQ}
         trainingFAQ={trainingFAQ}
+        faqRef={faqRef}
       />
     </div>
   );
@@ -104,63 +110,63 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     minWidth: '100%',
+    maxWidth: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    maxWidth: '80%',
     textAlign: 'center',
     color: '#FFFFFF',
-    marginTop: '-9em',
+    marginTop: '-5.2em',
     zIndex: 10,
-    [theme.breakpoints.down('xs')]: {
-      marginTop: '-5em',
-    },
-    '@media (max-width:360px)': {
+    [theme.breakpoints.down('sm')]: {
       marginTop: '-4em',
     },
-    /*     border: '2px solid red', */
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '-2.5em',
+    },
   },
   buttons: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    minWidth: '40%',
-    maxWidth: '40%',
-    margin: '-10em auto 0',
+    minWidth: '60%',
+    maxWidth: '60%',
+    margin: '-12em auto 0',
     [theme.breakpoints.only('md')]: {
-      minWidth: '50%',
-      maxWidth: '50%',
-      margin: '-8em auto 0',
+      minWidth: '80%',
+      maxWidth: '80%',
+      marginTop: '-9.5em',
     },
     [theme.breakpoints.down('sm')]: {
       minWidth: '60%',
       maxWidth: '60%',
-      margin: '-6em auto 0',
+      marginTop: '-8em',
     },
-    [theme.breakpoints.down('xs')]: {
-      /* justifyContent: 'center', */
-      marginTop: '-5em',
-      minWidth: '75%',
-      maxWidth: '75%',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+      marginTop: 0,
     },
-    /*     border: '1px solid green', */
   },
   button: {
     display: 'inline',
-    width: '11em',
+    minWidth: '9em',
+    maxWidth: '9em',
+    color: '#FFFFFF',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',
     margin: '1em 0',
     [theme.breakpoints.down('sm')]: {
-      width: '14em',
+      minWidth: '8em',
+      maxWidth: '8em',
       fontSize: '0.8rem',
       marginTop: 0,
     },
     [theme.breakpoints.down('xs')]: {
-      width: '9em',
-      margin: 0,
+      minWidth: '8em',
+      maxWidth: '8em',
     },
   },
   loc: {
