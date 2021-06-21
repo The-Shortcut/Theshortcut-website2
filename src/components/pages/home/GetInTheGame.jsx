@@ -39,8 +39,14 @@ export default GetInTheGame;
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    margin: '10em auto 7em',
-    border: '1px solid #FFFFFF',
+    margin: '10em auto 5em',
+    border: '1px solid #f9f9f9',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '13em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '5em',
+    },
   },
   root: {
     minWidth: '80%',
@@ -53,7 +59,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       minWidth: '95%',
       maxWidth: '95%',
-      marginTop: '3em',
     },
   },
   section: {

@@ -13,7 +13,7 @@ const MissionVision = () => {
       <div className={classes.container}>
         <div className={classes.mission}>
           <Title>Our Mission</Title>
-          <Typography variant='h4' className={classes.text}>
+          <Typography variant='h3' className={classes.text}>
           To equip our community members to build meaningful careers
           </Typography>
         </div>

@@ -110,6 +110,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   text: {
+    textAlign: 'center',
     minHeight: '190px',
     maxHeight: '190px',
     [theme.breakpoints.down('xs')]: {

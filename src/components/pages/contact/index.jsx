@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
 // Hero Image
-import heroImage from '../../../assets/photos/contactHero2.jpg';
+import heroImage from '../../../assets/photos/contactHero2.png';
 
 // Children
 /* import Team from './Team';

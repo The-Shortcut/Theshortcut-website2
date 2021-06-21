@@ -14,11 +14,11 @@ const Training = ({ trainingRef }) => {
   return (
     <section ref={trainingRef} className={classes.root} id='training'>
       <div style={{ marginTop: '7em' }}>
-        <Title>TRAINING</Title>
+        <Title>Training</Title>
         <Typography variant='body1' className={classes.text}>
           <strong>Current opportunities</strong>
           <br />
-          "Sorry, there are no training opportunities taking applications at the moment"
+          "We are working hard to create more opportunities, check back later"
         </Typography>
         <TrainingSections />
       </div>

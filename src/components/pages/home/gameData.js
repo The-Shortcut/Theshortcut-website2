@@ -1,8 +1,8 @@
 // PHOTOS
 import eventsHero from '../../../assets/photos/eventsHero.jpg';
-import careerHero from '../../../assets/photos/careerHero.jpg';
-import communityHero from '../../../assets/photos/communityHero.jpg';
-import servicesHero from '../../../assets/photos/servicesHero.jpg';
+import trainingTag from '../../../assets/photos/trainingTag.jpg';
+import communityTag from '../../../assets/photos/communityTag.jpg';
+import coachingTag from '../../../assets/photos/coachingTag.jpg';
 
 //ICONS
 import { FaCalendarAlt, FaChalkboardTeacher } from 'react-icons/fa';
@@ -22,19 +22,19 @@ export const gameData = [
   },
   {
     title: 'COACHING',
-    photo: servicesHero,
+    photo: coachingTag,
     path: '/services/#coaching',
     icon: <MdPeople color='#00A99D' style={{ fontSize: 70, marginTop: 25 }} />,
   },
   {
     title: 'COMMUNITY',
-    photo: communityHero,
+    photo: communityTag,
     path: '/community',
     icon: <IoIosPeople color='#00A99D' style={{ fontSize: 70, marginTop: 25 }} />,
   },
   {
     title: 'TRAINING',
-    photo: careerHero,
+    photo: trainingTag,
     path: '/services/#training',
     icon: <FaChalkboardTeacher color='#00A99D' style={{ fontSize: 60, marginTop: 25 }} />,
   },

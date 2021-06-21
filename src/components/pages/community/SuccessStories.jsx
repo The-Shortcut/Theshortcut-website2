@@ -104,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     maxWidth: '70%',
-    margin: '10em auto',
+    margin: '6em auto',
     [theme.breakpoints.down('xs')]: {
       minWidth: '85%',
     },
@@ -124,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '180px',
     minHeight: '220px',
     maxHeight: '220px',
+    objectFit:'cover',
     [theme.breakpoints.down('sm')]: {
       minWidth: '90px',
       maxWidth: '90px',

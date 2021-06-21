@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
     margin: '1em 0',
     [theme.breakpoints.down('sm')]: {
-      width: '14em',
+      minWidth: '14.5em',
       fontSize: '0.8rem',
       marginTop: 0,
     },

@@ -64,7 +64,7 @@ export const prevTrainingData = [
     partnerLogo: elyLogo,
   },
   {
-    title: 'Future/Technical skills training & Certifications',
+    title: 'Future/Tech skills Certifications',
     description:
       'We always work with a partner to create and deliver programs and workshops that cover highly in-demand skills to cultivate talent, improve employability, and support entrepreneurship know-how.',
     image: techTrainingImg,

@@ -12,42 +12,42 @@ import { RiCommunityFill } from 'react-icons/ri';
 
 export const ImpactStatData = [
   {
-    title: 'events & activities',
+    title: 'Events & Activities',
     amount: '205',
     icon: <FaCalendarCheck style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: 'participants',
+    title: 'Participants',
     amount: '1,969',
     icon: <HiUserGroup style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: 'supporting companies',
+    title: 'Supporting Companies',
     amount: '251',
     icon: <MdBusiness style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: 'feedback',
+    title: 'Feedback',
     amount: '8.4 / 10',
     icon: <FeedbackIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'nationalities',
+    title: 'Nationalities',
     amount: '102',
     icon: <FlagIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'gender distribution',
+    title: 'Gender Distribution',
     amount: 'F54/M45/other1%',
     icon: <FaTransgenderAlt style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: 'new entrepreneurs',
+    title: 'New Entrepreneurs',
     amount: '75',
     icon: <FaUserNinja style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: ' new employments',
+    title: ' New Employments',
     amount: '191',
     icon: <GiStairsGoal style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },

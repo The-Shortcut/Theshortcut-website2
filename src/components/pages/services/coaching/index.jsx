@@ -12,7 +12,7 @@ const Coaching = ({ coachingRef }) => {
   const classes = useStyles();
   return (
     <section ref={coachingRef} className={classes.intro}>
-      <Title>COACHING</Title>
+      <Title>Career Coaching</Title>
       <Typography variant='body1' className={classes.text}>
         All-access coaching resources are open to all and available free for everyone to utilize.
         These include pre-recorded material, live events, and self-directed learning and work.

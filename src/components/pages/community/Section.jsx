@@ -22,7 +22,7 @@ const Section = ({ section }) => {
         <Typography variant='h4' className={classes.title}>
           {section.title}
         </Typography>
-        <Typography variant='subtitle1' component='p' className={classes.text}>
+        <Typography variant='body1' className={classes.text}>
           {section.text}
         </Typography>
         <Typography variant='body1' style={{ textAlign: 'center' }}>
@@ -114,9 +114,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
-    margin: ' 3em 1em 1em',
+    margin: '1em 1em',
     lineHeight: '28px',
-    textAlign: 'left',
+    textAlign: 'center',
     minHeight: '12em',
     maxHeight: '12em',
     [theme.breakpoints.down('md')]: {

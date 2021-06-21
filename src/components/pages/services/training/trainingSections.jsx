@@ -13,7 +13,7 @@ const trainingSections = () => {
   return (
     <div className={classes.root}>
       <Typography variant='h4' style={{ textAlign: 'center', margin: '2em auto' }}>
-        Previous Training Programs Completed
+        Previous Training Programs
       </Typography>
       <div className={classes.container}>
         {prevTrainingData.map((item, index) => (
@@ -27,12 +27,12 @@ const trainingSections = () => {
             />
             <CardContent className={classes.cardContent}>
               <Typography variant='h4' className={classes.title}>
-                {item.title}
+                {item.title.toLocaleUpperCase()}
               </Typography>
-              <Typography variant='subtitle1' component='p'>
+              <Typography variant='subtitle1' component='p' className={classes.text}>
                 {item.description}
               </Typography>
-            {/* <img src={item.partnerLogo} alt='partner logo' className={classes.logoContainer} /> */}
+              {/* <img src={item.partnerLogo} alt='partner logo' className={classes.logoContainer} /> */}
             </CardContent>
           </Card>
         ))}
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '95%',
     },
     margin: '3em auto 7em',
-    border:'1px solid #DDDDDD'
+    border: '1px solid #DDDDDD',
   },
   container: {
     display: 'grid',
@@ -110,7 +110,23 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 10, */
   },
   title: {
-    minHeight: '3em',
-    maxHeight: '3em',
+    minHeight: '50px',
+    maxHeight: '50px',
+    [theme.breakpoints.down('md')]: {
+      minHeight: '65px',
+      maxHeight: '65px',
+    },
+    margin: 'auto',
+    textAlign: 'center',
+  },
+  text: {
+    textAlign: 'center',
+    minHeight: '190px',
+    maxHeight: '190px',
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '270px',
+      maxHeight: '270px',
+    },
+    lineHeight: '1.5em',
   },
 }));
