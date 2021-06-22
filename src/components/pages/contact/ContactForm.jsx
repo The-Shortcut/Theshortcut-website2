@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import SendIcon from '@material-ui/icons/Send';
 
 // Children
+import Title from '../../custom/Title';
 import SnackBar from '../../functional/SnackBar';
 import { formData } from '../../../helpers/formData';
 
@@ -14,7 +15,7 @@ const nameRegex = RegExp(/^[a-zA-Z\s]{3,25}$/);
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 const msgRegex = RegExp(/^[a-zA-Z0-9\s.:()#$&*+=-?@""''_]{3,250}$/);
 
-const ContactForm = () => {
+const ContactForm = ({ msgRef }) => {
   const classes = useStyles();
   const [state, setState] = useState({ name: '', email: '', message: '' });
   const [error, setError] = useState({ name: '', email: '', message: '' });
@@ -67,44 +68,49 @@ const ContactForm = () => {
   console.log({ open });
   /* console.log(state, error); */
   return (
-    <div>
+    <div ref={msgRef} className={classes.root}>
+      <Title>Contact Us</Title>
       <form className={classes.form}>
-        <TextField
-          label='Your Full Name'
-          className={classes.textField}
-          type='text'
-          name='name'
-          value={state.name}
-          onChange={handleChange}
-          onBlur={handleBlure}
-          autoComplete='name'
-          margin='normal'
-          variant='outlined'
-          fullWidth
-        />
-        {error.name === false && (
-          <Typography variant='caption' color='error'>
-            between 3 to 15 letters are valid! *
-          </Typography>
-        )}
-        <TextField
-          label='Your Email'
-          className={classes.textField}
-          type='email'
-          name='email'
-          value={state.email}
-          onChange={handleChange}
-          onBlur={handleBlure}
-          autoComplete='email'
-          margin='normal'
-          variant='outlined'
-          fullWidth
-        />
-        {error.email === false && (
-          <Typography variant='caption' color='error'>
-            your email is not valid! *
-          </Typography>
-        )}
+        <div className={classes.textField}>
+          <div className={classes.input}>
+            <TextField
+              label='Your Full Name'
+              type='text'
+              name='name'
+              value={state.name}
+              onChange={handleChange}
+              onBlur={handleBlure}
+              autoComplete='name'
+              margin='normal'
+              variant='outlined'
+              fullWidth
+            />
+            {error.name === false && (
+              <Typography variant='caption' color='error'>
+                between 3 to 15 letters are valid! *
+              </Typography>
+            )}
+          </div>
+          <div className={classes.input}>
+            <TextField
+              label='Your Email'
+              type='email'
+              name='email'
+              value={state.email}
+              onChange={handleChange}
+              onBlur={handleBlure}
+              autoComplete='email'
+              margin='normal'
+              variant='outlined'
+              fullWidth
+            />
+            {error.email === false && (
+              <Typography variant='caption' color='error'>
+                your email is not valid! *
+              </Typography>
+            )}
+          </div>
+        </div>
         <TextField
           label='Leave us a Message here'
           multiline
@@ -113,7 +119,6 @@ const ContactForm = () => {
           value={state.message}
           onChange={handleChange}
           onBlur={handleBlure}
-          className={classes.textField}
           margin='normal'
           variant='outlined'
           fullWidth
@@ -156,14 +161,30 @@ const ContactForm = () => {
 export default ContactForm;
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: '6em auto 7em',
+  },
   form: {
-    marginRight: '3em',
+    minWidth: '70%',
+    maxWidth: '70%',
+    margin: 'auto',
     [theme.breakpoints.down('xs')]: {
       margin: '0 auto 2em',
     },
   },
+  textField: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+    },
+  },
   input: {
-    fontSize: '1.5rem',
+    flexBasis: '48%',
+    [theme.breakpoints.down('xs')]: {
+      flexBasis: '100%',
+    },
   },
   button: {
     color: '#FFFFFF',

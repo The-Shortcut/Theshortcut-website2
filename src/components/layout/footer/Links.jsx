@@ -72,7 +72,7 @@ const Links = () => {
             component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
-            Join Community
+            Community
           </Typography>
         </Link>
         {/* <Typography variant='subtitle1' component='p' className={classes.item}>

@@ -47,7 +47,9 @@ const BYOB = () => {
           APPLY NOW
         </Button>
       </section>
+      <div style={{ background: '#DDDDDD', border:'1px solid #DDDDDD', margin:'7em auto'}}>
       <ByobFAQ />
+      </div>
       <section className={classes.intro}>
         <Typography varian='body1'>
           We’d love to hear from you! Please direct any questions regarding the program content to

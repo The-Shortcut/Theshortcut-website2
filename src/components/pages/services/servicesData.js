@@ -27,7 +27,7 @@ export const coachingData = [
     title: 'LOTTERY SESSIONS',
     description:
       'These sessions are a monthly giveaway to our community. You are entered into this lottery by participating in the Ask Me Anything sessions or being active in our online community. This session is online with our Career Coach to discuss specific topics such as your individual CV or interview skills.',
-    link: '',
+    link: '/events/all',
     icon: <GiClover style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
   },
@@ -35,7 +35,7 @@ export const coachingData = [
     title: 'ASK ME ANYTHING SESSIONS',
     description:
       'These are open sessions that take place on FB live and Instagram Live where our experts will answer questions that have been sent beforehand or during the live chat.',
-    link: '',
+    link: '/events/all',
     icon: <RiQuestionAnswerFill style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
   },

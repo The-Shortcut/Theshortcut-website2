@@ -12,7 +12,8 @@ import { getFAQ } from '../../../actions/docActions';
 
 // Children
 import Title from '../../custom/Title';
-const FAQ = () => {
+
+const FAQ = ({faqRef}) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
@@ -28,7 +29,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <div ref={faqRef} className={classes.root}>
       <Title>FAQ</Title>
       {faq_about &&
         faq_about.map((faq, index) => (
@@ -70,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '90%',
       marginBottom: theme.spacing(5),
     },
-    margin: '7em auto',
-    border:'1px solid #f9f9f9'
+    margin: '6.5em auto 8em',
   },
 }));

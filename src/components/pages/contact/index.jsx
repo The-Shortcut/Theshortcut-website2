@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 
 // Hero Image
 import heroImage from '../../../assets/photos/contactHero2.png';
 
 // Children
-/* import Team from './Team';
-import Board from './Board'; */
 import GetInTouch from './GetInTouch';
 import FAQ from './FAQ';
+import ContactForm from './ContactForm';
 
 const ContactUs = () => {
   const classes = useStyles();
+
+  const findRef = useRef(null);
+  const faqRef = useRef(null);
+  const msgRef = useRef(null);
+  const scrollToFind = (ref) => window.scrollTo(0, ref.current.offsetTop - 130);
+  const scrollToFaq = (ref) => window.scrollTo(0, ref.current.offsetTop - 130);
+  const scrollToMsg = (ref) => window.scrollTo(0, ref.current.offsetTop - 130);
+  const executeScrollFind = () => scrollToFind(findRef);
+  const executeScrollFaq = () => scrollToFaq(faqRef);
+  const executeScrollMsg = () => scrollToMsg(msgRef);
+
   return (
-    <div  id='getInTouch'>
+    <div id='getInTouch'>
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
@@ -31,10 +41,34 @@ const ContactUs = () => {
       <Typography variant='h1' className={classes.title}>
         Contact Us
       </Typography>
-      <GetInTouch />
-      <FAQ />
-      {/* <Team />
-      <Board /> */}
+      <div className={classes.buttons}>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={executeScrollFind}>
+          FIND US
+        </Button>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={executeScrollFaq}>
+          FAQ
+        </Button>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={executeScrollMsg}>
+          MESSAGE US
+        </Button>
+      </div>
+      <GetInTouch findRef={findRef} />
+      <div style={{ background: '#DDDDDD', border: '1px solid #DDDDDD' }}>
+        <FAQ faqRef={faqRef} />
+      </div>
+      <ContactForm msgRef={msgRef} />
     </div>
   );
 };
@@ -50,21 +84,64 @@ const useStyles = makeStyles((theme) => ({
     background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImage}) center/cover fixed no-repeat`,
   },
   title: {
-    minWidth:'100%',
+    minWidth: '100%',
+    maxWidth: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    maxWidth: '80%',
     textAlign: 'center',
     color: '#FFFFFF',
-    marginTop: '-5.2em',
+    marginTop: '-3.3em',
     zIndex: 10,
-    [theme.breakpoints.down('md')]: {
-      margin: '-6em 0 0 1.8em',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '-4em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '-2.5em',
+    },
+  },
+  buttons: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    minWidth: '60%',
+    maxWidth: '60%',
+    margin: '-9em auto 0',
+    [theme.breakpoints.only('md')]: {
+      minWidth: '80%',
+      maxWidth: '80%',
+      marginTop: '-9.5em',
     },
     [theme.breakpoints.down('sm')]: {
-      marginTop: '-2em',
+      minWidth: '60%',
+      maxWidth: '60%',
+      marginTop: '-8em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+      marginTop: 0,
+    },
+  },
+  button: {
+    display: 'inline',
+    minWidth: '9em',
+    maxWidth: '9em',
+    color: '#FFFFFF',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    textTransform: 'none',
+    margin: '1em 0',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '8em',
+      maxWidth: '8em',
+      fontSize: '0.8rem',
+      marginTop: 0,
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '8em',
+      maxWidth: '8em',
     },
   },
 }));

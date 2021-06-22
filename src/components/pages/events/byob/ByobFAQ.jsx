@@ -136,8 +136,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '90%',
       marginBottom: theme.spacing(5),
     },
-    margin: '5em auto',
-    border: '1px solid #f9f9f9',
+    margin: '6em auto',
   },
   sectionTitle: {
     margin: '1em',

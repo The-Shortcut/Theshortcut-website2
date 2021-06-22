@@ -9,35 +9,35 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 // Children
 import Title from '../../custom/Title';
-import ContactForm from './ContactForm';
 import Map from '../../functional/Map';
 
-const GetInTouch = () => {
+const GetInTouch = ({findRef}) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div ref={findRef} className={classes.root}>
       <Title>Get In Touch</Title>
-      <div className={classes.contact}>
-        <div className={classes.info}>
-          <ContactForm />
-        </div>
-        <div className={classes.info}>
-          <Typography variant='h6'>The Shortcut Lab</Typography>
-          <div className={classes.address}>
-            {/* <PhoneIcon />
-            <Typography variant='body1'>+358 46 640 3900</Typography> */}
-            <EmailIcon />
-            <Typography variant='body1'>info@theshortcut.org</Typography>
-            <LocationOnIcon style={{ marginTop: '-20px' }} />
+      <div>
+        <div className={classes.contact}>
+          <Typography variant='h4'>The Shortcut Lab</Typography>
+          <div className={classes.info}>
+            <div>
+              <div style={{display:'flex', margin: 10}}>
+                <EmailIcon style={{ marginRight: 10, marginTop: 3 }} />
+                <Typography variant='body1'>info@theshortcut.org</Typography>
+              </div>
+              <div style={{display:'flex', margin: 10}}>
+                <InfoIcon style={{ marginRight: 10, marginTop: 3 }} />
+                <Typography variant='body1'>Open Wednesday & Thursday, 10am &mdash; 4pm</Typography>
+              </div>
+            </div>
+            <div style={{display:'flex', margin: 10}}>
+            <LocationOnIcon style={{ marginRight: 10, marginTop: 3 }} />
             <Typography variant='body1'>
               Maria01 (entrance 15B),
               <br /> Lapinlahdenkatu 16, 00180, Helsinki
             </Typography>
-            <InfoIcon />
-            <Typography variant='body1'>
-              Open Wednesday & Thursday, 10am &mdash; 4pm
-            </Typography>
+            </div>
           </div>
           <div className={classes.map}>
             <Map />
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '70%',
     maxWidth: '70%',
-    margin: '6em auto',
+    margin: '9em auto 8em',
     [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -66,31 +66,32 @@ const useStyles = makeStyles((theme) => ({
       margin: '2em auto',
     },
   },
-  contact: {
+/*   contact: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     margin: 'auto',
-  },
-  info: {
+  }, */
+  contact: {
     minWidth: '100%',
     [theme.breakpoints.up('sm')]: {
       flex: 1,
       minWidth: 'auto',
     },
   },
-  address: {
+  info: {
     maxWidth: '100%',
     minWidth: '100%',
     margin: '1em auto 2em',
-    display: 'grid',
-    gridGap: '10px',
-    gridTemplate: 'auto 1fr / auto 1fr',
-    justifyContent: 'center',
+    display: 'flex',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
-      /* maxWidth: '50%' */
+      flexDirection: 'column',
+      alignItems: 'flex-start'
     },
   },
-  map: {},
+  address: {
+    display:'flex'
+  },
 }));
