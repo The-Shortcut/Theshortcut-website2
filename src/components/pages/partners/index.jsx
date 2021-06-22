@@ -51,7 +51,7 @@ const Partners = () => {
           INITIATIVES
         </Button>
         <Button variant='contained' color='primary' className={classes.button} onClick={executeScrollInt}>
-          INTRESTED?
+          WORK WITH US
         </Button>
       </div>
       <PartnersStatistics />

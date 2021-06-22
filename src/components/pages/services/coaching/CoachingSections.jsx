@@ -14,12 +14,12 @@ const CoachingSections = () => {
     <div className={classes.root}>
       <div className={classes.container}>
         {coachingData.map((item, index) => (
-          <Card variant='outlined' key={index} className={classes.card}>
+          <Card key={index} className={classes.card}>
             <CardActionArea disabled={!item.active}>
               <CardContent className={classes.cardContent}>
-                <img className={classes.imageContainer} src={item.image} alt={item.title} />
+                <div className={classes.iconContainer}>{item.icon}</div>
                 <Typography variant='h4' className={classes.title}>
-                  {item.title}
+                  {item.title.toLocaleUpperCase()}
                 </Typography>
                 <Typography variant='subtitle1' component='p' className={classes.text}>
                   {item.description}
@@ -75,12 +75,20 @@ const useStyles = makeStyles((theme) => ({
     margin: '1em auto',
     borderRadius: '10px',
     /* maxWidth: 280, */
-    minHeight: 520,
-    maxHeight: 520,
+    minHeight: 550,
+    maxHeight: 550,
+    [theme.breakpoints.down('md')]: {
+      minHeight: 580,
+      maxHeight: 580,
+    },
     [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(3),
-      minHeight: 560,
-      maxHeight: 560,
+      marginTop: theme.spacing(1),
+      minHeight: 520,
+      maxHeight: 520,
+    },
+    [theme.breakpoints.down('xs')]: {
+      minHeight: 480,
+      maxHeight: 480,
     },
   },
   cardContent: {
@@ -104,22 +112,49 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#fff',
   },
   title: {
-    minHeight: '40px',
-    maxHeight: '40px',
-    margin: '1em auto',
+    minHeight: '50px',
+    maxHeight: '50px',
+    [theme.breakpoints.down('md')]: {
+      minHeight: '65px',
+      maxHeight: '65px',
+    },
+    margin: 'auto',
     textAlign: 'center',
   },
   text: {
     textAlign: 'center',
-    minHeight: '190px',
-    maxHeight: '190px',
-    [theme.breakpoints.down('xs')]: {
-      minHeight: '270px',
-      maxHeight: '270px',
-    },
     lineHeight: '1.5em',
+    minHeight: '250px',
+    maxHeight: '250px',
+    [theme.breakpoints.down('md')]: {
+      minHeight: '280px',
+      maxHeight: '280px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '210px',
+      maxHeight: '210px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '170px',
+      maxHeight: '170px',
+    },
   },
   btn: {
     marginTop: 35,
+  },
+  iconContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '150%',
+    maxWidth: '7em',
+    minWidth: '7em',
+    maxHeight: '7em',
+    minHeight: '7em',
+    margin: '1em 0 0 0',
+    [theme.breakpoints.down('xs')]: {
+      margin: '1em 0 0 0',
+    },
+    backgroundColor: '#fff',
   },
 }));

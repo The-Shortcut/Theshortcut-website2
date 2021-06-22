@@ -36,7 +36,7 @@ const AboutUs = ({ aboutusRef }) => {
               variant='contained'
               color='primary'
               style={{ color: '#FFFFFF', marginTop: '2em' }}>
-              See Community
+              See Our Community
             </Button>
           </Link>
         </div>

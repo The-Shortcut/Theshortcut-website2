@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 import heroImage from '../../../assets/photos/eventsHero2.JPG';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 
 // REDUX
 import { useSelector } from 'react-redux';
@@ -18,6 +19,13 @@ import PaginationOutlined from '../../functional/Pagination';
 const AllEvents = () => {
   const classes = useStyles();
   const { isLoading, filteredEvents } = useSelector((state) => state.events);
+
+  const allEvRef = useRef(null);
+  const byobRef = useRef(null);
+  const scrollToAllEv = (ref) => window.scrollTo(0, ref.current.offsetTop - 100);
+  const scrollToBoyb = (ref) => window.scrollTo(0, ref.current.offsetTop - 45);
+  const executeScrollAllEv = () => scrollToAllEv(allEvRef);
+  const executeScrollByob = () => scrollToBoyb(byobRef);
 
   return (
     <div>
@@ -35,7 +43,19 @@ const AllEvents = () => {
       <Typography variant='h1' className={classes.title}>
         Events
       </Typography>
-      <Subject />
+      <div className={classes.buttons}>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={executeScrollAllEv}>
+          ALL EVENTS
+        </Button>
+        <Button variant='contained' color='default' className={classes.button} href='/events/byob'>
+          B.Y.O.B
+        </Button>
+      </div>
+      <Subject allEvRef={allEvRef} />
       <SearchEvents />
       {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
       <EventsList />
@@ -60,18 +80,60 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     minWidth: '100%',
+    maxWidth: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    maxWidth: '80%',
     textAlign: 'center',
     color: '#FFFFFF',
-    marginTop: '-5.2em',
+    marginTop: '-3.3em',
     zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-      marginTop: '-2em',
+      marginTop: '-2.4em',
     },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '-1.5em',
+    },
+  },
+  buttons: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    maxWidth: '40%',
+    margin: '-9em auto 0',
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '55%',
+      margin: '-9em auto 0',
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '70%',
+      marginTop: 0,
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+    },
+  },
+  button: {
+    display: 'inline',
+    minWidth: '11em',
+    maxWidth: '11em',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    textTransform: 'none',
+    margin: '1em 0',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '12em',
+      maxWidth: '12em',
+      fontSize: '0.8rem',
+      marginTop: 0,
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '11em',
+      maxWidth: '11em',
+    },
+    textAlign: 'center',
   },
   text: {
     textAlign: 'center',

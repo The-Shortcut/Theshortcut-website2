@@ -35,7 +35,7 @@ export const navBarData = [
   },
   {
     title: 'EVENTS',
-    path:'/events'
+    path:'/events/all'
     /* mainPath: '/events/all',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
@@ -68,7 +68,7 @@ export const navBarData = [
     ], */
   },
   {
-    title: 'PARTNERS',
+    title: 'FOR PARTNERS',
     path: '/partners',
     icon: null,
   },
@@ -88,11 +88,11 @@ export const navBarData = [
     path: '/our-impact',
     icon: null,
   },
-  {
+  /* {
     title: 'BLOG',
     path: '/blog',
     icon: null,
-  },
+  }, */
   {
     title: 'CONTACT US',
     path:'/contact-us'

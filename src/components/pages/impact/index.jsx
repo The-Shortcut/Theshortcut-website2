@@ -47,7 +47,7 @@ const OurImpact = () => {
           color='primary'
           className={classes.button}
           onClick={executeScrollDriven}>
-          DRIVEN STATS
+          WHAT DRIVES US
         </Button>
         <Button
           variant='contained'
@@ -61,7 +61,7 @@ const OurImpact = () => {
           color='primary'
           className={classes.button}
           onClick={executeScrollGoals}>
-          IMPACT GOALS
+          OUR IMPACT GOALS
         </Button>
       </div>
       <ImpactStatistics drivenRef={drivenRef} />
@@ -124,8 +124,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     display: 'inline',
-    minWidth: '9em',
-    maxWidth: '9em',
+    minWidth: '11em',
+    maxWidth: '11em',
     color: '#FFFFFF',
     fontSize: '1.2rem',
     fontWeight: 'bold',

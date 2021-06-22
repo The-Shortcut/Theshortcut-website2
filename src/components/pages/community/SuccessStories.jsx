@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 
 //Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 // REDUX

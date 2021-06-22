@@ -44,7 +44,7 @@ const Community = () => {
           color='primary'
           className={classes.button}
           onClick={executeScrollWelcome}>
-          WELCOME TO US
+          WELCOME
         </Button>
         <Button
           variant='contained'

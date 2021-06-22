@@ -47,6 +47,15 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    flexBasis: '22%',
+    margin: '1em auto',
+    [theme.breakpoints.down('xs')]: {
+      flexBasis: '40%',
+    },
   },
   icon: {
     minWidth: 70,
@@ -59,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
       minHeight: 60,
       maxHeight: 60,
     },
-   /*  [theme.breakpoints.down('xs')]: {
+    /*  [theme.breakpoints.down('xs')]: {
       background: 'none',
       border: 'none',
       boxShadow: 'none',

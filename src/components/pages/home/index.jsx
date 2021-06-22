@@ -106,7 +106,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     display: 'inline',
-    width: '12.5em',
+    minWidth: '12.5em',
+    maxWidth: '12.5em',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',
@@ -116,8 +117,8 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '0.8rem',
       marginTop: 0,
     },
-    /*  [theme.breakpoints.down('xs')]: {
-      marginTop: '1em',
-    }, */
+     [theme.breakpoints.down('xs')]: {
+      minWidth: '15em',
+    },
   },
 }));

@@ -7,10 +7,10 @@ import { Typography } from '@material-ui/core';
 
 import Title from '../../custom/Title';
 
-const Subject = () => {
+const Subject = ({ allEvRef }) => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div ref={allEvRef} className={classes.root}>
       {/* <div className={classes.mark}>
         <EventAvailableIcon color='primary' style={{ fontSize: '4rem', margin: 'auto' }} />
       </div> */}
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '80%',
     maxWidth: '80%',
-    margin: '4em auto',
+    margin: '7em auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       marginLeft: '10px',
-     /*  textAlign: 'justify', */
+      /*  textAlign: 'justify', */
     },
   },
 }));

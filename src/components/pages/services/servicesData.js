@@ -3,15 +3,16 @@ import clinicImage from '../../../assets/photos/clinicImage.jpg';
 import personalSessionImage from '../../../assets/photos/personalSession.jpg';
 import askMeLiveImage from '../../../assets/photos/askMeLive.jpg';
 import staticImage from '../../../assets/illustrations/9.png';
+import { RiMovieFill, RiQuestionAnswerFill } from 'react-icons/ri';
+import { GiClover } from 'react-icons/gi';
+import { FaHandsHelping } from 'react-icons/fa';
 
 // For trainingData
-import digiTrainingImg from '../../../assets/photos/partner1.jpg';
-import entrepreneureshiptImg from '../../../assets/photos/partnersHero2.jpeg';
-import techTrainingImg from '../../../assets/photos/integration.jpg';
-import careerClinicImg from '../../../assets/photos/skills-workshop.jpg';
+import digiTrainingImg from '../../../assets/photos/digiTrainingImg.jpg';
+import entrepreneureshiptImg from '../../../assets/photos/entrepreneureshiptImg.jpg';
+import techTrainingImg from '../../../assets/photos/techTrainingImg.jpg';
+import careerClinicImg from '../../../assets/photos/careerClinicImg.JPG';
 import elyLogo from '../../../assets/logo/partners/ely-logo.png';
-
-
 
 export const coachingData = [
   {
@@ -19,15 +20,15 @@ export const coachingData = [
     description:
       'This is a 9 video series that you can access at any time that goes over issues such as CVs, cover letters, job searching, networking, interviews, time management, LinkedIn profile, and effective communication.',
     link: ' https://www.youtube.com/playlist?list=PLwPjXphlI7pRYSB3z2yFU38vOEQL_bSrw',
-    image: clinicImage,
+    icon: <RiMovieFill style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
   },
   {
-    title: 'OPEN PERSONAL SESSIONS',
+    title: 'LOTTERY SESSIONS',
     description:
-      'These sessions are available to the community via reservation or drop-in for a  short personal session (depending on if they are online or in-person) with our Career Coach.',
+      'These sessions are a monthly giveaway to our community. You are entered into this lottery by participating in the Ask Me Anything sessions or being active in our online community. This session is online with our Career Coach to discuss specific topics such as your individual CV or interview skills.',
     link: '',
-    image: personalSessionImage,
+    icon: <GiClover style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
   },
   {
@@ -35,15 +36,15 @@ export const coachingData = [
     description:
       'These are open sessions that take place on FB live and Instagram Live where our experts will answer questions that have been sent beforehand or during the live chat.',
     link: '',
-    image: askMeLiveImage,
+    icon: <RiQuestionAnswerFill style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
   },
   {
-    title: 'LIMITED COACHING',
+    title: 'Työ-SIB Coaching Program',
     description:
-      'We are a trusted partner for different organizations that ask us to conduct coaching and training for them. These funders determine whom we can coach. This coaching service is, unfortunately, not open to everyone. ',
+      'We are a trusted partner for Työ-SIB (Social Impact Bond) for career coaching. Coaching includes both individual and group training. Työ-SIB decides who is admitted to this program, so contact your TE office or email info@tyosib.fi directly for more information to see if you are eligible.',
     link: '',
-    image: staticImage,
+    icon: <FaHandsHelping style={{ fontSize: 60, color: '#00A99D' }} />,
     active: false,
   },
 ];

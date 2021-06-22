@@ -4,6 +4,7 @@ import {
   INIT_CODE_OF_CONDUCT,
   INIT_TERMS,
   SERVICES_FAQ_DATA,
+  BYOB_FAQ_DATA
 } from './types';
 
 import docServices from '../services/docs';
@@ -47,3 +48,12 @@ export const getServicesFAQ = () => async (dispatch) => {
     payload: services_faq,
   });
 };
+
+export const getByobFAQ = () => async (dispatch) => {
+  const services_faq = await docServices.getByobFAQData();
+  dispatch({
+    type: BYOB_FAQ_DATA,
+    payload: services_faq,
+  });
+};
+

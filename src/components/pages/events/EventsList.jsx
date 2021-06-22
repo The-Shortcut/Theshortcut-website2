@@ -74,11 +74,11 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '95%',
       maxWidth: '95%',
     },
-    margin: '5em auto',
+    margin: 'auto',
   },
   container: {
     display: 'grid',
-    gridGap: '20px',
+    gridGap: '10px',
     gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '100%',
     maxWidth: '100%',
     /*     border: '2px solid red', */
-    margin: '5em auto',
+    margin: 'auto',
   },
   noMatched: {
     minWidth: 335,

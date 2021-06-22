@@ -17,12 +17,12 @@ const PaginationOutlined = () => {
   const handleChange = (event, value) => {
     if (window.innerWidth < 600) {
       window.scrollTo({
-        top: 580,
+        top: 830,
         behavior: 'smooth',
       });
     } else {
       window.scrollTo({
-        top: 640,
+        top: 970,
         behavior: 'smooth',
       });
     }

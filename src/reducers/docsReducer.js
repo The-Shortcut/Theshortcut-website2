@@ -4,6 +4,7 @@ import {
   INIT_CODE_OF_CONDUCT,
   INIT_TERMS,
   SERVICES_FAQ_DATA,
+  BYOB_FAQ_DATA,
 } from '../actions/types';
 
 const initState = {
@@ -21,6 +22,10 @@ const initState = {
   servicesFaqLoaded: false,
   coachingFAQ: null,
   trainingFAQ: null,
+  byobFaqLoaded: false,
+  beforeFAQ: null,
+  inProcessFAQ: null,
+  aboutFAQ: null,
 };
 
 const reducer = (state = initState, action) => {
@@ -60,6 +65,18 @@ const reducer = (state = initState, action) => {
         servicesFaqLoaded: true,
         coachingFAQ: coachingFaq,
         trainingFAQ: trainingFaq,
+      };
+    case BYOB_FAQ_DATA:
+      console.log(payload);
+      let beforeFaq = payload?.filter((faq) => faq.acf.tag === 'before');
+      let inProcessFaq = payload?.filter((faq) => faq.acf.tag === 'in-process');
+      let aboutFaq = payload?.filter((faq) => faq.acf.tag === 'about');
+      return {
+        ...state,
+        byobFaqLoaded: true,
+        beforeFAQ: beforeFaq.reverse(),
+        inProcessFAQ: inProcessFaq.reverse(),
+        aboutFAQ: aboutFaq.reverse(),
       };
     default:
       return state;

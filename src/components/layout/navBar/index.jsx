@@ -58,7 +58,7 @@ console.log(path)
         <AppBar
           position='fixed'
           style={
-            pageHeight > 100 ? { backgroundColor: '#434343' } : { backgroundColor: path === '/visit' ? '#434343' : 'transparent' }
+            pageHeight > 100 ? { backgroundColor: '#434343' } : { backgroundColor: (path === '/visit' || path === '/events/byob') ? '#434343' : 'transparent' }
           }>
           <Toolbar className={classes.toolBar}>
             <div className={classes.title}>

@@ -23,10 +23,6 @@ const Intro = () => {
           The place for professional and social integration in Finland.
         </Typography>
         <div className={classes.address}>
-          <PhoneIcon />
-          <Typography variant='subtitle1' component='p'>
-            +358 46 640 3900
-          </Typography>
           <EmailIcon />
           <Typography variant='subtitle1' component='p'>
             info@theshortcut.org

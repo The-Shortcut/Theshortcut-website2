@@ -14,8 +14,9 @@ const Coaching = ({ coachingRef }) => {
     <section ref={coachingRef} className={classes.intro}>
       <Title>Career Coaching</Title>
       <Typography variant='body1' className={classes.text}>
-        All-access coaching resources are open to all and available free for everyone to utilize.
-        These include pre-recorded material, live events, and self-directed learning and work.
+        Many of our career coaching services are open to all and available free for everyone to
+        utilize. These include pre-recorded material, live events, and self-directed learning and
+        work. Our Työ-SIB program is limited access.
       </Typography>
       <CoachingSections />
       <div id='training' />

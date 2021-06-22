@@ -52,7 +52,7 @@ const CovidBanner = () => {
         onClose={handleClose}
         message={
           <Typography variant='body1'>
-            <strong>COVID-19:</strong> We have restricted openings. Book your visit in advance.
+            <strong>COVID-19:</strong> We have restricted openings. Please book your visit in advance.
           </Typography>
         }
         action={

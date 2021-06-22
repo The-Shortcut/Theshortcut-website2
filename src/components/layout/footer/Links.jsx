@@ -20,6 +20,11 @@ const Links = () => {
             FAQ
           </Typography>
         </a>
+        <a href='/about/#core-values' className={classes.link}>
+          <Typography variant='subtitle1' component='p' className={classes.item}>
+            Core Values
+          </Typography>
+        </a>
         <Link to='/code' className={classes.link}>
           <Typography
             variant='subtitle1'
@@ -29,11 +34,6 @@ const Links = () => {
             Code of Conduct
           </Typography>
         </Link>
-        <a href='/about/#core-values' className={classes.link}>
-          <Typography variant='subtitle1' component='p' className={classes.item}>
-            Core Values
-          </Typography>
-        </a>
         <Link to='/terms' className={classes.link}>
           <Typography
             variant='subtitle1'

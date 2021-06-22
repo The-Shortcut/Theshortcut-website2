@@ -75,7 +75,7 @@ const EventCard = ({ event }) => {
   return (
     <Card className={classes.card}>
       <CardMedia className={classes.media} image={image} title={title} />
-{/*         <img src={image} alt={title} width='100%' className={classes.media} />
+      {/*         <img src={image} alt={title} width='100%' className={classes.media} />
       </CardMedia> */}
       <CardContent className={classes.info}>
         <div
@@ -163,9 +163,10 @@ const useStyles = makeStyles((theme) => ({
     background: '#F9F9F9',
     border: '1px solid #434343',
     borderRadius: '10px',
-    margin: '2em auto',
+    margin: '1em auto',
     [theme.breakpoints.down('sm')]: {
       minHeight: 660,
+      marginBottom: 0,
     },
     display: 'flex',
     flexDirection: 'column',

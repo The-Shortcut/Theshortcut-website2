@@ -1,37 +1,35 @@
 // Material-UI Icons
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-import EventIcon from '@material-ui/icons/Event';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 // REACT-ICONS
-import { BsFilePost } from 'react-icons/bs';
-import { FaCalendarDay } from 'react-icons/fa';
+import { RiUserHeartFill } from 'react-icons/ri';
+import { FaCalendarDay, FaUserNinja, FaTransgenderAlt } from 'react-icons/fa';
 import { MdDirectionsRun, MdShare } from 'react-icons/md';
+import { BsFillFlagFill } from 'react-icons/bs';
 
 export const statData = [
   {
-    title: 'members',
-    amount: '2,240',
-    icon: <PeopleAltIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
+    title: 'Nationalities',
+    amount: '132',
+    icon: <BsFillFlagFill style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'events',
-    amount: '225',
-    icon: <EventIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
+    title: 'Gender',
+    amount: 'F54/M45/other 1%',
+    icon: <FaTransgenderAlt style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'posts',
-    amount: '1,250',
-    icon: <BsFilePost style={{ fontSize: 40, color: '#FFFFFF' }} />,
+    title: 'Entrepreneurs',
+    amount: '10%',
+    icon: <FaUserNinja style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'likes',
-    amount: '17,823,244',
-    icon: <ThumbUpIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
+    title: 'Want a meaningful life',
+    amount: '100%',
+    icon: <RiUserHeartFill style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
 ];
 
