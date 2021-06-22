@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '2em',
+    },
     /*  [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',

@@ -71,7 +71,9 @@ const useStyles = makeStyles((theme) => ({
       minHeight: 520,
     },
     [theme.breakpoints.down('sm')]: {
-      minHeight: 520,
+      margin: '3em auto',
+      minHeight: 460,
+      maxHeight: 460,
     },
     [theme.breakpoints.down('xs')]: {
       margin: 'auto',
@@ -132,14 +134,9 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: '15em',
     },
     [theme.breakpoints.down('sm')]: {
-      minHeight: '15em',
-      maxHeight: '15em',
+      minHeight: '12em',
+      maxHeight: '12em',
     },
-    [theme.breakpoints.down('xs')]: {
-      minHeight: '16em',
-      maxHeight: '16em',
-    },
-    /*     border: '1px solid red', */
   },
   button: {
     display: 'inline',

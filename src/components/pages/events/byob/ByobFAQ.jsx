@@ -132,11 +132,11 @@ export default ByobFAQ;
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '70%',
+    margin: '6em auto',
     [theme.breakpoints.down('sm')]: {
       maxWidth: '90%',
-      marginBottom: theme.spacing(5),
+    margin: '2em auto',
     },
-    margin: '6em auto',
   },
   sectionTitle: {
     margin: '1em',

@@ -28,7 +28,7 @@ export default Subject;
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    margin: '6em',
+    margin: '6em auto',
   },
   text: {
     margin: 'auto',
@@ -36,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '70%',
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
-      minWidth: '100%',
-      maxWidth: '100%',
+      minWidth: '90%',
+      maxWidth: '90%',
     },
   },
 }));

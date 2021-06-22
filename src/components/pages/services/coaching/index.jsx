@@ -29,6 +29,9 @@ export default Coaching;
 const useStyles = makeStyles((theme) => ({
   intro: {
     margin: '7em 1em',
+    [theme.breakpoints.down('sm')]: {
+      margin:'1em auto'
+    }
   },
   text: {
     margin: 'auto',

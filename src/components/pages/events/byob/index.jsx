@@ -47,8 +47,8 @@ const BYOB = () => {
           APPLY NOW
         </Button>
       </section>
-      <div style={{ background: '#DDDDDD', border:'1px solid #DDDDDD', margin:'7em auto'}}>
-      <ByobFAQ />
+      <div className={classes.wrapper}>
+        <ByobFAQ />
       </div>
       <section className={classes.intro}>
         <Typography varian='body1'>
@@ -60,10 +60,10 @@ const BYOB = () => {
           contact TE telephone services (in English):
         </Typography>
         <ul>
-          <li style={{fontSize:'1rem'}}>
+          <li style={{ fontSize: '1rem' }}>
             tel. <a href='tel:+358295020713'>0295 020 713</a> (Mon-Fri 9.00 - 16.15)
           </li>
-          <li style={{fontSize:'1rem'}}>
+          <li style={{ fontSize: '1rem' }}>
             <a href='www.facebook.com/koulutusneuvonta'>www.facebook.com/koulutusneuvonta</a>
           </li>
         </ul>
@@ -89,16 +89,18 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     maxHeight: '100vh',
     background: `url(${heroImage}) center/cover fixed no-repeat`,
-    objectFit: 'cover',
   },
   intro: {
     minWidth: '70%',
     maxWidth: '70%',
+    margin: '4em auto',
     [theme.breakpoints.down('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
     },
-    margin: '4em auto',
+    [theme.breakpoints.down('xs')]: {
+      margin: '1em auto',
+    },
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -117,5 +119,14 @@ const useStyles = makeStyles((theme) => ({
       width: '12em',
       fontSize: '0.8rem',
     },
+  },
+  wrapper: {
+    background: '#DDDDDD',
+    border: '1px solid #DDDDDD',
+    margin: '7em auto',
+    [theme.breakpoints.down('sm')]: {
+    margin: '2em auto',
+      
+    }
   },
 }));

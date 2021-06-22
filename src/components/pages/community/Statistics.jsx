@@ -68,16 +68,11 @@ const useStyles = makeStyles((theme) => ({
       minHeight: 60,
       maxHeight: 60,
     },
-    /*  [theme.breakpoints.down('xs')]: {
-      background: 'none',
-      border: 'none',
-      boxShadow: 'none',
-      color: theme.palette.primary.main,
-    }, */
     border: '1px solid #888',
     borderRadius: '50%',
     boxShadow: ' 0px 0px 22px -5px #434343',
     background: theme.palette.primary.main,
+    marginBottom: 10,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

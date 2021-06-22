@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: '22%',
     [theme.breakpoints.down('xs')]: {
       flexBasis: '40%',
+      marginTop: 20
     },
   },
   icon: {

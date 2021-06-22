@@ -89,19 +89,23 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    minWidth: '40%',
     maxWidth: '40%',
     margin: '6em auto 0',
     [theme.breakpoints.only('md')]: {
+      minWidth: '55%',
       maxWidth: '55%',
       margin: '5em auto 0',
     },
     [theme.breakpoints.down('sm')]: {
+      minWidth: '50%',
       maxWidth: '50%',
       margin: '4em auto 0',
     },
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'center',
-      
+      minWidth: '60%',
+      maxWidth: '60%',
     },
   },
   button: {
