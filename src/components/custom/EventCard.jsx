@@ -21,6 +21,9 @@ import ShareButton from '../functional/ShareButton';
 // Default Image
 import defaultImage from '../../assets/photos/defaultImage.png';
 
+// Analytics
+import analytics from '../functional/analytics';
+
 const EventCard = ({ event }) => {
   const classes = useStyles();
   const [eventID, setEventID] = useState(null);
@@ -62,16 +65,32 @@ const EventCard = ({ event }) => {
     return `${startH}:${startArr[4]}${startAP} - ${endH}:${endArr[4]}${endAP}`;
   };
   const setStatus = (status) => {
-    if (status.includes('Video')) {
+    if (status.toLowerCase().includes('video')) {
       return 'WATCH NOW';
-    } else if (status.includes('completed') || status.includes('canceled')) {
+    } else if (status.toLowerCase().includes('completed') || status.toLowerCase().includes('canceled')) {
       return 'LEARN MORE';
-    } else if (status.includes('Audio')) {
+    } else if (status.toLowerCase().includes('audio')) {
       return 'LISTEN NOW';
+    } else if (availability.toLowerCase() === 'upcoming') {
+      return 'REGISTER';
     } else {
       return 'REGISTER';
     }
   };
+
+  const handleAnalysis = (targetEvent) => {
+    console.log(targetEvent);
+    if (targetEvent.id) {
+      setEventID(targetEvent.id);
+    }
+    analytics.sendEvent({
+      category: 'Select Event',
+      action: targetEvent.status,
+      label: targetEvent.name.text,
+      value: 1,
+    })
+  };
+  console.log({ eventID });
   return (
     <Card className={classes.card}>
       <CardMedia className={classes.media} image={image} title={title} />
@@ -125,29 +144,18 @@ const EventCard = ({ event }) => {
         {/* <Link to={{ pathname: `/events/all/${event.id}`, state: { data: event } }}>event page</Link> */}
       </CardContent>
       <CardActions className={classes.action}>
-        {availability === 'upcoming' ? (
-          <Button
-            variant='outlined'
-            color='primary'
-            size='medium'
-            onClick={() => setEventID(event.id)}
-            endIcon={<TrendingFlatIcon />}
-            id={`example-widget-trigger-${eventID}`}
-            type='button'>
-            Register
-          </Button>
-        ) : (
-          <Button
-            variant='outlined'
-            color='primary'
-            size='medium'
-            endIcon={<TrendingFlatIcon />}
-            href={link}
-            target='_blank'
-            rel='noopener noreferrer'>
-            {setStatus(event.status)}
-          </Button>
-        )}
+        <Button
+          variant='outlined'
+          color='primary'
+          size='medium'
+          endIcon={<TrendingFlatIcon />}
+          href={link}
+          id={`example-widget-trigger-${eventID}`}
+          onClick={() => handleAnalysis(event)}
+          target='_blank'
+          rel='noopener noreferrer'>
+          {setStatus(event.status)}
+        </Button>
         <ShareButton event={event} />
       </CardActions>
     </Card>

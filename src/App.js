@@ -15,6 +15,7 @@ import ScrollToTop from './ScrollToTop';
 
 const App = () => {
   const [pageH, setPageH] = useState(null);
+
   useEffect(() => {
     window.addEventListener('scroll', () => setPageH(window.scrollY));
   }, []);

@@ -23,9 +23,15 @@ import PrivacyPolicies from './components/layout/documents/PrivacyPolicies';
 import CodeOfConduct from './components/layout/documents/CodeOfConduct';
 import TermsOfUse from './components/layout/documents/TermsOfUse';
 
+// Analytics Hooks
+import useGoogleAnalytics from './hooks/useGoogleAnalytics';
+
+
 const NotFound = lazy(() => import('./components/layout/NotFound'));
 
+
 const Routes = () => {
+  useGoogleAnalytics();
   return (
     <Switch>
       <Route exact path='/' component={Home} />
@@ -51,8 +57,8 @@ const Routes = () => {
       <Suspense fallback={<div>loading...</div>}>
         <Switch>
           <Route exact path='/visit' component={Visit} />
-          <Route exact path="/404" component={NotFound} />
-          <Redirect to="/404" />
+          <Route exact path='/404' component={NotFound} />
+          <Redirect to='/404' />
         </Switch>
       </Suspense>
     </Switch>
