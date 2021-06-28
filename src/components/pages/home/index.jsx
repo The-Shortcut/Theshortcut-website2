@@ -48,7 +48,7 @@ const LandingPage = () => {
           </Button>
           {/* </Link> */}
           <Link href='/partners' style={{ textDecoration: 'none' }}>
-            <Button variant='contained' size='large' color='default' className={classes.button}>
+            <Button variant='contained' color='default' className={classes.button}>
               COLLABORATE WITH US
             </Button>
           </Link>
@@ -97,17 +97,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    minWidth: '40%',
-    maxWidth: '40%',
+    minWidth: '45%',
+    maxWidth: '45%',
     margin: '6em auto 0',
-    [theme.breakpoints.only('md')]: {
-      minWidth: '55%',
-      maxWidth: '55%',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '60%',
+      maxWidth: '60%',
       margin: '5em auto 0',
     },
     [theme.breakpoints.down('sm')]: {
-      minWidth: '50%',
-      maxWidth: '50%',
+      minWidth: '55%',
+      maxWidth: '55%',
       margin: '4em auto 0',
     },
     [theme.breakpoints.down('xs')]: {
@@ -118,8 +118,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     display: 'inline',
-    minWidth: '12.5em',
-    maxWidth: '12.5em',
+    minWidth: '13.5em',
+    maxWidth: '13.5em',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',
@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 0,
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '15em',
+      minWidth: '15.5em',
     },
   },
 }));
