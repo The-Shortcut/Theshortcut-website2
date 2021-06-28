@@ -1,8 +1,8 @@
 {
-  "name": "website2",
+  "name": "theshrotcut",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.theshortcut.org",
+  "homepage": "https://theshortcut.org",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -15,6 +15,7 @@
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-map-gl": "^6.1.13",
     "react-player": "^2.9.0",
@@ -34,6 +35,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "author": {
+    "name": "The Startup Shortcut Oy",
+    "email": "theshortcut@theshortcut.org"
   },
   "eslintConfig": {
     "extends": [

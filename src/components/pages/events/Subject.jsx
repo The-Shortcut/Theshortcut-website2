@@ -41,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       marginTop: '2em',
     },
+    textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '90%',
+    },
     /*  [theme.breakpoints.down('md')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -74,8 +78,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
-    marginLeft: '25px',
+    margin: 'auto',
     textAlign: 'center',
+    maxWidth: '80%',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '90%',
+    },
     [theme.breakpoints.down('sm')]: {
       marginLeft: '10px',
       /*  textAlign: 'justify', */

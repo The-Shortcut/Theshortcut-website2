@@ -1,4 +1,7 @@
-import React, { useRef} from 'react';
+import React, { useRef } from 'react';
+
+// Meta Tag
+import MetaTag from '../../utils/MetaTag';
 
 // Hero Image
 import heroImage from '../../../assets/photos/partnersHero2.jpeg';
@@ -29,12 +32,17 @@ const Partners = () => {
 
   return (
     <div>
+      <MetaTag
+        title='For Partners | The Shortcut'
+        description='Let’s solve unemployment in Finland together. Partner with us to leverage The Shortcut’s training expertise and lead change.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/for-partners.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
           width='100%'
           height='auto'
-          alt='about-page'
+          alt='for partners-page'
           style={{ filter: 'brightness(40%)' }}
         />
       ) : (
@@ -44,13 +52,25 @@ const Partners = () => {
         For Partners
       </Typography>
       <div className={classes.buttons}>
-        <Button variant='contained' color='primary' className={classes.button} onClick={executeScrollWork}>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={executeScrollWork}>
           HOW WE WORK
         </Button>
-        <Button variant='contained' color='primary' className={classes.button} onClick={executeScrollInit}>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={executeScrollInit}>
           INITIATIVES
         </Button>
-        <Button variant='contained' color='primary' className={classes.button} onClick={executeScrollInt}>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
+          onClick={executeScrollInt}>
           WORK WITH US
         </Button>
       </div>
@@ -94,8 +114,8 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '-2.4em',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop:'-1.5em'
-    }
+      marginTop: '-1.5em',
+    },
   },
   buttons: {
     display: 'flex',

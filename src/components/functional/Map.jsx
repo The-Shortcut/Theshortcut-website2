@@ -1,3 +1,4 @@
+/* eslint-disable no-self-assign */
 import React, { useState } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 
@@ -19,8 +20,11 @@ const Map = () => {
       {...viewport}
       mapboxApiAccessToken={TOKEN}
       mapStyle='mapbox://styles/theshortcut/ck9zsj3703njw1isa34hx4jzy'
-      onViewportChange={(nextViewport) => {
-        setViewport(nextViewport);
+      onViewportChange={(viewport) => {
+        window.innerWidth <= `768`
+          ? (viewport.width = "90vw")
+          : (viewport.width = viewport.width);
+        setViewport(viewport);
       }}
       style={{margin:'auto', minWidth:'100%', maxHeight:'220px'}}>
       <Marker latitude={60.16723} longitude={24.92175}>

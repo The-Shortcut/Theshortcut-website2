@@ -27,7 +27,7 @@ const reducer = (state = initState, action) => {
 
       return {
         ...state,
-        events: incompleted,
+        events: incompleted.sort(() => Math.random() - 0.5),
         allEvents: payload,
         filteredEvents: incompleted,
         isLoading: false,
@@ -49,12 +49,18 @@ const reducer = (state = initState, action) => {
         filterEvents = state.events.filter((event) => event.status.includes('record'));
       }
       if (payload === 'upcoming') {
-        filterEvents = state.events.filter((event) => event.status === 'upcoming' || event.status === 'Application Open');
+        filterEvents = state.events.filter(
+          (event) => event.status === 'upcoming' || event.status === 'Application Open'
+        );
       }
       if (payload === '') {
-        filterEvents = state.events
+        filterEvents = state.events;
       }
-      return { ...state, filteredEvents: filterEvents, currentPage: 1 };
+      return {
+        ...state,
+        filteredEvents: filterEvents.sort(() => Math.random() - 0.5),
+        currentPage: 1,
+      };
 
     case PAGINATION:
       let { currentPage, perPage, events, filteredEvents, currentItems, totalItems } = state;

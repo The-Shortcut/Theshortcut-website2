@@ -18,7 +18,7 @@ const Training = ({ trainingRef }) => {
         <Typography variant='body1' className={classes.text}>
           <strong>Current opportunities</strong>
           <br />
-          "We are working hard to create more opportunities, check back later"
+          We are working hard to create more opportunities, check back later.
         </Typography>
         <TrainingSections />
       </div>
@@ -36,12 +36,12 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     margin: 'auto',
-    minWidth: '50%',
-    maxWidth: '50%',
+    minWidth: '80%',
+    maxWidth: '80%',
     textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
-      minWidth: '80%',
-      maxWidth: '80%',
+      minWidth: '90%',
+      maxWidth: '90%',
     },
   },
 }));

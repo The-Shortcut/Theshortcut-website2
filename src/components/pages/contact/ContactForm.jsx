@@ -69,7 +69,7 @@ const ContactForm = ({ msgRef }) => {
   /* console.log(state, error); */
   return (
     <div ref={msgRef} className={classes.root}>
-      <Title>Contact Us</Title>
+      <Title>Message Us</Title>
       <form className={classes.form}>
         <div className={classes.textField}>
           <div className={classes.input}>

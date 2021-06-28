@@ -1,5 +1,8 @@
 import React from 'react';
 
+// META TAG
+import MetaTag from '../../../utils/MetaTag';
+
 // Hero Image
 import heroImage from '../../../../assets/photos/BYOB21Banner.gif';
 
@@ -15,13 +18,19 @@ const BYOB = () => {
   const classes = useStyles();
   return (
     <div>
+      <MetaTag
+        title='Be Your Own Boss | The Shortcut'
+        description="Our beloved entrepreneurship training program B.Y.O.B. -Be Your Own Boss is back! This
+          year it will be a 6 weeks long training program. (13th September - 22nd October 2021) The
+          program's goal is to give you the fundamental tools in order to create a viable company."
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/b.y.o.b.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
           width='100%'
           height='auto'
-          alt='contact-page'
-          style={{ filter: 'brightness(40%)' }}
+          alt='BYOB-page'
         />
       ) : (
         <div className={classes.hero} />
@@ -125,8 +134,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid #DDDDDD',
     margin: '7em auto',
     [theme.breakpoints.down('sm')]: {
-    margin: '2em auto',
-      
-    }
+      margin: '2em auto',
+    },
   },
 }));

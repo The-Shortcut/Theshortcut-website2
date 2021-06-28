@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
 
+// META TAG
+import MetaTag from '../../utils/MetaTag';
+
+// Hero Image
 import heroImage from '../../../assets/photos/eventsHero2.JPG';
 
 // Material-UI
@@ -21,20 +24,22 @@ const AllEvents = () => {
   const { isLoading, filteredEvents } = useSelector((state) => state.events);
 
   const allEvRef = useRef(null);
-  const byobRef = useRef(null);
   const scrollToAllEv = (ref) => window.scrollTo(0, ref.current.offsetTop - 100);
-  const scrollToBoyb = (ref) => window.scrollTo(0, ref.current.offsetTop - 45);
   const executeScrollAllEv = () => scrollToAllEv(allEvRef);
-  const executeScrollByob = () => scrollToBoyb(byobRef);
 
   return (
     <div>
+      <MetaTag
+        title='All Events | The Shortcut'
+        description='The Shortcuts hosts in-demand business and technology events for you to upskill your career and network. Start today.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/events.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
           width='100%'
           height='auto'
-          alt='contact-page'
+          alt='all events page'
           style={{ filter: 'brightness(40%)' }}
         />
       ) : (

@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 
+// META TAG
+import MetaTag from '../../utils/MetaTag';
 // Hero Image
 import heroImage from '../../../assets/photos/communityHero.jpg';
 
@@ -24,12 +26,17 @@ const Community = () => {
 
   return (
     <div>
+      <MetaTag
+        title='Community | The Shortcut'
+        description='The Shortcut is a diverse community of learners in Finland. Whether you want to network or transform your career, join us today.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/community.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
           width='100%'
           height='auto'
-          alt='about-page'
+          alt='community-page'
           style={{ filter: 'brightness(40%)' }}
         />
       ) : (

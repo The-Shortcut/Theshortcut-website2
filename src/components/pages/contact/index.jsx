@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 
+// META TAG
+import MetaTag from '../../utils/MetaTag';
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
@@ -27,6 +29,11 @@ const ContactUs = () => {
 
   return (
     <div id='getInTouch'>
+      <MetaTag
+        title='Contact Us | The Shortcut'
+        description='Interested in The Shortcut’s training and events? Get in touch! We are here to help.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/contact-us.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}

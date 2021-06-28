@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
+// Meta Tag
+import MetaTag from '../../utils/MetaTag';
 // REDUX
 import { useSelector, useDispatch } from 'react-redux';
 import { getServicesFAQ } from '../../../actions/docActions';
@@ -40,12 +41,17 @@ const Services = () => {
   console.log({ servicesFaqLoaded, coachingFAQ, trainingFAQ });
   return (
     <div>
+      <MetaTag
+        title='Our Services | The Shortcut'
+        description='Want to upskill or transform your career? Learn more about events, coaching, and training opportunities at The Shortcut here.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/services.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
           width='100%'
           height='auto'
-          alt='about-page'
+          alt='our sevices-page'
           style={{ filter: 'brightness(40%)' }}
         />
       ) : (

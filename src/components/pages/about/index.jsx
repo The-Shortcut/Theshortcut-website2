@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 
+// META TAG
+import MetaTag from '../../utils/MetaTag';
 // Image
 import heroImage from '../../../assets/photos/aboutHero2.jpg';
 
@@ -10,8 +12,6 @@ import { Typography, Button } from '@material-ui/core';
 // Children
 import AboutUs from './AboutUs';
 import CoreValues from './CoreValues';
-/* import SuccessStories from './SuccessStories'; */
-/* import FAQ from './FAQ'; */
 import Team from './Team';
 import Board from './Board';
 
@@ -33,6 +33,11 @@ const About = () => {
 
   return (
     <div>
+      <MetaTag
+        title='About-Us | The Shortcut'
+        description='Practical and impact-driven, The Shortcut offers training, events and mentoring for international professionals to build meaningful careers in Finland.'
+        screenshot = 'https://theshortcut.org/wp-content/uploads/2021/06/about-us.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
@@ -114,8 +119,8 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '-2.4em',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop:'-1.5em'
-    }
+      marginTop: '-1.5em',
+    },
   },
   loc: {
     minWidth: '100%',
@@ -159,9 +164,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '0.8rem',
       marginTop: 0,
     },
-     [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('xs')]: {
       minWidth: '6.8em',
-    maxWidth: '6.8em',
+      maxWidth: '6.8em',
     },
   },
 }));

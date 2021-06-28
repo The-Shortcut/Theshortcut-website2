@@ -158,6 +158,7 @@ export default EventCard;
 
 const useStyles = makeStyles((theme) => ({
   card: {
+    maxWidth: 420,
     minHeight: 600,
     maxHeight: 600,
     background: '#F9F9F9',

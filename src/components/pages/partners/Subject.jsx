@@ -29,15 +29,17 @@ export default Subject;
 const useStyles = makeStyles((theme) => ({
   section: {
     margin: '6em auto',
+    minWidth: '80%',
+    maxWidth: '80%',
   },
   text: {
     margin: 'auto',
-    minWidth: '70%',
-    maxWidth: '70%',
+    minWidth: '80%',
+    maxWidth: '80%',
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
-      minWidth: '90%',
-      maxWidth: '90%',
+      minWidth: '100%',
+      maxWidth: '100%',
     },
   },
 }));

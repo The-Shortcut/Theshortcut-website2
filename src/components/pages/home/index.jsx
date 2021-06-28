@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 
-// image
+// META TAG
+import MetaTag from '../../utils/MetaTag';
+
+// Hero Image
 import heroImage from '../../../assets/photos/home_hero.jpg';
 
 //Materail-UI
@@ -21,6 +24,11 @@ const LandingPage = () => {
 
   return (
     <div>
+      <MetaTag
+        title='Home | The Shortcut'
+        description='The Shortcut is an impact-driven organization that trains and equips community members to build meaningful careers in Finland. Transform your career today.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/homepage-2.png'
+      />
       <div>
         <img src={heroImage} alt='home_hero_image' className={classes.hero} />
         <div className={classes.title}>
@@ -74,8 +82,8 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFFFFF',
     margin: '-30em 11em 0',
     minWidth: '4em',
-    
-   /*  [theme.breakpoints.up('md')]: {
+
+    /*  [theme.breakpoints.up('md')]: {
       margin: '-30em 10em 0',
     }, */
     [theme.breakpoints.down('sm')]: {
@@ -121,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '0.8rem',
       marginTop: 0,
     },
-     [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('xs')]: {
       minWidth: '15em',
     },
   },

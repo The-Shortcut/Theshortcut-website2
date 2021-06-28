@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 
+// META TAG
+import MetaTag from '../../utils/MetaTag';
+
 // Hero Image
 import heroImage from '../../../assets/photos/impactHero2.jpg';
 
@@ -27,12 +30,17 @@ const OurImpact = () => {
 
   return (
     <div>
+      <MetaTag
+        title='Our Impact | The Shortcut'
+        description='Our goal is to improve lives through professional integration in Finland. Nearly 50% of The Shortcut’s training graduates get employed. Check how we do it here.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/our-impact.png'
+      />
       {window.innerWidth < 960 ? (
         <img
           src={heroImage}
           width='100%'
           height='auto'
-          alt='about-page'
+          alt='our impact page'
           style={{ filter: 'brightness(40%)' }}
         />
       ) : (

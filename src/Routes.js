@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
 //Routing
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Components
 import Home from './components/pages/home';
@@ -17,12 +17,13 @@ import OurImpact from './components/pages/impact';
 import Services from './components/pages/services';
 import ContactUs from './components/pages/contact';
 import Visit from './components/pages/visit';
-import NotFound from './components/layout/NotFound';
 
 // Footer
 import PrivacyPolicies from './components/layout/documents/PrivacyPolicies';
 import CodeOfConduct from './components/layout/documents/CodeOfConduct';
 import TermsOfUse from './components/layout/documents/TermsOfUse';
+
+const NotFound = lazy(() => import('./components/layout/NotFound'));
 
 const Routes = () => {
   return (
@@ -38,7 +39,6 @@ const Routes = () => {
       <Route exact path='/community' component={Community} />
       <Route exact path='/our-impact' component={OurImpact} />
       <Route exact path='/contact-us' component={ContactUs} />
-      <Route exact path='/visit' component={Visit} />
       {/* Resources */}
       {/* <Route exact path='/media' component={ForMedia} /> */}
       <Route exact path='/blog' component={Blog} />
@@ -48,7 +48,13 @@ const Routes = () => {
       <Route exact path='/terms' component={TermsOfUse} />
       {/*<Route exact path='/values' component={Values} />
       <Route exact path='/data-description' component={DataDescription} /> */}
-      <Route component={NotFound} />
+      <Suspense fallback={<div>loading...</div>}>
+        <Switch>
+          <Route exact path='/visit' component={Visit} />
+          <Route exact path="/404" component={NotFound} />
+          <Redirect to="/404" />
+        </Switch>
+      </Suspense>
     </Switch>
   );
 };

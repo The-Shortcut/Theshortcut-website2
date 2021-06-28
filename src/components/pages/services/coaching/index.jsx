@@ -11,13 +11,15 @@ import CoachingSections from './CoachingSections';
 const Coaching = ({ coachingRef }) => {
   const classes = useStyles();
   return (
-    <section ref={coachingRef} className={classes.intro}>
+    <section ref={coachingRef} className={classes.root}>
+      <div className={classes.intro}>
       <Title>Career Coaching</Title>
       <Typography variant='body1' className={classes.text}>
         Many of our career coaching services are open to all and available free for everyone to
         utilize. These include pre-recorded material, live events, and self-directed learning and
         work. Our Työ-SIB program is limited access.
       </Typography>
+      </div>
       <CoachingSections />
       <div id='training' />
     </section>
@@ -27,16 +29,21 @@ const Coaching = ({ coachingRef }) => {
 export default Coaching;
 
 const useStyles = makeStyles((theme) => ({
-  intro: {
-    margin: '7em 1em',
+  root: {
+    margin: '7em auto',
     [theme.breakpoints.down('sm')]: {
-      margin:'1em auto'
-    }
+      margin: '1em auto',
+    },
+  },
+  intro: {
+    margin:'auto',
+    minWidth: '80%',
+    maxWidth: '80%',
   },
   text: {
     margin: 'auto',
-    minWidth: '50%',
-    maxWidth: '50%',
+    minWidth: '80%',
+    maxWidth: '80%',
     textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
       minWidth: '90%',

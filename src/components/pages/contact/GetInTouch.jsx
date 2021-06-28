@@ -16,7 +16,7 @@ const GetInTouch = ({findRef}) => {
 
   return (
     <div ref={findRef} className={classes.root}>
-      <Title>Get In Touch</Title>
+      <Title>Find Us</Title>
       <div>
         <div className={classes.contact}>
           <Typography variant='h4'>The Shortcut Lab</Typography>
