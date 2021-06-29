@@ -19,6 +19,17 @@ import SearchEvents from './SearchEvents';
 import EventsList from './EventsList';
 import PaginationOutlined from '../../functional/Pagination';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'all events',
+    path: '/events/all',
+  },
+});
+
 const AllEvents = () => {
   const classes = useStyles();
   const { isLoading, filteredEvents } = useSelector((state) => state.events);

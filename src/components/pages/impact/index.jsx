@@ -15,6 +15,17 @@ import ImpactStatistics from './ImpactStatistics';
 import MissionVision from './MissionVision';
 import ImpactGoals from './ImpactGoals';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'our impact',
+    path: '/our-impact',
+  },
+});
+
 const OurImpact = () => {
   const classes = useStyles();
 

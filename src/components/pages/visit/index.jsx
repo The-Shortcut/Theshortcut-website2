@@ -4,6 +4,17 @@ import React from 'react';
 // Meta Tag
 import MetaTag from '../../utils/MetaTag';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'visit us',
+    path: '/visit',
+  },
+});
+
 const VisitUs = () => {
   return (
     <div>

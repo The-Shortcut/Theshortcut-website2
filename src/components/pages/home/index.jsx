@@ -15,6 +15,16 @@ import UpcomingEvents from './UpcomingEvents';
 import GetInTheGame from './GetInTheGame';
 import OurPartnersLogos from '../../custom/OurPartnersLogos';
 
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'home',
+    path: '/',
+  },
+});
+
 const LandingPage = () => {
   const classes = useStyles();
 

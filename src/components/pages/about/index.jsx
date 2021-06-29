@@ -15,6 +15,17 @@ import CoreValues from './CoreValues';
 import Team from './Team';
 import Board from './Board';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'about',
+    path: '/about',
+  },
+});
+
 const About = () => {
   const classes = useStyles();
 
@@ -36,7 +47,7 @@ const About = () => {
       <MetaTag
         title='About-Us | The Shortcut'
         description='Practical and impact-driven, The Shortcut offers training, events and mentoring for international professionals to build meaningful careers in Finland.'
-        screenshot = 'https://theshortcut.org/wp-content/uploads/2021/06/about-us.png'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/06/about-us.png'
       />
       {window.innerWidth < 960 ? (
         <img

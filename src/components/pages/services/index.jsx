@@ -18,6 +18,17 @@ import Training from './training';
 import Coaching from './coaching';
 import ServicesFAQ from './ServicesFAQ';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'services',
+    path: '/services',
+  },
+});
+
 const Services = () => {
   const classes = useStyles();
 

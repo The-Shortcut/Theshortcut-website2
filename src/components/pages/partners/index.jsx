@@ -17,6 +17,17 @@ import Initiatives from './Initiatives';
 import OurPatrnersLogos from '../../custom/OurPartnersLogos';
 import GetPartnerForm from './GetPartnerForm';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'for partners',
+    path: '/partners',
+  },
+});
+
 const Partners = () => {
   const classes = useStyles();
 

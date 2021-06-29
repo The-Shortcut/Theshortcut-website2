@@ -14,6 +14,17 @@ import { Typography, Button } from '@material-ui/core';
 import Title from '../../../custom/Title';
 import ByobFAQ from './ByobFAQ';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'be your own boss',
+    path: '/byob',
+  },
+});
+
 const BYOB = () => {
   const classes = useStyles();
   return (
@@ -26,12 +37,7 @@ const BYOB = () => {
         screenshot='https://theshortcut.org/wp-content/uploads/2021/06/b.y.o.b.png'
       />
       {window.innerWidth < 960 ? (
-        <img
-          src={heroImage}
-          width='100%'
-          height='auto'
-          alt='BYOB-page'
-        />
+        <img src={heroImage} width='100%' height='auto' alt='BYOB-page' />
       ) : (
         <div className={classes.hero} />
       )}

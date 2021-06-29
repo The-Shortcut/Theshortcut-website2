@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
 
+// Mapbox
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 // Material-UI
 import { CssBaseline } from '@material-ui/core';
 
@@ -13,11 +16,16 @@ import Media from './components/layout/newsLetter';
 import Footer from './components/layout/footer';
 import ScrollToTop from './ScrollToTop';
 
+// Google Tag Manager
+import TagManager from 'react-gtm-module';
+
+
 const App = () => {
   const [pageH, setPageH] = useState(null);
 
   useEffect(() => {
     window.addEventListener('scroll', () => setPageH(window.scrollY));
+    TagManager.initialize({gtmId: process.env.REACT_APP_GTM});
   }, []);
   return (
     <Router>

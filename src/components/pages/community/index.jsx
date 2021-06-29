@@ -14,6 +14,17 @@ import Statistics from './Statistics';
 import MainSections from './MainSections';
 import SuccessStories from './SuccessStories';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'community',
+    path: '/community',
+  },
+});
+
 const Community = () => {
   const classes = useStyles();
 

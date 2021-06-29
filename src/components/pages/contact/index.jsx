@@ -14,6 +14,17 @@ import GetInTouch from './GetInTouch';
 import FAQ from './FAQ';
 import ContactForm from './ContactForm';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'contact-us',
+    path: '/contact-us',
+  },
+});
+
 const ContactUs = () => {
   const classes = useStyles();
 
