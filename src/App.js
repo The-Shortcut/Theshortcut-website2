@@ -18,6 +18,7 @@ import ScrollToTop from './ScrollToTop';
 
 // Google Tag Manager
 import TagManager from 'react-gtm-module';
+import ToTopArrow from './components/functional/ToTopArrow';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
     <Router>
       <CssBaseline />
       <ScrollToTop />
+      <ToTopArrow />
       <NavBar pageHeight={pageH} />
       <Routes />
       <Media />

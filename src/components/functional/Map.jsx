@@ -1,4 +1,5 @@
-/* eslint-disable no-self-assign */
+/* eslint-disable import/no-webpack-loader-syntax */
+/* /* eslint-disable no-self-assign */
 import React, { useState } from 'react';
 import ReactMapGL, { Marker } from 'react-map-gl';
 
@@ -19,10 +20,11 @@ const Map = () => {
     <ReactMapGL
       {...viewport}
       mapboxApiAccessToken={TOKEN}
-      mapStyle='mapbox://styles/theshortcut/ck9zsj3703njw1isa34hx4jzy'
+      mapStyle='mapbox://styles/mapbox/streets-v11'
       onViewportChange={(viewport) => {
         window.innerWidth <= `768`
           ? (viewport.width = "90vw")
+          // eslint-disable-next-line no-self-assign
           : (viewport.width = viewport.width);
         setViewport(viewport);
       }}

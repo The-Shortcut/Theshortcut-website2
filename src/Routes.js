@@ -7,7 +7,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './components/pages/home';
 import About from './components/pages/about';
 import AllEvents from './components/pages/events';
-import Event from './components/pages/events/Event';
 import BYOB from './components/pages/events/byob';
 import Partners from './components/pages/partners';
 import Blog from './components/pages/blog';
