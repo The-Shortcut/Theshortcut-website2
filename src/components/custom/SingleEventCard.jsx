@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Material-UI
 import {
@@ -24,14 +24,32 @@ import defaultImage from '../../assets/photos/defaultImage.png';
 // Share Button
 import ShareButton from '../functional/ShareButton';
 
+// Analytics
+import analytics from '../functional/analytics';
+
 const SingleEventCard = ({ event }) => {
   const classes = useStyles();
+  const [eventID, setEventID] = useState(null);
   let image = event.logo.original ? event.logo.original.url : defaultImage;
   let title = event.name.text;
   let summary = event.summary;
   let availability = event.status;
   let people = event.capacity;
   let link = event.url;
+
+  const exampleCallback = function () {
+    console.log('Order complete!');
+  };
+
+  useEffect(() => {
+    window.EBWidgets.createWidget({
+      widgetType: 'checkout',
+      eventId: eventID,
+      modal: true,
+      modalTriggerElementId: `example-widget-trigger-${eventID}`,
+      onOrderComplete: exampleCallback,
+    });
+  }, [eventID]);
 
   const formatDate = (evDate) => {
     let dateArr = evDate.split(/\D/);
@@ -49,14 +67,35 @@ const SingleEventCard = ({ event }) => {
     return `${startH}:${startArr[4]}${startAP} - ${endH}:${endArr[4]}${endAP}`;
   };
   const setStatus = (status) => {
-    if (status.includes('Video')) {
-      return 'watch now';
-    } else if (status.includes('completed') || status.includes('canceled')) {
-      return 'Learn more ';
+    if (status.toLowerCase().includes('video')) {
+      return 'WATCH NOW';
+    } else if (
+      status.toLowerCase().includes('completed') ||
+      status.toLowerCase().includes('canceled')
+    ) {
+      return 'LEARN MORE';
+    } else if (status.toLowerCase().includes('audio')) {
+      return 'LISTEN NOW';
+    } else if (availability.toLowerCase() === 'upcoming') {
+      return 'REGISTER';
     } else {
-      return 'register ';
+      return 'REGISTER';
     }
   };
+
+  const handleAnalysis = (targetEvent) => {
+    console.log(targetEvent);
+    if (targetEvent.id) {
+      setEventID(targetEvent.id);
+    }
+    analytics.sendEvent({
+      category: 'Select Event',
+      action: targetEvent.status,
+      label: targetEvent.name.text,
+      value: 1,
+    });
+  };
+
   return (
     <Card className={classes.card}>
       <CardMedia style={{ flex: 1, padding: '0.5em' }}>
@@ -116,6 +155,8 @@ const SingleEventCard = ({ event }) => {
             size='medium'
             endIcon={<TrendingFlatIcon />}
             href={link}
+            id={`example-widget-trigger-${eventID}`}
+            onClick={() => handleAnalysis(event)}
             target='_blank'
             rel='noopener noreferrer'>
             {setStatus(event.status)}

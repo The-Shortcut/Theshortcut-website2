@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Redirect } from 'react-router-dom';
 
 // META TAG
 import MetaTag from '../../utils/MetaTag';
@@ -29,6 +30,8 @@ TagManager.dataLayer({
 const About = () => {
   const classes = useStyles();
 
+  
+
   const aboutusRef = useRef(null);
   const coreValuesRef = useRef(null);
   const teamRef = useRef(null);
@@ -41,7 +44,10 @@ const About = () => {
   const executeScrollToValues = () => scrollToRefCoreValues(coreValuesRef);
   const executeScrollToTeam = () => scrollToRefTeam(teamRef);
   const executeScrollToBoard = () => scrollToRefBoard(boardRef);
-
+  
+  if (window.location.pathname !== '/about') {
+    return <Redirect to='/404'/>
+  }
   return (
     <div>
       <MetaTag

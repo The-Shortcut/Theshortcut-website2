@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Redirect } from 'react-router-dom';
 
 // META TAG
 import MetaTag from '../../utils/MetaTag';
@@ -35,6 +36,9 @@ const Community = () => {
   const executeScrollWelcome = () => scrollToWelcome(welcomeRef);
   const executeScrollStories = () => scrollToStrories(storyRef);
 
+  if (window.location.pathname !== '/community') {
+    return <Redirect to='/404'/>
+  }
   return (
     <div>
       <MetaTag

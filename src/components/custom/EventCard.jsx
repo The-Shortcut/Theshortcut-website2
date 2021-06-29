@@ -90,7 +90,6 @@ const EventCard = ({ event }) => {
       value: 1,
     })
   };
-  console.log({ eventID });
   return (
     <Card className={classes.card}>
       <CardMedia className={classes.media} image={image} title={title} />
@@ -140,7 +139,7 @@ const EventCard = ({ event }) => {
       <CardContent>
         <Typography variant='h6'>{title}</Typography>
         <br />
-        <Typography variant='body2'>{summary}</Typography>
+        <Typography variant='body1'>{summary}</Typography>
         {/* <Link to={{ pathname: `/events/all/${event.id}`, state: { data: event } }}>event page</Link> */}
       </CardContent>
       <CardActions className={classes.action}>
