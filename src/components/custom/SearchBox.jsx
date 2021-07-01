@@ -9,19 +9,22 @@ import SearchIcon from '@material-ui/icons/Search';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchEvents, paginate } from '../../actions/eventActions';
 
-const SearchBox = () => {
+const SearchBox = ({setValue}) => {
   const classes = useStyles();
   const { isLoading } = useSelector((state) => state.events);
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
+    if (e.target.value !== '') {
+      setValue(0)
+    }
     dispatch(searchEvents(e.target.value));
     dispatch(paginate(1));
   };
 
   return (
     <Paper className={classes.root}>
-      <IconButton type='submit' className={classes.searchBtn} aria-label='search'>
+      <IconButton type='submit' className={classes.searchBtn} aria-label='search events'>
         <SearchIcon />
       </IconButton>
       <InputBase

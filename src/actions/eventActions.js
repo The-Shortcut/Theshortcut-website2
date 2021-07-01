@@ -2,7 +2,7 @@ import { INIT_EVENTS, SEARCH_EVENTS, PAGINATION } from './types';
 
 import eventServices from '../services/events';
 
-export const allEvents = () => async(dispatch) => {
+export const allEvents = () => async (dispatch) => {
   const events = await eventServices.getEvents();
   dispatch({
     type: INIT_EVENTS,
@@ -10,10 +10,10 @@ export const allEvents = () => async(dispatch) => {
   });
 };
 
-export const searchEvents = (item) => (dispatch) => {
+export const searchEvents = (term) => (dispatch) => {
   dispatch({
     type: SEARCH_EVENTS,
-    payload: item,
+    payload: term,
   });
 };
 

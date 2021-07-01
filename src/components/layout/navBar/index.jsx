@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Children
-import Search from './Search';
+/* import Search from './Search'; */
 import DrawerMenu from './DrawerMenu';
 import CovidBanner from './CovidBanner';
 
@@ -48,7 +48,7 @@ const NavBar = ({ pageHeight }) => {
     setPath(window.location.pathname)
     changeMenuIconColor()
   }, [changeMenuIconColor, path])
-console.log(path)
+
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };

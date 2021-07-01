@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
   Box,
   CardContent,
-  CardActionArea,
   CardActions,
   Typography,
   Button,

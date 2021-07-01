@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,12 +9,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { searchEvents, paginate } from '../../../actions/eventActions';
 
 //Children
-/* import Title from '../../custom/Title'; */
 import SearchBox from '../../custom/SearchBox';
 
-const SearchEvents = () => {
+const SearchEvents = ({ value, setValue }) => {
   const classes = useStyles();
-  const [value, setValue] = useState(0);
   const { isLoading, searchTags } = useSelector((state) => state.events);
 
   const dispatch = useDispatch();
@@ -27,25 +25,24 @@ const SearchEvents = () => {
 
   return (
     <div className={classes.main}>
-    <div className={classes.root}>
-      {/* <Title>The Shortcut Events</Title> */}
-      <SearchBox />
-      <Collapse in={!isLoading}>
-        <Tabs
-          value={value}
-          onChange={(event, newValue) => handleChange(event, newValue)}
-          indicatorColor='primary'
-          textColor='primary'
+      <div className={classes.root}>
+        <SearchBox setValue={setValue} />
+        <Collapse in={!isLoading}>
+          <Tabs
+            value={value}
+            onChange={(event, newValue) => handleChange(event, newValue)}
+            indicatorColor='primary'
+            textColor='primary'
             classes={{ indicator: classes.shortIndicator }}
             className={classes.tabs}
-          centered>
-          {searchTags.map((tag, index) => (
-            <Tab key={index} label={tag.label} className={classes.tab} />
-          ))}
-        </Tabs>
-      </Collapse>
+            centered>
+            {searchTags.map((tag, index) => (
+              <Tab key={index} label={tag.label} className={classes.tab} />
+            ))}
+          </Tabs>
+        </Collapse>
       </div>
-      </div>
+    </div>
   );
 };
 
@@ -53,14 +50,14 @@ export default SearchEvents;
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    minWidth:'100%',
+    minWidth: '100%',
     border: '1px solid #DDDDDD',
     background: '#DDDDDD',
   },
   root: {
     minWidth: '60%',
     maxWidth: '60%',
-    margin: '4em auto 1em',
+    margin: '2em auto 1em',
     [theme.breakpoints.only('md')]: {
       minWidth: '90%',
       maxWidth: '90%',

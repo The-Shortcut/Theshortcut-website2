@@ -1,16 +1,20 @@
 import { INIT_EVENTS, SEARCH_EVENTS, PAGINATION } from '../actions/types';
 
+let searchItem = window.location.search
+console.log(typeof searchItem)
+
 const initState = {
   isLoading: true,
   events: null,
   allEvents: null,
   filteredEvents: null,
   searchTags: [
-    { value: 'All', label: 'All' },
+    { value: 'all', label: 'All' },
     { value: 'upcoming', label: 'Upcoming' },
     { value: 'recorded', label: 'Recorded' },
     { value: 'past', label: 'Past' },
   ],
+  searchTerm: searchItem === '' ? 'all': searchItem.split('=')[1],
   // for pagination
   currentPage: 1,
   perPage: 9,
@@ -33,6 +37,7 @@ const reducer = (state = initState, action) => {
         isLoading: false,
       };
     case SEARCH_EVENTS:
+      console.log({payload})
       let filterEvents = [];
       filterEvents = state.allEvents.filter(
         (event) =>
@@ -56,8 +61,10 @@ const reducer = (state = initState, action) => {
       if (payload === '') {
         filterEvents = state.events;
       }
+
       return {
         ...state,
+        searchTerm: payload === '' ? 'all' : payload,
         filteredEvents: filterEvents.sort(() => Math.random() - 0.5),
         currentPage: 1,
       };

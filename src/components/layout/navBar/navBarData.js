@@ -1,5 +1,5 @@
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+/* import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'; */
 
 export const navBarData = [
   {
@@ -11,7 +11,7 @@ export const navBarData = [
     title: 'ABOUT',
     path: '/about',
     icon: null,
-   /*  mainPath: '/about',
+    /*  mainPath: '/about',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
     subNav: [
@@ -35,7 +35,7 @@ export const navBarData = [
   },
   {
     title: 'EVENTS',
-    path:'/events/all'
+    path: '/events',
     /* mainPath: '/events/all',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
@@ -52,7 +52,7 @@ export const navBarData = [
   },
   {
     title: 'OUR SERVICES',
-    path: '/services'
+    path: '/services',
     /* mainPath: '/services',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,
@@ -95,7 +95,7 @@ export const navBarData = [
   }, */
   {
     title: 'CONTACT US',
-    path:'/contact-us'
+    path: '/contact-us',
     /* mainPath: '/contact-us',
     icon: <KeyboardArrowUpIcon />,
     iconClosed: <KeyboardArrowDownIcon />,

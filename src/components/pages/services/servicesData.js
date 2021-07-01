@@ -1,8 +1,4 @@
 // For coachingData
-import clinicImage from '../../../assets/photos/clinicImage.jpg';
-import personalSessionImage from '../../../assets/photos/personalSession.jpg';
-import askMeLiveImage from '../../../assets/photos/askMeLive.jpg';
-import staticImage from '../../../assets/illustrations/9.png';
 import { RiMovieFill, RiQuestionAnswerFill } from 'react-icons/ri';
 import { GiClover } from 'react-icons/gi';
 import { FaHandsHelping } from 'react-icons/fa';

@@ -67,7 +67,10 @@ const EventCard = ({ event }) => {
   const setStatus = (status) => {
     if (status.toLowerCase().includes('video')) {
       return 'WATCH NOW';
-    } else if (status.toLowerCase().includes('completed') || status.toLowerCase().includes('canceled')) {
+    } else if (
+      status.toLowerCase().includes('completed') ||
+      status.toLowerCase().includes('canceled')
+    ) {
       return 'LEARN MORE';
     } else if (status.toLowerCase().includes('audio')) {
       return 'LISTEN NOW';
@@ -88,7 +91,7 @@ const EventCard = ({ event }) => {
       action: targetEvent.status,
       label: targetEvent.name.text,
       value: 1,
-    })
+    });
   };
   return (
     <Card className={classes.card}>
@@ -139,7 +142,9 @@ const EventCard = ({ event }) => {
       <CardContent>
         <Typography variant='h6'>{title}</Typography>
         <br />
-        <Typography variant='body1'>{summary}</Typography>
+        <Typography variant='subtitle1' component='p'>
+          {summary}
+        </Typography>
         {/* <Link to={{ pathname: `/events/all/${event.id}`, state: { data: event } }}>event page</Link> */}
       </CardContent>
       <CardActions className={classes.action}>
@@ -151,7 +156,7 @@ const EventCard = ({ event }) => {
           href={link}
           id={`example-widget-trigger-${eventID}`}
           onClick={() => handleAnalysis(event)}
-          target='_blank'
+          target='_self'
           rel='noopener noreferrer'>
           {setStatus(event.status)}
         </Button>

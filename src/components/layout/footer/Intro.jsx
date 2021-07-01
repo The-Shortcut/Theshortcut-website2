@@ -9,7 +9,6 @@ import { Typography } from '@material-ui/core';
 
 // ICONS
 import InfoIcon from '@material-ui/icons/Info';
-import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 

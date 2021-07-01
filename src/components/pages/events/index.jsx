@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 // META TAG
 import MetaTag from '../../utils/MetaTag';
@@ -11,7 +12,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 
 // REDUX
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { searchEvents, paginate } from '../../../actions/eventActions';
 
 // Children
 import Subject from './Subject';
@@ -32,7 +34,33 @@ TagManager.dataLayer({
 
 const AllEvents = () => {
   const classes = useStyles();
-  const { isLoading, filteredEvents } = useSelector((state) => state.events);
+  const [value, setValue] = useState(0);
+  const { isLoading, allEvents, filteredEvents, searchTerm } = useSelector((state) => state.events);
+  let history = useHistory();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    history.push({
+      pathname: '/events',
+      search: `?filtered=${searchTerm}`,
+    });
+  }, [history, searchTerm]);
+
+  useEffect(() => {
+    if (allEvents) {
+      dispatch(searchEvents(searchTerm));
+      dispatch(paginate(1));
+      if (searchTerm === 'upcoming') {
+        setValue(1);
+      } else if (searchTerm === 'recorded') {
+        setValue(2);
+      } else if (searchTerm === 'past') {
+        setValue(3);
+      } else {
+        setValue(0);
+      }
+    }
+  }, [allEvents, dispatch, searchTerm]);
 
   const allEvRef = useRef(null);
   const scrollToAllEv = (ref) => window.scrollTo(0, ref.current.offsetTop - 100);
@@ -72,7 +100,7 @@ const AllEvents = () => {
         </Button>
       </div>
       <Subject allEvRef={allEvRef} />
-      <SearchEvents />
+      <SearchEvents value={value} setValue={setValue} />
       {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
       <EventsList />
       {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
