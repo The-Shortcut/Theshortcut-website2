@@ -61,12 +61,12 @@ const ServicesFAQ = ({ servicesFaqLoaded, coachingFAQ, trainingFAQ, faqRef }) =>
         {trainingFAQ &&
           trainingFAQ.map((faq, index) => (
             <Accordion
-              key={index}
-              expanded={expanded === `panel${index}`}
-              onChange={handleChange(`panel${index}`)}>
+              key={index + 20}
+              expanded={expanded === `panel${index + 20}`}
+              onChange={handleChange(`panel${index + 20}`)}>
               <AccordionSummary
                 expandIcon={
-                  expanded === `panel${index}` ? (
+                  expanded === `panel${index + 20}` ? (
                     <IndeterminateCheckBoxIcon fontSize='large' color='inherit' />
                   ) : (
                     <AddBoxIcon fontSize='large' color='primary' />

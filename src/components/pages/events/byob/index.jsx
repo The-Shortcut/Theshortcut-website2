@@ -101,14 +101,15 @@ const useStyles = makeStyles((theme) => ({
   hero: {
     minWidth: '100%',
     maxWidth: '100%',
-    minHeight: '100vh',
-    maxHeight: '100vh',
+    minHeight: '50vh',
+    maxHeight: '50vh',
     background: `url(${heroImage}) center/cover fixed no-repeat`,
+    backgroundSize:'cover'
   },
   intro: {
-    minWidth: '70%',
-    maxWidth: '70%',
-    margin: '4em auto',
+    minWidth: '80%',
+    maxWidth: '80%',
+    margin: '1em auto',
     [theme.breakpoints.down('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',

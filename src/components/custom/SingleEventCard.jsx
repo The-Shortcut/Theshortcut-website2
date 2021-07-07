@@ -157,7 +157,7 @@ const SingleEventCard = ({ event }) => {
             href={link}
             id={`example-widget-trigger-${eventID}`}
             onClick={() => handleAnalysis(event)}
-            target='_blank'
+            target={availability.toLowerCase() === 'upcoming' ? '_self' : '_blank'}
             rel='noopener noreferrer'>
             {setStatus(event.status)}
           </Button>
@@ -178,7 +178,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '80%',
       minWidth: '80%',
     },
-    border: '1px solid #434343',
+    border: '1px solid #888',
     borderRadius: '10px',
     margin: '2em auto 0',
     display: 'flex',

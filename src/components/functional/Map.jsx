@@ -22,10 +22,6 @@ const Map = () => {
       mapboxApiAccessToken={TOKEN}
       mapStyle='mapbox://styles/mapbox/streets-v11'
       onViewportChange={(viewport) => {
-        window.innerWidth <= `768`
-          ? (viewport.width = "90vw")
-          // eslint-disable-next-line no-self-assign
-          : (viewport.width = viewport.width);
         setViewport(viewport);
       }}
       style={{margin:'auto', minWidth:'100%', maxHeight:'220px'}}>

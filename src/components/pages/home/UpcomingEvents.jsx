@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     margin: '6em auto',
-    maxWidth: '80%',
+    maxWidth: '90%',
     [theme.breakpoints.down('md')]: {
       margin: '5em auto',
       maxWidth: '90%',

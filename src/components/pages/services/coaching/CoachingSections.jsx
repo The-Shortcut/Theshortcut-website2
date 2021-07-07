@@ -31,7 +31,7 @@ const CoachingSections = () => {
                     className={classes.btn}
                     href={item.link}
                     target='_blank'>
-                    Find Out More
+                    {item.btnTitle}
                   </Button>
                 )}
               </CardContent>
@@ -47,8 +47,8 @@ export default CoachingSections;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '80%',
-    maxWidth: '80%',
+    minWidth: '85%',
+    maxWidth: '85%',
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -62,33 +62,33 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(243px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
     minWidth: '100%',
     maxWidth: '100%',
-   /*  border: '2px solid red', */
+    /*  border: '2px solid red', */
     margin: 'auto',
   },
   card: {
-    margin: '1em auto',
+    margin: 'auto',
     borderRadius: '10px',
     /* maxWidth: 280, */
     minHeight: 550,
     maxHeight: 550,
     [theme.breakpoints.down('md')]: {
-      minHeight: 580,
-      maxHeight: 580,
+      minHeight: 560,
+      maxHeight: 560,
     },
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(1),
-      minHeight: 520,
-      maxHeight: 520,
+      minHeight: 540,
+      maxHeight: 540,
     },
     [theme.breakpoints.down('xs')]: {
-      minHeight: 480,
-      maxHeight: 480,
+      minHeight: 440,
+      maxHeight: 440,
     },
   },
   cardContent: {
@@ -127,16 +127,16 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '250px',
     maxHeight: '250px',
     [theme.breakpoints.down('md')]: {
-      minHeight: '280px',
-      maxHeight: '280px',
+      minHeight: '260px',
+      maxHeight: '260px',
     },
     [theme.breakpoints.down('sm')]: {
-      minHeight: '210px',
-      maxHeight: '210px',
+      minHeight: '230px',
+      maxHeight: '230px',
     },
     [theme.breakpoints.down('xs')]: {
-      minHeight: '170px',
-      maxHeight: '170px',
+      minHeight: '160px',
+      maxHeight: '160px',
     },
   },
   btn: {
@@ -153,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '7em',
     margin: '1em 0 0 0',
     [theme.breakpoints.down('xs')]: {
-      margin: '1em 0 0 0',
+      margin: 0,
     },
     backgroundColor: '#fff',
   },

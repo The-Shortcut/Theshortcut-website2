@@ -88,7 +88,7 @@ export const navBarData = [
     path: '/our-impact',
     icon: null,
   },
-  /* {
+/*   {
     title: 'BLOG',
     path: '/blog',
     icon: null,

@@ -49,7 +49,7 @@ const Services = () => {
   useEffect(() => {
     dispatch(getServicesFAQ());
   }, [dispatch]);
-  console.log({ servicesFaqLoaded, coachingFAQ, trainingFAQ });
+
   return (
     <div>
       <MetaTag
@@ -134,13 +134,13 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     textAlign: 'center',
     color: '#FFFFFF',
-    marginTop: '-5.2em',
+    marginTop: '-5em',
     zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-      marginTop: '-4em',
+      marginTop: '-2.4em',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: '-2.5em',
+      marginTop: '-3em',
     },
   },
   buttons: {

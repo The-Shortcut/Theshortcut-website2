@@ -8,7 +8,7 @@ import { prevTrainingData } from '../servicesData';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardMedia, CardContent, Typography } from '@material-ui/core';
 
-const trainingSections = () => {
+const PrevTrainingSections = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -21,7 +21,7 @@ const trainingSections = () => {
             <CardMedia
               component='img'
               alt={item.title}
-              height='35%'
+              className={classes.media}
               image={item.image}
               title={item.title}
             />
@@ -32,7 +32,6 @@ const trainingSections = () => {
               <Typography variant='subtitle1' component='p' className={classes.text}>
                 {item.description}
               </Typography>
-              {/* <img src={item.partnerLogo} alt='partner logo' className={classes.logoContainer} /> */}
             </CardContent>
           </Card>
         ))}
@@ -41,12 +40,12 @@ const trainingSections = () => {
   );
 };
 
-export default trainingSections;
+export default PrevTrainingSections;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '80%',
-    maxWidth: '80%',
+    minWidth: '85%',
+    maxWidth: '85%',
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -61,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(235px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
@@ -71,19 +70,23 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
   card: {
-    margin: '1em auto',
+    margin: 'auto',
     borderRadius: '10px',
     /* maxWidth: 280, */
-    minHeight: 520,
-    maxHeight: 520,
-    [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(3),
-      minHeight: 560,
-      maxHeight: 560,
+    minHeight: 550,
+    maxHeight: 550,
+    [theme.breakpoints.down('md')]: {
+      minHeight: 520,
+      maxHeight: 520,
     },
     [theme.breakpoints.down('sm')]: {
-      minHeight: 460,
-      maxHeight: 460,
+      marginTop: theme.spacing(1),
+      minHeight: 490,
+      maxHeight: 490,
+    },
+    '@media (max-width:460px)': {
+      minHeight: 450,
+      maxHeight: 450,
     },
     zIndex: 1,
   },
@@ -93,35 +96,21 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  logoContainer: {
-    maxWidth: '5em',
-    minWidth: '5em',
-    maxHeight: '5em',
-    minHeight: '5em',
-    /* borderRadius: '150%',
-    maxWidth: '5em',
-    minWidth: '5em',
-    maxHeight: '5em',
-    minHeight: '5em',
-    margin: '-2.3em 0 0 14em',
-    backgroundColor: '#EEE',
-    boxShadow: ' 0px 0px 22px -5px #434343',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 'auto',
-    marginTop: '-2.3em',
-    zIndex: 10, */
+  media: {
+    height: 180,
+    [theme.breakpoints.only('sm')]: {
+      height: 140,
+    },
   },
   title: {
     minHeight: '50px',
     maxHeight: '50px',
+    margin: '0 auto 0.5em',
+    textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       minHeight: '65px',
       maxHeight: '65px',
     },
-    margin: 'auto',
-    textAlign: 'center',
   },
   text: {
     textAlign: 'center',

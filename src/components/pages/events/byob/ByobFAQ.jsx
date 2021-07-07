@@ -29,7 +29,6 @@ const ByobFAQ = () => {
   if (!byobFaqLoaded) {
     return <div> Data is loading ...</div>;
   }
-
   return (
     <div className={classes.root}>
       <Title>FAQ</Title>
@@ -53,12 +52,14 @@ const ByobFAQ = () => {
                 }
                 aria-controls='panel-content'
                 id='panel1bh-header'>
-                <Typography variant='body1'>{faq.acf.question}</Typography>
+                <Typography variant='body1'>{faq.title.rendered}</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography variant='subtitle1' component='p'>
-                  {faq.acf.answer}
-                </Typography>
+                <Typography
+                  variant='subtitle1'
+                  component='p'
+                  dangerouslySetInnerHTML={{ __html: faq?.content.rendered }}
+                />
               </AccordionDetails>
             </Accordion>
           ))}
@@ -70,12 +71,12 @@ const ByobFAQ = () => {
         {inProcessFAQ &&
           inProcessFAQ.map((faq, index) => (
             <Accordion
-              key={index}
-              expanded={expanded === `panel${index}`}
-              onChange={handleChange(`panel${index}`)}>
+              key={index + 10}
+              expanded={expanded === `panel${index + 10}`}
+              onChange={handleChange(`panel${index + 10}`)}>
               <AccordionSummary
                 expandIcon={
-                  expanded === `panel${index}` ? (
+                  expanded === `panel${index + 10}` ? (
                     <IndeterminateCheckBoxIcon fontSize='large' color='inherit' />
                   ) : (
                     <AddBoxIcon fontSize='large' color='primary' />
@@ -83,12 +84,14 @@ const ByobFAQ = () => {
                 }
                 aria-controls='panel-content'
                 id='panel1bh-header'>
-                <Typography variant='body1'>{faq.acf.question}</Typography>
+                <Typography variant='body1'>{faq.title.rendered}</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography variant='subtitle1' component='p'>
-                  {faq.acf.answer}
-                </Typography>
+                <Typography
+                  variant='subtitle1'
+                  component='p'
+                  dangerouslySetInnerHTML={{ __html: faq?.content.rendered }}
+                />
               </AccordionDetails>
             </Accordion>
           ))}
@@ -100,12 +103,12 @@ const ByobFAQ = () => {
         {aboutFAQ &&
           aboutFAQ.map((faq, index) => (
             <Accordion
-              key={index}
-              expanded={expanded === `panel${index}`}
-              onChange={handleChange(`panel${index}`)}>
+              key={index + 20}
+              expanded={expanded === `panel${index + 20}`}
+              onChange={handleChange(`panel${index + 20}`)}>
               <AccordionSummary
                 expandIcon={
-                  expanded === `panel${index}` ? (
+                  expanded === `panel${index + 20}` ? (
                     <IndeterminateCheckBoxIcon fontSize='large' color='inherit' />
                   ) : (
                     <AddBoxIcon fontSize='large' color='primary' />
@@ -135,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '6em auto',
     [theme.breakpoints.down('sm')]: {
       maxWidth: '90%',
-    margin: '2em auto',
+      margin: '2em auto',
     },
   },
   sectionTitle: {

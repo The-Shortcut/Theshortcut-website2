@@ -75,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 460,
     },
     [theme.breakpoints.down('xs')]: {
+      minHeight: 430,
+      maxHeight: 430,
       margin: 'auto',
     },
   },
@@ -127,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '90%',
     minHeight: '12em',
     maxHeight: '12em',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.only('md')]: {
       marginTop: '2em',
       minHeight: '15em',
       maxHeight: '15em',
@@ -135,6 +137,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       minHeight: '12em',
       maxHeight: '12em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '9em',
+      maxHeight: '9em',
     },
   },
   button: {

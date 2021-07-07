@@ -14,7 +14,7 @@ const MissionVision = ({missionRef}) => {
         <div className={classes.mission}>
           <Title>Our Mission</Title>
           <Typography variant='h3' className={classes.text}>
-          To equip our community members to build meaningful careers
+          To equip our community members to build meaningful careers.
           </Typography>
         </div>
         {/* <div className={classes.vision}>

@@ -6,7 +6,8 @@ import { Typography } from '@material-ui/core';
 
 // CHILDREN
 import Title from '../../../custom/Title';
-import TrainingSections from './trainingSections';
+import CurrTrainingSections from './CurrTrainingSections';
+import PrevTrainingSections from './PrevTrainingSections';
 
 const Training = ({ trainingRef }) => {
   const classes = useStyles();
@@ -16,11 +17,11 @@ const Training = ({ trainingRef }) => {
       <div style={{ marginTop: '7em' }}>
         <Title>Training</Title>
         <Typography variant='body1' className={classes.text}>
-          <strong>Current opportunities</strong>
-          <br />
-          We are working hard to create more opportunities, check back later.
+          In collaboration with our partners, we offer training for you to upskill and transform
+          your career. These programs require an application and are free of charge.
         </Typography>
-        <TrainingSections />
+        <CurrTrainingSections />
+        <PrevTrainingSections />
       </div>
     </section>
   );
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid #DDDDDD',
   },
   text: {
-    margin: 'auto',
+    margin: '2em auto',
     minWidth: '80%',
     maxWidth: '80%',
     textAlign: 'center',

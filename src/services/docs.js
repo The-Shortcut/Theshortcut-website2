@@ -29,6 +29,7 @@ const getServicesFAQData = async () => {
 
 const getByobFAQData = async () => {
   const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/byob_faq/?per_page=50');
+  console.log('response.data')
   return response.data;
 };
 

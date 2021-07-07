@@ -28,7 +28,7 @@ const settings = {
   arrows: false,
 };
 
-const Board = ({boardRef}) => {
+const Board = ({ boardRef }) => {
   const classes = useStyles();
   const [state, setState] = useState(-1);
   const { board } = useSelector((state) => state.team);
@@ -135,10 +135,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   container: {
-    minWidth: '100%',
     display: 'grid',
-    gridGap: '14px',
-    gridTemplateColumns: 'repeat(auto-fill, 180px)',
+    gridGap:'10px',
+    gridTemplateColumns: 'repeat(auto-fill,  minmax(180px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
@@ -148,8 +147,6 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     position: 'relative',
-    maxWidth: '13em',
-    minWidth: '13em',
     minHeight: '23em',
     margin: '0 auto 1em',
     borderRadius: '15px',

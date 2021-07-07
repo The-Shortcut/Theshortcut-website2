@@ -27,6 +27,8 @@ export default Statistics;
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    maxWidth: '80%',
+    margin:'auto',
     minHeight: '7em',
     marginTop: theme.spacing(5),
     display: 'flex',

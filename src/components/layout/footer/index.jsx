@@ -19,7 +19,7 @@ const Index = () => {
         <Divider style={{ margin: '1em auto' }} />
         <div className={classes.copyright}>
           <Typography variant='body2' style={{ margin: '1em auto' }}>
-            Copyright <strong style={{ color: '#00A99D' }}>&copy;</strong> 2021 The Shortcut. All
+            Copyright <strong>&copy;</strong> 2021 The Shortcut. All
             rights reserved.
           </Typography>
         </div>

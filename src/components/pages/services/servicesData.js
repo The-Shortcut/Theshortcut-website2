@@ -4,6 +4,7 @@ import { GiClover } from 'react-icons/gi';
 import { FaHandsHelping } from 'react-icons/fa';
 
 // For trainingData
+import byob21Banner from '../../../assets/photos/BYOB21Banner.gif'
 import digiTrainingImg from '../../../assets/photos/digiTrainingImg.jpg';
 import entrepreneureshiptImg from '../../../assets/photos/entrepreneureshiptImg.jpg';
 import techTrainingImg from '../../../assets/photos/techTrainingImg.jpg';
@@ -12,36 +13,56 @@ import elyLogo from '../../../assets/logo/partners/ely-logo.png';
 
 export const coachingData = [
   {
+    title: 'Työ-SIB Coaching Program',
+    description:
+      'We are a trusted partner for Työ-SIB (Social Impact Bond) for career coaching. Coaching includes both individual and group training. Työ-SIB decides who is admitted to this program, so contact your TE office or email info@tyosib.fi directly for more information to see if you are eligible.',
+    link: 'https://tyosib.fi/en/',
+    icon: <FaHandsHelping style={{ fontSize: 60, color: '#00A99D' }} />,
+    active: true,
+    btnTitle: 'Apply here',
+  },
+  {
     title: 'CAREER CLINIC RECORDINGS',
     description:
       'This is a 9 video series that you can access at any time that goes over issues such as CVs, cover letters, job searching, networking, interviews, time management, LinkedIn profile, and effective communication.',
     link: ' https://www.youtube.com/playlist?list=PLwPjXphlI7pRYSB3z2yFU38vOEQL_bSrw',
     icon: <RiMovieFill style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
+    btnTitle: 'Find out more',
   },
   {
     title: 'LOTTERY SESSIONS',
     description:
       'These sessions are a monthly giveaway to our community. You are entered into this lottery by participating in the Ask Me Anything sessions or being active in our online community. This session is online with our Career Coach to discuss specific topics such as your individual CV or interview skills.',
-    link: '/events/all',
+    link: '/events',
     icon: <GiClover style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
+    btnTitle: 'Find out more',
   },
   {
     title: 'ASK ME ANYTHING SESSIONS',
     description:
       'These are open sessions that take place on FB live and Instagram Live where our experts will answer questions that have been sent beforehand or during the live chat.',
-    link: '/events/all',
+    link: '/events',
     icon: <RiQuestionAnswerFill style={{ fontSize: 60, color: '#00A99D' }} />,
     active: true,
+    btnTitle: 'Find out more',
+  },
+];
+
+export const currTrainingData = [
+  {
+    title: 'B.Y.O.B. Entrepreneurship Program',
+    description:
+      'B.Y.O.B. (Be Your Own Boss) is a 6 weeks long training program that will give you all the fundamental tools in order to create a viable company.',
+    image: byob21Banner,
+    link:'/events/byob'
   },
   {
-    title: 'Työ-SIB Coaching Program',
+    title: 'B.Y.O.B. Entrepreneurship Program',
     description:
-      'We are a trusted partner for Työ-SIB (Social Impact Bond) for career coaching. Coaching includes both individual and group training. Työ-SIB decides who is admitted to this program, so contact your TE office or email info@tyosib.fi directly for more information to see if you are eligible.',
-    link: '',
-    icon: <FaHandsHelping style={{ fontSize: 60, color: '#00A99D' }} />,
-    active: false,
+      'B.Y.O.B. (Be Your Own Boss) is a 6 weeks long training program that will give you all the fundamental tools in order to create a viable company.',
+    image: byob21Banner,
   },
 ];
 

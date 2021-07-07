@@ -25,9 +25,7 @@ import TermsOfUse from './components/layout/documents/TermsOfUse';
 // Analytics Hooks
 import useGoogleAnalytics from './hooks/useGoogleAnalytics';
 
-
 const NotFound = lazy(() => import('./components/layout/NotFound'));
-
 
 const Routes = () => {
   useGoogleAnalytics();

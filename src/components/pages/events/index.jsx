@@ -28,7 +28,7 @@ TagManager.dataLayer({
     event: 'pageView',
     url: `${window.location.pathname}${window.location.search}`,
     page: 'all events',
-    path: '/events/all',
+    path: '/events',
   },
 });
 
@@ -95,8 +95,8 @@ const AllEvents = () => {
           onClick={executeScrollAllEv}>
           ALL EVENTS
         </Button>
-        <Button variant='contained' color='default' className={classes.button} href='/events/byob'>
-          B.Y.O.B
+        <Button variant='contained' color='default' className={classes.button} href='/services/#training'>
+          TRAINING
         </Button>
       </div>
       <Subject allEvRef={allEvRef} />

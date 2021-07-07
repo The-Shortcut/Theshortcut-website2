@@ -17,7 +17,7 @@ export const gameData = [
   {
     title: 'ALL EVENTS',
     photo: eventsHero,
-    path: '/events/all',
+    path: '/events',
     icon: <FaCalendarAlt color='#00A99D' style={{ fontSize: 65, marginTop: 25 }} />,
   },
   {

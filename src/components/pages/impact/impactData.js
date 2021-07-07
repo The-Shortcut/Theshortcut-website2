@@ -11,19 +11,19 @@ import { RiCommunityFill } from 'react-icons/ri';
 
 export const ImpactStatData = [
   {
-    title: 'Events & Activities',
-    amount: '205',
-    icon: <FaCalendarCheck style={{ fontSize: 35, color: '#FFFFFF' }} />,
+    title: 'Nationalities',
+    amount: '132',
+    icon: <BsFillFlagFill style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
     title: 'Participants',
-    amount: '1,969',
+    amount: '6,027',
     icon: <HiUserGroup style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: 'Supporting Companies',
-    amount: '251',
-    icon: <MdBusiness style={{ fontSize: 35, color: '#FFFFFF' }} />,
+    title: 'Events & Training',
+    amount: '260',
+    icon: <FaCalendarCheck style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
     title: 'Feedback',
@@ -31,25 +31,26 @@ export const ImpactStatData = [
     icon: <FeedbackIcon style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'Nationalities',
-    amount: '132',
-    icon: <BsFillFlagFill style={{ fontSize: 40, color: '#FFFFFF' }} />,
-  },
-  {
-    title: 'Gender Distribution',
-    amount: 'F54/M45/other 1%',
-    icon: <FaTransgenderAlt style={{ fontSize: 35, color: '#FFFFFF' }} />,
-  },
-  {
-    title: 'New Entrepreneurs',
+    title: 'Entrepreneurs',
     amount: '75',
     icon: <FaUserNinja style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: ' New Employments',
+    title: 'Employments',
     amount: '191',
     icon: <GiStairsGoal style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
+  {
+    title: 'Partners',
+    amount: '251',
+    icon: <MdBusiness style={{ fontSize: 35, color: '#FFFFFF' }} />,
+  },
+  {
+    title: 'Gender Distribution',
+    amount: 'F54% & M45%',
+    icon: <FaTransgenderAlt style={{ fontSize: 35, color: '#FFFFFF' }} />,
+  },
+  
 ];
 
 // ICONS

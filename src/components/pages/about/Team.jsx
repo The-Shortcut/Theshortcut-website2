@@ -27,7 +27,7 @@ const settings = {
   slidesToScroll: 1,
   arrows: false,
 };
-const Team = ({teamRef}) => {
+const Team = ({ teamRef }) => {
   const classes = useStyles();
   const [state, setState] = useState(-1);
   const { teammates } = useSelector((state) => state.team);
@@ -49,19 +49,17 @@ const Team = ({teamRef}) => {
                 <Card className={classes.card} key={index}>
                   <img className={classes.media} src={acf.image} alt={acf.name} />
                   <CardContent>
-                    <Typography variant='subtitle1'>
-                      {acf.name}
-                    </Typography>
+                    <Typography variant='subtitle1'>{acf.name}</Typography>
                     <Typography variant='subtitle2'>{acf.position}</Typography>
                   </CardContent>
                   <div className={classes.icons}>
-                    <a href={`mailto:${acf.email}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`mailto:${acf.email}`} target='_blank' rel='noopener noreferrer'>
                       <EmailIcon color='primary' />
                     </a>
-                    <a href={acf.linkedin} target="_blank" rel="noopener noreferrer">
+                    <a href={acf.linkedin} target='_blank' rel='noopener noreferrer'>
                       <LinkedInIcon color='primary' />
                     </a>
-                    <a href={acf.twitter} target="_blank" rel="noopener noreferrer">
+                    <a href={acf.twitter} target='_blank' rel='noopener noreferrer'>
                       <TwitterIcon color='primary' />
                     </a>
                   </div>
@@ -102,7 +100,12 @@ const Team = ({teamRef}) => {
                         </a>
                       </CardContent>
                     )}
-                    <CardMedia component="img" className={classes.media} image={item.acf.image} alt={item.acf.name} />
+                    <CardMedia
+                      component='img'
+                      className={classes.media}
+                      image={item.acf.image}
+                      alt={item.acf.name}
+                    />
                     <CardContent>
                       <Typography variant='subtitle1' style={{ fontWeight: 'bold' }}>
                         {item.acf.name}
@@ -124,7 +127,7 @@ export default Team;
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    margin:'6em auto 5em'
+    margin: '6em auto 5em',
   },
   root: {
     minWidth: '80%',
@@ -140,10 +143,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   container: {
-    minWidth: '100%',
     display: 'grid',
-    gridGap: '14px',
-    gridTemplateColumns: 'repeat(auto-fill, 180px)',
+    gridGap: '10px',
+    gridTemplateColumns: 'repeat(auto-fill,  minmax(180px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
@@ -153,8 +155,6 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     position: 'relative',
-    maxWidth: '13em',
-    minWidth: '13em',
     minHeight: '24em',
     maxHeight: '24em',
     margin: '0 auto 1em',

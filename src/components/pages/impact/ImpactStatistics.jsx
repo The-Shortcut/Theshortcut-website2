@@ -38,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '80%',
     maxWidth: '80%',
     margin: '9em auto 7em',
+    [theme.breakpoints.up('md')]: {
+      minWidth: '70%',
+    maxWidth: '70%',
+    },
     [theme.breakpoints.down('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -51,9 +55,9 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gridTemplateColumns: 'repeat(4, minmax(120px, 1fr))',
     [theme.breakpoints.down('xs')]: {
-      gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+      gridTemplateColumns: 'repeat(2, minmax(140px, 1fr))',
     },
     gridTemplateRows: 'none',
     justifyContent: 'center',
@@ -67,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 20,
   },
   icon: {
     minWidth: 70,

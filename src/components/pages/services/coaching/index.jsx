@@ -13,12 +13,13 @@ const Coaching = ({ coachingRef }) => {
   return (
     <section ref={coachingRef} className={classes.root}>
       <div className={classes.intro}>
-      <Title>Career Coaching</Title>
-      <Typography variant='body1' className={classes.text}>
-        Many of our career coaching services are open to all and available free for everyone to
-        utilize. These include pre-recorded material, live events, and self-directed learning and
-        work. Our Työ-SIB program is limited access.
-      </Typography>
+        <Title>Career Coaching</Title>
+        <Typography variant='body1' className={classes.text}>
+          Land your next best role through our career coaching. We offer a variety of coaching for
+          you to channel your super powers, free of charge. Our partner-based coaching service has
+          application requirements, but our other coaching materials and sessions are open to
+          everyone. Transform your career now!
+        </Typography>
       </div>
       <CoachingSections />
       <div id='training' />
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   intro: {
-    margin:'auto',
+    margin: 'auto',
     minWidth: '80%',
     maxWidth: '80%',
   },

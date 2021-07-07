@@ -18,7 +18,7 @@ export const statData = [
   },
   {
     title: 'Gender',
-    amount: 'F54/M45/other 1%',
+    amount: 'F54% & M45%',
     icon: <FaTransgenderAlt style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {

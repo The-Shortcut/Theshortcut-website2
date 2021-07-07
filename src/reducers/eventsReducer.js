@@ -1,7 +1,6 @@
 import { INIT_EVENTS, SEARCH_EVENTS, PAGINATION } from '../actions/types';
 
 let searchItem = window.location.search
-console.log(typeof searchItem)
 
 const initState = {
   isLoading: true,

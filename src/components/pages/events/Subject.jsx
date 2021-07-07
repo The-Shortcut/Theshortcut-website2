@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,17 +12,14 @@ const Subject = ({ allEvRef }) => {
   const classes = useStyles();
   return (
     <div ref={allEvRef} className={classes.root}>
-      {/* <div className={classes.mark}>
-        <EventAvailableIcon color='primary' style={{ fontSize: '4rem', margin: 'auto' }} />
-      </div> */}
       <Title>The Shortcut Events</Title>
       <Typography variant='body1' className={classes.text}>
-        The Shortcut organizes many events for entrepreneurs, upskillers, and job seekers.
-        Workshops, training programs, talks, webinars, and more are organized to connect you with
-        local experts to help you with your professional integration in Finland. All for free!
+        Learn for your future. We organize workshops, talks and webinars for you entrepreneurs,
+        upskillers, and job seekers. Here you can search our upcoming events and recordings of our
+        past events. <br />
+        Explore and learn from experts now! Our events are open to everyone and free of charge.
         <br />
-        Here you can search our upcoming events and our past events. The past events that were
-        recorded, are also available here.
+        Looking for in-depth learning experience? Check our current training programs <a href="/services/#training">here</a>.
       </Typography>
     </div>
   );

@@ -156,7 +156,7 @@ const EventCard = ({ event }) => {
           href={link}
           id={`example-widget-trigger-${eventID}`}
           onClick={() => handleAnalysis(event)}
-          target='_self'
+          target={availability.toLowerCase() === 'upcoming' ? '_self' : '_blank'}
           rel='noopener noreferrer'>
           {setStatus(event.status)}
         </Button>

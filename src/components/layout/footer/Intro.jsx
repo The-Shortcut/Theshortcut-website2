@@ -19,7 +19,7 @@ const Intro = () => {
       <div className={classes.info}>
         <img src={logo} alt='TheShortcut footer logo' className={classes.logo} />
         <Typography variant='h4'>
-          The place for professional and social integration in Finland.
+          The place for meaningful professional integration and career transformation.
         </Typography>
         <div className={classes.address}>
           <EmailIcon />
