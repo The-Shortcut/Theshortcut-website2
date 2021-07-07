@@ -58,12 +58,6 @@ export const currTrainingData = [
     image: byob21Banner,
     link:'/events/byob'
   },
-  {
-    title: 'B.Y.O.B. Entrepreneurship Program',
-    description:
-      'B.Y.O.B. (Be Your Own Boss) is a 6 weeks long training program that will give you all the fundamental tools in order to create a viable company.',
-    image: byob21Banner,
-  },
 ];
 
 export const prevTrainingData = [
