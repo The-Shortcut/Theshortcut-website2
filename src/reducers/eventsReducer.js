@@ -36,7 +36,6 @@ const reducer = (state = initState, action) => {
         isLoading: false,
       };
     case SEARCH_EVENTS:
-      console.log({payload})
       let filterEvents = [];
       filterEvents = state.allEvents.filter(
         (event) =>

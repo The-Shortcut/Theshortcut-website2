@@ -76,5 +76,6 @@ const useStyles = makeStyles((theme) => ({
   text: {
     margin: '1.5em 1em',
     textAlign: 'center',
+    textOverflow: 'ellipsis',
   },
 }));

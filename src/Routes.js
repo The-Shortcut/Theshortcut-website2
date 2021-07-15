@@ -10,6 +10,7 @@ import AllEvents from './components/pages/events';
 import BYOB from './components/pages/events/byob';
 import Partners from './components/pages/partners';
 import Blog from './components/pages/blog';
+import Post from './components/pages/blog/Post';
 import Career from './components/pages/career';
 import Community from './components/pages/community';
 import OurImpact from './components/pages/impact';
@@ -28,7 +29,7 @@ import useGoogleAnalytics from './hooks/useGoogleAnalytics';
 const NotFound = lazy(() => import('./components/layout/NotFound'));
 
 const Routes = () => {
-  useGoogleAnalytics();
+  /* useGoogleAnalytics(); */
   return (
     <Switch>
       <Route exact path='/' component={Home} />
@@ -45,6 +46,7 @@ const Routes = () => {
       {/* Resources */}
       {/* <Route exact path='/media' component={ForMedia} /> */}
       <Route exact path='/blog' component={Blog} />
+      <Route exact path='/blog/:id' component={Post} />
       {/* {/* Footer */}
       <Route exact path='/privacy' component={PrivacyPolicies} />
       <Route exact path='/code' component={CodeOfConduct} />

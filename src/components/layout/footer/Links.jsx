@@ -92,9 +92,11 @@ const Links = () => {
             For Partners
           </Typography>
         </Link>
+        <Link to='/blog' className={classes.link}>
         <Typography variant='subtitle1' component='p' className={classes.item}>
           Blog
         </Typography>
+        </Link>
        {/*  <Typography variant='subtitle1' component='p' className={classes.item}>
           For media
         </Typography>

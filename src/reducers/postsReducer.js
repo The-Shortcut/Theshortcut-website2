@@ -1,15 +1,62 @@
-import { INIT_POSTS } from '../actions/types';
+import {
+  INIT_POSTS,
+  POSTS_PAGINATION,
+  SINGLE_POST,
+  POSTS_CATEGORIES,
+  FIND_POSTS_BY_CATEGORY,
+} from '../actions/types';
+
+let catTerm = window.location.search;
 
 const initState = {
   isLoading: true,
   posts: null,
+  featuredBlog: null,
+  filteredPosts: null,
+  currentPage: 1,
+  perPage: 10,
+  currentItems: [],
+  totalItems: 0,
+  postIsLoading: true,
+  singlePost: null,
+  categories: null,
+  category: null,
+  /* categoryTerm: (catTerm === '') ? 'all' : catTerm.split('=')[1], */
+  categoryTerm: 'all',
 };
 
 const reducer = (state = initState, action) => {
   const { type, payload } = action;
   switch (type) {
-      case INIT_POSTS:
-      return { ...state, isLoading: false, posts: payload };
+    case INIT_POSTS:
+      const featuredBlog = payload.find((post) => post.acf.featured === true);
+      const blogList = payload.filter((post) => post.acf.featured !== true);
+      return {
+        ...state,
+        isLoading: false,
+        posts: payload,
+        featuredBlog: featuredBlog,
+        filteredPosts: blogList,
+      };
+    case POSTS_PAGINATION:
+      let { currentPage, perPage, posts, filteredPosts, currentItems, totalItems } = state;
+      const lastItem = currentPage * perPage;
+      const firstItem = lastItem - perPage;
+      currentItems =
+        filteredPosts === null
+          ? posts.slice(firstItem, lastItem)
+          : filteredPosts.slice(firstItem, lastItem + perPage);
+      totalItems = filteredPosts === null ? posts.length : filteredPosts.length;
+      return { ...state, currentItems, totalItems, currentPage: payload };
+    case SINGLE_POST:
+      return { ...state, postIsLoading: false, singlePost: payload };
+    case POSTS_CATEGORIES:
+      return { ...state, categories: payload };
+    case FIND_POSTS_BY_CATEGORY:
+      let filtered = state.posts.filter(post => post.categories.find(cat => cat === payload.id));
+      console.log(filtered)
+      console.log(payload.id)
+      return { ...state, category: payload, categoryTerm: payload.name, filteredPosts: filtered };
     default:
       return state;
   }

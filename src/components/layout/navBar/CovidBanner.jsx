@@ -6,6 +6,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
+// Redux
+import { useSelector } from 'react-redux';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: '100%',
@@ -22,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 const CovidBanner = () => {
   const [open, setOpen] = React.useState(true);
   const classes = useStyles();
+  const { postIsLoading } = useSelector((state) => state.posts);
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -32,7 +36,7 @@ const CovidBanner = () => {
   };
 
   return (
-    <div>
+    <div style={{display: !postIsLoading ? 'none' : 'block'}}>
       <Snackbar
         anchorOrigin={
           window.innerWidth > 960

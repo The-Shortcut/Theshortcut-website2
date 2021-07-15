@@ -6,12 +6,19 @@ import { Pagination, PaginationItem } from '@material-ui/lab';
 
 // REDUX
 import { useSelector, useDispatch } from 'react-redux';
-import { paginate } from '../../actions/eventActions';
+import { paginate as EvPaginate } from '../../actions/eventActions';
+import { paginate as PoPaginate } from '../../actions/postActions';
 
 const PaginationOutlined = () => {
   const classes = useStyles();
 
-  const { perPage, currentPage, totalItems } = useSelector((state) => state.events);
+  const { perPage, currentPage, totalItems } = useSelector((state) => {
+    if (window.location.pathname === '/events') {
+      return state.events;
+    } else if (window.location.pathname === '/blog') {
+      return state.posts;
+    }
+  });
   const dispatch = useDispatch();
 
   const handleChange = (event, value) => {
@@ -26,7 +33,11 @@ const PaginationOutlined = () => {
         behavior: 'smooth',
       });
     }
-    dispatch(paginate(value));
+    if (window.location.pathname === '/events') {
+      dispatch(EvPaginate(value));
+    } else if (window.location.pathname === '/blog') {
+      dispatch(PoPaginate(value));
+    }
   };
 
   return (

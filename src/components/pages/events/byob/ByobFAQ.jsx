@@ -25,7 +25,7 @@ const ByobFAQ = () => {
   useEffect(() => {
     dispatch(getByobFAQ());
   }, [dispatch]);
-  console.log({ byobFaqLoaded, beforeFAQ, inProcessFAQ, aboutFAQ });
+
   if (!byobFaqLoaded) {
     return <div> Data is loading ...</div>;
   }

@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 import DrawerMenu from './DrawerMenu';
 import CovidBanner from './CovidBanner';
 
+// Redux
+import { useSelector } from 'react-redux';
+
 // Material-UI
 import { AppBar, Toolbar, IconButton, useScrollTrigger } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,6 +37,7 @@ const NavBar = ({ pageHeight }) => {
   const classes = useStyles();
   const [menuOpen, setMenuOpen] = useState(false);
   const [path, setPath] = useState('/')
+  const { postIsLoading } = useSelector((state) => state.posts);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const changeMenuIconColor = () => {
     // eslint-disable-next-line no-unused-expressions
@@ -58,7 +62,7 @@ const NavBar = ({ pageHeight }) => {
         <AppBar
           position='fixed'
           style={
-            pageHeight > 100 ? { backgroundColor: '#434343' } : { backgroundColor: (path === '/visit' || path === '/events/byob') ? '#434343' : 'transparent' }
+            pageHeight > 100 ? { backgroundColor: '#434343' } : { backgroundColor: (path === '/visit' || path === '/events/byob' || !postIsLoading) ? '#434343' : 'transparent' }
           }>
           <Toolbar className={classes.toolBar}>
             <div className={classes.title}>
