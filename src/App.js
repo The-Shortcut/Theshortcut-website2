@@ -20,13 +20,12 @@ import ScrollToTop from './ScrollToTop';
 import TagManager from 'react-gtm-module';
 import ToTopArrow from './components/functional/ToTopArrow';
 
-
 const App = () => {
   const [pageH, setPageH] = useState(null);
 
   useEffect(() => {
     window.addEventListener('scroll', () => setPageH(window.scrollY));
-    TagManager.initialize({gtmId: process.env.REACT_APP_GTM});
+    TagManager.initialize({ gtmId: process.env.REACT_APP_GTM });
   }, []);
   return (
     <Router>

@@ -46,6 +46,6 @@ const useStyles = makeStyles((theme) => ({
     transition: 'opacity 0.4s',
     opacity: 0.7,
     color: '#00A99D',
-    zIndex: 100
+    zIndex: 100,
   },
 }));

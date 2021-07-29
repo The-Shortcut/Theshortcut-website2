@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react';
 
 // Material-UI
@@ -11,7 +12,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import Title from '../../custom/Title';
 import Map from '../../functional/Map';
 
-const GetInTouch = ({findRef}) => {
+const GetInTouch = ({ findRef }) => {
   const classes = useStyles();
 
   return (
@@ -22,25 +23,32 @@ const GetInTouch = ({findRef}) => {
           <Typography variant='h4'>The Shortcut Lab</Typography>
           <div className={classes.info}>
             <div>
-              <div style={{display:'flex', margin: 10}}>
+              <div style={{ display: 'flex', margin: 10 }}>
                 <EmailIcon style={{ marginRight: 10, marginTop: 3 }} />
                 <Typography variant='body1'>info@theshortcut.org</Typography>
               </div>
-              <div style={{display:'flex', margin: 10}}>
+              <div style={{ display: 'flex', margin: 10 }}>
                 <InfoIcon style={{ marginRight: 10, marginTop: 3 }} />
                 <Typography variant='body1'>Open Wednesday & Thursday, 10am &mdash; 4pm</Typography>
               </div>
             </div>
-            <div style={{display:'flex', margin: 10}}>
-            <LocationOnIcon style={{ marginRight: 10, marginTop: 3 }} />
-            <Typography variant='body1'>
-              Maria01 (entrance 15B),
-              <br /> Lapinlahdenkatu 16, 00180, Helsinki
-            </Typography>
+            <div style={{ display: 'flex', margin: 10 }}>
+              <LocationOnIcon style={{ marginRight: 10, marginTop: 3 }} />
+              <Typography variant='body1'>
+                Maria01 (entrance 15B),
+                <br /> Lapinlahdenkatu 16, 00180, Helsinki
+              </Typography>
             </div>
           </div>
           <div className={classes.map}>
-            <Map />
+            <iframe
+              src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.8147075145432!2d24.919504915888247!3d60.167246281959855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920bcaeccfa0f1%3A0x18344d73b341d1e9!2sLapinlahdenkatu%2016%2C%2000180%20Helsinki!5e0!3m2!1sen!2sfi!4v1627567353327!5m2!1sen!2sfi'
+              width='100%'
+              height='600'
+              style={{ margin: 'auto', minWidth: '100%', maxHeight: '240px', border: 'none' }}
+              allowfullscreen=''
+              loading='lazy'
+            />
           </div>
         </div>
       </div>
@@ -66,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
       margin: '2em auto',
     },
   },
-/*   contact: {
+  /*   contact: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
@@ -88,10 +96,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
-      alignItems: 'flex-start'
+      alignItems: 'flex-start',
     },
   },
   address: {
-    display:'flex'
+    display: 'flex',
   },
 }));

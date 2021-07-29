@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import MetaTag from '../../utils/MetaTag';
 
@@ -20,7 +20,6 @@ const Post = () => {
   useEffect(() => {
     dispatch(singlePostData(id));
   }, [dispatch, id]);
-  console.log({ id, singlePost });
 
   if (postIsLoading) {
     return (
@@ -38,7 +37,7 @@ const Post = () => {
         screenshot='https://theshortcut.org/wp-content/uploads/2021/06/homepage-2.png'
       />
       <iframe
-        id="frameContainer"
+        id='frameContainer'
         className={classes.frame}
         title='book a visit panel'
         src={singlePost.link}

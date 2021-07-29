@@ -91,13 +91,13 @@ const Team = ({ teamRef }) => {
                             style={{ filter: 'brightness(150%)' }}
                           />
                         </a>
-                        <a href={item.acf.twitter}>
+                       {/*  <a href={item.acf.twitter}>
                           <TwitterIcon
                             color='primary'
                             fontSize='large'
                             style={{ filter: 'brightness(150%)' }}
                           />
-                        </a>
+                        </a> */}
                       </CardContent>
                     )}
                     <CardMedia

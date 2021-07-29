@@ -29,7 +29,7 @@ const PaginationOutlined = () => {
       });
     } else {
       window.scrollTo({
-        top: 970,
+        top: 1120,
         behavior: 'smooth',
       });
     }

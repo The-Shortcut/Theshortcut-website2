@@ -1,16 +1,23 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Default Image
+import dImage from '../../../assets/photos/defaultImage.png';
+
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 import { BsTextIndentLeft } from 'react-icons/bs';
 
-import dImage from '../../../assets/photos/defaultImage.png';
+// REDUX
+import { useSelector } from 'react-redux';
 
 const SingleBlog = ({ blog }) => {
   const classes = useStyles();
   const imgRef = useRef();
+  const { categories } = useSelector((state) => state.posts);
+  let myCat = categories.filter((cat) => blog.categories.includes(cat.id));
+  let myCatTitles = myCat.map((cat) => cat.name);
 
   useEffect(() => {
     if (imgRef.current) {
@@ -22,7 +29,6 @@ const SingleBlog = ({ blog }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getImage = () => {
     let images = blog.content.rendered.match(/<img.*?src="(.*?)"[^\>]+>/g);
-    console.log(images);
     if (images === null) {
       return null;
     } else {
@@ -65,15 +71,15 @@ const SingleBlog = ({ blog }) => {
           <img src={dImage} alt='blog_image' className={classes.image} />
         )}
       </Link>
+      <Typography variant='subtitle2' className={classes.cat}>
+        {myCatTitles.length === 1 ? 'Caterogy' : 'Categories'}: {myCatTitles.join(' , ')}
+      </Typography>
       <Typography variant='body1' dangerouslySetInnerHTML={{ __html: blog.excerpt.rendered }} />
       <Link
         underline='none'
         to={`/blog/${blog.id}`}
         style={{ textDecoration: 'none', height: '100%' }}>
-        <Button
-          color='primary'
-          endIcon={<BsTextIndentLeft />}
-          style={{ maxWidth: '120px', alignSelf: 'flex-end' }}>
+        <Button color='primary' endIcon={<BsTextIndentLeft />} className={classes.btn}>
           Read more
         </Button>
       </Link>
@@ -148,5 +154,16 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     minHeight: '21em',
     maxHeight: '21em',
+  },
+  btn: {
+    minWidth: '140px',
+    maxWidth: '140px',
+    alignSelf: 'flex-end',
+  },
+  cat: {
+    background: '#434343',
+    color: '#FFFFFF',
+    marginTop: '-7px',
+    paddingLeft: 10,
   },
 }));

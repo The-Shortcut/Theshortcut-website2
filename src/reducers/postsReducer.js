@@ -21,8 +21,8 @@ const initState = {
   singlePost: null,
   categories: null,
   category: null,
-  /* categoryTerm: (catTerm === '') ? 'all' : catTerm.split('=')[1], */
-  categoryTerm: 'all',
+  categoryTerm: (catTerm === '') ? 'all' : catTerm.split('=')[1],
+ /*  categoryTerm: 'all', */
 };
 
 const reducer = (state = initState, action) => {
@@ -31,6 +31,9 @@ const reducer = (state = initState, action) => {
     case INIT_POSTS:
       const featuredBlog = payload.find((post) => post.acf.featured === true);
       const blogList = payload.filter((post) => post.acf.featured !== true);
+      const blogListByCat = payload.filter((post) => state.categories.find( cat => post.categories.includes(cat.id)));
+      console.log(blogListByCat)
+      state.categories.forEach(res => Object.assign(res, { count: payload.filter(post => post.categories.find(cat => cat === res.id)).length }))
       return {
         ...state,
         isLoading: false,
@@ -45,18 +48,16 @@ const reducer = (state = initState, action) => {
       currentItems =
         filteredPosts === null
           ? posts.slice(firstItem, lastItem)
-          : filteredPosts.slice(firstItem, lastItem + perPage);
+          : filteredPosts.slice(firstItem, lastItem);
       totalItems = filteredPosts === null ? posts.length : filteredPosts.length;
       return { ...state, currentItems, totalItems, currentPage: payload };
     case SINGLE_POST:
       return { ...state, postIsLoading: false, singlePost: payload };
     case POSTS_CATEGORIES:
-      return { ...state, categories: payload };
+      return { ...state, categories: payload, singlePost: null };
     case FIND_POSTS_BY_CATEGORY:
       let filtered = state.posts.filter(post => post.categories.find(cat => cat === payload.id));
-      console.log(filtered)
-      console.log(payload.id)
-      return { ...state, category: payload, categoryTerm: payload.name, filteredPosts: filtered };
+      return { ...state, category: payload, categoryTerm: payload.slug, filteredPosts: filtered };
     default:
       return state;
   }

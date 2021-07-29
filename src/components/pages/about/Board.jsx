@@ -93,13 +93,13 @@ const Board = ({ boardRef }) => {
                           style={{ filter: 'brightness(200%)' }}
                         />
                       </a>
-                      <a href={item.acf.twitter}>
+                      {/* <a href={item.acf.twitter}>
                         <TwitterIcon
                           color='primary'
                           fontSize='large'
                           style={{ filter: 'brightness(200%)' }}
                         />
-                      </a>
+                      </a> */}
                     </CardContent>
                   )}
                   <img className={classes.media} src={item.acf.image} alt={item.acf.name} />
