@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 // Meta Tag
@@ -9,7 +9,12 @@ import heroImage from '../../../assets/photos/blogHero.png';
 
 // REDUX
 import { useSelector, useDispatch } from 'react-redux';
-import { postsData, paginate, postsCategoriesData } from '../../../actions/postActions';
+import {
+  postsData,
+  paginate,
+  postsCategoriesData,
+  findPostsByCategory,
+} from '../../../actions/postActions';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,14 +24,16 @@ import { Typography, CircularProgress } from '@material-ui/core';
 import SkeletonPost from '../../functional/SkeletonPost';
 import PaginationOutlined from '../../functional/Pagination';
 import FeaturedBlog from './FeaturedBlog';
-import CategoriesList from './CategoriesList';
+import SearchPosts from './SearchPosts';
 import SingleBlog from './SingleBlog';
 
 const Blog = () => {
   const classes = useStyles();
+  const [value, setValue] = useState({ number: 0, title: '' });
   const {
     isLoading,
     categories,
+    posts,
     featuredBlog,
     filteredPosts,
     currentPage,
@@ -52,6 +59,17 @@ const Blog = () => {
     }
   }, [currentPage, dispatch, isLoading]);
 
+  useEffect(() => {
+    let matchedCat = categories?.find((cat) => cat.slug === categoryTerm);
+    if (categoryTerm === matchedCat?.slug) {
+      setValue({ number: categories?.indexOf(matchedCat), title: categoryTerm });
+    }
+    if (posts) {
+      dispatch(findPostsByCategory(matchedCat));
+      dispatch(paginate(1));
+    }
+  }, [categories, categoryTerm, dispatch, posts, value.number, value.title]);
+
   return (
     <div>
       <MetaTag
@@ -71,15 +89,15 @@ const Blog = () => {
         <div className={classes.hero} />
       )}
       <Typography variant='h1' className={classes.title}>
-            Blog
-          </Typography>
+        Blog
+      </Typography>
       {isLoading ? (
-          <SkeletonPost />
+        <SkeletonPost />
       ) : (
         <div className={classes.root}>
           <section className={classes.topSection}>
             <FeaturedBlog blog={featuredBlog} />
-            <CategoriesList categories={categories} />
+            <SearchPosts categories={categories} value={value} setValue={setValue} />
           </section>
           <section className={classes.itemsSection}>
             <div className={classes.container}>

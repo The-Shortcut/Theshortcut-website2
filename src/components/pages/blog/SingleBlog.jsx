@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    maxWidth: '90%',
+    maxWidth: '380px',
   },
   title: {
     margin: 'auto',

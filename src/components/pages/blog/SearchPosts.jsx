@@ -1,43 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Collapse, Tabs, Tab } from '@material-ui/core';
+import { Collapse, Tabs, Tab, Typography } from '@material-ui/core';
 
 // REDUX
 import { useSelector, useDispatch } from 'react-redux';
-import { searchEvents, paginate } from '../../../actions/eventActions';
+import { findPostsByCategory, paginate } from '../../../actions/postActions';
 
 //Children
 import SearchBox from '../../custom/SearchBox';
 
-const SearchEvents = ({ value, setValue }) => {
+const SearchPosts = ({ value, setValue }) => {
   const classes = useStyles();
-  const { isLoading, searchTags } = useSelector((state) => state.events);
+  const [selected, setSelected] = useState('');
+  const { isLoading, categories } = useSelector((state) => state.posts);
 
   const dispatch = useDispatch();
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
-    dispatch(searchEvents(event.target.innerText.toLowerCase()));
+    setValue({ number: newValue, title: event.target.innerText.toLowerCase() });
+  };
+
+  const handleClick = (cat) => {
+    dispatch(findPostsByCategory(cat));
     dispatch(paginate(1));
   };
 
   return (
     <div className={classes.main}>
       <div className={classes.root}>
-        <SearchBox placeHolder='Search Events ...' setValue={setValue} />
+        <SearchBox placeHolder='Search posts ...' setValue={setValue} />
         <Collapse in={!isLoading}>
+          <Typography className={classes.cat}>Categories:</Typography>
           <Tabs
-            value={value}
+            value={value.number}
+            orientation='vertical'
             onChange={(event, newValue) => handleChange(event, newValue)}
+            aria-label='Posts categories'
             indicatorColor='primary'
-            textColor='primary'
+            textColor='secondary'
             classes={{ indicator: classes.shortIndicator }}
             className={classes.tabs}
             centered>
-            {searchTags.map((tag, index) => (
-              <Tab key={index} label={tag.label} className={classes.tab} />
+            {categories.map((cat, index) => (
+              <Tab
+                key={index}
+                label={cat.name}
+                className={classes.tab}
+                onClick={() => handleClick(cat)}
+              />
             ))}
           </Tabs>
         </Collapse>
@@ -46,17 +58,11 @@ const SearchEvents = ({ value, setValue }) => {
   );
 };
 
-export default SearchEvents;
+export default SearchPosts;
 
 const useStyles = makeStyles((theme) => ({
-  main: {
-    minWidth: '100%',
-    border: '1px solid #DDDDDD',
-    background: '#DDDDDD',
-  },
+  main: {},
   root: {
-    minWidth: '60%',
-    maxWidth: '60%',
     margin: '2em auto 1em',
     [theme.breakpoints.only('md')]: {
       minWidth: '90%',
@@ -72,13 +78,24 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   shortIndicator: {
+    minWidth: '9em',
+    maxHeight: '3px',
+    marginTop: 35,
+    marginRight: 47,
     [theme.breakpoints.up('sm')]: {
       maxWidth: 80,
       height: 4,
       marginLeft: theme.spacing(5),
     },
   },
+  cat: {
+    fontWeight: 'bold',
+    marginTop: 25,
+  },
   tab: {
+    border: '1px solid #888888',
+    borderRadius: '20px',
+    margin: 5,
     [theme.breakpoints.up('sm')]: {
       fontSize: '1rem',
       fontWeight: 'bold',

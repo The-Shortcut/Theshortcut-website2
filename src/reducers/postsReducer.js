@@ -20,7 +20,16 @@ const initState = {
   postIsLoading: true,
   singlePost: null,
   categories: null,
-  category: null,
+  cats: [
+    { value: 'all', label: 'All' },
+    { value: 'employment', label: 'Employment' },
+    { value: 'entrepreneurship', label: 'Entrepreneurship' },
+    { value: 'events', label: 'Events' },
+    { value: 'diversity', label: 'Diversity' },
+    { value: 'immigration', label: 'Immigration' },
+    { value: 'community stories', label: 'Community Stories' },
+  ],
+  category: (catTerm === '') ? 'all' : catTerm.split('=')[1],
   categoryTerm: (catTerm === '') ? 'all' : catTerm.split('=')[1],
  /*  categoryTerm: 'all', */
 };
@@ -31,8 +40,7 @@ const reducer = (state = initState, action) => {
     case INIT_POSTS:
       const featuredBlog = payload.find((post) => post.acf.featured === true);
       const blogList = payload.filter((post) => post.acf.featured !== true);
-      const blogListByCat = payload.filter((post) => state.categories.find( cat => post.categories.includes(cat.id)));
-      console.log(blogListByCat)
+      /* const blogListByCat = payload.filter((post) => state.categories.find( cat => post.categories.includes(cat.id))); */
       state.categories.forEach(res => Object.assign(res, { count: payload.filter(post => post.categories.find(cat => cat === res.id)).length }))
       return {
         ...state,
