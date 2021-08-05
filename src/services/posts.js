@@ -7,10 +7,9 @@ const getPostsData = async () => {
   return responsePage1.data.concat(responsePage2.data);
 };
 
-const getSinglePostData = async (id) => {
-  const response = await axios.get(`https://theshortcut.org/wp-json/wp/v2/posts/${id}`);
-  const categories = await axios.get(`https://theshortcut.org/wp-json/wp/v2/categories?post=${id}`);
-  return {...response.data, categoriesData: categories.data};
+const getSinglePostData = async (slug) => {
+  const response = await axios.get(`https://theshortcut.org/wp-json/wp/v2/posts?slug=${slug}`);
+  return response.data[0];
 };
 
 const getPostsCategories = async () => {

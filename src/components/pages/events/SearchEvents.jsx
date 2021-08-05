@@ -9,9 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { searchEvents, paginate } from '../../../actions/eventActions';
 
 //Children
-import SearchBox from '../../custom/SearchBox';
+import SearchBox from './SearchBox';
 
-const SearchEvents = ({ value, setValue }) => {
+const SearchEvents = ({ value, setValue, searchRef }) => {
   const classes = useStyles();
   const { isLoading, searchTags } = useSelector((state) => state.events);
 
@@ -24,9 +24,9 @@ const SearchEvents = ({ value, setValue }) => {
   };
 
   return (
-    <div className={classes.main}>
+    <div className={classes.main} ref={searchRef}>
       <div className={classes.root}>
-        <SearchBox placeHolder='Search Events ...' setValue={setValue} />
+        <SearchBox setValue={setValue} />
         <Collapse in={!isLoading}>
           <Tabs
             value={value}

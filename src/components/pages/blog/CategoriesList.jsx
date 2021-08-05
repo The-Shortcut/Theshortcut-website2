@@ -1,31 +1,59 @@
 import React from 'react';
 
-// REDUX
-import { findPostsByCategory,paginate } from '../../../actions/postActions';
-import { useSelector, useDispatch } from 'react-redux';
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
+import { Collapse, Tabs, Tab, Typography } from '@material-ui/core';
 
-const CategoriesList = ({ categories }) => {
+// REDUX
+import { useSelector, useDispatch } from 'react-redux';
+import { findPostsByCategory, paginate } from '../../../actions/postActions';
+
+//Children
+import SearchBox from './SearchBox';
+
+const CategoriesList = ({ value, setValue, executeScrollPosts }) => {
   const classes = useStyles();
+  const { isLoading, categories } = useSelector((state) => state.posts);
+
   const dispatch = useDispatch();
 
+  const handleChange = (event, newValue) => {
+    setValue({ number: newValue, title: event.target.innerText.toLowerCase() });
+  };
+
   const handleClick = (cat) => {
-      dispatch(findPostsByCategory(cat));
-      dispatch(paginate(1))
+    dispatch(findPostsByCategory(cat));
+    dispatch(paginate(1));
+    executeScrollPosts()
   };
 
   return (
-    <div className={classes.root}>
-      <h2>CATEGORIES</h2>
-      <table className={classes.table}>
-        {categories.map((cat) => (
-          <tr key={cat.id} className={classes.cat} onClick={() => handleClick(cat)}>
-            <td>{cat.name}</td>
-            <td>{cat.count}</td>
-          </tr>
-        ))}
-      </table>
+    <div className={classes.main}>
+      <div className={classes.root}>
+        <SearchBox setValue={setValue} />
+        <Collapse in={!isLoading}>
+          <Typography className={classes.cat}>Categories:</Typography>
+          <Tabs
+            value={value.number}
+            orientation='vertical'
+            onChange={(event, newValue) => handleChange(event, newValue)}
+            aria-label='Posts categories'
+            indicatorColor='primary'
+            textColor='secondary'
+            classes={{ indicator: classes.shortIndicator }}
+            className={classes.tabs}
+            centered>
+            {categories.map((cat, index) => (
+              <Tab
+                key={index}
+                label={cat.name}
+                className={classes.tab}
+                onClick={() => handleClick(cat)}
+              />
+            ))}
+          </Tabs>
+        </Collapse>
+      </div>
     </div>
   );
 };
@@ -33,35 +61,49 @@ const CategoriesList = ({ categories }) => {
 export default CategoriesList;
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    margin: 'auto',
+  },
   root: {
-    margin: '3.5em auto 8em',
-    minWidth: '30%',
-    maxWidth: '30%',
-    [theme.breakpoints.down('xs')]: {
+    margin: '2em auto 1em',
+    [theme.breakpoints.only('md')]: {
       minWidth: '90%',
-      margin: '1.5em auto',
+      maxWidth: '90%',
     },
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '80%',
+      maxWidth: '80%',
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  table: {
-    border: '1px solid #EEE',
-    borderRadius: '5px',
-    borderCollapse: 'collapse',
-    fontSize: '1.2rem',
-    fontWeight: 500,
-    width: '100%',
-  },
-  '@global': {
-    'tr:nth-child(even)': {
-      backgroundColor: '#DDD',
+  shortIndicator: {
+    minWidth: '9em',
+    maxHeight: '3px',
+    marginTop: 35,
+    marginRight: 31,
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: 80,
+      height: 4,
+      marginLeft: theme.spacing(5),
     },
-    'th, td': {
-      padding: '0.3em',
-    },
+    [theme.breakpoints.down('xs')]: {
+      marginRight: 21,
+    }
   },
   cat: {
-    '&:hover': {
-      cursor: 'pointer',
-      fontWeight: 700,
+    fontWeight: 'bold',
+    marginTop: 25,
+  },
+  tab: {
+    border: '1px solid #888888',
+    borderRadius: '20px',
+    margin: 5,
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1rem',
+      fontWeight: 'bold',
     },
   },
 }));

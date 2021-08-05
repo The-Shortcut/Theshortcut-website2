@@ -4,9 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
 
-// Mapbox
-import 'mapbox-gl/dist/mapbox-gl.css';
-
 // Material-UI
 import { CssBaseline } from '@material-ui/core';
 

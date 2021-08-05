@@ -7,9 +7,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 import { BsTextIndentLeft } from 'react-icons/bs';
 
+// REDUX
+import { useSelector } from 'react-redux';
+
+// Analytics
+import analytics from '../../functional/analytics';
+
 const FeaturedBlog = ({ blog }) => {
   const classes = useStyles();
   const [image, setImage] = useState(null);
+
+  const { categories } = useSelector((state) => state.posts);
+  let myCat = categories.filter((cat) => blog.categories.includes(cat.id));
+  let myCatTitles = myCat.map((cat) => cat.name);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getImage = React.useCallback(async () => {
@@ -31,6 +41,14 @@ const FeaturedBlog = ({ blog }) => {
     return `${monthName} ${dateArr[2]}, ${dateArr[0]}`;
   };
 
+  const handleAnalysis = (targetEvent) => {
+    analytics.sendEvent({
+      category: 'Select Post',
+      label: targetEvent.title.rendered,
+      value: 1,
+    });
+  };
+
   return (
     <div className={classes.card}>
       <Typography
@@ -47,20 +65,24 @@ const FeaturedBlog = ({ blog }) => {
       </div>
       <Link
         underline='none'
-        to={`/blog/${blog.id}`}
+        to={`/blog/${blog.slug}`}
+        onClick={() => handleAnalysis(blog)}
         style={{ textDecoration: 'none', height: '100%' }}>
         <img src={image} alt='blog_image' className={classes.image} />
       </Link>
+      <Typography variant='subtitle2' className={classes.cat}>
+        {myCatTitles.length === 1 ? 'Caterogy' : 'Categories'}: {myCatTitles.join(' , ')}
+      </Typography>
       <Typography variant='body1' dangerouslySetInnerHTML={{ __html: blog.excerpt.rendered }} />
       <Link
         underline='none'
-        to={`/blog/${blog.id}`}
+        to={`/blog/${blog.slug}`}
         style={{ textDecoration: 'none', height: '100%' }}>
         <Button
           color='primary'
           endIcon={<BsTextIndentLeft />}
           style={{ float: 'right', marginRight: 30 }}
-          onClick={() => console.log(blog)}>
+          onClick={() => handleAnalysis(blog)}>
           Read more
         </Button>
       </Link>
@@ -133,5 +155,11 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '21em',
     maxHeight: '21em',
     objectFit:'cover'
+  },
+  cat: {
+    background: '#434343',
+    color: '#FFFFFF',
+    marginTop: '-7px',
+    paddingLeft: 10,
   },
 }));

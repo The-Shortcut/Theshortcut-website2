@@ -84,7 +84,6 @@ const SingleEventCard = ({ event }) => {
   };
 
   const handleAnalysis = (targetEvent) => {
-    console.log(targetEvent);
     if (targetEvent.id) {
       setEventID(targetEvent.id);
     }

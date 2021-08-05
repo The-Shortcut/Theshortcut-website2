@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { paginate as EvPaginate } from '../../actions/eventActions';
 import { paginate as PoPaginate } from '../../actions/postActions';
 
-const PaginationOutlined = () => {
+const PaginationOutlined = ({ paginateRef, executeScrollResult, executeScrollSearchEv }) => {
   const classes = useStyles();
 
   const { perPage, currentPage, totalItems } = useSelector((state) => {
@@ -22,26 +22,28 @@ const PaginationOutlined = () => {
   const dispatch = useDispatch();
 
   const handleChange = (event, value) => {
-    if (window.innerWidth < 600) {
-      window.scrollTo({
-        top: 830,
-        behavior: 'smooth',
-      });
-    } else {
-      window.scrollTo({
-        top: 1120,
-        behavior: 'smooth',
-      });
-    }
     if (window.location.pathname === '/events') {
       dispatch(EvPaginate(value));
+      executeScrollSearchEv();
+      /* if (window.innerWidth < 600) {
+        window.scrollTo({
+          top: 830,
+          behavior: 'smooth',
+        });
+      } else {
+        window.scrollTo({
+          top: 1120,
+          behavior: 'smooth',
+        });
+      } */
     } else if (window.location.pathname === '/blog') {
       dispatch(PoPaginate(value));
+      executeScrollResult();
     }
   };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} ref={paginateRef}>
       <Pagination
         page={currentPage}
         count={Math.ceil(totalItems / perPage)}

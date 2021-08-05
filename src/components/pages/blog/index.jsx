@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 // Meta Tag
@@ -14,6 +14,7 @@ import {
   paginate,
   postsCategoriesData,
   findPostsByCategory,
+  searchPosts,
 } from '../../../actions/postActions';
 
 // Material-UI
@@ -24,7 +25,7 @@ import { Typography, CircularProgress } from '@material-ui/core';
 import SkeletonPost from '../../functional/SkeletonPost';
 import PaginationOutlined from '../../functional/Pagination';
 import FeaturedBlog from './FeaturedBlog';
-import SearchPosts from './SearchPosts';
+import CategoriesList from './CategoriesList';
 import SingleBlog from './SingleBlog';
 
 const Blog = () => {
@@ -39,16 +40,25 @@ const Blog = () => {
     currentPage,
     currentItems,
     categoryTerm,
+    searchTerm,
   } = useSelector((state) => state.posts);
   let history = useHistory();
   const dispatch = useDispatch();
 
+  const postsRef = useRef(null);
+  const scrollToPosts = (ref) => window.scrollTo(0, ref.current.offsetTop - 80);
+  const executeScrollPosts = () => scrollToPosts(postsRef);
+
+  const scrollToResult = (ref) => window.scrollTo(0, ref.current.offsetTop - 80);
+  const executeScrollResult = () => scrollToResult(postsRef);
+
   useEffect(() => {
     history.push({
       pathname: '/blog',
-      search: `?category=${categoryTerm}`,
+      hash: `#${categoryTerm}`,
+      search: `?searchTerm=${searchTerm}`,
     });
-  }, [history, categoryTerm]);
+  }, [history, categoryTerm, searchTerm]);
 
   useEffect(() => {
     if (isLoading) {
@@ -56,8 +66,9 @@ const Blog = () => {
       dispatch(postsCategoriesData());
     } else {
       dispatch(paginate(currentPage));
+      /* dispatch(searchPosts(searchTerm)); */
     }
-  }, [currentPage, dispatch, isLoading]);
+  }, [currentPage, dispatch, isLoading, searchTerm]);
 
   useEffect(() => {
     let matchedCat = categories?.find((cat) => cat.slug === categoryTerm);
@@ -69,7 +80,6 @@ const Blog = () => {
       dispatch(paginate(1));
     }
   }, [categories, categoryTerm, dispatch, posts, value.number, value.title]);
-
   return (
     <div>
       <MetaTag
@@ -97,16 +107,16 @@ const Blog = () => {
         <div className={classes.root}>
           <section className={classes.topSection}>
             <FeaturedBlog blog={featuredBlog} />
-            <SearchPosts categories={categories} value={value} setValue={setValue} />
+            <CategoriesList value={value} setValue={setValue} executeScrollPosts={executeScrollPosts}  />
           </section>
-          <section className={classes.itemsSection}>
+          <section className={classes.itemsSection} ref={postsRef}>
             <div className={classes.container}>
               {currentItems.map((blog) => (
                 <SingleBlog key={blog.id} blog={blog} />
               ))}
             </div>
           </section>
-          {filteredPosts.length > 10 && <PaginationOutlined />}
+          {filteredPosts.length > 10 && <PaginationOutlined executeScrollResult={executeScrollResult} />}
         </div>
       )}
     </div>
@@ -170,16 +180,12 @@ const useStyles = makeStyles((theme) => ({
   },
   topSection: {
     margin: 'auto',
-    minWidth: '80%',
-    maxWidth: '80%',
-    [theme.breakpoints.only('sm')]: {
-      minWidth: '90%',
-      maxWidth: '90%',
-    },
-    [theme.breakpoints.down('xs')]: {
+    minWidth: '90%',
+    maxWidth: '90%',
+ /*    [theme.breakpoints.down('sm')]: {
       minWidth: '95%',
       maxWidth: '95%',
-    },
+    }, */
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',

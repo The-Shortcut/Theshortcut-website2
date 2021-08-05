@@ -23,6 +23,7 @@ const SingleBlog = ({ blog }) => {
     if (imgRef.current) {
       imgRef.current.firstElementChild.style.width = '100%';
       imgRef.current.firstElementChild.style.height = '21em';
+      imgRef.current.firstElementChild.style.objectFit = 'cover';
     }
   }, []);
 
@@ -59,16 +60,12 @@ const SingleBlog = ({ blog }) => {
       </div>
       <Link
         underline='none'
-        to={`/blog/${blog.id}`}
+        to={`/blog/${blog.slug}`}
         style={{ textDecoration: 'none', height: '100%' }}>
         {getImage() ? (
-          <div
-            ref={imgRef}
-            style={{ objectFit: 'cover' }}
-            dangerouslySetInnerHTML={{ __html: getImage() }}
-          />
+          <div ref={imgRef} dangerouslySetInnerHTML={{ __html: getImage() }} />
         ) : (
-          <img src={dImage} alt='blog_image' className={classes.image} />
+          <img src={dImage} alt='default_blog_image' className={classes.image} />
         )}
       </Link>
       <Typography variant='subtitle2' className={classes.cat}>
@@ -77,7 +74,7 @@ const SingleBlog = ({ blog }) => {
       <Typography variant='body1' dangerouslySetInnerHTML={{ __html: blog.excerpt.rendered }} />
       <Link
         underline='none'
-        to={`/blog/${blog.id}`}
+        to={`/blog/${blog.slug}`}
         style={{ textDecoration: 'none', height: '100%' }}>
         <Button color='primary' endIcon={<BsTextIndentLeft />} className={classes.btn}>
           Read more

@@ -6,14 +6,11 @@ import { Paper, InputBase, IconButton } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 
 // REDUX
-import { useSelector, useDispatch } from 'react-redux';
-import { searchEvents, paginate as eventPaginate  } from '../../actions/eventActions';
-import { paginate as postPaginate } from '../../actions/postActions';
+import { useDispatch } from 'react-redux';
+import { searchEvents, paginate as eventPaginate  } from '../../../actions/eventActions';
 
-const SearchBox = ({ placeHolder, setValue}) => {
+const SearchBox = ({setValue}) => {
   const classes = useStyles();
-  const eventLoading = useSelector((state) => state.events.isLoading);
-  const postsLoading = useSelector(state => state.posts.isLoading);
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
@@ -21,14 +18,8 @@ const SearchBox = ({ placeHolder, setValue}) => {
     if (value !== '') {
       setValue(0)
     }
-    if (!eventLoading) {
       dispatch(searchEvents(value));
       dispatch(eventPaginate(1));
-    }
-    /* if (!postsLoading) {
-      dispatch(searchPosts(value));
-      dispatch(postPaginate(1));
-    } */
   };
 
   return (
@@ -38,8 +29,8 @@ const SearchBox = ({ placeHolder, setValue}) => {
       </IconButton>
       <InputBase
         className={classes.input}
-        placeholder={placeHolder}
-        inputProps={{ 'aria-label': placeHolder }}
+        placeholder="Search Events ..."
+        inputProps={{ 'aria-label': "search events" }}
         onChange={handleSearch}
         onFocus={(e) => e.target.select()}
       />

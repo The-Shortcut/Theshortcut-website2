@@ -29,7 +29,7 @@ import useGoogleAnalytics from './hooks/useGoogleAnalytics';
 const NotFound = lazy(() => import('./components/layout/NotFound'));
 
 const Routes = () => {
-  /* useGoogleAnalytics(); */
+  useGoogleAnalytics();
   return (
     <Switch>
       <Route exact path='/' component={Home} />
@@ -46,7 +46,7 @@ const Routes = () => {
       {/* Resources */}
       {/* <Route exact path='/media' component={ForMedia} /> */}
       <Route exact path='/blog' component={Blog} />
-      <Route exact path='/blog/:id' component={Post} />
+      <Route exact path='/blog/:slug' component={Post} />
       {/* {/* Footer */}
       <Route exact path='/privacy' component={PrivacyPolicies} />
       <Route exact path='/code' component={CodeOfConduct} />

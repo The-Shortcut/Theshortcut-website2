@@ -66,6 +66,10 @@ const AllEvents = () => {
   const scrollToAllEv = (ref) => window.scrollTo(0, ref.current.offsetTop - 100);
   const executeScrollAllEv = () => scrollToAllEv(allEvRef);
 
+  const searchRef = useRef(null);
+  const scrollToSearch = (ref) => window.scrollTo(0, ref.current.offsetTop - 75);
+  const executeScrollSearchEv = () => scrollToSearch(searchRef);
+
   return (
     <div>
       <MetaTag
@@ -95,15 +99,23 @@ const AllEvents = () => {
           onClick={executeScrollAllEv}>
           ALL EVENTS
         </Button>
-        <Button variant='contained' color='default' className={classes.button} href='/services/#training'>
+        <Button
+          variant='contained'
+          color='default'
+          className={classes.button}
+          href='/services/#training'>
           TRAINING
         </Button>
       </div>
       <Subject allEvRef={allEvRef} />
-      <SearchEvents value={value} setValue={setValue} />
-      {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
+      <SearchEvents value={value} setValue={setValue} searchRef={searchRef} />
+      {!isLoading && filteredEvents?.length > 10 && (
+        <PaginationOutlined executeScrollSearchEv={executeScrollSearchEv} />
+      )}
       <EventsList />
-      {!isLoading && filteredEvents?.length > 10 && <PaginationOutlined />}
+      {!isLoading && filteredEvents?.length > 10 && (
+        <PaginationOutlined executeScrollSearchEv={executeScrollSearchEv} />
+      )}
       <Typography variant='subtitle1' component='p' className={classes.text}>
         If you didn’t find the kind of event you were looking for or you have an idea for an event,
         then contact us at <a href='mailto:info@theshortcut.org'>info@theshortcut.org</a>
