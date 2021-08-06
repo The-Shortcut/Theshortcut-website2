@@ -155,9 +155,7 @@ const EventCard = ({ event }) => {
           endIcon={<TrendingFlatIcon />}
           href={link}
           id={`example-widget-trigger-${eventID}`}
-          onClick={() => handleAnalysis(event)}
-          target={availability.toLowerCase() === 'upcoming' ? '_self' : '_blank'}
-          rel='noopener noreferrer'>
+          onClick={() => handleAnalysis(event)}>
           {setStatus(event.status)}
         </Button>
         <ShareButton event={event} />

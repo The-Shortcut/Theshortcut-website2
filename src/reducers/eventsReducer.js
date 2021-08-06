@@ -1,6 +1,6 @@
 import { INIT_EVENTS, SEARCH_EVENTS, PAGINATION } from '../actions/types';
 
-let searchItem = window.location.search
+let searchItem = window.location.search;
 
 const initState = {
   isLoading: true,
@@ -8,12 +8,12 @@ const initState = {
   allEvents: null,
   filteredEvents: null,
   searchTags: [
-    { value: 'all', label: 'All' },
     { value: 'upcoming', label: 'Upcoming' },
     { value: 'recorded', label: 'Recorded' },
     { value: 'past', label: 'Past' },
+    { value: 'all', label: 'All' },
   ],
-  searchTerm: searchItem === '' ? 'all': searchItem.split('=')[1],
+  searchTerm: searchItem === '' ? 'upcoming' : searchItem.split('=')[1],
   // for pagination
   currentPage: 1,
   perPage: 9,
