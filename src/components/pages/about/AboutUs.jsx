@@ -49,7 +49,6 @@ const AboutUs = ({ aboutusRef }) => {
           {/* <img src={aboutUs} alt='about us' className={classes.player} /> */}
         </div>
       </div>
-      <div id='core-values' />
     </div>
   );
 };

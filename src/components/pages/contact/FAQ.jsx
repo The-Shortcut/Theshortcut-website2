@@ -13,7 +13,7 @@ import { getFAQ } from '../../../actions/docActions';
 // Children
 import Title from '../../custom/Title';
 
-const FAQ = ({faqRef}) => {
+const FAQ = ({ faqRef }) => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
@@ -29,7 +29,7 @@ const FAQ = ({faqRef}) => {
   };
 
   return (
-    <div ref={faqRef} className={classes.root}>
+    <div ref={faqRef} className={classes.root} id='faq'>
       <Title>FAQ</Title>
       {faq_about &&
         faq_about.map((faq, index) => (

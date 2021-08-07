@@ -118,7 +118,6 @@ const Team = ({ teamRef }) => {
           </div>
         )}
       </div>
-      <div id='board' />
     </div>
   );
 };

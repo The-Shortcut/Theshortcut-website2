@@ -10,10 +10,10 @@ import { values } from './valuesData';
 // Children
 import Title from '../../custom/Title';
 
-const CoreValues = ({coreValuesRef}) => {
+const CoreValues = ({ coreValuesRef }) => {
   const classes = useStyles();
   return (
-    <section ref={coreValuesRef} className={classes.section}>
+    <section ref={coreValuesRef} className={classes.section} id='core-values'>
       <div className={classes.root}>
         <Title>Core Values</Title>
         <div className={classes.container}>
@@ -29,7 +29,6 @@ const CoreValues = ({coreValuesRef}) => {
             </div>
           ))}
         </div>
-      <div id='team' />
       </div>
     </section>
   );

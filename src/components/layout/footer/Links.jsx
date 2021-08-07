@@ -15,12 +15,12 @@ const Links = () => {
             About Us
           </Typography>
         </Link>
-        <a href='/about/#faq' className={classes.link}>
+        <a href='/contact-us#faq' className={classes.link}>
           <Typography variant='subtitle1' component='p' className={classes.item}>
             FAQ
           </Typography>
         </a>
-        <a href='/about/#core-values' className={classes.link}>
+        <a href='/about#core-values' className={classes.link}>
           <Typography variant='subtitle1' component='p' className={classes.item}>
             Core Values
           </Typography>
@@ -57,7 +57,7 @@ const Links = () => {
         <Typography variant='h4' className={classes.headTitle}>
           Join Us
         </Typography>
-        <Link to='/events/all' className={classes.link}>
+        <Link to='/events' className={classes.link}>
           <Typography
             variant='subtitle1'
             component='p'

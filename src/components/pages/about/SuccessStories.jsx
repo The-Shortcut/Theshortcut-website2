@@ -88,7 +88,6 @@ const SuccessStories = () => {
             ))}
           </Slider>
         )}
-        <div id='faq' />
       </div>
     </div>
   );
