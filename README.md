@@ -13,8 +13,6 @@ The second version of The Shortcut website created by ReactJS and headless WordP
 - Material-UI
 - Graph API
 - react-router-dom
-- react-map-gl
-- moment
 - Axios
 
 
