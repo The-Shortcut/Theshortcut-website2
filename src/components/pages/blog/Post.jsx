@@ -14,7 +14,7 @@ import { CircularProgress } from '@material-ui/core';
 const Post = () => {
   const classes = useStyles();
   let { slug } = useParams();
-  console.log(slug)
+
   const { postIsLoading, singlePost } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
 

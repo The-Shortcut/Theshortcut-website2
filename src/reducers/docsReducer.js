@@ -67,7 +67,6 @@ const reducer = (state = initState, action) => {
         trainingFAQ: trainingFaq,
       };
     case BYOB_FAQ_DATA:
-      console.log(payload);
       let beforeFaq = payload?.filter((faq) => faq.acf.tag === 'before');
       let inProcessFaq = payload?.filter((faq) => faq.acf.tag === 'in-process');
       let aboutFaq = payload?.filter((faq) => faq.acf.tag === 'about');

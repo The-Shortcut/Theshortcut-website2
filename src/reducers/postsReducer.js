@@ -7,7 +7,6 @@ import {
   SEARCH_POSTS,
 } from '../actions/types';
 
-let searchItem = window.location.search;
 let catItem = window.location.hash;
 
 const initState = {
@@ -68,7 +67,6 @@ const reducer = (state = initState, action) => {
     case SINGLE_POST:
       return { ...state, postIsLoading: false, singlePost: payload };
     case POSTS_CATEGORIES:
-      console.log(payload)
       return { ...state, categories: payload, singlePost: null };
     case FIND_POSTS_BY_CATEGORY:
       let filtered = state.categoryTerm === 'all' ? state.posts : state.posts.filter((post) =>

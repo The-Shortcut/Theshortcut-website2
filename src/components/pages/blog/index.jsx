@@ -14,12 +14,11 @@ import {
   paginate,
   postsCategoriesData,
   findPostsByCategory,
-  searchPosts,
 } from '../../../actions/postActions';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, CircularProgress } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 // Children
 import SkeletonPost from '../../functional/SkeletonPost';

@@ -64,9 +64,7 @@ const ContactForm = ({ msgRef }) => {
       setState({ name: '', email: '', message: '' });
     }
   };
-
-  console.log({ open });
-  /* console.log(state, error); */
+  
   return (
     <div ref={msgRef} className={classes.root}>
       <Title>Message Us</Title>

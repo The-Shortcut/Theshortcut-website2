@@ -10,7 +10,6 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 // Children
 import Title from '../../custom/Title';
-import Map from '../../functional/Map';
 
 const GetInTouch = ({ findRef }) => {
   const classes = useStyles();

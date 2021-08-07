@@ -63,8 +63,6 @@ const GetPartnerForm = ({ intRef }) => {
     }
   };
 
-  console.log({ open });
-  /* console.log(state, error); */
   return (
     <div ref={intRef} className={classes.root}>
       <Title>Interested in partnering with us ?</Title>

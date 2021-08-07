@@ -39,7 +39,7 @@ export const sections = [
     icon: <FaCalendarDay color='#00A99D' style={{ fontSize: 55, margin: '24px' }} />,
     text: 'By participating in our Events, you will automatically become a member and know why this diverse community is so rewarding. Head to the Events page to see what you can participate in! Join an Event!',
     target: 'Join an Event!',
-    redirect: { path: '/events/all', name: 'search events' },
+    redirect: { path: '/events', name: 'search events' },
   },
   {
     title: 'VISIT US',

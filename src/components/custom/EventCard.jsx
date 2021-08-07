@@ -35,7 +35,7 @@ const EventCard = ({ event }) => {
   let link = event.url;
   /*   console.log(eventID); */
 
-  const exampleCallback = function () {
+  const exampleCallback = () => {
     console.log('Order complete!');
   };
 
@@ -44,7 +44,7 @@ const EventCard = ({ event }) => {
       widgetType: 'checkout',
       eventId: eventID,
       modal: true,
-      modalTriggerElementId: `example-widget-trigger-${eventID}`,
+      modalTriggerElementId: `example-widget-trigger`,
       onOrderComplete: exampleCallback,
     });
   }, [eventID]);
@@ -154,7 +154,7 @@ const EventCard = ({ event }) => {
           size='medium'
           endIcon={<TrendingFlatIcon />}
           href={link}
-          id={`example-widget-trigger-${eventID}`}
+          id={`example-widget-trigger`}
           onClick={() => handleAnalysis(event)}>
           {setStatus(event.status)}
         </Button>
