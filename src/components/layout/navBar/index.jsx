@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Children
-/* import Search from './Search'; */
+import Search from './Search';
 import DrawerMenu from './DrawerMenu';
 import CovidBanner from './CovidBanner';
 
@@ -80,7 +80,7 @@ const NavBar = ({ pageHeight }) => {
               </Link>
             </div>
             <CovidBanner />
-           {/*  <Search /> */}
+            {/* <Search /> */}
           </Toolbar>
         </AppBar>
       </ElevationScroll>

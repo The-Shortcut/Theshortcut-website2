@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+/* import axios from 'axios'; */
+
+import dImage from '../../../assets/photos/defaultImage.png';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,24 +17,29 @@ import analytics from '../../functional/analytics';
 
 const FeaturedBlog = ({ blog }) => {
   const classes = useStyles();
-  const [image, setImage] = useState(null);
+  const imgRef = useRef();
 
   const { categories } = useSelector((state) => state.posts);
   let myCat = categories.filter((cat) => blog.categories.includes(cat.id));
   let myCatTitles = myCat.map((cat) => cat.name);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getImage = React.useCallback(async () => {
-    let response = await axios.get(
-      `https://theshortcut.org/wp-json/wp/v2/media/${blog.featured_media}`
-    );
-    let source = response.data.media_details.sizes.medium_large.source_url;
-    return setImage(source);
-  });
-
   useEffect(() => {
-    getImage();
-  }, [getImage]);
+    if (imgRef.current) {
+      imgRef.current.firstElementChild.style.width = '100%';
+      imgRef.current.firstElementChild.style.height = '21em';
+      imgRef.current.firstElementChild.style.objectFit = 'cover';
+    }
+  }, []);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getImage = () => {
+    let images = blog.content.rendered.match(/<img.*?src="(.*?)"[^\>]+>/g);
+    if (images === null) {
+      return null;
+    } else {
+      return images.slice(-1)[0];
+    }
+  };
 
   const formatDate = (evDate) => {
     let dateArr = evDate.split(/\D/);
@@ -68,7 +75,11 @@ const FeaturedBlog = ({ blog }) => {
         to={`/blog/${blog.slug}`}
         onClick={() => handleAnalysis(blog)}
         style={{ textDecoration: 'none', height: '100%' }}>
-        <img src={image} alt='blog_image' className={classes.image} />
+        {getImage() ? (
+          <div ref={imgRef} dangerouslySetInnerHTML={{ __html: getImage() }} />
+        ) : (
+          <img src={dImage} alt='default_blog_image' className={classes.image} />
+        )}
       </Link>
       <Typography variant='subtitle2' className={classes.cat}>
         {myCatTitles.length === 1 ? 'Caterogy' : 'Categories'}: {myCatTitles.join(' , ')}

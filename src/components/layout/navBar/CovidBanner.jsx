@@ -42,7 +42,7 @@ const CovidBanner = () => {
           window.innerWidth > 960
             ? {
                 vertical: 'top',
-                horizontal: 'right',
+                horizontal: 'center',
               }
             : {
                 vertical: 'bottom',
