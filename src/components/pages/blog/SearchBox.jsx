@@ -9,7 +9,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { useDispatch } from 'react-redux';
 import { searchPosts, paginate } from '../../../actions/postActions';
 
-const SearchBox = ({ setValue }) => {
+const SearchBox = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 

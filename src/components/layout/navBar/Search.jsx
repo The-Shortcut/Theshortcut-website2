@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 // Material-UI
 import { InputBase } from '@material-ui/core';
@@ -7,6 +8,19 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const Search = () => {
   const classes = useStyles();
+  const [query, setQuery] = useState('');
+
+  if (query !== '') {
+    return <Redirect to={{pathname: '/search', search:`?query=${query}`}} />;
+  }
+
+  const handleSearch = (e) => {
+    if (e.keyCode === 13 || e.key === 'Enter') {
+      setQuery(e.target.value);
+    }
+  };
+
+/*   console.log({ query }); */
   return (
     <div className={classes.search}>
       <div className={classes.searchIcon}>
@@ -14,7 +28,8 @@ const Search = () => {
       </div>
       <InputBase
         placeholder='Search…'
-        onChange={(e) => console.log(e.target.value)}
+        onKeyDown={handleSearch}
+        onFocus={(e) => e.target.select()}
         classes={{
           root: classes.inputRoot,
           input: classes.inputInput,

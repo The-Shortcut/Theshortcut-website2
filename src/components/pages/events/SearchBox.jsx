@@ -16,7 +16,7 @@ const SearchBox = ({setValue}) => {
   const handleSearch = (e) => {
     let { value } = e.target;
     if (value !== '') {
-      setValue(0)
+      setValue(3)
     }
       dispatch(searchEvents(value));
       dispatch(eventPaginate(1));
