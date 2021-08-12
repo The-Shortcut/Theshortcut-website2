@@ -39,7 +39,7 @@ const Team = ({ teamRef }) => {
   }, [dispatch]);
 
   return (
-    <div ref={teamRef} className={classes.section}>
+    <div ref={teamRef} className={classes.section} id="our-team">
       <div className={classes.root}>
         <Title>Our Team</Title>
         {window.innerWidth < 600 ? (

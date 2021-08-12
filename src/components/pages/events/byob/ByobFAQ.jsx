@@ -30,7 +30,7 @@ const ByobFAQ = () => {
     return <div> Data is loading ...</div>;
   }
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="byob-faq">
       <Title>FAQ</Title>
       <div>
         <Typography variant='h4' className={classes.sectionTitle}>

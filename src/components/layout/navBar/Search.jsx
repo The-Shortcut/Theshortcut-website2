@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 
 // Material-UI
@@ -11,7 +11,7 @@ const Search = () => {
   const [query, setQuery] = useState('');
 
   if (query !== '') {
-    return <Redirect to={{pathname: '/search', search:`?query=${query}`}} />;
+    return <Redirect to={{ pathname: '/search', search: `?query=${query.toLowerCase()}` }} />;
   }
 
   const handleSearch = (e) => {
@@ -20,7 +20,7 @@ const Search = () => {
     }
   };
 
-/*   console.log({ query }); */
+  /*   console.log({ query }); */
   return (
     <div className={classes.search}>
       <div className={classes.searchIcon}>
@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
     },
     [theme.breakpoints.down('xs')]: {
-      display: 'none',
+      width: '100%',
+      marginLeft: theme.spacing(2),
     },
   },
   searchIcon: {
@@ -85,6 +86,9 @@ const useStyles = makeStyles((theme) => ({
       '&:focus': {
         width: '30ch',
       },
+    },
+    [theme.breakpoints.down('xs')]: {
+      border: 'none',
     },
   },
 }));
