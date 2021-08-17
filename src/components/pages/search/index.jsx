@@ -37,6 +37,7 @@ const SearchWebsite = () => {
       setQuery(e.target.value);
     }
   };
+  console.log({ query });
 
   useEffect(() => {
     if (!events) {
@@ -44,6 +45,7 @@ const SearchWebsite = () => {
     }
     if (!posts) {
       dispatch(postsData());
+      dispatch(postsCategoriesData());
     }
     if (!teammates) {
       dispatch(teamMembers());
@@ -58,7 +60,6 @@ const SearchWebsite = () => {
     if (!byobFAQ) {
       dispatch(getByobFAQ());
     }
-    dispatch(postsCategoriesData());
   }, [
     faq_about,
     byobFAQ,
@@ -245,7 +246,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
-    }
+    },
   },
   search: {
     position: 'relative',
@@ -288,8 +289,8 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth:'95%'
-    }
+      minWidth: '95%',
+    },
   },
   spinner: {
     display: 'flex',

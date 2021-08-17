@@ -33,7 +33,7 @@ const FeaturedBlog = ({ blog }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getImage = () => {
-    let images = blog.content.rendered.match(/<img.*?src="(.*?)"[^\>]+>/g);
+    let images = blog.content.rendered.match(/<img.*?src="(.*?)"[^>]+>/g);
     if (images === null) {
       return null;
     } else {
