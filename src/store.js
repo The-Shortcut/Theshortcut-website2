@@ -8,6 +8,7 @@ import teamsReducer from './reducers/teamsReducer';
 import postsReducer from './reducers/postsReducer';
 import storiesReducer from './reducers/storiesReducer';
 import docsReducer from './reducers/docsReducer';
+import servicesReducer from './reducers/servicesReducer';
 
 const reducer = combineReducers({
   events: eventsReducer,
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   posts: postsReducer,
   stories: storiesReducer,
   docs: docsReducer,
+  services: servicesReducer,
 });
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 export default store;

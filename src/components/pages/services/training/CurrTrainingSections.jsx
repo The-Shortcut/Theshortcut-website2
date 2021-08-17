@@ -1,17 +1,26 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React from 'react';
+import React,{useEffect} from 'react';
 
-// DATA
-import { currTrainingData } from '../servicesData';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardMedia, CardContent, Typography, Button } from '@material-ui/core';
 
+// REDUX
+import { useSelector, useDispatch } from 'react-redux';
+import { trainingServiceData } from '../../../../actions/serviceActions';
 const CurrTrainingSections = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const { isLoading, trainings } = useSelector(state => state.services);
 
-  if (currTrainingData.length === 0) {
+  useEffect(() => {
+    if (!trainings) {
+     dispatch(trainingServiceData())
+   }
+  }, [dispatch, trainings])
+
+  if (trainings?.length === 0) {
     return (
       <Typography variant='body1' className={classes.text}>
         <strong>Current opportunities</strong>
@@ -25,14 +34,14 @@ const CurrTrainingSections = () => {
       <Typography variant='h4' style={{ textAlign: 'center', margin: '2em auto' }}>
         Current opportunities
       </Typography>
-      {currTrainingData.length < 3 && window.innerWidth > 860 ? (
+      {trainings?.length < 3 && window.innerWidth > 860 ? (
         <div className={classes.container1}>
-          {currTrainingData.map((item, index) => (
+          {trainings?.map(({acf}, index) => (
             <Card key={index} className={classes.card1}>
               <CardMedia style={{ flex: 1 }}>
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={acf.image.url}
+                  alt={acf.title}
                   width='100%'
                   height='100%'
                   style={{ borderRadius: '5px 0 0 5px' }}
@@ -40,12 +49,12 @@ const CurrTrainingSections = () => {
               </CardMedia>
               <CardContent className={classes.cardContent1}>
                 <Typography variant='h4' style={{ margin: '1em' }}>
-                  {item.title.toLocaleUpperCase()}
+                  {acf.title.toLocaleUpperCase()}
                 </Typography>
                 <Typography variant='subtitle1' component='p'>
-                  {item.description}
+                  {acf.description}
                 </Typography>
-                <Button variant='outlined' href={item.link} className={classes.regBtn}>
+                <Button variant='outlined' href={acf.link} className={classes.regBtn}>
                   Apply here
                 </Button>
               </CardContent>
@@ -54,26 +63,26 @@ const CurrTrainingSections = () => {
         </div>
       ) : (
         <div className={classes.container}>
-          {currTrainingData.map((item, index) => (
+          {trainings?.map(({acf}, index) => (
             <Card key={index} className={classes.card}>
               <CardMedia
                 component='img'
-                alt={item.title}
+                alt={acf.title}
                 className={classes.media}
-                image={item.image}
-                title={item.title}
+                image={acf.image.url}
+                title={acf.title}
               />
               <CardContent className={classes.cardContent}>
                 <Typography variant='h4' className={classes.title}>
-                  {item.title.toLocaleUpperCase()}
+                  {acf.title.toLocaleUpperCase()}
                 </Typography>
                 <Typography variant='subtitle1' component='p'>
-                  {item.description}
+                  {acf.description}
                 </Typography>
                 <Button
                   variant='outlined'
                   color='primary'
-                  href={item.link}
+                  href={acf.link}
                   className={classes.regBtn}>
                   Apply here
                 </Button>
