@@ -80,7 +80,7 @@ const NavBar = ({ pageHeight }) => {
               </Link>
             </div>
             <CovidBanner />
-            {/* <Search /> */}
+            <Search />
           </Toolbar>
         </AppBar>
       </ElevationScroll>

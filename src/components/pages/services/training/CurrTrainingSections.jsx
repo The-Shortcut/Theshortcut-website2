@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React,{useEffect} from 'react';
-
+import React, { useEffect } from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,13 +11,13 @@ import { trainingServiceData } from '../../../../actions/serviceActions';
 const CurrTrainingSections = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { isLoading, trainings } = useSelector(state => state.services);
+  const { isLoading, trainings } = useSelector((state) => state.services);
 
   useEffect(() => {
     if (!trainings) {
-     dispatch(trainingServiceData())
-   }
-  }, [dispatch, trainings])
+      dispatch(trainingServiceData());
+    }
+  }, [dispatch, trainings]);
 
   if (trainings?.length === 0) {
     return (
@@ -36,7 +35,7 @@ const CurrTrainingSections = () => {
       </Typography>
       {trainings?.length < 3 && window.innerWidth > 860 ? (
         <div className={classes.container1}>
-          {trainings?.map(({acf}, index) => (
+          {trainings?.map(({ acf }, index) => (
             <Card key={index} className={classes.card1}>
               <CardMedia style={{ flex: 1 }}>
                 <img
@@ -63,7 +62,7 @@ const CurrTrainingSections = () => {
         </div>
       ) : (
         <div className={classes.container}>
-          {trainings?.map(({acf}, index) => (
+          {trainings?.map(({ acf }, index) => (
             <Card key={index} className={classes.card}>
               <CardMedia
                 component='img'
