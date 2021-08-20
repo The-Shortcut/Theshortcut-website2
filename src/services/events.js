@@ -10,13 +10,21 @@ const formatDate = (date, time) => {
 };
 
 const getEvents = async () => {
-  const eventsResponse = await axios.get(
-    `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&token=${API_TOKEN}`
-  );
+  let pageOne = `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&page=1&token=${API_TOKEN}`;
+  let pageTwo = `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&page=2&token=${API_TOKEN}`;
+  let pageThree = `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&page=3&token=${API_TOKEN}`;
+
+  const reqOne = await axios.get(pageOne);
+  const reqTwo = await axios.get(pageTwo);
+  const reqThree = await axios.get(pageThree);
+  const totalEvents = await axios.all([reqOne, reqTwo, reqThree]).then(axios.spread((...responses) => {
+    return responses.flatMap(res => res.data.events);
+  })).catch(err => console.error(err));
+
   const draftsResponse = await axios.get(
     `https://www.eventbriteapi.com/v3/organizations/171778300477/events/?order_by=start_desc&status=draft&token=${API_TOKEN}`
   );
-  const response = eventsResponse.data.events.filter(
+  const response = totalEvents.filter(
     (event) => !draftsResponse.data.events.find(({ id }) => event.id === id)
   );
   response.forEach((event) =>

@@ -10,7 +10,7 @@ import Title from '../../custom/Title';
 const Subject = ({ allEvRef }) => {
   const classes = useStyles();
   return (
-    <div ref={allEvRef} className={classes.root}>
+    <div ref={allEvRef} className={classes.root} id="the-shortcut-events">
       <Title>The Shortcut Events</Title>
       <Typography variant='body1' className={classes.text}>
         Learn for your future. We organize workshops, talks and webinars for you entrepreneurs,

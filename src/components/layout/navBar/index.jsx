@@ -36,7 +36,7 @@ function ElevationScroll(props) {
 const NavBar = ({ pageHeight }) => {
   const classes = useStyles();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [path, setPath] = useState('/')
+  const [path, setPath] = useState('/');
   const { postIsLoading } = useSelector((state) => state.posts);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const changeMenuIconColor = () => {
@@ -49,9 +49,9 @@ const NavBar = ({ pageHeight }) => {
   };
 
   useEffect(() => {
-    setPath(window.location.pathname)
-    changeMenuIconColor()
-  }, [changeMenuIconColor, path])
+    setPath(window.location.pathname);
+    changeMenuIconColor();
+  }, [changeMenuIconColor, path]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -62,12 +62,22 @@ const NavBar = ({ pageHeight }) => {
         <AppBar
           position='fixed'
           style={
-            pageHeight > 100 ? { backgroundColor: '#434343' } : { backgroundColor: (path === '/visit' || path === '/events/byob' || !postIsLoading) ? '#434343' :'transparent' }
+            pageHeight > 100
+              ? { backgroundColor: '#434343' }
+              : {
+                  backgroundColor:
+                    path === '/visit' ||
+                    path === '/events/byob' ||
+                    path === '/search' ||
+                    !postIsLoading
+                      ? '#434343'
+                      : 'transparent',
+                }
           }>
           <Toolbar className={classes.toolBar}>
             <div className={classes.title}>
               <IconButton
-                id="menuIcon"
+                id='menuIcon'
                 className={classes.menuButton}
                 onClick={toggleMenu}
                 color='primary'
@@ -75,12 +85,16 @@ const NavBar = ({ pageHeight }) => {
                 aria-label='open drawer'>
                 <MenuIcon fontSize='large' />
               </IconButton>
-              <Link to="/">
-              <img src={TopLogo} alt='The Shortcut Logo' className={classes.logo} />
+              <Link to='/'>
+                <img src={TopLogo} alt='The Shortcut Logo' className={classes.logo} />
               </Link>
             </div>
-            <CovidBanner />
-            <Search />
+            {path !== '/search' && (
+              <div>
+                <CovidBanner />
+                <Search />
+              </div>
+            )}
           </Toolbar>
         </AppBar>
       </ElevationScroll>

@@ -50,14 +50,14 @@ const AllEvents = () => {
     if (allEvents) {
       dispatch(searchEvents(searchTerm));
       dispatch(paginate(1));
-      if (searchTerm === 'all') {
-        setValue(3);
+      if (searchTerm === 'upcoming') {
+        setValue(0);
       } else if (searchTerm === 'recorded') {
         setValue(1);
       } else if (searchTerm === 'past') {
         setValue(2);
       } else {
-        setValue(0);
+        setValue(3);
       }
     }
   }, [allEvents, dispatch, searchTerm]);

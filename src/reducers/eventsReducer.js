@@ -13,7 +13,7 @@ const initState = {
     { value: 'past', label: 'Past' },
     { value: 'all', label: 'All' },
   ],
-  searchTerm: searchItem === '' ? 'upcoming' : searchItem.split('=')[1],
+  searchTerm: searchItem === '' ? 'upcoming' : searchItem.split('=')[1].replaceAll('%20', ' '),
   // for pagination
   currentPage: 1,
   perPage: 9,

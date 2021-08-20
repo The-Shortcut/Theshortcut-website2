@@ -36,7 +36,7 @@ import yksityisyrittajain_logo from '../../assets/logo/partners/yksityisyrittaja
 import yousician_logo from '../../assets/logo/partners/yousician-logo.png';
 import yrittajat_logo from '../../assets/logo/partners/yrittajat-logo.png';
 
-const partnerslist1 = [
+export const partnerslist1 = [
   {
     name: 'Aalto_University logo',
     logo: Aalto_University_logo,

@@ -23,6 +23,7 @@ const initState = {
   coachingFAQ: null,
   trainingFAQ: null,
   byobFaqLoaded: false,
+  byobFAQ:null,
   beforeFAQ: null,
   inProcessFAQ: null,
   aboutFAQ: null,
@@ -73,6 +74,7 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         byobFaqLoaded: true,
+        byobFAQ: payload,
         beforeFAQ: beforeFaq.reverse(),
         inProcessFAQ: inProcessFaq.reverse(),
         aboutFAQ: aboutFaq.reverse(),

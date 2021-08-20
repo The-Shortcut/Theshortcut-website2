@@ -40,7 +40,7 @@ const Board = ({ boardRef }) => {
   }, [dispatch]);
 
   return (
-    <div ref={boardRef} className={classes.root}>
+    <div ref={boardRef} className={classes.root} id="our-board">
       <Title>Our Board</Title>
       {window.innerWidth < 600 ? (
         <Slider {...settings} style={{ margin: 'auto' }}>

@@ -17,6 +17,7 @@ import OurImpact from './components/pages/impact';
 import Services from './components/pages/services';
 import ContactUs from './components/pages/contact';
 import Visit from './components/pages/visit';
+import Search from './components/pages/search';
 
 // Footer
 import PrivacyPolicies from './components/layout/documents/PrivacyPolicies';
@@ -35,7 +36,6 @@ const Routes = () => {
       <Route exact path='/' component={Home} />
       <Route exact path='/about' component={About} />
       <Route exact path='/events' component={AllEvents} />
-      {/* <Route exact path='/events/all/:id' component={Event} /> */}
       <Route exact path='/events/byob' component={BYOB} />
       <Route exact path='/services' component={Services} />
       <Route exact path='/partners' component={Partners} />
@@ -43,16 +43,15 @@ const Routes = () => {
       <Route exact path='/community' component={Community} />
       <Route exact path='/our-impact' component={OurImpact} />
       <Route exact path='/contact-us' component={ContactUs} />
-      {/* Resources */}
-      {/* <Route exact path='/media' component={ForMedia} /> */}
       <Route exact path='/blog' component={Blog} />
       <Route exact path='/blog/:slug' component={Post} />
+      <Route exact path='/search'>
+        <Search />
+      </Route>
       {/* {/* Footer */}
       <Route exact path='/privacy' component={PrivacyPolicies} />
       <Route exact path='/code' component={CodeOfConduct} />
       <Route exact path='/terms' component={TermsOfUse} />
-      {/*<Route exact path='/values' component={Values} />
-      <Route exact path='/data-description' component={DataDescription} /> */}
       <Suspense fallback={<div>loading...</div>}>
         <Switch>
           <Route exact path='/visit' component={Visit} />

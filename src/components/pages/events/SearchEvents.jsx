@@ -22,9 +22,8 @@ const SearchEvents = ({ value, setValue, searchRef }) => {
     dispatch(searchEvents(event.target.innerText.toLowerCase()));
     dispatch(paginate(1));
   };
-
   return (
-    <div className={classes.main} ref={searchRef}>
+    <div className={classes.main} ref={searchRef} id="search-events">
       <div className={classes.root}>
         <SearchBox setValue={setValue} />
         <Collapse in={!isLoading}>

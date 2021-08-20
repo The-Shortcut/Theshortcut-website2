@@ -22,7 +22,7 @@ const ServicesFAQ = ({ servicesFaqLoaded, coachingFAQ, trainingFAQ, faqRef }) =>
   }
 
   return (
-    <div ref={faqRef} className={classes.root}>
+    <div ref={faqRef} className={classes.root} id="services-faq">
       <Title>FAQ</Title>
       <div>
         <Typography variant='h4' className={classes.sectionTitle}>

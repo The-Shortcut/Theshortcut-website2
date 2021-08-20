@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   snackBar: {
     background: '#ffc107',
     color: '#000',
+    marginTop: theme.spacing(5.5)
   },
 }));
 
