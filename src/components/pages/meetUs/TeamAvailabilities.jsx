@@ -42,7 +42,7 @@ const TeamAvailabilities = () => {
                 <div className={classes.icons}>
                   <div
                     style={{
-                      width: '120px',
+                      width: '110px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'flex-start',
@@ -51,7 +51,7 @@ const TeamAvailabilities = () => {
                   </div>
                   <div
                     style={{
-                      width: '120px',
+                      width: '110px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'flex-start',
@@ -173,7 +173,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icons: {
+    minWidth: '95%',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '60%',
+      maxWidth: '60%',
+    },
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
