@@ -115,9 +115,14 @@ export const navBarData = [
     path: '/career',
     icon: null,
   }, */
-  {
+  /* {
     title: 'BOOK A VISIT',
     path: '/visit',
+    icon: null,
+  }, */
+  {
+    title: 'BOOK A MEETING',
+    path: '/meet-us',
     icon: null,
   },
 ];

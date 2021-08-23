@@ -17,6 +17,7 @@ import OurImpact from './components/pages/impact';
 import Services from './components/pages/services';
 import ContactUs from './components/pages/contact';
 import Visit from './components/pages/visit';
+import MeetUs from './components/pages/meetUs';
 import Search from './components/pages/search';
 
 // Footer
@@ -43,6 +44,7 @@ const Routes = () => {
       <Route exact path='/community' component={Community} />
       <Route exact path='/our-impact' component={OurImpact} />
       <Route exact path='/contact-us' component={ContactUs} />
+      <Route exact path='/meet-us' component={MeetUs} />
       <Route exact path='/blog' component={Blog} />
       <Route exact path='/blog/:slug' component={Post} />
       <Route exact path='/search'>
@@ -54,7 +56,7 @@ const Routes = () => {
       <Route exact path='/terms' component={TermsOfUse} />
       <Suspense fallback={<div>loading...</div>}>
         <Switch>
-          <Route exact path='/visit' component={Visit} />
+          {/* <Route exact path='/visit' component={Visit} /> */}
           <Route exact path='/404' component={NotFound} />
           <Redirect to='/404' />
         </Switch>
