@@ -89,9 +89,9 @@ const NavBar = ({ pageHeight }) => {
                 <img src={TopLogo} alt='The Shortcut Logo' className={classes.logo} />
               </Link>
             </div>
-            {path !== '/search' && (
+            {(path !== '/search') && (
               <div>
-                <CovidBanner />
+                {path === '/meet-us' ? null : <CovidBanner />}
                 <Search />
               </div>
             )}

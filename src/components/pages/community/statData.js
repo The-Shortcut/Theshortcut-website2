@@ -42,11 +42,11 @@ export const sections = [
     redirect: { path: '/events', name: 'search events' },
   },
   {
-    title: 'VISIT US',
+    title: 'MEET US',
     icon: <MdDirectionsRun color='#00A99D' style={{ fontSize: 65, margin: '24px' }} />,
-    text: 'The Shortcut Lab, as well as our online community, is a bustling physical space where we, and others, host events, have reservable working rooms, and where you can meet like-minded people from the community.',
-    target: 'Join us in The Shortcut Lab!',
-    redirect: { path: '/visit', name: 'book a visit' },
+    text: 'The Shortcut Lab is a vibrant and active community. These difficult times have forced us to interact in a more digital way. Until the COVID-19 situation improves, our team is available via online meetings. Our goal is to continue to support your career ambitions.',
+    target: 'Feel free to book a time with us!',
+    redirect: { path: '/meet-us', name: 'book a meeting' },
   },
   {
     title: 'SOCIAL MEDIA',

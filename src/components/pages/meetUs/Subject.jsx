@@ -13,11 +13,11 @@ const Subject = () => {
     <section className={classes.section}>
       <Title>Book A Meeting With Us</Title>
       <Typography variant='body1' className={classes.text}>
-        Life doesn't stop just because of the worsening Covid situation! This is why we are excited
-        to create 1-on-1 meetings for you with the knowledgeable staff here at The Shortcut! Each
-        person has their own area of expertise which you will find listed next to their picture.
-        Just click and you will be linked to their availability calendar. Book soon as hours are
-        limited!
+        Our work at the Shortcut doesn't stop because of the worsening Covid situation! While our
+        lab is closed, you can book 1-on-1 meetings with our knowledgeable staff. Every person has
+        their own areas of expertise they can talk to you about. You can find them listed underneath
+        their picture. Just click "Book a Meeting" and you will be sent to their calendar. Make sure
+        to book soon because the time slots are limited!
       </Typography>
     </section>
   );

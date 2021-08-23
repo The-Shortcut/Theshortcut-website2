@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   snackBar: {
     background: '#ffc107',
     color: '#000',
-    marginTop: theme.spacing(5.5)
+    marginTop: theme.spacing(5.5),
   },
 }));
 
@@ -37,7 +37,7 @@ const CovidBanner = () => {
   };
 
   return (
-    <div style={{display: !postIsLoading ? 'none' : 'block'}}>
+    <div style={{ display: !postIsLoading ? 'none' : 'block' }}>
       <Snackbar
         anchorOrigin={
           window.innerWidth > 960
@@ -56,20 +56,21 @@ const CovidBanner = () => {
         onClose={handleClose}
         message={
           <Typography variant='body1'>
-            <strong>COVID-19:</strong> We have restricted openings. Please book your visit in advance.
-          </Typography>
-        }
-        action={
-          <React.Fragment>
-            <a href='/visit'>
+            <strong>Due to COVID-19 </strong>situation are lab is currently only available through
+            online meetings.Please book
+            <a href='/meet-us'>
               <Button
                 color='inherit'
                 style={{ fontSize: '1.2rem' }}
-                size='large'
+                size='small'
                 onClick={handleClose}>
                 here
               </Button>
             </a>
+          </Typography>
+        }
+        action={
+          <React.Fragment>
             <IconButton size='small' aria-label='close' color='#ffc107' onClick={handleClose}>
               <CloseIcon fontSize='small' />
             </IconButton>

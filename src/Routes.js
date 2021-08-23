@@ -16,7 +16,7 @@ import Community from './components/pages/community';
 import OurImpact from './components/pages/impact';
 import Services from './components/pages/services';
 import ContactUs from './components/pages/contact';
-import Visit from './components/pages/visit';
+/* import Visit from './components/pages/visit'; */
 import MeetUs from './components/pages/meetUs';
 import Search from './components/pages/search';
 

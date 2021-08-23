@@ -13,7 +13,7 @@ export const teamData = [
     availabilityDay: 'Wednesdays',
     expertiseAreas:
       'Brainstorming, ideation, creative problem solving, entrepreneurship, integration challenges',
-    link: 'https://calendly.com/kristina-sweet-theshortcut',
+    link: 'https://calendly.com/kristina-sweet-theshortcut/30min?back=1&month=2021-08',
   },
   {
     name: 'Julia Witting-Maklin',
@@ -23,7 +23,7 @@ export const teamData = [
     availabilityDay: 'Wednesdays',
     expertiseAreas:
       'Business & political culture in Finland, working in a Finnish / International team, brainstorming & networking. Bonus: Finnish / Nordic history',
-    link: 'http://calendly.com/julia-witting-maklin-the-shortcut',
+    link: 'https://calendly.com/julia-witting-maklin-the-shortcut/experiment1et?back=1&month=2021-08',
   },
   {
     name: 'Vickie Weng',
@@ -51,7 +51,7 @@ export const teamData = [
     availabilityTime: '11:00 - 13:00',
     availabilityDay: 'Thursdays',
     expertiseAreas: 'Web development roadmap and related more in-demand subjects in tech area',
-    link: 'https://calendly.com/mostafa-hazareh',
+    link: 'https://calendly.com/mostafa-hazareh/experiment1et?back=1&month=2021-08',
   },
   {
     name: 'Charlotta Kauranne',
@@ -60,7 +60,7 @@ export const teamData = [
     availabilityTime: '10:00 - 12:00',
     availabilityDay: 'Thursdays',
     expertiseAreas:
-      'Project planning, text editing, feedback on brand visuals and websites, requiring knowledge of the Finnish society and culture or the local languages.',
+      'Project planning, text editing, feedback on brand visuals and websites, things requiring knowledge of the Finnish society/culture or local languages.',
     link: 'https://calendly.com/charlotta-theshortcut/30min',
   },
   {
@@ -71,6 +71,6 @@ export const teamData = [
     availabilityDay: 'Thursdays',
     expertiseAreas:
       'Event organization and hosting, community building, accelerators & pitching, diversity and inclusion at work, financial administration and reporting',
-    link: 'http://calendly.com/ekaterina-berdysheva',
+    link: 'http://calendly.com/ekaterina-berdysheva/30min',
   },
 ];

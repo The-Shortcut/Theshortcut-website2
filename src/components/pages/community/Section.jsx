@@ -145,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     display: 'inline',
-    width: '9em',
+    width: '10em',
     fontSize: '1rem',
     fontWeight: 'bold',
     color: '#FFFFFF',
