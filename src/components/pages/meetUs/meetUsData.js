@@ -12,7 +12,7 @@ export const teamData = [
     availabilityTime: '12:30 - 14:00',
     availabilityDay: 'Wednesdays',
     expertiseAreas:
-      'Brainstorming, ideation, creative problem solving, entrepreneurship, integration challenges',
+      'Brainstorming, ideation, creative problem solving, entrepreneurship, integration challenges.',
     link: 'https://calendly.com/kristina-sweet-theshortcut/30min?back=1&month=2021-08',
   },
   {
@@ -22,7 +22,7 @@ export const teamData = [
     availabilityTime: '10:00 - 12:00',
     availabilityDay: 'Wednesdays',
     expertiseAreas:
-      'Business & political culture in Finland, working in a Finnish / International team, brainstorming & networking. Bonus: Finnish / Nordic history',
+      'Business & political culture in Finland, working in a Finnish / International team, brainstorming & networking. Bonus: Finnish / Nordic history.',
     link: 'https://calendly.com/julia-witting-maklin-the-shortcut/experiment1et?back=1&month=2021-08',
   },
   {
@@ -31,7 +31,8 @@ export const teamData = [
     photo: vickiePic,
     availabilityTime: '13:00 - 15:00',
     availabilityDay: 'Wednesdays',
-    expertiseAreas: 'Integration, networking, brandstorming & ideation, pitching & public speaking',
+    expertiseAreas:
+      'Integration, networking, brandstorming & ideation, pitching & public speaking.',
     link: 'https://calendly.com/vickie-weng/15min?month=2021-08',
   },
   {
@@ -41,7 +42,7 @@ export const teamData = [
     availabilityTime: '13:00 - 16:00',
     availabilityDay: 'Thursdays',
     expertiseAreas:
-      'Networking, personal branding, marketing, blogging & writing and career confidence',
+      'Networking, personal branding, marketing, blogging & writing and career confidence.',
     link: 'https://calendly.com/jessi-christian/30-minute-meeting',
   },
   {
@@ -50,7 +51,7 @@ export const teamData = [
     photo: mostafaPic,
     availabilityTime: '11:00 - 13:00',
     availabilityDay: 'Thursdays',
-    expertiseAreas: 'Web development roadmap and related more in-demand subjects in tech area',
+    expertiseAreas: 'Web development roadmap and related more in-demand subjects in tech area.',
     link: 'https://calendly.com/mostafa-hazareh/experiment1et?back=1&month=2021-08',
   },
   {
@@ -70,7 +71,7 @@ export const teamData = [
     availabilityTime: '14:00 - 16:00',
     availabilityDay: 'Thursdays',
     expertiseAreas:
-      'Event organization and hosting, community building, accelerators & pitching, diversity and inclusion at work, financial administration and reporting',
+      'Event organization and hosting, community building, accelerators & pitching, diversity and inclusion at work, financial administration and reporting.',
     link: 'http://calendly.com/ekaterina-berdysheva/30min',
   },
 ];
