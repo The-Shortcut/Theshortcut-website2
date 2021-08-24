@@ -120,8 +120,8 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: 540,
     },
     [theme.breakpoints.down('xs')]: {
-      minHeight: 490,
-      maxHeight: 490,
+      minHeight: 520,
+      maxHeight: 520,
     },
   },
   cardContent: {

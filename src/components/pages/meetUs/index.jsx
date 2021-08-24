@@ -14,6 +14,17 @@ import { Typography } from '@material-ui/core';
 import Subject from './Subject';
 import TeamAvailabilities from './TeamAvailabilities';
 
+// GTM
+import TagManager from 'react-gtm-module';
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'pageView',
+    url: `${window.location.pathname}${window.location.search}`,
+    page: 'meet us',
+    path: '/meet-us',
+  },
+});
+
 const MeetUs = () => {
   const classes = useStyles();
 

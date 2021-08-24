@@ -3,6 +3,8 @@ import vickiePic from '../../../assets/photos/team/vickie.png';
 import katjaPic from '../../../assets/photos/team/katja.png';
 import juliaPic from '../../../assets/photos/team/julia.jpg';
 import mostafaPic from '../../../assets/photos/team/mostafa.png';
+import lottaPic from '../../../assets/photos/team/lotta1.png';
+import jessiPic from '../../../assets/photos/team/jessi.png';
 
 export const teamData = [
   {
@@ -38,7 +40,7 @@ export const teamData = [
   {
     name: 'Jessi Christian',
     title: 'Head of Marketing ',
-    photo: 'https://theshortcut.org/wp-content/uploads/2019/01/Female-Avatar.png',
+    photo: jessiPic,
     availabilityTime: '13:00 - 16:00',
     availabilityDay: 'Thursdays',
     expertiseAreas:
@@ -57,7 +59,7 @@ export const teamData = [
   {
     name: 'Charlotta Kauranne',
     title: 'Project Manager ',
-    photo: 'https://theshortcut.org/wp-content/uploads/2019/01/Female-Avatar.png',
+    photo: lottaPic,
     availabilityTime: '10:00 - 12:00',
     availabilityDay: 'Thursdays',
     expertiseAreas:
