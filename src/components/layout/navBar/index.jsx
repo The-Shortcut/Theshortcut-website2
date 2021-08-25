@@ -66,6 +66,7 @@ const NavBar = ({ pageHeight }) => {
               ? { backgroundColor: '#434343' }
               : {
                   backgroundColor:
+                    path === '/services/training/coding101' ||
                     path === '/visit' ||
                     path === '/events/byob' ||
                     path === '/search' ||
@@ -89,7 +90,7 @@ const NavBar = ({ pageHeight }) => {
                 <img src={TopLogo} alt='The Shortcut Logo' className={classes.logo} />
               </Link>
             </div>
-            {(path !== '/search') && (
+            {path !== '/search' && (
               <div>
                 {path === '/meet-us' ? null : <CovidBanner />}
                 <Search />

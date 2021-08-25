@@ -1,24 +1,17 @@
 import React from 'react';
 
-
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Card,
-  CardContent,
-  CardActionArea,
-  Typography,
-  Button,
-} from '@material-ui/core';
+import { Card, CardContent, CardActionArea, Typography, Button } from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 
-const TeamAvailabilities = ({meetingData}) => {
+const TeamAvailabilities = ({ meetingData }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        {meetingData?.map(({acf}, index) => (
+        {meetingData?.map(({ acf }, index) => (
           <Card key={index} className={classes.card}>
             <CardActionArea>
               <img
@@ -101,8 +94,8 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     borderRadius: '10px',
     /* maxWidth: 280, */
-    minHeight: 600,
-    maxHeight: 600,
+    minHeight: 610,
+    maxHeight: 610,
   },
   cardContent: {
     display: 'flex',
@@ -129,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     minHeight: 280,
     maxHeight: 280,
-    objectFit:'cover'
+    objectFit: 'cover',
     /*     [theme.breakpoints.only('sm')]: {
       height: 140,
     }, */
@@ -149,11 +142,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     lineHeight: '1.5em',
     marginTop: 10,
-    minHeight: '160px',
-    maxHeight: '160px',
+    minHeight: '170px',
+    maxHeight: '170px',
     [theme.breakpoints.down('xs')]: {
-      minHeight: '120px',
-      maxHeight: '120px',
+      minHeight: '130px',
+      maxHeight: '130px',
     },
   },
   icons: {
