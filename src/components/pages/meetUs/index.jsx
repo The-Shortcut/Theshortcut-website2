@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 // META TAG
 import MetaTag from '../../utils/MetaTag';
@@ -27,6 +28,20 @@ TagManager.dataLayer({
 
 const MeetUs = () => {
   const classes = useStyles();
+  const [meetingData, setMeetingData] = useState(null);
+
+  const getMeetingCalendarsData = async () => {
+    const res = await axios.get(
+      'https://theshortcut.org/wp-json/wp/v2/meeting-calendars/?per_page=50'
+    );
+    return setMeetingData(res.data);
+  };
+
+  useEffect(() => {
+    if (!meetingData) {
+      getMeetingCalendarsData();
+    }
+  }, [meetingData]);
 
   return (
     <div>
@@ -50,7 +65,7 @@ const MeetUs = () => {
         Meet Us
       </Typography>
       <Subject />
-      <TeamAvailabilities />
+      <TeamAvailabilities meetingData={meetingData} />
     </div>
   );
 };

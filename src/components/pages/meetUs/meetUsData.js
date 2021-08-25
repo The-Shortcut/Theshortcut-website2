@@ -8,7 +8,7 @@ import jessiPic from '../../../assets/photos/team/jessi.png';
 
 export const teamData = [
   {
-    name: 'kristina Sweet',
+    name: 'Kristina Sweet',
     title: 'CEO',
     photo: kristinaPic,
     availabilityTime: '12:30 - 14:00',

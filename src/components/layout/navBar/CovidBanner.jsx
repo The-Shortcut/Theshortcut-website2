@@ -56,7 +56,7 @@ const CovidBanner = () => {
         onClose={handleClose}
         message={
           <Typography variant='body1'>
-            <strong>Due to COVID-19 situation </strong>, our lab is currently only available through
+            <strong>Due to COVID-19 situation</strong>, our lab is currently only available through
             online meetings. Please book
             <a href='/meet-us'>
               <Button

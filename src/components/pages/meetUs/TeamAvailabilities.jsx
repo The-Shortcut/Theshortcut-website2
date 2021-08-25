@@ -1,13 +1,10 @@
 import React from 'react';
 
-// Data
-import { teamData } from './meetUsData';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Card,
-  CardMedia,
   CardContent,
   CardActionArea,
   Typography,
@@ -16,28 +13,24 @@ import {
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 
-const TeamAvailabilities = () => {
+const TeamAvailabilities = ({meetingData}) => {
   const classes = useStyles();
-
-  console.log(teamData);
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        {teamData.map((item, index) => (
+        {meetingData?.map(({acf}, index) => (
           <Card key={index} className={classes.card}>
             <CardActionArea>
-              <CardMedia
-                component='img'
-                alt={item.title}
+              <img
+                alt={acf.title}
                 className={classes.media}
-                image={item.photo}
-                title={item.title}
+                src={acf.photo.sizes.us_600_400_crop}
               />
               <CardContent className={classes.cardContent}>
-                <Typography variant='h4'>{item.name}</Typography>
-                <Typography variant='subtitle2'>{item.title}</Typography>
+                <Typography variant='h4'>{acf.name}</Typography>
+                <Typography variant='subtitle2'>{acf.title}</Typography>
                 <Typography variant='subtitle1' component='p' className={classes.text}>
-                  {item.expertiseAreas}
+                  {acf.expertise}
                 </Typography>
                 <div className={classes.icons}>
                   <div
@@ -47,7 +40,7 @@ const TeamAvailabilities = () => {
                       alignItems: 'center',
                       justifyContent: 'flex-start',
                     }}>
-                    <AccessTimeIcon style={{ marginRight: '5px' }} /> {item.availabilityTime}
+                    <AccessTimeIcon style={{ marginRight: '5px' }} /> {acf.time}
                   </div>
                   <div
                     style={{
@@ -56,14 +49,14 @@ const TeamAvailabilities = () => {
                       alignItems: 'center',
                       justifyContent: 'flex-start',
                     }}>
-                    <EventAvailableIcon style={{ marginRight: '5px' }} /> {item.availabilityDay}
+                    <EventAvailableIcon style={{ marginRight: '5px' }} /> {acf.day}
                   </div>
                 </div>
                 <Button
                   variant='outlined'
                   color='primary'
                   className={classes.btn}
-                  href={item.link}
+                  href={acf.link}
                   target='_blank'>
                   Book a Meeting
                 </Button>
@@ -108,21 +101,8 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     borderRadius: '10px',
     /* maxWidth: 280, */
-    minHeight: 550,
-    maxHeight: 550,
-    [theme.breakpoints.down('md')]: {
-      minHeight: 560,
-      maxHeight: 560,
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(1),
-      minHeight: 540,
-      maxHeight: 540,
-    },
-    [theme.breakpoints.down('xs')]: {
-      minHeight: 520,
-      maxHeight: 520,
-    },
+    minHeight: 600,
+    maxHeight: 600,
   },
   cardContent: {
     display: 'flex',
@@ -145,7 +125,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#fff',
   },
   media: {
-    height: 220,
+    minWidth: '100%',
+    maxWidth: '100%',
+    minHeight: 280,
+    maxHeight: 280,
+    objectFit:'cover'
     /*     [theme.breakpoints.only('sm')]: {
       height: 140,
     }, */
@@ -173,13 +157,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icons: {
-    minWidth: '95%',
+    minWidth: '100%',
     [theme.breakpoints.down('xs')]: {
-      minWidth: '60%',
-      maxWidth: '60%',
+      minWidth: '80%',
+      maxWidth: '80%',
     },
     display: 'flex',
-    flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
