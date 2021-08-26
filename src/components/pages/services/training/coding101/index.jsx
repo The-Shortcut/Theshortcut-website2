@@ -127,7 +127,7 @@ const Coding101 = () => {
             <br />
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              14th September - 2nd December (12 weeks)
+              14<sup>th</sup> September - 2<sup>nd</sup> December (12 weeks)
             </Typography>
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />

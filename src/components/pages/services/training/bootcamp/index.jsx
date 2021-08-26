@@ -146,7 +146,7 @@ const Bootcamp = () => {
             <br />
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              6th September - 24th September
+              6<sup>th</sup> September - 24<sup>th</sup> September
             </Typography>
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
