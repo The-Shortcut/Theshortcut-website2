@@ -131,7 +131,7 @@ const Coding101 = () => {
             </Typography>
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Every Tuesday and Thursday, 16.00-17.30
+              Every Tuesday and Thursday, 16:00-17:30
             </Typography>
           </CardContent>
         </Card>
