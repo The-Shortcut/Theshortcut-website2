@@ -22,51 +22,83 @@ TagManager.dataLayer({
   dataLayer: {
     event: 'pageView',
     url: `${window.location.pathname}${window.location.search}`,
-    page: 'Coding101',
-    path: '/services/training/coding101',
+    page: 'bootcamp',
+    path: '/services/training/bootcamp',
   },
 });
 
-const Coding101 = () => {
+const Bootcamp = () => {
   const classes = useStyles();
   return (
     <div>
       <MetaTag
-        title='coding101 | The Shortcut'
-        description='Our training program “Coding 101 - Web Development Essentials” teaches you in 12 weeks the three basic coding languages - HTML, CSS and JavaScript.
-        You don’t need any previous coding experience but you need to be able to commit to the full 12 weeks of training. 
-        Sessions are every Tuesday and Thursday from 16:00 - 17:30.'
-        screenshot='https://theshortcut.org/wp-content/uploads/2021/08/Coding-101-banner-1.png'
+        title='Recruiter Bootcamp | The Shortcut'
+        description='We have a historic talent shortage in Finland, so naturally, recruitment specialists have never been in higher demand. R&R Talent Advisors offers a four week training program in collaboration with the Shortcut to teach you everything about the recruitment life-cycle. You’ll learn both the technical (headhunting, boolean search) and non-technical sides (working with hiring managers/candidates, negotiation) of the profession. 
+        We’re looking for a talented, hard-working, and diverse group of people that want to learn the (recruitment) ropes from the experienced team of R&R!
+        '
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/08/Recruiter-Boot-Camp-2021-2.png'
       />
       {window.innerWidth < 960 ? (
         <img
-          src={'https://theshortcut.org/wp-content/uploads/2021/08/Coding-101-banner-1.png'}
+          src={'https://theshortcut.org/wp-content/uploads/2021/08/Recruiter-Boot-Camp-2021-2.png'}
           width='100%'
           height='auto'
-          alt='coding101_page'
+          alt='Bootcamp_page'
         />
       ) : (
         <div className={classes.hero} />
       )}
       <section className={classes.intro}>
-        <Title>Are you ready to learn the basics of coding?</Title>
+        <Title>Become a Talent Acquisition Expert</Title>
         <Typography variant='body1' className={classes.text}>
-          Our training program “Coding 101 - Web Development Essentials” teaches you in 12 weeks the
-          three basic coding languages - HTML, CSS and JavaScript. You don’t need any previous
-          coding experience but you need to be able to commit to the full 12 weeks of training.
+          We have a historic talent shortage in Finland, so naturally, recruitment specialists have
+          never been in higher demand. R&R Talent Advisors offers a four week training program in
+          collaboration with the Shortcut to teach you everything about the recruitment life-cycle.
+          You’ll learn both the technical (headhunting, boolean search) and non-technical sides
+          (working with hiring managers/candidates, negotiation) of the profession.
           <br />
-          At the end of the course, you will have the chance to use the skills you learned in a
-          project and successful participants will receive a certificate.
+          We’re looking for a talented, hard-working, and diverse group of people that want to learn
+          the (recruitment) ropes from the experienced team of R&R!
           <br />
-          After completing the course you will be able to build a website or homepage and perform
-          any tasks associated with developing websites for hosting via intranet or internet.
+          <ul>
+            <li style={{listStyleType:'none', fontSize:'1.4rem', fontWeight:'bold'}}>This class is great for you if:</li>
+            <li>You already have some skills in HR/Recruitment</li>
+            <li>You are a complete novice or a job seeker that wants to make a career change</li>
+            <li>
+              You are fresh out of university and are interested in human resources/talent
+              acquisition
+            </li>
+          </ul>
+        </Typography>
+        <Typography variant='body1'>
+          About R&R Talent Advisors:{' '}
+          <a href='https://www.rrtalentadvisors.com/' target='_blank' rel='noreferrer'>
+            https://www.rrtalentadvisors.com/
+          </a>
+        </Typography>
+        <Typography variant='body1'>
+          Meet our speakers:{' '}
+                  <Button
+                      variant="outlined" color="secondary"
+            href='https://www.linkedin.com/in/rob-pappas-73864a18/'
+            target='_blank'
+            rel='noreferrer'>
+            Rob Pappas
+          </Button>{' '}
+                  <Button
+                      variant="outlined" color="secondary"
+            href='https://www.linkedin.com/in/magnus-lindfors-07378749/'
+            target='_blank'
+            rel='noreferrer'>
+            Magnus Lindfors
+          </Button>
         </Typography>
         <Button
           variant='contained'
           color='primary'
           className={classes.button}
           target='_blank'
-          href='https://forms.gle/tVc7XTNYrB1DcLx18'>
+          href='https://docs.google.com/forms/d/e/1FAIpQLSc7GWl0qRGXNBB0Aym7u6at63hGfTNu-b2hs9bCGyBVKxkdKQ/viewform'>
           APPLY NOW
         </Button>
       </section>
@@ -77,23 +109,15 @@ const Coding101 = () => {
             <br />
             <Typography variant='body1'>
               <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Project-based teaching to sharpen your HTML, CSS & JavaScript skills
+              Full recruitment life-cycle
             </Typography>
             <Typography variant='body1'>
               <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              How to build mini-projects in a short time
+              Headhunting and boolean search technique
             </Typography>
             <Typography variant='body1'>
               <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Modern styling with flexbox, CSS animations and etc...
-            </Typography>
-            <Typography variant='body1'>
-              <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              How to work with variables, conditions, arrays, and loops in JavaScript
-            </Typography>
-            <Typography variant='body1'>
-              <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              DOM manipulation & events
+              Soft skills e.g. How to work with hiring managers/candidates, negotiation
             </Typography>
           </CardContent>
         </Card>
@@ -102,16 +126,11 @@ const Coding101 = () => {
             <Typography variant='h3'>Program includes:</Typography>
             <br />
             <Typography variant='body1'>
-              <GiHourglass style={{ paddingTop: 10, fontSize: '1.4rem' }} /> More than 24 hours of
-              teaching
+              <GiHourglass style={{ paddingTop: 10, fontSize: '1.4rem' }} /> 12 hours of teaching
             </Typography>
             <Typography variant='body1'>
               <RiCodeBoxFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Live coding challenges
-            </Typography>
-            <Typography variant='body1'>
-              <RiDownloadCloud2Fill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Downloadable resources
+              Opportunities to network
             </Typography>
             <Typography variant='body1'>
               <AiFillSafetyCertificate style={{ paddingTop: 10, fontSize: '1.4rem' }} />
@@ -127,11 +146,11 @@ const Coding101 = () => {
             <br />
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              14th September - 2nd December (12 weeks)
+              6th September - 24th September
             </Typography>
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Every Tuesday and Thursday, 16.00-17.30
+              Every Monday, Wednesday and Thursday. 16:00 - 17:30
             </Typography>
           </CardContent>
         </Card>
@@ -157,19 +176,18 @@ const Coding101 = () => {
       <section className={classes.intro}>
         <Typography variant='body1'>
           We’d love to hear from you! Please direct any questions regarding the program content to
-          Mostafa Hazareh:{' '}
-          <a href='mailto:mostafa.hazareh@theshortcut.org'>mostafa.hazareh@theshortcut.org</a>
+          Vickie Weng: <a href='vickie@theshortcut.org'>vickie@theshortcut.org</a>
         </Typography>
         <br />
         <Typography variant='h3'>
-          Deadline for application : 6<sup>th</sup> September
+          Deadline for application : 1<sup>st</sup> September
         </Typography>
         <Button
           variant='contained'
           color='primary'
           className={classes.button}
           target='_blank'
-          href='https://forms.gle/tVc7XTNYrB1DcLx18'>
+          href='https://forms.gle/S79edzcDCf4g1kaA7'>
           APPLY NOW
         </Button>
       </section>
@@ -177,7 +195,7 @@ const Coding101 = () => {
   );
 };
 
-export default Coding101;
+export default Bootcamp;
 
 const useStyles = makeStyles((theme) => ({
   hero: {
@@ -186,7 +204,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     minHeight: '50vh',
     maxHeight: '50vh',
-    background: `#f9f9f9 center/contain url(https://theshortcut.org/wp-content/uploads/2021/08/Coding-101-banner-1.png) no-repeat`,
+    background: `#f9f9f9 center/contain url(https://theshortcut.org/wp-content/uploads/2021/08/Recruiter-Boot-Camp-2021-2.png) no-repeat`,
   },
   intro: {
     minWidth: '70%',
