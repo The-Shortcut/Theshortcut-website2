@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Components
 import Home from './components/pages/home';
+import StartHere from './components/pages/home/StartHere';
 import About from './components/pages/about';
 import AllEvents from './components/pages/events';
 import BYOB from './components/pages/events/byob';
@@ -37,6 +38,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
+{/*       <Route exact path='/start-here' component={StartHere} /> */}
       <Route exact path='/about' component={About} />
       <Route exact path='/events' component={AllEvents} />
       <Route exact path='/events/byob' component={BYOB} />

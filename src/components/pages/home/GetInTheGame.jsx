@@ -2,11 +2,14 @@ import React from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, Card, CardContent, Button } from '@material-ui/core';
+
+
 
 // Children
 import Title from '../../custom/Title';
 import Game from './Game';
+import StartHere from './StartHere';
 
 // Data
 import { gameData } from './gameData';
@@ -23,6 +26,10 @@ const GetInTheGame = ({ gamesRef }) => {
           can upskill and pivot your career through events, coaching, and training in our vibrant
           community!
         </Typography>
+        <StartHere />
+        {/* <Button color='primary' variant='contained' startIcon={<MdHelp />} className={classes.button}>
+          How can we help
+        </Button> */}
         <div className={classes.section}>
           {gameData.map((data, index) => (
             <a href={data.path} className={classes.link} key={index}>
@@ -84,13 +91,30 @@ const useStyles = makeStyles((theme) => ({
     '@media (max-width: 320px)': {},
   },
   text: {
-    margin: '0 auto 3em',
+    margin: '0 auto',
     minWidth: '50%',
     maxWidth: '50%',
     textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
       minWidth: '80%',
       maxWidth: '80%',
+    },
+  },
+  button: {
+    display: 'flex',
+    minWidth: '13.5em',
+    maxWidth: '13.5em',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    textTransform: 'none',
+    margin: '1em auto',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '14.5em',
+      fontSize: '0.8rem',
+      marginTop: 0,
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '15.5em',
     },
   },
 }));

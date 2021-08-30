@@ -14,6 +14,7 @@ import { Typography, Button, Link } from '@material-ui/core';
 import UpcomingEvents from './UpcomingEvents';
 import GetInTheGame from './GetInTheGame';
 import OurPartnersLogos from '../../custom/OurPartnersLogos';
+import News from './StartHere';
 
 import TagManager from 'react-gtm-module';
 TagManager.dataLayer({
