@@ -14,6 +14,7 @@ import { Typography, Button } from '@material-ui/core';
 import Statistics from './Statistics';
 import MainSections from './MainSections';
 import SuccessStories from './SuccessStories';
+import Resources from './Resources';
 
 // GTM
 import TagManager from 'react-gtm-module';
@@ -30,14 +31,17 @@ const Community = () => {
   const classes = useStyles();
 
   const welcomeRef = useRef(null);
+  const resourcesRef = useRef(null);
   const storyRef = useRef(null);
   const scrollToWelcome = (ref) => window.scrollTo(0, ref.current.offsetTop - 45);
+  const scrollToResources = (ref) => window.scrollTo(0, ref.current.offsetTop - 130);
   const scrollToStrories = (ref) => window.scrollTo(0, ref.current.offsetTop - 45);
   const executeScrollWelcome = () => scrollToWelcome(welcomeRef);
+  const executeScrollResources = () => scrollToResources(resourcesRef);
   const executeScrollStories = () => scrollToStrories(storyRef);
 
   if (window.location.pathname !== '/community') {
-    return <Redirect to='/404'/>
+    return <Redirect to='/404' />;
   }
   return (
     <div>
@@ -72,12 +76,20 @@ const Community = () => {
           variant='contained'
           color='primary'
           className={classes.button}
+          onClick={executeScrollResources}>
+          RESOURCES
+        </Button>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.button}
           onClick={executeScrollStories}>
           SUCCESS STORIES
         </Button>
       </div>
       <Statistics />
       <MainSections welcomeRef={welcomeRef} />
+      <Resources resourcesRef={resourcesRef} />
       <SuccessStories storyRef={storyRef} />
     </div>
   );
@@ -115,38 +127,43 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    maxWidth: '40%',
+    minWidth: '60%',
+    maxWidth: '60%',
     margin: '-9em auto 0',
     [theme.breakpoints.down('md')]: {
-      maxWidth: '55%',
-      margin: '-9em auto 0',
+      minWidth: '80%',
+      maxWidth: '80%',
+      marginTop: '-8em',
     },
     [theme.breakpoints.down('sm')]: {
-      maxWidth: '70%',
-      marginTop: 0,
+      minWidth: '60%',
+      maxWidth: '60%',
+      marginTop: '-6em',
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       minWidth: '95%',
       maxWidth: '95%',
+      marginTop: 0,
     },
   },
   button: {
     display: 'inline',
-    minWidth: '12.5em',
-    maxWidth: '12.5em',
+    minWidth: '12em',
+    maxWidth: '12em',
+    color: '#FFFFFF',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',
     margin: '1em 0',
     [theme.breakpoints.down('sm')]: {
-      minWidth: '14.5em',
-      maxWidth: '14.5em',
+      minWidth: '11em',
+      maxWidth: '11em',
       fontSize: '0.8rem',
       marginTop: 0,
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '11em',
-      maxWidth: '11em',
+      minWidth: '8em',
+      maxWidth: '8em',
     },
   },
 }));

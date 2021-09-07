@@ -14,6 +14,7 @@ import { Typography, Button, Link } from '@material-ui/core';
 import UpcomingEvents from './UpcomingEvents';
 import GetInTheGame from './GetInTheGame';
 import OurPartnersLogos from '../../custom/OurPartnersLogos';
+import WhereToStart from './WhereToStart';
 
 import TagManager from 'react-gtm-module';
 TagManager.dataLayer({
@@ -66,7 +67,10 @@ const LandingPage = () => {
       </div>
       <GetInTheGame gamesRef={gamesRef} />
       <UpcomingEvents />
-      <OurPartnersLogos />
+      <WhereToStart />
+      <div style={{ background: '#DDDDDD', border: '2px solid #DDDDDD', marginBottom:'-4em'}}>
+        <OurPartnersLogos />
+      </div>
     </div>
   );
 };

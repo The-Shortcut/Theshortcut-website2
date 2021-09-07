@@ -9,7 +9,7 @@ import { Typography, Button, Card, CardContent } from '@material-ui/core';
 
 // icons
 import { GiCheckMark, GiHourglass } from 'react-icons/gi';
-import { RiTimerFill, RiDownloadCloud2Fill, RiCodeBoxFill } from 'react-icons/ri';
+import { RiTimerFill, RiCodeBoxFill } from 'react-icons/ri';
 import { DiRequirejs } from 'react-icons/di';
 import { AiFillSafetyCertificate } from 'react-icons/ai';
 

@@ -7,7 +7,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // REACT-ICONS
 import { RiUserHeartFill } from 'react-icons/ri';
 import { FaCalendarDay, FaUserNinja, FaTransgenderAlt } from 'react-icons/fa';
-import { MdDirectionsRun, MdShare } from 'react-icons/md';
+import { MdDirectionsRun, MdShare, MdEventAvailable } from 'react-icons/md';
 import { BsFillFlagFill } from 'react-icons/bs';
 
 export const statData = [
@@ -77,3 +77,17 @@ export const sections = [
     ],
   },
 ];
+
+export const resources = [
+  {
+    value: 'Take a free online course with FiTech.',
+    link: 'https://bit.ly/2UtJ9fn',
+    icon: <MdEventAvailable color='#00A99D' style={{ fontSize: 40 }}/>,
+  },
+  {
+    value:
+      'Join the Spouse Program by the City of Helsinki that helps spouses integrate in Finland.',
+    link: 'https://spouseprogram.fi/',
+    icon: <MdEventAvailable color='#00A99D' style={{ fontSize: 40 }}/>,
+  },
+]

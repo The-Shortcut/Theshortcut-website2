@@ -11,7 +11,7 @@ import { trainingServiceData } from '../../../../actions/serviceActions';
 const CurrTrainingSections = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { isLoading, trainings } = useSelector((state) => state.services);
+  const { trainings } = useSelector((state) => state.services);
 
   useEffect(() => {
     if (!trainings) {
