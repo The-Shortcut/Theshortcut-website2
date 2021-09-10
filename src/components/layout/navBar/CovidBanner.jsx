@@ -37,7 +37,10 @@ const CovidBanner = () => {
   };
 
   return (
-    <div style={{ display: !postIsLoading ? 'none' : 'block' }}>
+    <div
+      style={{
+        display: !postIsLoading || window.location.pathname === '/start-here' ? 'none' : 'block',
+      }}>
       <Snackbar
         anchorOrigin={
           window.innerWidth > 960

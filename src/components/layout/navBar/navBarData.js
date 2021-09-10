@@ -125,4 +125,9 @@ export const navBarData = [
     path: '/meet-us',
     icon: null,
   },
+  {
+    title: 'START HERE',
+    path: '/start-here',
+    icon: null,
+  },
 ];

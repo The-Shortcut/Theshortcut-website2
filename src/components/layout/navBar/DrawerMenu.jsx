@@ -10,6 +10,7 @@ import { navBarData } from './navBarData';
 
 // Children
 import MenuItem from './MenuItem';
+import StartHereBtn from '../../pages/home/StartHereBtn';
 
 // LOGO
 import drawerLogo from '../../../assets/logo/shortcut/Emblem The Shortcut_emblem green.png';

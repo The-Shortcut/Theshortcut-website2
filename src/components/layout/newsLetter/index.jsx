@@ -115,7 +115,7 @@ const FollowMedia = () => {
   };
 
   return (
-    <div className={classes.div}>
+    <div className={classes.div} style={window.location.pathname === '/start-here' ? {display:'none'} : {display: 'flex'}}>
       <form className={classes.form}>
         <div className={classes.inputSection}>
           <TextField

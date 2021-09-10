@@ -11,7 +11,7 @@ import Links from './Links';
 const Index = () => {
   const classes = useStyles();
   return (
-      <footer className={classes.footer}>
+      <footer className={classes.footer} style={window.location.pathname === '/start-here' ? {display:'none'} : {display: 'block'}}>
         <div className={classes.container}>
           <Intro />
           <Links />

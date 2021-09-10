@@ -26,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
     border: 'none',
     background: 'none',
     margin: '0 auto 2em',
-    [theme.breakpoints.up('md')]: {
+/*     [theme.breakpoints.up('md')]: {
       marginTop: '-3em',
-    },
+    }, */
   },
 
   button: {

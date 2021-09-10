@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { Slide, ListItem, ListItemText, Typography, Button } from '@material-ui/core';
 
+import StartHereBtn from '../../pages/home/StartHereBtn';
+
 const MenuItem = ({ item, toggleDrawer }) => {
   const [subnav, setSubnav] = useState(false);
   const classes = useStyles();
@@ -32,9 +34,15 @@ const MenuItem = ({ item, toggleDrawer }) => {
         <ListItem button className={classes.listItem}>
           <ListItemText
             primary={
-              <Typography variant='body1' style={{ fontWeight: 'bold' }}>
-                {item.title}
-              </Typography>
+              item?.title === 'START HERE' ? (
+                <Button color='primary' variant='contained' className={classes.button}>
+                START HERE
+              </Button>
+              ) : (
+                <Typography variant='body1' style={{ fontWeight: 'bold' }}>
+                  {item.title}
+                </Typography>
+              )
             }
           />
           <div>{item.subNav && subnav ? item.icon : item.subNav ? item.iconClosed : null}</div>
@@ -60,11 +68,27 @@ const useStyles = makeStyles((theme) => ({
   listItem: {
     color: '#434343',
     margin: 0,
-    padding: '0 3em',
+    padding: '0 2em',
   },
   subItem: {
     color: '#434343',
     margin: 0,
     padding: ' 0 4em',
+  },
+  button: {
+    minWidth: '13.5em',
+    maxWidth: '13.5em',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    textTransform: 'none',
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '14.5em',
+      fontSize: '0.8rem',
+      marginTop: 0,
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '15.5em',
+    },
+    color: '#fff',
   },
 }));
