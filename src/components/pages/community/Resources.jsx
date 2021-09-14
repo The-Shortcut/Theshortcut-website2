@@ -1,33 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-// DATA
-import { resources } from './statData';
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, CardActionArea, Typography, Link } from '@material-ui/core';
+import { MdEventAvailable } from 'react-icons/md';
 
 // Children
 import Title from '../../custom/Title';
 
+// REDUX
+import { useSelector, useDispatch } from 'react-redux';
+import { getServicesData } from '../../../actions/recourceActions';
+
 const Resources = ({ resourcesRef }) => {
   const classes = useStyles();
-  console.log(resources);
+  const { isLoading, resources } = useSelector((state) => state.resources);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (isLoading) {
+      dispatch(getServicesData());
+    }
+  }, [dispatch, isLoading]);
+
   return (
     <div className={classes.root} ref={resourcesRef}>
       <Title>Additional Resources from our Partner Network</Title>
-      {resources.map((res, index) => (
+      {resources?.map(({acf}, index) => (
         <Card key={index} className={classes.card}>
           <CardActionArea>
             <Link
-              href={res.link}
+              href={acf.link}
               underline='hover'
               target='_blank'
               rel='noreferrer'
               color='inherit'>
               <CardContent className={classes.content}>
-                {res.icon}{' '}
+                <MdEventAvailable color='#00A99D' style={{ fontSize: 40 }} />
                 <Typography variant='body1' style={{ marginLeft: 15 }}>
-                  {res.value}
+                  {acf.value}
                 </Typography>
               </CardContent>
             </Link>

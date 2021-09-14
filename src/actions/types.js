@@ -26,3 +26,4 @@ export const SERVICES_FAQ_DATA = 'SERVICES_FAQ_DATA';
 export const BYOB_FAQ_DATA = 'BYOB_FAQ_DATA';
 
 export const INIT_TRAINING = 'INIT_TRAINING';
+export const INIT_RESOURCES = 'INIT_RESOURCES';
