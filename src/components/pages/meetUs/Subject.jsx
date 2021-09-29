@@ -19,6 +19,15 @@ const Subject = () => {
         their picture. Just click "Book a Meeting" and you will be sent to their calendar. Make sure
         to book soon because the time slots are limited!
       </Typography>
+      <br />
+      <Typography variant='body1' className={classes.text}>
+        <strong>Please Read Before Booking:</strong> These meetings are meant for mentoring or
+        networking and are reserved for our community members. If you have other items to discuss
+        (sales, partnership, etc.)
+      </Typography>
+      <Typography variant='body1' className={classes.text}>
+        please reach out to us via email.
+      </Typography>
     </section>
   );
 };

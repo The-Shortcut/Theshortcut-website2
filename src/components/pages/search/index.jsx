@@ -7,6 +7,7 @@ import { allEvents } from '../../../actions/eventActions';
 import { teamMembers, boardMembers } from '../../../actions/teamActions';
 import { postsData, postsCategoriesData } from '../../../actions/postActions';
 import { getFAQ, getServicesFAQ, getByobFAQ } from '../../../actions/docActions';
+import { getResourcesData } from '../../../actions/resourceActions';
 
 //Material-UI
 import { makeStyles, fade } from '@material-ui/core/styles';
@@ -19,6 +20,7 @@ import FAQResut from './FAQResut';
 import MemberResult from './MemberResult';
 import PostResult from './PostResult';
 import EventResult from './EventResult';
+import ResourcesResult from './ResourcesResult';
 
 const SearchWebsite = () => {
   const classes = useStyles();
@@ -30,6 +32,7 @@ const SearchWebsite = () => {
   const { posts } = useSelector((state) => state.posts);
   const { teammates, board } = useSelector((state) => state.team);
   const { faq_about, coachingFAQ, trainingFAQ, byobFAQ } = useSelector((state) => state.docs);
+  const { resources } = useSelector((state) => state.resources);
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
@@ -60,6 +63,9 @@ const SearchWebsite = () => {
     if (!byobFAQ) {
       dispatch(getByobFAQ());
     }
+    if (!resources) {
+      dispatch(getResourcesData());
+    }
   }, [
     faq_about,
     byobFAQ,
@@ -72,6 +78,7 @@ const SearchWebsite = () => {
     query,
     teammates,
     trainingFAQ,
+    resources,
   ]);
 
   let filteredEvents = events?.filter(
@@ -85,6 +92,7 @@ const SearchWebsite = () => {
       post.title.rendered.toLowerCase().includes(query) ||
       post.content.rendered.toLowerCase().includes(query)
   );
+  let filteredResources = resources?.filter(({ acf }) => acf.value.toLowerCase().includes(query));
   let filteredTeam = teammates?.filter(
     ({ acf }) =>
       acf.name.toLowerCase().includes(query) || acf.position.toLowerCase().includes(query)
@@ -112,6 +120,7 @@ const SearchWebsite = () => {
   let totalQuery =
     filteredEvents?.length +
     filteredPosts?.length +
+    filteredResources?.length +
     filteredTeam?.length +
     filteredBoard?.length +
     filteredAboutFAQ?.length +
@@ -155,6 +164,20 @@ const SearchWebsite = () => {
         {filteredPosts ? (
           filteredPosts?.map((post) => (
             <PostResult post={post} route={`/blog/${post.slug}`} page='Blog' />
+          ))
+        ) : (
+          <div className={classes.spinner}>
+            <CircularProgress disableShrink />
+          </div>
+        )}
+        {filteredResources ? (
+          filteredResources?.map(({ acf }) => (
+            <ResourcesResult
+              resource={acf}
+              route='/community#resources'
+              page='Community'
+              section='Resources'
+            />
           ))
         ) : (
           <div className={classes.spinner}>

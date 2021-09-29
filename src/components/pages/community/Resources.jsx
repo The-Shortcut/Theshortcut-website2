@@ -10,7 +10,7 @@ import Title from '../../custom/Title';
 
 // REDUX
 import { useSelector, useDispatch } from 'react-redux';
-import { getServicesData } from '../../../actions/recourceActions';
+import { getResourcesData } from '../../../actions/resourceActions';
 
 const Resources = ({ resourcesRef }) => {
   const classes = useStyles();
@@ -18,14 +18,14 @@ const Resources = ({ resourcesRef }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (isLoading) {
-      dispatch(getServicesData());
+      dispatch(getResourcesData());
     }
   }, [dispatch, isLoading]);
 
   return (
-    <div className={classes.root} ref={resourcesRef}>
+    <div className={classes.root} ref={resourcesRef} id='resources'>
       <Title>Additional Resources from our Partner Network</Title>
-      {resources?.map(({acf}, index) => (
+      {resources?.map(({ acf }, index) => (
         <Card key={index} className={classes.card}>
           <CardActionArea>
             <Link
