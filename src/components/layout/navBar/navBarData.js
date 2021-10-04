@@ -78,11 +78,11 @@ export const navBarData = [
     path: '/community',
     icon: null,
   },
-  /*  {
-    title: 'TALENT POOL',
-    path: '/talent-pool',
+   {
+    title: 'JOIN OUR TALENT POOL',
+    path: '/talent-community',
     icon: null,
-  }, */
+  },
   {
     title: 'OUR IMPACT',
     path: '/our-impact',

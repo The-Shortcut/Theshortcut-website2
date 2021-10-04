@@ -22,6 +22,7 @@ import Search from './components/pages/search';
 import Coding101 from './components/pages/services/training/coding101';
 import Bootcamp from './components/pages/services/training/bootcamp';
 import StartHere from './components/pages/startHere';
+import TalentCommunity from './components/pages/talentCommunity'
 // Footer
 import PrivacyPolicies from './components/layout/documents/PrivacyPolicies';
 import CodeOfConduct from './components/layout/documents/CodeOfConduct';
@@ -51,6 +52,7 @@ const Routes = () => {
       <Route exact path='/meet-us' component={MeetUs} />
       <Route exact path='/blog' component={Blog} />
       <Route exact path='/blog/:slug' component={Post} />
+      <Route exact path='/talent-community' component={TalentCommunity} />
       <Route
         exact
         path='/start-here'
