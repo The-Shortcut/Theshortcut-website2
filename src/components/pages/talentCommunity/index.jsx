@@ -284,6 +284,9 @@ const useStyles = makeStyles((theme) => ({
   section: {
     margin: '5em auto 7em',
     border: '1px solid #f9f9f9',
+    [theme.breakpoints.down('sm')]: {
+      margin: '3.5em auto',
+    },
   },
   lastSection: {
     backgroundColor: '#141414',
@@ -352,7 +355,8 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 0,
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '15.5em',
+      minWidth: '90%',
+      marginTop: 12,
     },
     color: '#fff',
   },
