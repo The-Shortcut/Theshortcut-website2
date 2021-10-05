@@ -6,11 +6,11 @@ import MetaTag from '../../utils/MetaTag';
 
 // Images
 import heroImage from '../../../assets/photos/talentCommunityHero.jpg';
-import talent1 from '../../../assets/photos/talent1.jpg';
-import talent2 from '../../../assets/photos/talent2.jpg';
-import talent3 from '../../../assets/photos/talent3.jpg';
-import talent4 from '../../../assets/photos/talent4.JPG';
-import talent5 from '../../../assets/photos/talent5.jpg';
+import talent1 from '../../../assets/photos/talent1.png';
+import talent2 from '../../../assets/photos/talent2.png';
+import talent3 from '../../../assets/photos/talent3.png';
+import talent4 from '../../../assets/photos/talent4.png';
+import talent5 from '../../../assets/photos/talent5.png';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -44,19 +44,21 @@ const TalentCommunity = () => {
         screenshot='https://theshortcut.org/wp-content/uploads/2021/06/community.png'
       />
       {window.innerWidth < 960 ? (
-        <img
-          src={heroImage}
-          width='100%'
-          height='auto'
-          alt='community-page'
-          style={{ filter: 'brightness(40%)' }}
-        />
+        <>
+          <img src={heroImage} width='100%' height='450px' alt='community-page' />
+          <Typography variant='h1' style={{ fontSize: '2.5rem' }} className={classes.title}>
+            Join Our <br /> Talent Community
+          </Typography>
+        </>
       ) : (
-        <div className={classes.hero} />
+        <>
+          <div className={classes.hero} />
+          <Typography variant='h1' className={classes.title}>
+            Join Our <br /> Talent Community
+          </Typography>
+        </>
       )}
-      <Typography variant='h1' className={classes.title}>
-        Join Our <br /> Talent Community
-      </Typography>
+
       <section className={classes.section}>
         <Title>Join Our Community</Title>
         <div className={classes.container}>
@@ -74,7 +76,13 @@ const TalentCommunity = () => {
             <Typography variant='body1' className={classes.text}>
               Joining the Talent Community is the best way to get the most out of our services!
             </Typography>
-            <Button href="https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V" target="_blank" rel="noopener noreferrer"  color='primary' variant='contained' className={classes.joinBtn}>
+            <Button
+              href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
+              target='_blank'
+              rel='noopener noreferrer'
+              color='primary'
+              variant='contained'
+              className={classes.joinBtn}>
               Join the Talent Community
             </Button>
           </div>
@@ -125,7 +133,13 @@ const TalentCommunity = () => {
               If you want to update your profile later on or change your employment status, you can
               submit your email on the same page where you joined to get a new sign-in link.
             </Typography>
-            <Button href="https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V" target="_blank" rel="noopener noreferrer" color='primary' variant='contained' className={classes.joinBtn}>
+            <Button
+              href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
+              target='_blank'
+              rel='noopener noreferrer'
+              color='primary'
+              variant='contained'
+              className={classes.joinBtn}>
               Join the Talent Community
             </Button>
           </div>
@@ -166,7 +180,15 @@ const TalentCommunity = () => {
               Your data will be deleted if you do not update your profile within a specified time
               period after receiving that message.
             </Typography>
-            <Typography variant='body1' className={classes.text}></Typography>
+            <Button
+              href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
+              target='_blank'
+              rel='noopener noreferrer'
+              color='primary'
+              variant='contained'
+              className={classes.joinBtn}>
+              Join the Talent Community
+            </Button>
           </div>
         </div>
       </section>
@@ -174,7 +196,13 @@ const TalentCommunity = () => {
         <Typography variant='h3' style={{ textAlign: 'center' }}>
           Already have a profile <br /> in our Talent Community?
         </Typography>
-        <Button href="https://ats.talentadore.com/talents/eQz/en/WzM0OTM0OF0.YVbKkw.Mh80AsF3KjUuaqsGB4SeGSkcU-k" target="_blank" rel="noopener noreferrer"color='secondary' variant='contained' className={classes.editInfoBtn}>
+        <Button
+          href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
+          target='_blank'
+          rel='noopener noreferrer'
+          color='secondary'
+          variant='contained'
+          className={classes.editInfoBtn}>
           Edit your information here
         </Button>
       </section>
@@ -207,7 +235,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '-2.4em',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: '-2.8em',
+      marginTop: '-3.5em',
     },
   },
   buttons: {
@@ -286,6 +314,11 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '50%',
     minHeight: '370px',
     maxHeight: '450px',
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '50%',
+      minHeight: '470px',
+      maxHeight: '480px',
+    },
     [theme.breakpoints.down('sm')]: {
       minWidth: '100%',
       maxHeight: '320px',
