@@ -39,7 +39,7 @@ const TalentCommunity = () => {
   return (
     <div>
       <MetaTag
-        title='Talenty Community | The Shortcut'
+        title='Talent Community | The Shortcut'
         description='The Shortcut is a diverse community of learners in Finland. Whether you want to network or transform your career, join us today.'
         screenshot='https://theshortcut.org/wp-content/uploads/2021/06/community.png'
       />
@@ -311,6 +311,9 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
       maxWidth: '90%',
     },
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '60%',
+    }
   },
   image: {
     flex: 1,
@@ -344,13 +347,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   joinBtn: {
-    minWidth: '13.5em',
-    maxWidth: '13.5em',
+    minWidth: '15em',
+    maxWidth: '15em',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',
     [theme.breakpoints.down('sm')]: {
-      minWidth: '14.5em',
       fontSize: '0.8rem',
       marginTop: 0,
     },
