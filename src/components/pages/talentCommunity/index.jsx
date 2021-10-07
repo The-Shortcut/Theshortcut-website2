@@ -76,6 +76,12 @@ const TalentCommunity = () => {
             <Typography variant='body1' className={classes.text}>
               Joining the Talent Community is the best way to get the most out of our services!
             </Typography>
+            <Typography>
+              For more information, please see our{' '}
+              <a href='/privacy-policies' target='_blank' rel='noreferrer'>
+                privacy policy.
+              </a>
+            </Typography>
             <Button
               href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
               target='_blank'
@@ -133,6 +139,12 @@ const TalentCommunity = () => {
               If you want to update your profile later on or change your employment status, you can
               submit your email on the same page where you joined to get a new sign-in link.
             </Typography>
+            <Typography>
+              For more information, please see our{' '}
+              <a href='/privacy-policies' target='_blank' rel='noreferrer'>
+                privacy policy.
+              </a>
+            </Typography>
             <Button
               href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
               target='_blank'
@@ -179,6 +191,12 @@ const TalentCommunity = () => {
             <Typography variant='body1' className={classes.text}>
               Your data will be deleted if you do not update your profile within a specified time
               period after receiving that message.
+            </Typography>
+            <Typography>
+              For more information, please see our{' '}
+              <a href='/privacy-policies' target='_blank' rel='noreferrer'>
+                privacy policy.
+              </a>
             </Typography>
             <Button
               href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
@@ -255,7 +273,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '60%',
       marginTop: '-6em',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       minWidth: '95%',
       maxWidth: '95%',
       marginTop: 0,
@@ -313,7 +331,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('sm')]: {
       maxWidth: '60%',
-    }
+    },
   },
   image: {
     flex: 1,

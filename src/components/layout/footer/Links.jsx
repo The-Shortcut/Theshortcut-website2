@@ -43,7 +43,7 @@ const Links = () => {
             Terms of use
           </Typography>
         </Link>
-        <Link to='/privacy' className={classes.link}>
+        <Link to='/privacy-policies' className={classes.link}>
           <Typography
             variant='subtitle1'
             component='p'
@@ -73,6 +73,15 @@ const Links = () => {
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
             Community
+          </Typography>
+        </Link>
+        <Link to='/talent-community' className={classes.link}>
+          <Typography
+            variant='subtitle1'
+            component='p'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            Join the Talent Pool
           </Typography>
         </Link>
         {/* <Typography variant='subtitle1' component='p' className={classes.item}>
