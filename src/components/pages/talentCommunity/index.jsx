@@ -76,12 +76,6 @@ const TalentCommunity = () => {
             <Typography variant='body1' className={classes.text}>
               Joining the Talent Community is the best way to get the most out of our services!
             </Typography>
-            <Typography>
-              For more information, please see our{' '}
-              <a href='/privacy-policies' target='_blank' rel='noreferrer'>
-                privacy policy.
-              </a>
-            </Typography>
             <Button
               href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
               target='_blank'
@@ -138,12 +132,6 @@ const TalentCommunity = () => {
             <Typography variant='body1' className={classes.text}>
               If you want to update your profile later on or change your employment status, you can
               submit your email on the same page where you joined to get a new sign-in link.
-            </Typography>
-            <Typography>
-              For more information, please see our{' '}
-              <a href='/privacy-policies' target='_blank' rel='noreferrer'>
-                privacy policy.
-              </a>
             </Typography>
             <Button
               href='https://ats.talentadore.com/candidates/shortcut/add/eQz/en/g/K66V'
