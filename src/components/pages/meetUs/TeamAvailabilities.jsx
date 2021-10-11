@@ -2,22 +2,31 @@ import React from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, CardActionArea, Typography, Button } from '@material-ui/core';
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActionArea,
+  Typography,
+  Button,
+} from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 
 const TeamAvailabilities = ({ meetingData }) => {
   const classes = useStyles();
+  console.log(meetingData);
   return (
     <div className={classes.root}>
       <div className={classes.container}>
         {meetingData?.map(({ acf }, index) => (
           <Card key={index} className={classes.card}>
             <CardActionArea>
-              <img
-                alt={acf.title}
+              <CardMedia
+                component='img'
                 className={classes.media}
-                src={acf.photo.sizes.us_600_400_crop}
+                image={acf.photo.url}
+                alt={acf.name}
               />
               <CardContent className={classes.cardContent}>
                 <Typography variant='h4'>{acf.name}</Typography>
