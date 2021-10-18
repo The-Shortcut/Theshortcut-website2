@@ -31,7 +31,7 @@ const getEvents = async () => {
     event.status === 'live' ? Object.assign(event, { status: 'upcoming' }) : event.status
   );
 
-  const eventsByCMS = await axios.get('https://theshortcut.org/wp-json/wp/v2/events/?per_page=100');
+  const eventsByCMS = await axios.get('https://admin.theshortcut.org/wp-json/wp/v2/events/?per_page=100');
   let data = eventsByCMS.data.map((data) => data.acf);
   let modifiedData = [];
   data.forEach((item) => {
