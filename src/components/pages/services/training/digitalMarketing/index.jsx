@@ -5,11 +5,20 @@ import MetaTag from '../../../../utils/MetaTag';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button, Card, CardContent } from '@material-ui/core';
+import {
+  Typography,
+  Button,
+  Card,
+  CardContent,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from '@material-ui/core';
 
 // icons
-import { GiCheckMark, GiHourglass } from 'react-icons/gi';
-import { RiTimerFill, RiCodeBoxFill } from 'react-icons/ri';
+import { GiCheckMark } from 'react-icons/gi';
+import { RiTimerFill } from 'react-icons/ri';
 import { DiRequirejs } from 'react-icons/di';
 import { AiFillSafetyCertificate } from 'react-icons/ai';
 
@@ -27,20 +36,20 @@ TagManager.dataLayer({
   },
 });
 
-const Bootcamp = () => {
+const DigitalMarketing = () => {
   const classes = useStyles();
   return (
     <div>
       <MetaTag
-        title='Recruiter Bootcamp | The Shortcut'
-        description='We have a historic talent shortage in Finland, so naturally, recruitment specialists have never been in higher demand. R&R Talent Advisors offers a four week training program in collaboration with the Shortcut to teach you everything about the recruitment life-cycle. You’ll learn both the technical (headhunting, boolean search) and non-technical sides (working with hiring managers/candidates, negotiation) of the profession. 
-        We’re looking for a talented, hard-working, and diverse group of people that want to learn the (recruitment) ropes from the experienced team of R&R!
-        '
-        screenshot='https://theshortcut.org/wp-content/uploads/2021/08/Recruiter-Boot-Camp-2021-2.png'
+        title='Digital Marketing Program | The Shortcut'
+        description='Our Digital Marketing and Growth Hacking Program teaches you online marketing skills from Google Analytics to SEO/SEM. Within twelve weeks of immersive training you will learn the tools you need to become the next generation of digital marketing professionals.'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-.png'
       />
       {window.innerWidth < 960 ? (
         <img
-          src={'https://theshortcut.org/wp-content/uploads/2021/08/Recruiter-Boot-Camp-2021-2.png'}
+          src={
+            'https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-.png'
+          }
           width='100%'
           height='auto'
           alt='Bootcamp_page'
@@ -49,56 +58,31 @@ const Bootcamp = () => {
         <div className={classes.hero} />
       )}
       <section className={classes.intro}>
-        <Title>Become a Talent Acquisition Expert</Title>
+        <Title>The Shortcut’s Digital Marketing and Growth Hacking Program</Title>
         <Typography variant='body1' className={classes.text}>
-          We have a historic talent shortage in Finland, so naturally, recruitment specialists have
-          never been in higher demand. R&R Talent Advisors offers a four week training program in
-          collaboration with the Shortcut to teach you everything about the recruitment life-cycle.
-          You’ll learn both the technical (headhunting, boolean search) and non-technical sides
-          (working with hiring managers/candidates, negotiation) of the profession.
+          Are you passionate about creating content for social media or want to find out why
+          everyone in marketing is talking about growth hacking? Our Digital Marketing and Growth
+          Hacking Program teaches you online marketing skills from Google Analytics to SEO/SEM.
+          Within twelve weeks of immersive training you will learn the tools you need to become the
+          next generation of digital marketing professionals.
           <br />
-          We’re looking for a talented, hard-working, and diverse group of people that want to learn
-          the (recruitment) ropes from the experienced team of R&R!
+          If you’ve been dreaming about a career in digital marketing but found it hard to get an
+          entry point to the industry, this program is meant for you. You will learn about social
+          media management, creating marketing content, growth marketing, the basics of HTML and so
+          much more.
           <br />
-          <ul>
-            <li style={{listStyleType:'none', fontSize:'1.4rem', fontWeight:'bold'}}>This class is great for you if:</li>
-            <li>You already have some skills in HR/Recruitment</li>
-            <li>You are a complete novice or a job seeker that wants to make a career change</li>
-            <li>
-              You are fresh out of university and are interested in human resources/talent
-              acquisition
-            </li>
-          </ul>
-        </Typography>
-        <Typography variant='body1'>
-          About R&R Talent Advisors:{' '}
-          <a href='https://www.rrtalentadvisors.com/' target='_blank' rel='noreferrer'>
-            https://www.rrtalentadvisors.com/
-          </a>
-        </Typography>
-        <Typography variant='body1'>
-          Meet our speakers:{' '}
-                  <Button
-                      variant="outlined" color="secondary"
-            href='https://www.linkedin.com/in/rob-pappas-73864a18/'
-            target='_blank'
-            rel='noreferrer'>
-            Rob Pappas
-          </Button>{' '}
-                  <Button
-                      variant="outlined" color="secondary"
-            href='https://www.linkedin.com/in/magnus-lindfors-07378749/'
-            target='_blank'
-            rel='noreferrer'>
-            Magnus Lindfors
-          </Button>
+          As a participant of the Digital Marketing and Growth Hacking program you will learn
+          relevant digital marketing skills from “startup doers.” Our teachers are industry experts
+          who have walked the digital marketing journey and want to share their knowledge and
+          experiences. You can even put your newly acquired skills into practice with
+          hands-on-projects that simulate real working practices. Sounds like the program for you?
         </Typography>
         <Button
           variant='contained'
           color='primary'
           className={classes.button}
           target='_blank'
-          href='https://docs.google.com/forms/d/e/1FAIpQLSc7GWl0qRGXNBB0Aym7u6at63hGfTNu-b2hs9bCGyBVKxkdKQ/viewform'>
+          href='#'>
           APPLY NOW
         </Button>
       </section>
@@ -107,29 +91,63 @@ const Bootcamp = () => {
           <CardContent>
             <Typography variant='h3'>What you'll learn:</Typography>
             <br />
+            {/* <List>
+              <ListItem>
+                <ListItemIcon>
+                  <GiCheckMark style={{ fontSize: '1.4rem' }} />
+                </ListItemIcon>
+                <ListItemText>Digital marketing skills.</ListItemText>
+              </ListItem>
+              <ListItem
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
+                <ListItemIcon>
+                  <GiCheckMark style={{ fontSize: '1.4rem', border: '1px solid red' }} />
+                </ListItemIcon>
+                <ListItemText>
+                  Google Analytics, SEO/SEM, social media management, content creation, growth
+                  marketing, etc.
+                </ListItemText>
+              </ListItem>
+              <ListItem>
+                <ListItemIcon>
+                  <GiCheckMark style={{ fontSize: '1.4rem' }} />
+                </ListItemIcon>
+                <ListItemText>Growth mindset approach.</ListItemText>
+              </ListItem>
+            </List> */}
             <Typography variant='body1'>
               <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Full recruitment life-cycle
+              Digital marketing skills
             </Typography>
             <Typography variant='body1'>
               <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Headhunting and boolean search technique
+              Google Analytics, SEO/SEM, social media management, content creation, growth
+              marketing, etc.
             </Typography>
             <Typography variant='body1'>
               <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Soft skills e.g. How to work with hiring managers/candidates, negotiation
+              growth mindset approach
             </Typography>
           </CardContent>
         </Card>
-        <Card variant='outlined' className={classes.second}>
+        <Card variant='outlined' className={classes.first}>
           <CardContent>
             <Typography variant='h3'>Program includes:</Typography>
             <br />
             <Typography variant='body1'>
-              <GiHourglass style={{ paddingTop: 10, fontSize: '1.4rem' }} /> 12 hours of teaching
+              <AiFillSafetyCertificate style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              Workshops & lectures by industry experts & "startup doers"
             </Typography>
             <Typography variant='body1'>
-              <RiCodeBoxFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              <AiFillSafetyCertificate style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              1-on-1 mentorship and guidance
+            </Typography>
+            <Typography variant='body1'>
+              <AiFillSafetyCertificate style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              Career coaching & soft skill development training
+            </Typography>
+            <Typography variant='body1'>
+              <AiFillSafetyCertificate style={{ paddingTop: 10, fontSize: '1.4rem' }} />
               Opportunities to network
             </Typography>
             <Typography variant='body1'>
@@ -146,29 +164,46 @@ const Bootcamp = () => {
             <br />
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              6<sup>th</sup> September - 24<sup>th</sup> September
+              10<sup>th</sup> January - 1<sup>st</sup> April 2022
             </Typography>
             <Typography variant='body1'>
               <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Every Monday, Wednesday and Thursday. 16:00 - 17:30
+              12 week immersive training program.
+            </Typography>
+            <Typography variant='body1'>
+              <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              five days a week, seven hours per day
+            </Typography>
+            <Typography variant='body1'>
+              <RiTimerFill style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              Application deadline: 7th of December 2021
             </Typography>
           </CardContent>
         </Card>
-        <Card variant='outlined' className={classes.second}>
+        <Card variant='outlined' className={classes.first}>
           <CardContent>
             <Typography variant='h3'>Requirements:</Typography>
             <br />
             <Typography variant='body1'>
               <DiRequirejs style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Basic Computer skills
+              Currently unemployed
             </Typography>
             <Typography variant='body1'>
               <DiRequirejs style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Full commitment to the program
+              Determined and driven to pursue a career in digital marketing
             </Typography>
             <Typography variant='body1'>
               <DiRequirejs style={{ paddingTop: 10, fontSize: '1.4rem' }} />
-              Proactive attitude and strong motivation!
+              Higher education degree (college/bachelor or higher), OR vocational business training
+              combined with a few years of relevant work experience
+            </Typography>
+            <Typography variant='body1'>
+              <DiRequirejs style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              comfortable working in English
+            </Typography>
+            <Typography variant='body1'>
+              <DiRequirejs style={{ paddingTop: 10, fontSize: '1.4rem' }} />
+              Can commit to all 12 weeks of the program, 5 days a week, 7 hours a day
             </Typography>
           </CardContent>
         </Card>
@@ -180,14 +215,14 @@ const Bootcamp = () => {
         </Typography>
         <br />
         <Typography variant='h3'>
-          Deadline for application : 1<sup>st</sup> September
+          Application deadline : 7<sup>th</sup> December 2021
         </Typography>
         <Button
           variant='contained'
           color='primary'
           className={classes.button}
           target='_blank'
-          href='https://forms.gle/S79edzcDCf4g1kaA7'>
+          href='"'>
           APPLY NOW
         </Button>
       </section>
@@ -195,16 +230,16 @@ const Bootcamp = () => {
   );
 };
 
-export default Bootcamp;
+export default DigitalMarketing;
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    marginTop: 70,
+    marginTop: 0,
     minWidth: '100%',
     maxWidth: '100%',
-    minHeight: '50vh',
-    maxHeight: '50vh',
-    background: `#f9f9f9 center/contain url(https://theshortcut.org/wp-content/uploads/2021/08/Recruiter-Boot-Camp-2021-2.png) no-repeat`,
+    minHeight: '100vh',
+    maxHeight: '100vh',
+    background: `#f9f9f9 center/contain url(https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-.png) no-repeat`,
   },
   intro: {
     minWidth: '70%',
@@ -254,8 +289,8 @@ const useStyles = makeStyles((theme) => ({
   },
   first: {
     flex: 1,
-    minWidth: '60%',
-    maxWidth: '60%',
+    minWidth: '48%',
+    maxWidth: '48%',
     [theme.breakpoints.down('xs')]: {
       minWidth: '100%',
     },

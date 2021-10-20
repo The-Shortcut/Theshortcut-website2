@@ -20,7 +20,7 @@ import ContactUs from './components/pages/contact';
 import MeetUs from './components/pages/meetUs';
 import Search from './components/pages/search';
 import Coding101 from './components/pages/services/training/coding101';
-import Bootcamp from './components/pages/services/training/bootcamp';
+import DigitalMarketing from './components/pages/services/training/digitalMarketing';
 import StartHere from './components/pages/startHere';
 import TalentCommunity from './components/pages/talentCommunity';
 // Footer
@@ -43,7 +43,7 @@ const Routes = () => {
       <Route exact path='/events/byob' component={BYOB} />
       <Route exact path='/services' component={Services} />
       <Route exact path='/services/training/coding101' component={Coding101} />
-      <Route exact path='/services/training/bootcamp' component={Bootcamp} />
+      <Route exact path='/services/training/digital-marketing-program' component={DigitalMarketing} />
       <Route exact path='/partners' component={Partners} />
       <Route exact path='/career' component={Career} />
       <Route exact path='/community' component={Community} />
