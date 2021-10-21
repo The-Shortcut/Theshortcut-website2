@@ -43,12 +43,12 @@ const DigitalMarketing = () => {
       <MetaTag
         title='Digital Marketing Program | The Shortcut'
         description='Our Digital Marketing and Growth Hacking Program teaches you online marketing skills from Google Analytics to SEO/SEM. Within twelve weeks of immersive training you will learn the tools you need to become the next generation of digital marketing professionals.'
-        screenshot='https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-.png'
+        screenshot='https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-1.png'
       />
       {window.innerWidth < 960 ? (
         <img
           src={
-            'https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-.png'
+            'https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-Website.png'
           }
           width='100%'
           height='auto'
@@ -58,7 +58,9 @@ const DigitalMarketing = () => {
         <div className={classes.hero} />
       )}
       <section className={classes.intro}>
-        <Title>The Shortcut’s Digital Marketing and Growth Hacking Program</Title>
+        <Typography variant='h3' style={{ textAlign: 'center' }}>
+          The Shortcut’s Digital Marketing and <br /> Growth Hacking Program
+        </Typography>
         <Typography variant='body1' className={classes.text}>
           Are you passionate about creating content for social media or want to find out why
           everyone in marketing is talking about growth hacking? Our Digital Marketing and Growth
@@ -66,10 +68,12 @@ const DigitalMarketing = () => {
           Within twelve weeks of immersive training you will learn the tools you need to become the
           next generation of digital marketing professionals.
           <br />
+          <br />
           If you’ve been dreaming about a career in digital marketing but found it hard to get an
           entry point to the industry, this program is meant for you. You will learn about social
           media management, creating marketing content, growth marketing, the basics of HTML and so
           much more.
+          <br />
           <br />
           As a participant of the Digital Marketing and Growth Hacking program you will learn
           relevant digital marketing skills from “startup doers.” Our teachers are industry experts
@@ -82,7 +86,8 @@ const DigitalMarketing = () => {
           color='primary'
           className={classes.button}
           target='_blank'
-          href='#'>
+          rel='noopener noreferrer'
+          href='https://koulutukset.te-palvelut.fi/kt/702433?locations=Uusimaa&announced=0&sort=1'>
           APPLY NOW
         </Button>
       </section>
@@ -91,30 +96,6 @@ const DigitalMarketing = () => {
           <CardContent>
             <Typography variant='h3'>What you'll learn:</Typography>
             <br />
-            {/* <List>
-              <ListItem>
-                <ListItemIcon>
-                  <GiCheckMark style={{ fontSize: '1.4rem' }} />
-                </ListItemIcon>
-                <ListItemText>Digital marketing skills.</ListItemText>
-              </ListItem>
-              <ListItem
-                style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
-                <ListItemIcon>
-                  <GiCheckMark style={{ fontSize: '1.4rem', border: '1px solid red' }} />
-                </ListItemIcon>
-                <ListItemText>
-                  Google Analytics, SEO/SEM, social media management, content creation, growth
-                  marketing, etc.
-                </ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <GiCheckMark style={{ fontSize: '1.4rem' }} />
-                </ListItemIcon>
-                <ListItemText>Growth mindset approach.</ListItemText>
-              </ListItem>
-            </List> */}
             <Typography variant='body1'>
               <GiCheckMark style={{ paddingTop: 10, fontSize: '1.4rem' }} />
               Digital marketing skills
@@ -209,20 +190,54 @@ const DigitalMarketing = () => {
         </Card>
       </section>
       <section className={classes.intro}>
-        <Typography variant='body1'>
-          We’d love to hear from you! Please direct any questions regarding the program content to
-          Vickie Weng: <a href='vickie@theshortcut.org'>vickie@theshortcut.org</a>
-        </Typography>
-        <br />
-        <Typography variant='h3'>
-          Application deadline : 7<sup>th</sup> December 2021
+        <Title>Application process</Title>
+        <Typography variant='body1' className={classes.text}>
+          Apply to the program either by filling in an electronic application via THIS LINK or by
+          filling a paper application with the TE Office / local government pilot on employment (the
+          course number is 702433). If needed, you can find the paper application (TEM601) at
+          www.suomi.fi. If you fill in an electronic application without strong identification (f.
+          eg. online banking codes), you must confirm your application at TE Office or local
+          government pilot on employment before the end of the application period.
+          <br />
+          <br />
+          <span style={{ fontWeight: 'bold' }}>
+            The selection to the progam will be made on the basis of the applications, so please
+            fill the application form carefully and tell us of your relevant skills and experience,
+            as well as your reasons for applying to the program.
+          </span>
+          <br />
+          <br />
+          Please note that by leaving an application to this program you commit to taking part in
+          the program should you be selected. If you withdraw from the program without a valid
+          reason, your right to unemployment benefit will be reviewed by TE Office / local
+          government pilot on employment.
         </Typography>
         <Button
           variant='contained'
           color='primary'
           className={classes.button}
           target='_blank'
-          href='"'>
+          rel='noopener noreferrer'
+          href='https://koulutukset.te-palvelut.fi/kt/702433?locations=Uusimaa&announced=0&sort=1'>
+          APPLY NOW
+        </Button>
+      </section>
+      <section className={classes.lastSection}>
+        <Typography variant='body1' style={{maxWidth: '60%', textAlign: 'center'}}>
+          We’d love to hear from you! Please direct any questions regarding the program content to
+          Vickie Weng: <a href='vickie@theshortcut.org' style={{color:'#0000ff'}}>vickie@theshortcut.org</a>
+        </Typography>
+        <br />
+        <Typography variant='h3'>
+          Application deadline: 7<sup>th</sup> December 2021
+        </Typography>
+        <Button
+          variant='contained'
+          color='primary'
+          className={classes.applyBtn}
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://koulutukset.te-palvelut.fi/kt/702433?locations=Uusimaa&announced=0&sort=1'>
           APPLY NOW
         </Button>
       </section>
@@ -235,19 +250,20 @@ export default DigitalMarketing;
 const useStyles = makeStyles((theme) => ({
   hero: {
     marginTop: 0,
+    top: 0,
     minWidth: '100%',
     maxWidth: '100%',
     minHeight: '100vh',
     maxHeight: '100vh',
-    background: `#f9f9f9 center/contain url(https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-.png) no-repeat`,
+    background: `#f9f9f9 center/contain url(https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-Website.png) no-repeat`,
   },
   intro: {
-    minWidth: '70%',
-    maxWidth: '70%',
+    minWidth: '60%',
+    maxWidth: '60%',
     margin: '3em auto',
     [theme.breakpoints.down('sm')]: {
-      minWidth: '90%',
-      maxWidth: '90%',
+      minWidth: '80%',
+      maxWidth: '80%',
     },
     [theme.breakpoints.down('xs')]: {
       margin: '1em auto',
@@ -326,5 +342,27 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     border: '1px solid red',
+  },
+  lastSection: {
+    backgroundColor: '#141414',
+    color: '#FFFFFF',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '7em 0',
+    marginBottom: '-4em',
+  },
+  text: {
+    textAlign: 'center',
+    lineHeight: '28px',
+    padding: '0 1.2em',
+  },
+  applyBtn: {
+    color: '#fff',
+    backgroundColor: '#a90061',
+    fontSize: '1.4rem',
+    fontWeight: 'bold',
+    marginTop: 30,
   },
 }));

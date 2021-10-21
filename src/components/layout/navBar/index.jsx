@@ -41,7 +41,7 @@ const NavBar = ({ pageHeight }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const changeMenuIconColor = () => {
     // eslint-disable-next-line no-unused-expressions
-    if (path === '/privacy-policies' || path === '/code' || path === '/terms') {
+    if (path === '/privacy-policies' || path === '/code' || path === '/terms' || path.includes('marketing')) {
       document.getElementById('menuIcon').style.backgroundColor = '#FFF';
     } else {
       document.getElementById('menuIcon').style.backgroundColor = 'inherit';

@@ -59,7 +59,8 @@ const TeamAvailabilities = ({ meetingData }) => {
                   color='primary'
                   className={classes.btn}
                   href={acf.link}
-                  target='_blank'>
+                  target='_blank'
+rel='noopener noreferrer'>                
                   Book a Meeting
                 </Button>
               </CardContent>
