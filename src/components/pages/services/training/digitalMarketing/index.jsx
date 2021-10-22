@@ -137,8 +137,8 @@ const DigitalMarketing = () => {
             </Typography>
           </CardContent>
         </Card>
-      </section>
-      <section className={classes.wrapper}>
+        {/* </section>
+      <section className={classes.wrapper}> */}
         <Card variant='outlined' className={classes.first}>
           <CardContent>
             <Typography variant='h3'>Duration:</Typography>
@@ -223,9 +223,12 @@ const DigitalMarketing = () => {
         </Button>
       </section>
       <section className={classes.lastSection}>
-        <Typography variant='body1' style={{maxWidth: '60%', textAlign: 'center'}}>
+        <Typography variant='body1' style={{ maxWidth: '60%', textAlign: 'center' }}>
           We’d love to hear from you! Please direct any questions regarding the program content to
-          Vickie Weng: <a href='vickie@theshortcut.org' style={{color:'#0000ff'}}>vickie@theshortcut.org</a>
+          Vickie Weng:{' '}
+          <a href='vickie@theshortcut.org' style={{ color: '#0000ff' }}>
+            vickie@theshortcut.org
+          </a>
         </Typography>
         <br />
         <Typography variant='h3'>
@@ -249,13 +252,12 @@ export default DigitalMarketing;
 
 const useStyles = makeStyles((theme) => ({
   hero: {
-    marginTop: 0,
-    top: 0,
     minWidth: '100%',
     maxWidth: '100%',
     minHeight: '100vh',
     maxHeight: '100vh',
-    background: `#f9f9f9 center/contain url(https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-Website.png) no-repeat`,
+    background: `url(https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-Website.png) center/cover fixed no-repeat`,
+    backgroundSize: 'cover',
   },
   intro: {
     minWidth: '60%',
@@ -291,6 +293,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '80%',
     maxWidth: '80%',
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'stretch',
     margin: '1em auto',
@@ -307,6 +310,7 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
     minWidth: '48%',
     maxWidth: '48%',
+    marginBottom: '1em',
     [theme.breakpoints.down('xs')]: {
       minWidth: '100%',
     },
