@@ -24,7 +24,7 @@ const UpcomingEvents = () => {
   if (upcoming?.length < 1) {
     upcoming = events.slice(0, 1);
   }
-
+  console.log(upcoming);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -40,6 +40,7 @@ const getEvents = async () => {
       start: { local: formatDate(item.date_start, item.time_start) },
       end: { local: formatDate(item.date_end, item.time_end) },
       summary: item.description,
+      capacity: item.capacity,
       logo: { original: { url: item.image.url } },
       venue: item.venue,
       url: item.url,
