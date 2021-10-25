@@ -194,16 +194,25 @@ const DigitalMarketing = () => {
       <section className={classes.intro}>
         <Title>Application process</Title>
         <Typography variant='body1' className={classes.text}>
-          Apply to the program either by filling in an electronic application via THIS LINK or by
-          filling a paper application with the TE Office / local government pilot on employment (the
-          course number is 702433). If needed, you can find the paper application (TEM601) at
-          www.suomi.fi. If you fill in an electronic application without strong identification (f.
-          eg. online banking codes), you must confirm your application at TE Office or local
-          government pilot on employment before the end of the application period.
-          <br />
+          <ol style={{ textAlign: 'left' }}>
+            <li>
+              Apply to the program either by filling in an electronic application via THIS LINK or
+              by filling a paper application with the TE Office / local government pilot on
+              employment (the course number is 702433). If needed, you can find the paper
+              application (TEM601) at www.suomi.fi. If you fill in an electronic application without
+              strong identification (f. eg. online banking codes), you must confirm your application
+              at TE Office or local government pilot on employment before the end of the application
+              period.
+            </li>
+            <br />
+            <li>
+              Send your CV to The Shortcut's Vickie Weng:{' '}
+              <a href='vickie@theshortcut.org'>vickie@theshortcut.org</a>
+            </li>
+          </ol>
           <br />
           <span style={{ fontWeight: 'bold' }}>
-            The selection to the progam will be made on the basis of the applications, so please
+            The selection to the program will be made on the basis of the applications, so please
             fill the application form carefully and tell us of your relevant skills and experience,
             as well as your reasons for applying to the program.
           </span>
@@ -287,7 +296,11 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '95%',
       alignItems: 'center',
     },
-    [theme.breakpoints.down('xs')]: {},
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+    },
   },
   title: {
     flex: 2,
@@ -295,6 +308,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 10,
     [theme.breakpoints.down('xs')]: {
       flex: 1,
+      maxHeight: 150,
     },
   },
   banner: {
