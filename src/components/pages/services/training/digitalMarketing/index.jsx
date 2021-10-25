@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 
 // META TAG
@@ -5,16 +6,9 @@ import MetaTag from '../../../../utils/MetaTag';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Typography,
-  Button,
-  Card,
-  CardContent,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from '@material-ui/core';
+import { Typography, Button, Card, CardContent } from '@material-ui/core';
+
+import dtpBanner from '../../../../../assets/photos/dtp.png';
 
 // icons
 import { GiCheckMark } from 'react-icons/gi';
@@ -31,8 +25,8 @@ TagManager.dataLayer({
   dataLayer: {
     event: 'pageView',
     url: `${window.location.pathname}${window.location.search}`,
-    page: 'bootcamp',
-    path: '/services/training/bootcamp',
+    page: 'digital-marketing-program',
+    path: '/services/training/digital-marketing-program',
   },
 });
 
@@ -45,18 +39,26 @@ const DigitalMarketing = () => {
         description='Our Digital Marketing and Growth Hacking Program teaches you online marketing skills from Google Analytics to SEO/SEM. Within twelve weeks of immersive training you will learn the tools you need to become the next generation of digital marketing professionals.'
         screenshot='https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-1.png'
       />
-      {window.innerWidth < 960 ? (
+      <div className={classes.hero}>
+        <div className={classes.heroContainer}>
+          <Typography variant='h1' className={classes.title}>
+            Digital Marketing <br /> Program
+          </Typography>
+          <img src={dtpBanner} className={classes.banner} />
+        </div>
+      </div>
+      {/* {window.innerWidth < 960 ? (
         <img
-          src={
-            'https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-Website.png'
-          }
+          src={dtpBanner}
           width='100%'
-          height='auto'
-          alt='Bootcamp_page'
+          height='100%'
+          style={{ objectFit: 'contain' }}
+          alt='digital-marketing-training-page'
         />
       ) : (
         <div className={classes.hero} />
-      )}
+      )} */}
+
       <section className={classes.intro}>
         <Typography variant='h3' style={{ textAlign: 'center' }}>
           The Shortcut’s Digital Marketing and <br /> Growth Hacking Program
@@ -226,7 +228,7 @@ const DigitalMarketing = () => {
         <Typography variant='body1' style={{ maxWidth: '60%', textAlign: 'center' }}>
           We’d love to hear from you! Please direct any questions regarding the program content to
           Vickie Weng:{' '}
-          <a href='vickie@theshortcut.org' style={{ color: '#0000ff' }}>
+          <a href='vickie@theshortcut.org' style={{ color: '#00FFFF' }}>
             vickie@theshortcut.org
           </a>
         </Typography>
@@ -254,10 +256,72 @@ const useStyles = makeStyles((theme) => ({
   hero: {
     minWidth: '100%',
     maxWidth: '100%',
-    minHeight: '100vh',
-    maxHeight: '100vh',
-    background: `url(https://theshortcut.org/wp-content/uploads/2021/10/DTP-Facebook-eventbrite-banner-1920-x-540-px-Website.png) center/cover fixed no-repeat`,
-    backgroundSize: 'cover',
+    minHeight: '70vh',
+    maxHeight: '70vh',
+    [theme.breakpoints.down('md')]: {
+      minHeight: '60vh',
+      maxHeight: '60vh',
+    },
+    background: 'linear-gradient(#00A99D, #0B5394)',
+    position: 'relative',
+  },
+  heroContainer: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    minWidth: '80%',
+    maxWidth: '80%',
+    minHeight: '100%',
+    maxHeight: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '75%',
+      maxWidth: '75%',
+      alignItems: 'flex-end',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '95%',
+      maxWidth: '95%',
+      alignItems: 'center',
+    },
+    [theme.breakpoints.down('xs')]: {},
+  },
+  title: {
+    flex: 2,
+    color: '#FFFFFF',
+    zIndex: 10,
+    [theme.breakpoints.down('xs')]: {
+      flex: 1,
+    },
+  },
+  banner: {
+    flex: 1,
+    alignSelf: 'end',
+    minWidth: '30em',
+    maxWidth: '30em',
+    minHeight: '30em',
+    maxHeight: '30em',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '25em',
+      maxWidth: '25em',
+      minHeight: '25em',
+      maxHeight: '25em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '20em',
+      maxWidth: '20em',
+      minHeight: '20em',
+      maxHeight: '20em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '10em',
+      maxWidth: '10em',
+      minHeight: '10em',
+      maxHeight: '10em',
+    },
   },
   intro: {
     minWidth: '60%',

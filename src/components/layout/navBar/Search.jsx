@@ -57,8 +57,9 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
     },
     [theme.breakpoints.down('xs')]: {
-      width: '100%',
-      marginLeft: theme.spacing(2),
+      /*  width: '100%',
+      marginLeft: theme.spacing(2), */
+      display: 'none',
     },
   },
   searchIcon: {
