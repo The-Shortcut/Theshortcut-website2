@@ -194,6 +194,7 @@ const DigitalMarketing = () => {
       <section className={classes.intro}>
         <Title>Application process</Title>
         <Typography variant='body1' className={classes.text}>
+          The application process has two steps, please make sure to complete both.
           <ol style={{ textAlign: 'left' }}>
             <li>
               Apply to the program either by filling in an electronic application via THIS LINK or
