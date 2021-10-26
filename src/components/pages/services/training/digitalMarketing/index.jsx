@@ -197,8 +197,14 @@ const DigitalMarketing = () => {
           The application process has two steps, please make sure to complete both.
           <ol style={{ textAlign: 'left' }}>
             <li>
-              Apply to the program either by filling in an electronic application via THIS LINK or
-              by filling a paper application with the TE Office / local government pilot on
+              Apply to the program either by filling in an electronic application via{' '}
+              <a
+                href='https://koulutukset.te-palvelut.fi/kt/702433?locations=Uusimaa&announced=0&sort=1'
+                target='_blank'
+                rel='noopener noreferrer'>
+                THIS LINK
+              </a>{' '}
+              or by filling a paper application with the TE Office / local government pilot on
               employment (the course number is 702433). If needed, you can find the paper
               application (TEM601) at www.suomi.fi. If you fill in an electronic application without
               strong identification (f. eg. online banking codes), you must confirm your application
