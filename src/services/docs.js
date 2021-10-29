@@ -1,18 +1,18 @@
 import axios from 'axios';
 
 const getFAQData = async () => {
-  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/faq/?per_page=50');
+  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/faq/');
   return response.data;
 };
 
 const getPrivacyPoliciesData = async () => {
-  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/policies/?per_page=50');
+  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/policies/');
   return response.data;
 };
 
 const getCodeOfDConductData = async () => {
   const response = await axios.get(
-    'https://theshortcut.org/wp-json/wp/v2/coduct_codes/?per_page=50'
+    'https://theshortcut.org/wp-json/wp/v2/coduct_codes/'
   );
   return response.data;
 };
@@ -28,7 +28,7 @@ const getServicesFAQData = async () => {
 };
 
 const getByobFAQData = async () => {
-  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/byob_faq/?per_page=50');
+  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/byob_faq/');
   console.log('response.data')
   return response.data;
 };

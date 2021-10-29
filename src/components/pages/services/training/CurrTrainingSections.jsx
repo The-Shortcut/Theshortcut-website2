@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect } from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardMedia, CardContent, Typography, Button } from '@material-ui/core';
+import { Card, CardMedia, CardContent, Typography, Button, Box } from '@material-ui/core';
 
 // REDUX
 import { useSelector, useDispatch } from 'react-redux';
@@ -33,21 +34,19 @@ const CurrTrainingSections = () => {
       <Typography variant='h4' style={{ textAlign: 'center', margin: '2em auto' }}>
         Current opportunities
       </Typography>
-      {trainings?.length < 3 && window.innerWidth > 860 ? (
+{/*       {trainings?.length < 3 && window.innerWidth > 860 ? (
         <div className={classes.container1}>
           {trainings?.map(({ acf }, index) => (
-            <Card key={index} className={classes.card1}>
-              <CardMedia style={{ flex: 1 }}>
-                <img
-                  src={acf.image.url}
-                  alt={acf.title}
-                  width='100%'
-                  height='100%'
-                  style={{ borderRadius: '5px 0 0 5px' }}
-                />
-              </CardMedia>
-              <CardContent className={classes.cardContent1}>
-                <Typography variant='h4' style={{ margin: '1em' }}>
+            <Card key={index}  sx={{ display: 'flex' }}>
+              <CardMedia
+                component='img'
+                image={acf.image.url}
+                alt={acf.title}
+                sx={{ width: 151 }}
+              />
+               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+              <CardContent sx={{ flex: '1 0 auto' }}>
+                <Typography variant='h4'>
                   {acf.title.toLocaleUpperCase()}
                 </Typography>
                 <Typography variant='subtitle1' component='p'>
@@ -57,10 +56,11 @@ const CurrTrainingSections = () => {
                   Apply here
                 </Button>
               </CardContent>
+              </Box>
             </Card>
           ))}
         </div>
-      ) : (
+      ) : ( */}
         <div className={classes.container}>
           {trainings?.map(({ acf }, index) => (
             <Card key={index} className={classes.card}>
@@ -75,7 +75,7 @@ const CurrTrainingSections = () => {
                 <Typography variant='h4' className={classes.title}>
                   {acf.title.toLocaleUpperCase()}
                 </Typography>
-                <Typography variant='subtitle1' component='p'>
+                <Typography variant='subtitle1' component='p' className={classes.description}>
                   {acf.description}
                 </Typography>
                 <Button
@@ -89,7 +89,7 @@ const CurrTrainingSections = () => {
             </Card>
           ))}
         </div>
-      )}
+{/*       )} */}
     </div>
   );
 };
@@ -98,8 +98,12 @@ export default CurrTrainingSections;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '85%',
-    maxWidth: '85%',
+    minWidth: '70%',
+    maxWidth: '70%',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '80%',
+      maxWidth: '80%',
+    },
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -138,28 +142,30 @@ const useStyles = makeStyles((theme) => ({
   },
   regBtn: {
     margin: '2em auto',
-    display: 'flex',
+    position: 'absolute',
+    bottom: 0,
     minWidth: '12em',
     maxWidth: '12em',
   },
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(235px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
-    minWidth: '98%',
-    maxWidth: '98%',
-    /* border: '2px solid red', */
+    minWidth: '90%',
+    maxWidth: '90%',
     margin: 'auto',
+    /* border: '2px solid red', */
   },
   card: {
     margin: 'auto',
     borderRadius: '10px',
-    minHeight: 510,
-    maxHeight: 510,
-    [theme.breakpoints.down('md')]: {
+    minHeight: 500,
+    maxHeight: 500,
+    position: 'relative',
+/*     [theme.breakpoints.down('md')]: {
       minHeight: 500,
       maxHeight: 500,
     },
@@ -172,7 +178,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(1),
       minHeight: 510,
       maxHeight: 510,
-    },
+    }, */
     zIndex: 1,
   },
   cardContent: {
@@ -182,11 +188,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   media: {
-    height: 230,
-    [theme.breakpoints.only('sm')]: {
-      height: 140,
-    },
     objectFit: 'fill',
+    minHeight: '220px',
+    maxHeight: '220px',
   },
   title: {
     minHeight: '50px',
@@ -208,4 +212,11 @@ const useStyles = makeStyles((theme) => ({
     },
     lineHeight: '1.5em',
   },
+  description: {
+    display: '-webkit-box',
+    boxOrient: 'vertical',
+    lineClamp: 5,
+    wordBreak: 'break-all',
+    overflow: 'hidden',
+  }
 }));
