@@ -78,6 +78,8 @@ const SingleEventCard = ({ event }) => {
       return 'LISTEN NOW';
     } else if (availability.toLowerCase() === 'upcoming') {
       return 'REGISTER';
+    } else if(availability.toLowerCase() === 'application open') {
+      return 'APPLY NOW'
     } else {
       return 'REGISTER';
     }

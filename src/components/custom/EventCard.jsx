@@ -76,6 +76,8 @@ const EventCard = ({ event }) => {
       return 'LISTEN NOW';
     } else if (availability.toLowerCase() === 'upcoming') {
       return 'REGISTER';
+    } else if (availability.toLowerCase() === 'application open') {
+      return 'APPLY NOW';
     } else {
       return 'REGISTER';
     }
@@ -95,54 +97,34 @@ const EventCard = ({ event }) => {
   };
   return (
     <Card className={classes.card}>
-      <CardMedia className={classes.media} image={image} title={title} />
-      {/*         <img src={image} alt={title} width='100%' className={classes.media} />
-      </CardMedia> */}
-      <CardContent className={classes.info}>
-        <div
-          style={{
-            width: '140px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-          }}>
+      <CardMedia
+        component='img'
+        height='220'
+        className={classes.media}
+        image={image}
+        title={title}
+      />
+      <div className={classes.info}>
+        <div className={classes.infoItem}>
           <EventAvailableIcon style={{ marginRight: '5px' }} /> {availability}
         </div>
-        <div
-          style={{
-            width: '170px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-          }}>
+        <div className={classes.infoItem}>
           <TodayIcon style={{ marginRight: '5px' }} />{' '}
           {event.isVideo ? 'always available' : formatDate(event.start.local)}
         </div>
-        <div
-          style={{
-            width: '110px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-          }}>
+        <div className={classes.infoItem}>
           <PeopleIcon style={{ marginRight: '5px' }} /> {people}
         </div>
-        <div
-          style={{
-            width: '170px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-          }}>
+        <div className={classes.infoItem}>
           <AccessTimeIcon style={{ marginRight: '5px' }} />{' '}
           {event.isVideo ? event.duration : formatTime(event)}
         </div>
-      </CardContent>
+      </div>
       <Divider />
       <CardContent>
-        <Typography variant='h6'>{title}</Typography>
+        <Typography variant='h6' className={classes.title}>{title}</Typography>
         <br />
-        <Typography variant='subtitle1' component='p'>
+        <Typography variant='subtitle1' component='p' className={classes.summary}>
           {summary}
         </Typography>
         {/* <Link to={{ pathname: `/events/all/${event.id}`, state: { data: event } }}>event page</Link> */}
@@ -169,31 +151,51 @@ export default EventCard;
 const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 420,
-    minHeight: 600,
-    maxHeight: 600,
+    minHeight: 550,
+    maxHeight: 550,
     background: '#F9F9F9',
     border: '1px solid #434343',
     borderRadius: '10px',
     margin: '1em auto',
-    [theme.breakpoints.down('sm')]: {
+   /*  [theme.breakpoints.down('sm')]: {
       minHeight: 660,
       marginBottom: 0,
-    },
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
+    }, */
+    display: 'block',
+    position:'relative',
   },
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+    objectFit: 'fill',
+    minHeight: '220px',
   },
   info: {
+    margin: '10px 5px',
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gridTemplateRows: '1fr 1fr',
     rowGap: '5px',
   },
+  infoItem: (props) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  }),
+  title: {
+    display: '-webkit-box',
+    boxOrient: 'vertical',
+    lineClamp: 2,
+    wordBreak: 'break-all',
+    overflow: 'hidden',
+  },
+  summary: {
+    display: '-webkit-box',
+    boxOrient: 'vertical',
+    lineClamp: 3,
+    wordBreak: 'break-all',
+    overflow: 'hidden',
+  },
   action: {
+    position:'absolute',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',

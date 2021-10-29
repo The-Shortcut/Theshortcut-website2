@@ -180,7 +180,7 @@ const TalentCommunity = () => {
               Your data will be deleted if you do not update your profile within a specified time
               period after receiving that message.
             </Typography>
-            <Typography>
+            <Typography variant='body1' className={classes.text}>
               For more information, please see our{' '}
               <a href='/privacy-policies' target='_blank' rel='noreferrer'>
                 privacy policy.

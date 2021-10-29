@@ -31,12 +31,12 @@ const EventsList = () => {
   if (isLoading) {
     return (
       <div className={classes.root}>
-      <div className={classes.container}>
-        {skeletonArr.map((i) => (
-          <SkeletonEvent key={i} />
-        ))}
+        <div className={classes.container}>
+          {skeletonArr.map((i) => (
+            <SkeletonEvent key={i} />
+          ))}
         </div>
-        </div>
+      </div>
     );
   } else if (currentItems.length === 0) {
     return (
@@ -49,13 +49,13 @@ const EventsList = () => {
 
   return (
     <div className={classes.root}>
-    <div className={classes.container}>
-      {currentItems.map((event, index) => (
-        <div key={index}>
-          <EventCard event={event} />
-        </div>
-      ))}
-    </div>
+      <div className={classes.container}>
+        {currentItems.map((event, index) => (
+          <div key={index}>
+            <EventCard event={event} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -64,8 +64,12 @@ export default EventsList;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '80%',
-    maxWidth: '80%',
+    minWidth: '70%',
+    maxWidth: '70%',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '80%',
+      maxWidth: '80%',
+    },
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -85,7 +89,6 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     minWidth: '100%',
     maxWidth: '100%',
-    /*     border: '2px solid red', */
     margin: 'auto',
   },
   noMatched: {
