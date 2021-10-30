@@ -17,7 +17,7 @@ const CoachingSections = () => {
           <Card key={index} className={classes.card}>
             <CardActionArea disabled={!item.active}>
               <CardContent className={classes.cardContent}>
-                <div className={classes.iconContainer}>{item.icon}</div>
+                <div>{item.icon}</div>
                 <Typography variant='h4' className={classes.title}>
                   {item.title.toLocaleUpperCase()}
                 </Typography>
@@ -47,8 +47,8 @@ export default CoachingSections;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: '85%',
-    maxWidth: '85%',
+    minWidth: '80%',
+    maxWidth: '80%',
     [theme.breakpoints.only('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
     gridGap: '10px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(243px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
     gridTemplateRows: 'none',
     justifyContent: 'center',
     alignContent: 'center',
@@ -74,42 +74,12 @@ const useStyles = makeStyles((theme) => ({
   card: {
     margin: 'auto',
     borderRadius: '10px',
-    /* maxWidth: 280, */
-    minHeight: 550,
-    maxHeight: 550,
-    [theme.breakpoints.down('md')]: {
-      minHeight: 560,
-      maxHeight: 560,
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(1),
-      minHeight: 540,
-      maxHeight: 540,
-    },
-    [theme.breakpoints.down('xs')]: {
-      minHeight: 440,
-      maxHeight: 440,
-    },
   },
   cardContent: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  imageContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: '150%',
-    maxWidth: '9em',
-    minWidth: '9em',
-    maxHeight: '9em',
-    minHeight: '9em',
-    [theme.breakpoints.down('xs')]: {
-      margin: 0,
-    },
-    backgroundColor: '#fff',
   },
   title: {
     minHeight: '50px',
@@ -122,39 +92,17 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   text: {
+    overflow: 'hidden',
     textAlign: 'center',
     lineHeight: '1.5em',
     minHeight: '250px',
     maxHeight: '250px',
-    [theme.breakpoints.down('md')]: {
-      minHeight: '260px',
-      maxHeight: '260px',
-    },
-    [theme.breakpoints.down('sm')]: {
-      minHeight: '230px',
-      maxHeight: '230px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      minHeight: '160px',
-      maxHeight: '160px',
+    '@media (max-width: 606px)': {
+      minHeight: '215px',
+      maxHeight: '215px',
     },
   },
   btn: {
-    marginTop: 35,
-  },
-  iconContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: '150%',
-    maxWidth: '7em',
-    minWidth: '7em',
-    maxHeight: '7em',
-    minHeight: '7em',
-    margin: '1em 0 0 0',
-    [theme.breakpoints.down('xs')]: {
-      margin: 0,
-    },
-    backgroundColor: '#fff',
+    marginTop: 15,
   },
 }));

@@ -101,6 +101,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.only('sm')]: {
       height: 140,
     },
+    objectFit:'cover'
   },
   title: {
     minHeight: '50px',
