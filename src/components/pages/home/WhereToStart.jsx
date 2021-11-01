@@ -51,9 +51,6 @@ const useStyles = makeStyles((theme) => ({
   section: {
     display: 'flex',
     alignItems: 'flex-start',
-    [theme.breakpoints.down('sm')]: {
-      alignItems: 'flex-start',
-    },
   },
   icon: {
     maxWidth: '20vw',
@@ -66,7 +63,6 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '90%',
       maxWidth: '90%',
       margin: '0 auto 2em',
-      alignItems: 'center',
     },
   },
 }));

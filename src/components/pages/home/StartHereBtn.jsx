@@ -25,10 +25,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     border: 'none',
     background: 'none',
-    margin: '0 auto 2em',
-/*     [theme.breakpoints.up('md')]: {
-      marginTop: '-3em',
-    }, */
+    margin: '-2em auto 2em',
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '-5em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '1em',
+    },
   },
 
   button: {
