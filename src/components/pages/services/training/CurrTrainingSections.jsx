@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '100%',
       minWidth: '100%',
     },
-    borderRadius: '10px',
+    borderRadius: '20px',
     margin: '0 auto 2em',
     display: 'flex',
   },
@@ -161,7 +161,8 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     margin: 'auto',
-    borderRadius: '10px',
+    borderRadius: '20px',
+    boxShadow: ' 0px 0px 22px -5px #434343',
     minHeight: 500,
     maxHeight: 500,
     position: 'relative',

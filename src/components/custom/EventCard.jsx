@@ -122,7 +122,9 @@ const EventCard = ({ event }) => {
       </div>
       <Divider />
       <CardContent>
-        <Typography variant='h6' className={classes.title}>{title}</Typography>
+        <Typography variant='h6' className={classes.title}>
+          {title}
+        </Typography>
         <br />
         <Typography variant='subtitle1' component='p' className={classes.summary}>
           {summary}
@@ -154,19 +156,21 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 550,
     maxHeight: 550,
     background: '#F9F9F9',
-    border: '1px solid #434343',
-    borderRadius: '10px',
+    border: '1px solid #DDD',
+    borderRadius: '20px',
     margin: '1em auto',
-   /*  [theme.breakpoints.down('sm')]: {
+    boxShadow: ' 0px 0px 22px -5px #434343',
+    /*  [theme.breakpoints.down('sm')]: {
       minHeight: 660,
       marginBottom: 0,
     }, */
     display: 'block',
-    position:'relative',
+    position: 'relative',
   },
   media: {
     objectFit: 'fill',
     minHeight: '220px',
+    borderRadius: '20px 20px 0 0',
   },
   info: {
     margin: '10px 5px',
@@ -195,7 +199,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
   },
   action: {
-    position:'absolute',
+    position: 'absolute',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',

@@ -45,7 +45,7 @@ const FollowMedia = () => {
     try {
       const listRes = await axios(addToListConfig);
 
-      setAlert({ state: 'info', msg: 'Your will recieve welcome email!' });
+      setAlert({ state: 'info', msg: 'You will recieve welcome email!' });
       setTimeout(() => {
         setOpen(false);
       }, 5000);
@@ -115,7 +115,11 @@ const FollowMedia = () => {
   };
 
   return (
-    <div className={classes.div} style={window.location.pathname === '/start-here' ? {display:'none'} : {display: 'flex'}}>
+    <div
+      className={classes.container}
+      style={
+        window.location.pathname === '/start-here' ? { display: 'none' } : { display: 'flex' }
+      }>
       <form className={classes.form}>
         <div className={classes.inputSection}>
           <TextField
@@ -189,7 +193,7 @@ const FollowMedia = () => {
 export default FollowMedia;
 
 const useStyles = makeStyles((theme) => ({
-  div: {
+  container: {
     maxWidth: '100%',
     backgroundColor: '#DDDDDD',
     margin: '4em auto 0',
