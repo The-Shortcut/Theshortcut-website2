@@ -23,6 +23,7 @@ import Coding101 from './components/pages/services/training/coding101';
 import DigitalMarketing from './components/pages/services/training/digitalMarketing';
 import StartHere from './components/pages/startHere';
 import TalentCommunity from './components/pages/talentCommunity';
+import SpyWhoHiredMe from './components/pages/services/training/spy';
 // Footer
 import PrivacyPolicies from './components/layout/documents/PrivacyPolicies';
 import CodeOfConduct from './components/layout/documents/CodeOfConduct';
@@ -44,6 +45,7 @@ const Routes = () => {
       <Route exact path='/services' component={Services} />
       <Route exact path='/services/training/coding101' component={Coding101} />
       <Route exact path='/services/training/digital-marketing-program' component={DigitalMarketing} />
+      <Route exact path='/services/training/the-spy-who-hired-me' component={SpyWhoHiredMe} />
       <Route exact path='/partners' component={Partners} />
       <Route exact path='/career' component={Career} />
       <Route exact path='/community' component={Community} />
