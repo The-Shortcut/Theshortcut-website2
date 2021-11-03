@@ -62,13 +62,8 @@ const SpyWhoHiredMe = () => {
         THE SPY <br /> WHO <br /> HIRED ME
       </Typography>
       <section className={classes.intro}>
-        <Title>
-          The Shortcut’s Digital Marketing and <br /> Growth Hacking Program
-        </Title>
+        <Title>You've never been to a networking event like this.</Title>
         <Typography variant='body1' className={classes.text}>
-          You've never been to a networking event like this.
-          <br />
-          <br />
           In this unique networking event, everybody in the room will present themselves as a
           candidate for a potential job in the tech industry. But we have planted three secret
           recruiters in your ranks that get the chance to get to know you authentically. After a
@@ -150,7 +145,7 @@ const SpyWhoHiredMe = () => {
       </section>
       <section className={classes.lastSection}>
         <Typography variant='body1' style={{ maxWidth: '60%', textAlign: 'center' }}>
-          Please direct any questions regarding the event to Ekaterina Berdysheva:{' '}<br />
+          Please direct any questions regarding the event to Ekaterina Berdysheva: <br />
           <a href='ekaterina.berdysheva@theshortcut.org' style={{ color: '#00FFFF' }}>
             ekaterina@theshortcut.org
           </a>
@@ -194,11 +189,12 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     textAlign: 'center',
     color: '#FFFFFF',
-     marginTop: '-4em',
+    marginTop: '-4em',
     zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-        marginTop: '-4.2em',
-    },
+      marginTop: '-4.2em',
+      },
+    textShadow: '0 1px 30px rgba(255, 255, 255, 1)'
   },
   heroContainer: {
     position: 'absolute',

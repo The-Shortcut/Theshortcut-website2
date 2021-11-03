@@ -8,7 +8,7 @@ const Title = ({ children }) => {
   const classes = useStyles();
 
   return (
-    <Box>
+    <Box style={{ minWidth: '100%' }}>
       <Typography variant='h3' className={classes.text}>
         {children}
       </Typography>
@@ -26,9 +26,14 @@ const useStyles = makeStyles((theme) => ({
     },
     textAlign: 'center',
     fontWeight: 'bold',
-    fontStyle:'italic',
+    fontStyle: 'italic',
     inlineSize: 'min-content',
     borderBottom: '5px solid #00A99D',
     whiteSpace: 'nowrap',
+    [theme.breakpoints.down('xs')]: {
+      whiteSpace: 'normal',
+      minWidth: '80%',
+      maxWidth: '80%',
+    },
   },
 }));
