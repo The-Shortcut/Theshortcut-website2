@@ -47,17 +47,16 @@ const SpyWhoHiredMe = () => {
           </Typography>
         </div>
       </div> */}
-      {window.innerWidth < 960 ? (
+{/*       {window.innerWidth < 960 ? (
         <img
           src={spyBanner}
           width='100%'
-          height='100%'
-          style={{ objectFit: 'contain' }}
-          alt='digital-marketing-training-page'
+          style={{ objectFit: 'contain', minHeight:'400px' }}
+          alt='the-spy-who-hired-me'
         />
-      ) : (
+      ) : ( */}
         <div className={classes.hero} />
-      )}
+{/*       )} */}
       <Typography variant='h1' className={classes.pageTitle}>
         THE SPY <br /> WHO <br /> HIRED ME
       </Typography>
@@ -176,6 +175,10 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     minHeight: '70vh',
     maxHeight: '70vh',
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '50vh',
+    maxHeight: '50vh',
+    },
     background: `url(${spyBanner}) center/cover fixed no-repeat`,
     backgroundSize: 'cover',
     position: 'relative',
@@ -187,12 +190,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
+    bottom:'27%',
     textAlign: 'center',
     color: '#FFFFFF',
-    marginTop: '-4em',
     zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-      marginTop: '-4.2em',
+      bottom:'48%',
       },
     textShadow: '0 1px 30px rgba(255, 255, 255, 1)'
   },
