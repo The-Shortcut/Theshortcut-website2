@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
 
-// Material-UI
 import { CssBaseline } from '@material-ui/core';
 
 // Layout Components

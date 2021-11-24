@@ -132,8 +132,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     display: 'inline',
-    minWidth: '13.5em',
-    maxWidth: '13.5em',
+    minWidth: '14em',
+    maxWidth: '14em',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',

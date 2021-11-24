@@ -5,16 +5,17 @@ import reportWebVitals from './reportWebVitals';
 
 // Material-UI
 import { ThemeProvider } from '@material-ui/core/styles';
+
 import theme from './theme';
 
 // REDUX
 import { Provider } from 'react-redux';
 import store from './store';
 
-
 ReactDOM.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
+
       <App />
     </ThemeProvider>
   </Provider>,
