@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // Children
 import Search from './Search';
 import DrawerMenu from './DrawerMenu';
-import CovidBanner from './CovidBanner';
+/* import CovidBanner from './CovidBanner'; */
 
 // Redux
 import { useSelector } from 'react-redux';
@@ -92,7 +92,7 @@ const NavBar = ({ pageHeight }) => {
             </div>
             {path !== '/search' && (
               <div>
-                {path === '/meet-us' ? null : <CovidBanner />}
+               {/*  {path === '/meet-us' ? null : <CovidBanner />} */}
                 <Search />
               </div>
             )}

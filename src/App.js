@@ -8,13 +8,14 @@ import { CssBaseline } from '@material-ui/core';
 
 // Layout Components
 import NavBar from './components/layout/navBar';
-import Media from './components/layout/newsLetter';
+import FollowMedia from './components/layout/newsLetter';
 import Footer from './components/layout/footer';
 import ScrollToTop from './ScrollToTop';
 
 // Google Tag Manager
 import TagManager from 'react-gtm-module';
 import ToTopArrow from './components/functional/ToTopArrow';
+import CookiesBanner from './components/functional/CookiesBanner';
 
 const App = () => {
   const [pageH, setPageH] = useState(null);
@@ -24,15 +25,18 @@ const App = () => {
     TagManager.initialize({ gtmId: process.env.REACT_APP_GTM });
   }, []);
   return (
-    <Router>
-      <CssBaseline />
-      <ScrollToTop />
-      <ToTopArrow />
-      <NavBar pageHeight={pageH} />
-      <Routes />
-      <Media />
-      <Footer />
-    </Router>
+    <>
+      <Router>
+        <CssBaseline />
+        <ScrollToTop />
+        <ToTopArrow />
+        <NavBar pageHeight={pageH} />
+        <Routes />
+        <FollowMedia />
+        <Footer />
+      </Router>
+      {/* <CookiesBanner /> */}
+    </>
   );
 };
 
