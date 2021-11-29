@@ -22,11 +22,11 @@ import ShareButton from '../functional/ShareButton';
 import defaultImage from '../../assets/photos/defaultImage.png';
 
 // Analytics
-import analytics from '../functional/analytics';
+/* import analytics from '../functional/analytics'; */
 
 const EventCard = ({ event }) => {
   const classes = useStyles();
-  const [eventID, setEventID] = useState(null);
+/*   const [eventID, setEventID] = useState(null); */
   let image = event.logo ? event.logo.original.url : defaultImage;
   let title = event.name.text;
   let summary = event.summary;
@@ -35,11 +35,11 @@ const EventCard = ({ event }) => {
   let link = event.url;
   /*   console.log(eventID); */
 
-  const exampleCallback = () => {
+/*   const exampleCallback = () => {
     console.log('Order complete!');
-  };
+  }; */
 
-  useEffect(() => {
+/*   useEffect(() => {
     window.EBWidgets.createWidget({
       widgetType: 'checkout',
       eventId: eventID,
@@ -47,7 +47,7 @@ const EventCard = ({ event }) => {
       modalTriggerElementId: `example-widget-trigger`,
       onOrderComplete: exampleCallback,
     });
-  }, [eventID]);
+  }, [eventID]); */
 
   const formatDate = (evDate) => {
     let dateArr = evDate.split(/\D/);
@@ -83,7 +83,7 @@ const EventCard = ({ event }) => {
     }
   };
 
-  const handleAnalysis = (targetEvent) => {
+  /* const handleAnalysis = (targetEvent) => {
     console.log(targetEvent);
     if (targetEvent.id) {
       setEventID(targetEvent.id);
@@ -94,7 +94,7 @@ const EventCard = ({ event }) => {
       label: targetEvent.name.text,
       value: 1,
     });
-  };
+  }; */
   return (
     <Card className={classes.card}>
       <CardMedia
@@ -138,8 +138,10 @@ const EventCard = ({ event }) => {
           size='medium'
           endIcon={<TrendingFlatIcon />}
           href={link}
-          id={`example-widget-trigger`}
-          onClick={() => handleAnalysis(event)}>
+          /* id={`example-widget-trigger`}
+          onClick={() => handleAnalysis(event)}
+          */
+        >
           {setStatus(event.status)}
         </Button>
         <ShareButton event={event} />

@@ -25,11 +25,11 @@ import defaultImage from '../../assets/photos/defaultImage.png';
 import ShareButton from '../functional/ShareButton';
 
 // Analytics
-import analytics from '../functional/analytics';
+/* import analytics from '../functional/analytics'; */
 
 const SingleEventCard = ({ event }) => {
   const classes = useStyles();
-  const [eventID, setEventID] = useState(null);
+  /* const [eventID, setEventID] = useState(null); */
   let image = event.logo.original ? event.logo.original.url : defaultImage;
   let title = event.name.text;
   let summary = event.summary;
@@ -37,11 +37,11 @@ const SingleEventCard = ({ event }) => {
   let people = event.capacity;
   let link = event.url;
 
-  const exampleCallback = function () {
+/*   const exampleCallback = function () {
     console.log('Order complete!');
-  };
+  }; */
 
-  useEffect(() => {
+/*   useEffect(() => {
     window.EBWidgets.createWidget({
       widgetType: 'checkout',
       eventId: eventID,
@@ -49,7 +49,7 @@ const SingleEventCard = ({ event }) => {
       modalTriggerElementId: `example-widget-trigger-${eventID}`,
       onOrderComplete: exampleCallback,
     });
-  }, [eventID]);
+  }, [eventID]); */
 
   const formatDate = (evDate) => {
     let dateArr = evDate.split(/\D/);
@@ -85,7 +85,7 @@ const SingleEventCard = ({ event }) => {
     }
   };
 
-  const handleAnalysis = (targetEvent) => {
+/*   const handleAnalysis = (targetEvent) => {
     if (targetEvent.id) {
       setEventID(targetEvent.id);
     }
@@ -95,7 +95,7 @@ const SingleEventCard = ({ event }) => {
       label: targetEvent.name.text,
       value: 1,
     });
-  };
+  }; */
 
   return (
     <Card className={classes.card}>
@@ -156,8 +156,8 @@ const SingleEventCard = ({ event }) => {
             size='medium'
             endIcon={<TrendingFlatIcon />}
             href={link}
-            id={`example-widget-trigger-${eventID}`}
-            onClick={() => handleAnalysis(event)}
+            /* id={`example-widget-trigger-${eventID}`}
+            onClick={() => handleAnalysis(event)} */
             target={availability.toLowerCase() === 'upcoming' ? '_self' : '_blank'}
             rel='noopener noreferrer'>
             {setStatus(event.status)}
