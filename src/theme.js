@@ -6,7 +6,6 @@ import CircularStdBlack from '../src/assets/fonts/CircularStd-Black.ttf';
 import CircularStdBook from '../src/assets/fonts/CircularStd-Book.ttf';
 import CircularStdMedium from '../src/assets/fonts/CircularStd-Medium.ttf';
 
-
 const circularStdBlack = {
   fontFamily: 'Circular Std Black',
   fontStyle: 'normal',
@@ -68,8 +67,8 @@ const theme = createMuiTheme({
   typography: {
     // Use the system font instead of the default Roboto font.
     fontFamily: [
-      'Circular Std Black',
       'Circular Std Book',
+      'Circular Std Black',
       'Circular Std Medium',
       'Calibri',
       '-apple-system',
@@ -87,18 +86,13 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [
-          circularStdBlack,
-          circularStdBook,
-          circularStdMeduim,
-          calibri,
-        ],
+        '@font-face': [circularStdBlack, circularStdBook, circularStdMeduim, calibri],
       },
     },
   },
 });
 theme.typography.h1 = {
-  fontFamily: '"Circular Std Black"',
+  fontFamily: '"Circular Std Book"',
   fontSize: '3rem',
   '@media (min-width:600px)': {
     fontSize: '4rem',
@@ -108,7 +102,7 @@ theme.typography.h1 = {
   },
 };
 theme.typography.h2 = {
-  fontFamily: '"Circular Std Black"',
+  fontFamily: '"Circular Std Book"',
   fontSize: '1.3rem',
   '@media (min-width:600px)': {
     fontSize: '1.6rem',
@@ -118,7 +112,7 @@ theme.typography.h2 = {
   },
 };
 theme.typography.h3 = {
-  fontFamily: '"Circular Std Black"',
+  fontFamily: '"Circular Std Book"',
   fontSize: '1.2rem',
   '@media (min-width:600px)': {
     fontSize: '1.4rem',
@@ -128,7 +122,7 @@ theme.typography.h3 = {
   },
 };
 theme.typography.h4 = {
-  fontFamily: '"Circular Std Black"',
+  fontFamily: '"Circular Std Book"',
   fontSize: '1rem',
   '@media (min-width:600px)': {
     fontSize: '1rem',
@@ -138,7 +132,7 @@ theme.typography.h4 = {
   },
 };
 theme.typography.h5 = {
-  fontFamily: '"Circular Std Black"',
+  fontFamily: '"Circular Std Book"',
   fontSize: '0.8rem',
   '@media (min-width:600px)': {
     fontSize: '0.9rem',
