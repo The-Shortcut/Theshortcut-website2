@@ -34,6 +34,10 @@ export const navBarData = [
     ], */
   },
   {
+    title: 'FOR MEDIA',
+    path: '/for-media'
+  },
+  {
     title: 'EVENTS',
     path: '/events',
     /* mainPath: '/events/all',

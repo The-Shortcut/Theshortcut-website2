@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import MetaTag from '../../utils/MetaTag';
 
 // Hero Image
-import heroImage from '../../../assets/photos/home_hero.jpg';
+import heroImage from '../../../assets/photos/home_hero_old.jpg';
 
 //Materail-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -63,12 +63,17 @@ const LandingPage = () => {
               COLLABORATE WITH US
             </Button>
           </Link>
+          <Link href='/for-media' color='primary' style={{ textDecoration: 'none' }}>
+            <Button variant='contained' color='default' className={classes.button}>
+              FOR MEDIA
+            </Button>
+          </Link>
         </div>
       </div>
       <GetInTheGame gamesRef={gamesRef} />
       <UpcomingEvents />
       <WhereToStart />
-      <div style={{ background: '#DDDDDD', border: '2px solid #DDDDDD', marginBottom:'-4em'}}>
+      <div style={{ background: '#DDDDDD', border: '2px solid #DDDDDD', marginBottom: '-4em' }}>
         <OurPartnersLogos />
       </div>
     </div>
@@ -111,12 +116,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    minWidth: '45%',
-    maxWidth: '45%',
+    minWidth: '65%',
+    maxWidth: '65%',
     margin: '6em auto 0',
     [theme.breakpoints.down('md')]: {
-      minWidth: '60%',
-      maxWidth: '60%',
+      minWidth: '70%',
+      maxWidth: '70%',
       margin: '5em auto 0',
     },
     [theme.breakpoints.down('sm')]: {
@@ -132,19 +137,23 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     display: 'inline',
-    minWidth: '14em',
-    maxWidth: '14em',
+    minWidth: '13em',
+    maxWidth: '13em',
     fontSize: '1.2rem',
     fontWeight: 'bold',
     textTransform: 'none',
     margin: '1em 0',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '12em',
+      fontSize: '1rem',
+    },
     [theme.breakpoints.down('sm')]: {
-      minWidth: '14.5em',
+      minWidth: '11em',
       fontSize: '0.8rem',
       marginTop: 0,
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '15.5em',
+      minWidth: '13em',
     },
   },
 }));

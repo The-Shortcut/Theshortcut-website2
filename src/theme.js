@@ -2,21 +2,21 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 // FONTS
 import Calibri from '../src/assets/fonts/Calibri.ttf';
-import CircularStdBlack from '../src/assets/fonts/CircularStd-Black.ttf';
+/* import CircularStdBlack from '../src/assets/fonts/CircularStd-Black.ttf'; */
 import CircularStdBook from '../src/assets/fonts/CircularStd-Book.ttf';
-import CircularStdMedium from '../src/assets/fonts/CircularStd-Medium.ttf';
+/* import CircularStdMedium from '../src/assets/fonts/CircularStd-Medium.ttf'; */
 
-const circularStdBlack = {
+/* const circularStdBlack = {
   fontFamily: 'Circular Std Black',
   fontStyle: 'normal',
   fontDisplay: 'swap',
   src: `local(CircularStd-Black), url(${CircularStdBlack}) format(ttf)`,
   unicodeRange:
     'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
-};
+}; */
 
-const circularStdBook = {
-  fontFamily: 'Circular Std Book',
+const circularStd = {
+  fontFamily: 'Circular Std',
   fontStyle: 'normal',
   fontDisplay: 'swap',
   src: `local(CircularStd-Book), url(${CircularStdBook}) format(ttf)`,
@@ -24,14 +24,14 @@ const circularStdBook = {
     'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
 };
 
-const circularStdMeduim = {
+/* const circularStdMeduim = {
   fontFamily: 'Circular Std Medium',
   fontStyle: 'normal',
   fontDisplay: 'swap',
   src: `local(CircularStd-Medium), url(${CircularStdMedium}) format(ttf)`,
   unicodeRange:
     'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
-};
+}; */
 
 const calibri = {
   fontFamily: 'Calibri',
@@ -67,9 +67,7 @@ const theme = createMuiTheme({
   typography: {
     // Use the system font instead of the default Roboto font.
     fontFamily: [
-      'Circular Std Book',
-      'Circular Std Black',
-      'Circular Std Medium',
+      'Circular Std',
       'Calibri',
       '-apple-system',
       'BlinkMacSystemFont',
@@ -86,13 +84,12 @@ const theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        '@font-face': [circularStdBlack, circularStdBook, circularStdMeduim, calibri],
+        '@font-face': [circularStd, calibri],
       },
     },
   },
 });
 theme.typography.h1 = {
-  fontFamily: '"Circular Std Book"',
   fontSize: '3rem',
   '@media (min-width:600px)': {
     fontSize: '4rem',
@@ -102,7 +99,6 @@ theme.typography.h1 = {
   },
 };
 theme.typography.h2 = {
-  fontFamily: '"Circular Std Book"',
   fontSize: '1.3rem',
   '@media (min-width:600px)': {
     fontSize: '1.6rem',
@@ -112,7 +108,6 @@ theme.typography.h2 = {
   },
 };
 theme.typography.h3 = {
-  fontFamily: '"Circular Std Book"',
   fontSize: '1.2rem',
   '@media (min-width:600px)': {
     fontSize: '1.4rem',
@@ -122,7 +117,6 @@ theme.typography.h3 = {
   },
 };
 theme.typography.h4 = {
-  fontFamily: '"Circular Std Book"',
   fontSize: '1rem',
   '@media (min-width:600px)': {
     fontSize: '1rem',
@@ -132,7 +126,6 @@ theme.typography.h4 = {
   },
 };
 theme.typography.h5 = {
-  fontFamily: '"Circular Std Book"',
   fontSize: '0.8rem',
   '@media (min-width:600px)': {
     fontSize: '0.9rem',
@@ -151,11 +144,10 @@ theme.typography.h5 = {
   },
 }; */
 theme.typography.body1 = {
-  fontFamily: 'Circular Std Book',
   fontSize: '1.2rem',
 };
 theme.typography.subtitle1 = {
-  fontFamily: 'Circular Std Book',
+  /*   fontFamily: 'Circular Std Book', */
   fontSize: '1rem',
 };
 export default theme;

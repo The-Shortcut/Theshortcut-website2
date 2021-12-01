@@ -24,6 +24,7 @@ import DigitalMarketing from './components/pages/services/training/digitalMarket
 import StartHere from './components/pages/startHere';
 import TalentCommunity from './components/pages/talentCommunity';
 import SpyWhoHiredMe from './components/pages/services/training/spy';
+import Media from './components/pages/media';
 // Footer
 import PrivacyPolicies from './components/layout/documents/PrivacyPolicies';
 import CodeOfConduct from './components/layout/documents/CodeOfConduct';
@@ -56,6 +57,7 @@ const Routes = () => {
       <Route exact path='/blog/:slug' component={Post} />
       <Route exact path='/talent-community' component={TalentCommunity} />
       <Route exact path='/start-here' component={StartHere} />
+      <Route exact path='/for-media' component={Media} />
       <Route exact path='/search'>
         <Search />
       </Route>

@@ -15,6 +15,11 @@ const Links = () => {
             About Us
           </Typography>
         </Link>
+        <a href='/for-media' className={classes.link}>
+          <Typography variant='subtitle1' component='p' className={classes.item}>
+            For Media
+          </Typography>
+        </a>
         <a href='/contact-us#faq' className={classes.link}>
           <Typography variant='subtitle1' component='p' className={classes.item}>
             FAQ
@@ -101,12 +106,21 @@ const Links = () => {
             For Partners
           </Typography>
         </Link>
-        <Link to='/blog' className={classes.link}>
-        <Typography variant='subtitle1' component='p' className={classes.item}>
-          Blog
-        </Typography>
+        <Link to='/services' className={classes.link}>
+          <Typography
+            variant='subtitle1'
+            component='p'
+            className={classes.item}
+            onClick={() => window.scrollTo(0, 0)}>
+            Our Sevices
+          </Typography>
         </Link>
-       {/*  <Typography variant='subtitle1' component='p' className={classes.item}>
+        <Link to='/blog' className={classes.link}>
+          <Typography variant='subtitle1' component='p' className={classes.item}>
+            Blog
+          </Typography>
+        </Link>
+        {/*  <Typography variant='subtitle1' component='p' className={classes.item}>
           For media
         </Typography>
         <Typography variant='subtitle1' component='p' className={classes.item}>
