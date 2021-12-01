@@ -60,7 +60,7 @@ const OurMedia = () => {
       </section>
       <section className={classes.section}>
         <Typography variant='h4'>
-          MediaKit :{' '}
+          MediaKit:{' '}
           <Button
             component='button'
             target='_blank'
@@ -69,7 +69,7 @@ const OurMedia = () => {
           </Button>
         </Typography>
         <Typography variant='h4'>
-          Logos :{' '}
+          Logos:{' '}
           <Button
             component='button'
             href='https://theshortcut.org/wp-content/uploads/2021/12/logos.zip'>

@@ -59,12 +59,12 @@ const LandingPage = () => {
           </Button>
           {/* </Link> */}
           <Link href='/partners' style={{ textDecoration: 'none' }}>
-            <Button variant='contained' color='default' className={classes.button}>
+            <Button variant='contained' color='primary' className={classes.button}>
               COLLABORATE WITH US
             </Button>
           </Link>
-          <Link href='/for-media' color='primary' style={{ textDecoration: 'none' }}>
-            <Button variant='contained' color='default' className={classes.button}>
+          <Link href='/for-media' style={{ textDecoration: 'none' }}>
+            <Button variant='contained' color='primary' className={classes.button}>
               FOR MEDIA
             </Button>
           </Link>
@@ -136,6 +136,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
+    color:'#FFFFFF',
     display: 'inline',
     minWidth: '13em',
     maxWidth: '13em',

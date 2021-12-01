@@ -5,10 +5,10 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 // REACT-ICONS
-import { RiUserHeartFill } from 'react-icons/ri';
-import { FaCalendarDay, FaUserNinja, FaTransgenderAlt } from 'react-icons/fa';
-import { MdDirectionsRun, MdShare, MdEventAvailable } from 'react-icons/md';
-import { BsFillFlagFill } from 'react-icons/bs';
+import { RiUserHeartFill, RiMailCheckFill } from 'react-icons/ri';
+import { FaCalendarDay, FaTransgenderAlt, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { MdDirectionsRun, MdShare, MdEventAvailable, MdSchool, MdCake } from 'react-icons/md';
+import { BsFillFlagFill, BsFillCollectionPlayFill } from 'react-icons/bs';
 
 export const statData = [
   {
@@ -18,18 +18,38 @@ export const statData = [
   },
   {
     title: 'Gender',
-    amount: 'F54% & M45%',
+    amount: 'F54% & M46%',
     icon: <FaTransgenderAlt style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'Entrepreneurs',
-    amount: '10%',
-    icon: <FaUserNinja style={{ fontSize: 40, color: '#FFFFFF' }} />,
+    title: 'Highly Educated',
+    amount: '90%',
+    icon: <MdSchool style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
-    title: 'Want a meaningful life',
-    amount: '100%',
-    icon: <RiUserHeartFill style={{ fontSize: 40, color: '#FFFFFF' }} />,
+    title: 'Under the age of 35',
+    amount: '71%',
+    icon: <MdCake style={{ fontSize: 40, color: '#FFFFFF' }} />,
+  },
+  {
+    title: 'Followers',
+    amount: '4.9k',
+    icon: <FaFacebookF style={{ fontSize: 40, color: '#FFFFFF' }} />,
+  },
+  {
+    title: 'Average Open Rate',
+    amount: '41%',
+    icon: <RiMailCheckFill style={{ fontSize: 40, color: '#FFFFFF' }} />,
+  },
+  {
+    title: 'Organic Impressions Monthly',
+    amount: '51k',
+    icon: <FaLinkedinIn style={{ fontSize: 40, color: '#FFFFFF' }} />,
+  },
+  {
+    title: 'Viewers',
+    amount: '11.1k',
+    icon: <BsFillCollectionPlayFill style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
 ];
 
@@ -82,12 +102,12 @@ export const resources = [
   {
     value: 'Take a free online course with FiTech.',
     link: 'https://bit.ly/2UtJ9fn',
-    icon: <MdEventAvailable color='#00A99D' style={{ fontSize: 40 }}/>,
+    icon: <MdEventAvailable color='#00A99D' style={{ fontSize: 40 }} />,
   },
   {
     value:
       'Join the Spouse Program by the City of Helsinki that helps spouses integrate in Finland.',
     link: 'https://spouseprogram.fi/',
-    icon: <MdEventAvailable color='#00A99D' style={{ fontSize: 40 }}/>,
+    icon: <MdEventAvailable color='#00A99D' style={{ fontSize: 40 }} />,
   },
-]
+];

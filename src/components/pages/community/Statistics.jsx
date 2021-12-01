@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(1),
     },
