@@ -19,9 +19,10 @@ const GetInTheGame = ({ gamesRef }) => {
       <div className={classes.root}>
         <Title>We Get You In The Game</Title>
         <Typography variant='body1' className={classes.text}>
-          Welcome to The Shortcut! Take your next step to reach your professional goals with us. You
-          can upskill and pivot your career through events, coaching, and training in our vibrant
-          community!
+          Welcome to The Shortcut!
+          Reach your professional goals with us - no matter if you're looking for a job or want to
+          start your own business. We offer events, coaching, and training to help you create a
+          meaningful career.
         </Typography>
         <div className={classes.section}>
           {gameData.map((data, index) => (

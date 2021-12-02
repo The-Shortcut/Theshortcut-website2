@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import MetaTag from '../../utils/MetaTag';
 
 // Hero Image
-import heroImage from '../../../assets/photos/home_hero_old.jpg';
+import heroImage from '../../../assets/photos/home_hero.jpg';
 
 //Materail-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -40,12 +40,23 @@ const LandingPage = () => {
         description='The Shortcut is an impact-driven organization that trains and equips community members to build meaningful careers in Finland. Transform your career today.'
         screenshot='https://theshortcut.org/wp-content/uploads/2021/06/homepage-2.png'
       />
+      {window.innerWidth < 960 ? (
+        <img
+          src={heroImage}
+          width='100%'
+          height='auto'
+          alt='home-page'
+          style={{ filter: 'brightness(40%)' }}
+        />
+      ) : (
+        <div className={classes.hero} />
+      )}
       <div>
-        <img src={heroImage} alt='home_hero_image' className={classes.hero} />
+        {/* <img src={heroImage} alt='home_hero_image' className={classes.hero} /> */}
         <div className={classes.title}>
           <Typography variant='h1'>The Shortcut</Typography>
           <Typography variant='h2'>
-            The place for social and professional integration in Finland
+            The place for social and professional integration in Finland.
           </Typography>
         </div>
         <div className={classes.buttons}>
@@ -55,17 +66,17 @@ const LandingPage = () => {
             color='primary'
             className={classes.button}
             onClick={executeScroll}>
-            FOR INDIVIDUALS
+            For Jobseekers
           </Button>
           {/* </Link> */}
           <Link href='/partners' style={{ textDecoration: 'none' }}>
             <Button variant='contained' color='primary' className={classes.button}>
-              COLLABORATE WITH US
+              For Partners
             </Button>
           </Link>
           <Link href='/for-media' style={{ textDecoration: 'none' }}>
             <Button variant='contained' color='primary' className={classes.button}>
-              FOR MEDIA
+              For Media
             </Button>
           </Link>
         </div>
@@ -87,6 +98,15 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100%',
   },
   hero: {
+    position: 'relative',
+    minWidth: '100%',
+    maxWidth: '100%',
+    minHeight: '100vh',
+    maxHeight: '100vh',
+    background: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage}) center/cover fixed no-repeat`,
+    zIndex: -1,
+  },
+  /*  hero: {
     minWidth: '100%',
     maxWidth: '100%',
     minHeight: '100vh',
@@ -95,48 +115,47 @@ const useStyles = makeStyles((theme) => ({
       minHeight: '40em',
       maxHeight: '40em',
     },
-  },
+    objectFit: 'cover',
+    filter: 'brightness(60%)',
+  }, */
   title: {
+    minWidth: '100%',
+    maxWidth: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
     textAlign: 'center',
     color: '#FFFFFF',
-    margin: '-30em 11em 0',
-    minWidth: '4em',
-
-    /*  [theme.breakpoints.up('md')]: {
-      margin: '-30em 10em 0',
-    }, */
+    marginTop: '-14em',
+    zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-      margin: '-28em 3em 0',
+      marginTop: '-10em',
     },
     [theme.breakpoints.down('xs')]: {
-      margin: '-24em 1em 0',
+      marginTop: '-9.5em',
     },
   },
   buttons: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    minWidth: '65%',
-    maxWidth: '65%',
-    margin: '6em auto 0',
+    minWidth: '60%',
+    maxWidth: '60%',
+    margin: '-9.5em auto 5em',
     [theme.breakpoints.down('md')]: {
       minWidth: '70%',
       maxWidth: '70%',
-      margin: '5em auto 0',
-    },
-    [theme.breakpoints.down('sm')]: {
-      minWidth: '55%',
-      maxWidth: '55%',
-      margin: '4em auto 0',
     },
     [theme.breakpoints.down('xs')]: {
-      justifyContent: 'center',
-      minWidth: '60%',
-      maxWidth: '60%',
+      minWidth: '90%',
+      maxWidth: '90%',
+      marginTop: 0,
     },
   },
   button: {
-    color:'#FFFFFF',
+    color: '#FFFFFF',
     display: 'inline',
     minWidth: '13em',
     maxWidth: '13em',
@@ -154,7 +173,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: 0,
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '13em',
+      minWidth: '8em',
     },
   },
 }));

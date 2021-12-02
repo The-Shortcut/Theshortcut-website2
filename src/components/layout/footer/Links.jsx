@@ -112,7 +112,7 @@ const Links = () => {
             component='p'
             className={classes.item}
             onClick={() => window.scrollTo(0, 0)}>
-            Our Sevices
+            Our Services
           </Typography>
         </Link>
         <Link to='/blog' className={classes.link}>
