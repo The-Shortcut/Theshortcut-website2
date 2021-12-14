@@ -11,12 +11,13 @@ import heroImage from '../../../assets/photos/servicesHero2.JPG';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography, Link } from '@material-ui/core';
 
 // CHILDREN
 import Training from './training';
 import Coaching from './coaching';
 import ServicesFAQ from './ServicesFAQ';
+import Support from './Support';
 
 // GTM
 import TagManager from 'react-gtm-module';
@@ -87,18 +88,17 @@ const Services = () => {
             onClick={executeScrollTraining}>
             TRAINING
           </Button>
-          <Button
-            variant='contained'
-            color='primary'
-            className={classes.button}
-            onClick={executeScrollFAQ}>
-            FAQ
-          </Button>
+          <Link href='/talent-community' style={{ textDecoration: 'none' }}>
+            <Button variant='contained' color='primary' className={classes.button}>
+              TALENT POOL
+            </Button>
+          </Link>
         </div>
       </div>
       <div className={classes.loc} id='coaching' />
       <Coaching coachingRef={coachingRef} />
       <Training trainingRef={trainingRef} />
+      <Support />
       <ServicesFAQ
         servicesFaqLoaded={servicesFaqLoaded}
         coachingFAQ={coachingFAQ}

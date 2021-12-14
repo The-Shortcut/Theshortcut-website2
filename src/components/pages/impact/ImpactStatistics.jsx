@@ -1,4 +1,17 @@
-import React from 'react';
+/* eslint-disable no-restricted-globals */
+import React, { useEffect } from 'react';
+
+// REACT-ICONS
+/* import * as Fa from 'react-icons/fa';
+import * as Hi from 'react-icons/hi';
+import * as Md from 'react-icons/md';
+import * as Gi from 'react-icons/gi';
+import * as Bs from 'react-icons/bs';
+import * as Ri from 'react-icons/ri';
+
+// REDUX
+import { useSelector, useDispatch } from 'react-redux';
+import { getStatsData } from '../../../actions/statActions'; */
 
 // DATA
 import { ImpactStatData } from './impactData';
@@ -10,19 +23,54 @@ import Title from '../../custom/Title';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
-const ImpactStatistics = ({drivenRef}) => {
+const ImpactStatistics = ({ drivenRef }) => {
   const classes = useStyles();
+  /* const { isLoading, stats } = useSelector((state) => state.stats);
 
+  const reactIcons = [Fa, Hi, Md, Gi, Bs, Ri];
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getStatsData());
+  }, [dispatch]);
+
+  const statIcon = (iconName) => {
+let iconProvider = iconName.split('').slice(0, 2).join('');
+    console.log(iconName)
+    switch (iconProvider) {
+      case 'Fa':
+        let theIcon = { ...reactIcons[0] }
+        console.log(theIcon)
+        return reactIcons[0].FaCalendarCheck();
+      case 'Hi':
+        return reactIcons[1].HiUserGroup();
+      case 'Md':
+        return reactIcons[2].MdBusiness();
+      case 'Gi':
+        return reactIcons[3].GiStairsGoal();
+      case 'Bs':
+        return reactIcons[4].BsFillFlagFill();
+      case 'Ri':
+        return reactIcons[5].iconName();
+      default:
+        return;
+    }
+  };
+
+  console.log(isLoading, stats); */
   return (
     <div ref={drivenRef} className={classes.root}>
       <Title>Driven by Impact</Title>
       <div className={classes.container}>
-        {ImpactStatData.map((item, index) => (
+        {ImpactStatData?.map((acf, index) => (
           <div key={index} className={classes.item}>
-            <div className={classes.icon}>{item.icon}</div>
-            <Typography variant='h4' style={{marginTop: 10}}>{item.amount}</Typography>
+            <div className={classes.icon}>{acf.icon}</div>
+            <Typography variant='h4' style={{ marginTop: 10 }}>
+              {acf.amount}
+            </Typography>
             <Typography variant='body1' style={{ textAlign: 'center' }}>
-              {item.title}
+              {acf.title}
             </Typography>
           </div>
         ))}
@@ -40,12 +88,12 @@ const useStyles = makeStyles((theme) => ({
     margin: '9em auto 7em',
     [theme.breakpoints.up('md')]: {
       minWidth: '70%',
-    maxWidth: '70%',
+      maxWidth: '70%',
     },
     [theme.breakpoints.down('sm')]: {
       minWidth: '90%',
       maxWidth: '90%',
-      margin:'3em auto'
+      margin: '3em auto',
     },
     [theme.breakpoints.down('xs')]: {
       minWidth: '95%',

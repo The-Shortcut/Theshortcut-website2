@@ -30,8 +30,8 @@ const LandingPage = () => {
   const classes = useStyles();
 
   const gamesRef = useRef(null);
-  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 90);
-  const executeScroll = () => scrollToRef(gamesRef);
+  /* const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 90); */
+  /* const executeScroll = () => scrollToRef(gamesRef); */
 
   return (
     <div>
@@ -60,15 +60,16 @@ const LandingPage = () => {
           </Typography>
         </div>
         <div className={classes.buttons}>
-          {/* <Link href='#games' style={{ textDecoration: 'none' }}> */}
-          <Button
-            variant='contained'
-            color='primary'
-            className={classes.button}
-            onClick={executeScroll}>
-            For Jobseekers
-          </Button>
-          {/* </Link> */}
+          <Link href='services' style={{ textDecoration: 'none' }}>
+            <Button
+              variant='contained'
+              color='primary'
+              className={classes.button}
+              /* onClick={executeScroll} */
+            >
+              For Jobseekers
+            </Button>
+          </Link>
           <Link href='/partners' style={{ textDecoration: 'none' }}>
             <Button variant='contained' color='primary' className={classes.button}>
               For Partners

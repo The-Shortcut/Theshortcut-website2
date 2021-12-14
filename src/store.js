@@ -10,6 +10,7 @@ import storiesReducer from './reducers/storiesReducer';
 import docsReducer from './reducers/docsReducer';
 import servicesReducer from './reducers/servicesReducer';
 import resourcesReducer from './reducers/resourcesReducer';
+import statsReducer from './reducers/statsReducer';
 
 const reducer = combineReducers({
   events: eventsReducer,
@@ -18,7 +19,8 @@ const reducer = combineReducers({
   stories: storiesReducer,
   docs: docsReducer,
   services: servicesReducer,
-  resources: resourcesReducer
+  resources: resourcesReducer,
+  stats: statsReducer,
 });
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 export default store;
