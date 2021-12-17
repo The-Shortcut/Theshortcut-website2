@@ -15,7 +15,6 @@ import ScrollToTop from './ScrollToTop';
 // Google Tag Manager
 import TagManager from 'react-gtm-module';
 import ToTopArrow from './components/functional/ToTopArrow';
-import CookiesBanner from './components/functional/CookiesBanner';
 
 const App = () => {
   const [pageH, setPageH] = useState(null);
@@ -25,7 +24,6 @@ const App = () => {
     TagManager.initialize({ gtmId: process.env.REACT_APP_GTM });
   }, []);
   return (
-    <>
       <Router>
         <CssBaseline />
         <ScrollToTop />
@@ -35,8 +33,6 @@ const App = () => {
         <FollowMedia />
         <Footer />
       </Router>
-      {/* <CookiesBanner /> */}
-    </>
   );
 };
 

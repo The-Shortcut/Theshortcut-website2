@@ -2,12 +2,13 @@
 import FeedbackIcon from '@material-ui/icons/Feedback';
 
 // REACT-ICONS
-import { FaCalendarCheck, FaTransgenderAlt, FaUserNinja } from 'react-icons/fa';
+import { FaCalendarCheck, FaTransgenderAlt, FaUsersCog } from 'react-icons/fa';
 import { HiUserGroup } from 'react-icons/hi';
-import { MdBusiness } from 'react-icons/md';
-import { GiStairsGoal } from 'react-icons/gi';
+import { MdSchool, MdCake } from 'react-icons/md';
+import { GiStairsGoal, GiShakingHands } from 'react-icons/gi';
 import { BsPersonBoundingBox, BsBriefcaseFill, BsFillFlagFill } from 'react-icons/bs';
 import { RiCommunityFill } from 'react-icons/ri';
+import { IoIosPaper } from 'react-icons/io';
 
 export const ImpactStatData = [
   {
@@ -17,13 +18,13 @@ export const ImpactStatData = [
   },
   {
     title: 'Participants',
-    amount: '6,027',
+    amount: '7,857',
     icon: <HiUserGroup style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: 'Events & Training',
-    amount: '260',
-    icon: <FaCalendarCheck style={{ fontSize: 35, color: '#FFFFFF' }} />,
+    title: 'Highly Educated',
+    amount: '90%',
+    icon: <MdSchool style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
     title: 'Feedback',
@@ -32,25 +33,24 @@ export const ImpactStatData = [
   },
   {
     title: 'Entrepreneurs',
-    amount: '75',
-    icon: <FaUserNinja style={{ fontSize: 35, color: '#FFFFFF' }} />,
+    amount: '87',
+    icon: <IoIosPaper style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
     title: 'Employments',
-    amount: '191',
-    icon: <GiStairsGoal style={{ fontSize: 35, color: '#FFFFFF' }} />,
+    amount: '263',
+    icon: <GiShakingHands style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
   {
-    title: 'Partners',
-    amount: '251',
-    icon: <MdBusiness style={{ fontSize: 35, color: '#FFFFFF' }} />,
+    title: 'Under the age of 35',
+    amount: '71%',
+    icon: <MdCake style={{ fontSize: 40, color: '#FFFFFF' }} />,
   },
   {
     title: 'Gender Distribution',
-    amount: 'F54% & M45%',
+    amount: '54% F & 45% M',
     icon: <FaTransgenderAlt style={{ fontSize: 35, color: '#FFFFFF' }} />,
   },
-  
 ];
 
 // ICONS
