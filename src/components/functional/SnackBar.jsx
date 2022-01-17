@@ -12,8 +12,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const variantIcon = {
   success: CheckCircleIcon,
+  mail_sent: CheckCircleIcon,
   warning: WarningIcon,
   error: ErrorIcon,
+  mail_failed: ErrorIcon,
   info: InfoIcon,
 };
 
@@ -21,7 +23,13 @@ const useStyles1 = makeStyles((theme) => ({
   success: {
     backgroundColor: theme.palette.primary.main,
   },
+  mail_sent: {
+    backgroundColor: theme.palette.primary.main,
+  },
   error: {
+    backgroundColor: theme.palette.error.main,
+  },
+  mail_failed: {
     backgroundColor: theme.palette.error.main,
   },
   warning: {
@@ -68,7 +76,6 @@ function MySnackbarContentWrapper(props) {
     />
   );
 }
-
 
 const SnackBar = ({ open, handleClose, status, msg }) => {
   return (

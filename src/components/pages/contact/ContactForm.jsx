@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Material-UI
 import { TextField, Button, Typography } from '@material-ui/core';
@@ -10,16 +10,28 @@ import Title from '../../custom/Title';
 import SnackBar from '../../functional/SnackBar';
 import { formData } from '../../../helpers/formData';
 
+// REDUX
+import { useDispatch, useSelector } from 'react-redux';
+
 // Validations
 const nameRegex = RegExp(/^[a-zA-Z\s]{3,25}$/);
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
-const msgRegex = RegExp(/^[a-zA-Z0-9\s.:()#$&*+=-?@""''_]{3,250}$/);
+const msgRegex = RegExp(/^[a-zA-Z0-9\s.,:()#$&*+=-?@""''_]{3,250}$/);
 
 const ContactForm = ({ msgRef }) => {
   const classes = useStyles();
   const [state, setState] = useState({ name: '', email: '', message: '' });
   const [error, setError] = useState({ name: '', email: '', message: '' });
   const [open, setOpen] = useState(false);
+
+  const { contactFormData } = useSelector((state) => state.docs);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (contactFormData?.status === 'mail_sent') {
+      setState({ name: '', email: '', message: '' });
+    }
+  }, [contactFormData?.status]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,19 +64,16 @@ const ContactForm = ({ msgRef }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    formData(state);
     let errors = Object.values(error);
     if (!errors.includes(false)) {
+      dispatch(formData(state));
       setOpen((prev) => !prev);
     }
     setTimeout(() => {
       setOpen(false);
-    }, 5000);
-    if (!open) {
-      setState({ name: '', email: '', message: '' });
-    }
+    }, 6000);
   };
-  
+
   return (
     <div ref={msgRef} className={classes.root}>
       <Title>Message Us</Title>
@@ -144,12 +153,14 @@ const ContactForm = ({ msgRef }) => {
           className={classes.button}>
           SUBMIT
           <SendIcon className={classes.rightIcon} />
-          <SnackBar
-            open={open}
-            handleClose={handleClose}
-            status='success'
-            msg='Thank you for your message!'
-          />
+          {contactFormData ? (
+            <SnackBar
+              open={open}
+              handleClose={handleClose}
+              status={contactFormData.status}
+              msg={contactFormData.message.split('\n')[0]}
+            />
+          ) : null}
         </Button>
       </form>
     </div>

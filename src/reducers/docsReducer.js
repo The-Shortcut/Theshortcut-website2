@@ -5,6 +5,8 @@ import {
   INIT_TERMS,
   SERVICES_FAQ_DATA,
   BYOB_FAQ_DATA,
+  CONTACT_FORM_NOTIFICATION,
+  CONTACT_FORM_NOTIFICATION_ERROR
 } from '../actions/types';
 
 const initState = {
@@ -23,10 +25,11 @@ const initState = {
   coachingFAQ: null,
   trainingFAQ: null,
   byobFaqLoaded: false,
-  byobFAQ:null,
+  byobFAQ: null,
   beforeFAQ: null,
   inProcessFAQ: null,
   aboutFAQ: null,
+  contactFormData: null,
 };
 
 const reducer = (state = initState, action) => {
@@ -79,6 +82,10 @@ const reducer = (state = initState, action) => {
         inProcessFAQ: inProcessFaq.reverse(),
         aboutFAQ: aboutFaq.reverse(),
       };
+    case CONTACT_FORM_NOTIFICATION:
+      return { ...state, contactFormData: payload.data };
+    case CONTACT_FORM_NOTIFICATION_ERROR:
+      return { ...state, contactFormData: payload };
     default:
       return state;
   }
