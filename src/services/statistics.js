@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const getStatistics = async () => {
-    const response = await axios.get(`https://theshortcut.org/wp-json/wp/v2/statistics/`);
+    const response = await axios.get(`https://theshortcut.org/wp-json/wp/v2/statistics/?per_page=100`);
     return response.data;
 };
 

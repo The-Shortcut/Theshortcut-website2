@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // DATA
 import { partnersStat } from './partnersData';
@@ -7,15 +7,31 @@ import { partnersStat } from './partnersData';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
+// REDUX
+import { useSelector, useDispatch } from 'react-redux';
+import { getStatsData } from '../../../actions/statActions';
+
 const PartnersStatistics = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const { partnersStats } = useSelector((state) => state.stats);
+
+  useEffect(() => {
+    dispatch(getStatsData());
+  }, [dispatch]);
+
   return (
     <div className={classes.root}>
-      {partnersStat.map((stat, index) => (
+      {partnersStats?.map(({ acf }, index) => (
         <div key={index} className={classes.container}>
-          <div className={classes.icon}>{stat.icon}</div>
-          <Typography variant='h4'>{stat.title}</Typography>
-          <Typography variant='subtitle1'>{stat.description}</Typography>
+          <div className={classes.icon}>
+            <div
+              style={{ fontSize: 30, color: '#FFFFFF' }}
+              dangerouslySetInnerHTML={{ __html: acf.icon }}
+            />
+          </div>
+          <Typography variant='h4'>{acf.value}</Typography>
+          <Typography variant='subtitle1'>{acf.title}</Typography>
         </div>
       ))}
     </div>
@@ -47,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     flexBasis: '22%',
     [theme.breakpoints.down('xs')]: {
       flexBasis: '40%',
-      marginTop: 20
+      marginTop: 20,
     },
   },
   icon: {

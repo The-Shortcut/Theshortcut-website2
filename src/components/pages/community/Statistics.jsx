@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { statData } from './statData';
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 
+// REDUX
+import { useSelector, useDispatch } from 'react-redux';
+import { getStatsData } from '../../../actions/statActions';
+
 const Statistics = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const { communityStats } = useSelector((state) => state.stats);
+
+  useEffect(() => {
+    dispatch(getStatsData());
+  }, [dispatch]);
 
   return (
     <div className={classes.root}>
-      {statData.map((item, index) => (
+      {communityStats?.map(({ acf }, index) => (
         <div key={index} className={classes.container}>
-          <div className={classes.icon}>{item.icon}</div>
+          <div className={classes.icon}>
+            <div
+              style={{ fontSize: 30, color: '#FFFFFF' }}
+              dangerouslySetInnerHTML={{ __html: acf.icon }}
+            />
+          </div>
           <div className={classes.values}>
-            <Typography variant='h5'>{item.amount}</Typography>
-            <Typography variant='subtitle1'>{item.title}</Typography>
+            <Typography variant='h5'>{acf.value}</Typography>
+            <Typography variant='subtitle1'>{acf.title}</Typography>
           </div>
         </div>
       ))}
@@ -28,7 +42,7 @@ export default Statistics;
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: '80%',
-    margin:'auto',
+    margin: 'auto',
     minHeight: '7em',
     marginTop: theme.spacing(5),
     display: 'flex',

@@ -34,7 +34,7 @@ const CurrTrainingSections = () => {
       <Typography variant='h4' style={{ textAlign: 'center', margin: '2em auto' }}>
         Current opportunities
       </Typography>
-{/*       {trainings?.length < 3 && window.innerWidth > 860 ? (
+      {/*       {trainings?.length < 3 && window.innerWidth > 860 ? (
         <div className={classes.container1}>
           {trainings?.map(({ acf }, index) => (
             <Card key={index}  sx={{ display: 'flex' }}>
@@ -61,35 +61,31 @@ const CurrTrainingSections = () => {
           ))}
         </div>
       ) : ( */}
-        <div className={classes.container}>
-          {trainings?.map(({ acf }, index) => (
-            <Card key={index} className={classes.card}>
-              <CardMedia
-                component='img'
-                alt={acf.title}
-                className={classes.media}
-                image={acf.image.url}
-                title={acf.title}
-              />
-              <CardContent className={classes.cardContent}>
-                <Typography variant='h4' className={classes.title}>
-                  {acf.title.toLocaleUpperCase()}
-                </Typography>
-                <Typography variant='subtitle1' component='p' className={classes.description}>
-                  {acf.description}
-                </Typography>
-                <Button
-                  variant='outlined'
-                  color='primary'
-                  href={acf.link}
-                  className={classes.regBtn}>
-                  Apply here
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-{/*       )} */}
+      <div className={classes.container}>
+        {trainings?.map(({ acf }, index) => (
+          <Card key={index} className={classes.card}>
+            <CardMedia
+              component='img'
+              alt={acf.title}
+              className={classes.media}
+              image={acf.image.url}
+              title={acf.title}
+            />
+            <CardContent className={classes.cardContent}>
+              <Typography variant='h4' className={classes.title}>
+                {acf.title.toLocaleUpperCase()}
+              </Typography>
+              <Typography variant='subtitle1' component='p' className={classes.description}>
+                {acf.description}
+              </Typography>
+              <Button variant='outlined' color='primary' href={acf.link} className={classes.regBtn}>
+                Apply here
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      {/*       )} */}
     </div>
   );
 };
@@ -165,21 +161,8 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: ' 0px 0px 22px -5px #434343',
     minHeight: 500,
     maxHeight: 500,
+    maxWidth: 350,
     position: 'relative',
-/*     [theme.breakpoints.down('md')]: {
-      minHeight: 500,
-      maxHeight: 500,
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing(1),
-      minHeight: 450,
-      maxHeight: 450,
-    },
-    [theme.breakpoints.down('xs')]: {
-      marginTop: theme.spacing(1),
-      minHeight: 510,
-      maxHeight: 510,
-    }, */
     zIndex: 1,
   },
   cardContent: {
@@ -219,5 +202,5 @@ const useStyles = makeStyles((theme) => ({
     lineClamp: 5,
     wordBreak: 'break-all',
     overflow: 'hidden',
-  }
+  },
 }));
