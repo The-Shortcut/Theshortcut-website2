@@ -25,6 +25,7 @@ import StartHere from './components/pages/startHere';
 import TalentCommunity from './components/pages/talentCommunity';
 import SpyWhoHiredMe from './components/pages/services/training/spy';
 import Media from './components/pages/media';
+import SparkAcademy from './components/pages/sparkAcademy';
 // Footer
 import PrivacyPolicies from './components/layout/documents/PrivacyPolicies';
 import CodeOfConduct from './components/layout/documents/CodeOfConduct';
@@ -45,7 +46,11 @@ const Routes = () => {
       <Route exact path='/events/byob' component={BYOB} />
       <Route exact path='/services' component={Services} />
       <Route exact path='/services/training/coding101' component={Coding101} />
-      <Route exact path='/services/training/digital-marketing-program' component={DigitalMarketing} />
+      <Route
+        exact
+        path='/services/training/digital-marketing-program'
+        component={DigitalMarketing}
+      />
       <Route exact path='/services/training/the-spy-who-hired-me' component={SpyWhoHiredMe} />
       <Route exact path='/partners' component={Partners} />
       <Route exact path='/career' component={Career} />
@@ -58,6 +63,7 @@ const Routes = () => {
       <Route exact path='/talent-community' component={TalentCommunity} />
       <Route exact path='/start-here' component={StartHere} />
       <Route exact path='/for-media' component={Media} />
+      {/* <Route exact path='/spark-academy' component={SparkAcademy} /> */}
       <Route exact path='/search'>
         <Search />
       </Route>

@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getStatsData } from '../../../actions/statActions';
 
 // DATA
-import { ImpactStatData } from './impactData';
+/* import { ImpactStatData } from './impactData'; */
 
 // children
 import Title from '../../custom/Title';

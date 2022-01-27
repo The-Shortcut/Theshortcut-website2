@@ -60,6 +60,7 @@ const reducer = (state = initState, action) => {
         filterEvents = state.events;
       }
 
+      console.log({ payload });
       return {
         ...state,
         searchTerm: payload === '' ? 'all' : payload,
@@ -69,14 +70,17 @@ const reducer = (state = initState, action) => {
 
     case PAGINATION:
       let { currentPage, perPage, events, filteredEvents, currentItems, totalItems } = state;
-
+      let modifiedFilteredEvents = filteredEvents.filter(
+        (event) => event.status !== 'completed' && event.status !== 'ended'
+      );
       const lastItem = currentPage * perPage;
       const firstItem = lastItem - perPage;
       currentItems =
         filteredEvents === null
           ? events.slice(firstItem, lastItem)
-          : filteredEvents.slice(firstItem, lastItem);
-      totalItems = filteredEvents === null ? events.length : filteredEvents.length;
+          : modifiedFilteredEvents.slice(firstItem, lastItem);
+
+      totalItems = modifiedFilteredEvents === null ? events.length : modifiedFilteredEvents.length;
       return { ...state, currentItems, totalItems, currentPage: payload };
     default:
       return state;
