@@ -63,7 +63,7 @@ const Routes = () => {
       <Route exact path='/talent-community' component={TalentCommunity} />
       <Route exact path='/start-here' component={StartHere} />
       <Route exact path='/for-media' component={Media} />
-      {/* <Route exact path='/spark-academy' component={SparkAcademy} /> */}
+      <Route exact path='/spark-academy' component={SparkAcademy} />
       <Route exact path='/search'>
         <Search />
       </Route>

@@ -1,14 +1,17 @@
 import React from 'react';
 
 // Hero Image
-import saHero from '../../../assets/photos/saHero.jpg';
+import saHero from '../../../assets/photos/sparkAcademy/sparkAcademy.png';
+import googleLogo from '../../../assets/logo/sparkAcademyPartners/google.png';
+import cityOfHelsinkiLogo from '../../../assets/logo/sparkAcademyPartners/cityOfHelsinki.png';
+
+// Children
+import FirstSection from './FirstSection';
+import SecondSection from './SecondSection';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
-
-// Children
-import Title from '../../custom/Title';
 
 // META TAG
 import MetaTag from '../../utils/MetaTag';
@@ -34,29 +37,25 @@ const SparkAcademy = () => {
         screenshot=''
       />
       {window.innerWidth < 960 ? (
-        <img
-          src={saHero}
-          width='100%'
-          height='auto'
-          alt='about-page'
-          style={{ filter: 'brightness(40%)' }}
-        />
+        <img src={saHero} width='100%' height='auto' alt='sparkAcademy-page' />
       ) : (
         <div className={classes.hero} />
       )}
-      <Typography variant='h1' className={classes.title}>
-        Spark Academy
-      </Typography>
-      <section className={classes.intro}>
-        <Title>The Shortcut Spark Academy</Title>
-        <Typography variant='body1' className={classes.text}>
-          The Shortcut is the place for meaningful professional integration and career
-          transformation in Finland. We are an impact-driven non-profit organization that bridges
-          the gap between job seekers and companies in Finland by providing in-demand training and
-          fostering a growth mindset in the community where educated individuals can upskill and
-          build a meaningful career.
-        </Typography>
-      </section>
+      <div className={classes.title}>
+        <Typography variant='h1' style={{fontFamily:'Noto Serif Display'}}>Spark Academy</Typography>
+        <Typography variant='h3' style={{fontFamily:'Noto Serif Display'}}>Every Fire starts with a Spark</Typography>
+        <div className={classes.logos}>
+          <img
+            src={cityOfHelsinkiLogo}
+            alt='partner-logo-cityOfHelsinki'
+            width='100px'
+            height='auto'
+          />
+          <img src={googleLogo} alt='partner-logo-Google' width='100px' height='auto' />
+        </div>
+      </div>
+      <FirstSection />
+      <SecondSection />
     </div>
   );
 };
@@ -65,47 +64,57 @@ export default SparkAcademy;
 
 const useStyles = makeStyles((theme) => ({
   hero: {
+    position: 'relative',
     minWidth: '100%',
     maxWidth: '100%',
     minHeight: '100vh',
     maxHeight: '100vh',
-    background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${saHero}) center/cover fixed no-repeat`,
+    background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),url(${saHero}) center/cover fixed no-repeat`,
     zIndex: -1,
   },
   title: {
-    minWidth: '100%',
-    maxWidth: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     position: 'absolute',
     textAlign: 'center',
     color: '#FFFFFF',
-    marginTop: '-3.3em',
+    top: '22.5em',
+    left: '10.5em',
     zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-      marginTop: '-2.4em',
+      top: '18%',
+      left: '10%',
+    },
+    /*     [theme.breakpoints.down('xs')]: {
+      border: '1px solid blue',
+    }, */
+  },
+  applyBtn: {
+    minWidth: '15em',
+    maxWidth: '15em',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    textTransform: 'none',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8rem',
+      marginTop: 0,
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: '-1.5em',
+      minWidth: '90%',
+      marginTop: 12,
+    },
+    color: '#fff',
+    backgroundColor: '#497C7A',
+  },
+  text: {
+    paddingLeft: '60px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '1px',
     },
   },
-  intro: {
-    minWidth: '80%',
-    maxWidth: '80%',
-    margin: '1em auto',
-    [theme.breakpoints.down('sm')]: {
-      minWidth: '90%',
-      maxWidth: '90%',
-    },
-    [theme.breakpoints.down('xs')]: {
-      margin: '1em auto',
-    },
-    textAlign: 'center',
+  logos: {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginTop: 20
   },
   button: {
     display: 'inline',
@@ -126,18 +135,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '7em auto',
     [theme.breakpoints.down('sm')]: {
       margin: '2em auto',
-    },
-  },
-  section: {
-    minWidth: '70%',
-    maxWidth: '70%',
-    margin: '3em auto',
-    [theme.breakpoints.down('sm')]: {
-      minWidth: '80%',
-      maxWidth: '80%',
-    },
-    [theme.breakpoints.down('xs')]: {
-      margin: '1em auto',
     },
   },
   lastSection: {

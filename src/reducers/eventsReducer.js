@@ -70,6 +70,7 @@ const reducer = (state = initState, action) => {
 
     case PAGINATION:
       let { currentPage, perPage, events, filteredEvents, currentItems, totalItems } = state;
+      console.log(filteredEvents)
       let modifiedFilteredEvents = filteredEvents.filter(
         (event) => event.status !== 'completed' && event.status !== 'ended'
       );

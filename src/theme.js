@@ -63,6 +63,12 @@ const theme = createMuiTheme({
     background: {
       default: '#000000',
     },
+    sparkAcademyPrimary: {
+      main: '#497C7A',
+    },
+    sparkAcademySecondary: {
+      main: '#992C30',
+    },
   },
   typography: {
     // Use the system font instead of the default Roboto font.
