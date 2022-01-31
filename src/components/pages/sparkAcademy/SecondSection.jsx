@@ -23,6 +23,7 @@ const SecondSection = () => {
             need to start your own business or work with innovative products and services as a team
             member.
             <br />
+            <br />
             We invite anyone who identifies as a woman or non-binary person to join this journey
             towards igniting your spark.
           </Typography>
@@ -70,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'strech',
+    alignItems: 'center',
     textAlign: 'left',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
@@ -86,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFFCFA',
     [theme.breakpoints.down('xs')]: {
       marginTop: 20,
+      fontSize: '1.5rem',
     },
   },
   text: {

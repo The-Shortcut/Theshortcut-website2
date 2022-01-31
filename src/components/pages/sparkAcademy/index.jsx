@@ -2,8 +2,8 @@ import React from 'react';
 
 // Hero Image
 import saHero from '../../../assets/photos/sparkAcademy/sparkAcademy.png';
-import saHeroM from '../../../assets/photos/sparkAcademy/sparkAcademyM.png';
-import googleLogo from '../../../assets/logo/sparkAcademyPartners/google.png';
+import saHeroM from '../../../assets/photos/sparkAcademy/sparkAcademyMobile.png';
+import googleLogo from '../../../assets/logo/sparkAcademyPartners/growWithGoogleWhite.png';
 import cityOfHelsinkiLogo from '../../../assets/logo/sparkAcademyPartners/cityOfHelsinki.png';
 
 // Children
@@ -32,18 +32,19 @@ TagManager.dataLayer({
     path: '/spark-academy',
   },
 });
+
 const SparkAcademy = () => {
   const classes = useStyles();
   return (
     <div>
       <MetaTag
-        title='spark-academy | The Shortcut'
+        title='Spark Academy | The Shortcut'
         description='
         The Shortcut is the place for meaningful professional integration and career transformation in Finland. We are an impact-driven non-profit organization that bridges the gap between job seekers and companies in Finland by providing in-demand training and fostering a growth mindset in the community where educated individuals can upskill and build a meaningful career.'
         screenshot=''
       />
       {window.innerWidth < 960 ? (
-        <img src={saHeroM} width='100%' height='400px' alt='sparkAcademy-page' />
+        <img src={saHeroM} width='100%' height='200px' alt='sparkAcademy-page' />
       ) : (
         <div className={classes.hero} />
       )}
@@ -51,17 +52,17 @@ const SparkAcademy = () => {
         <Typography variant='h1' style={{ fontFamily: 'Noto Serif Display' }}>
           Spark Academy
         </Typography>
-        <Typography variant='h3' style={{ fontFamily: 'Noto Serif Display' }}>
+        <Typography variant='h3' className={classes.tagLine}>
           Every Fire starts with a Spark
         </Typography>
         <div className={classes.logos}>
-          <img src={googleLogo} alt='partner-logo-Google' width='100px' height='auto' />
           <img
             src={cityOfHelsinkiLogo}
             alt='partner-logo-cityOfHelsinki'
             width='100px'
             height='auto'
           />
+          <img src={googleLogo} alt='partner-logo-Google' width='200px' height='auto' />
         </div>
       </div>
       <FirstSection />
@@ -100,7 +101,14 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '',
     },
     [theme.breakpoints.down('xs')]: {
+      top: '8.5%',
       textAlign: 'left',
+    },
+  },
+  tagLine: {
+    fontFamily: 'Noto Serif Display',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
     },
   },
   applyBtn: {
@@ -127,10 +135,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logos: {
+    maxWidth: '90%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    marginTop: 20,
+    margin: '2em auto 0',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
   },
   button: {
     display: 'inline',

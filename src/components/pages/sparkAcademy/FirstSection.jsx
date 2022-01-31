@@ -79,8 +79,13 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontFamily: 'Noto Serif Display',
+    paddingLeft: '60px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '1px',
+    },
     [theme.breakpoints.down('xs')]: {
       marginTop: 20,
+      fontSize:'1.5rem'
     },
   },
   applyBtn: {

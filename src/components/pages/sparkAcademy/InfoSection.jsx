@@ -41,7 +41,7 @@ const InfoSection = () => {
       <Grid container spacing={6} className={classes.container}>
         {infoData.map((item, index) => (
           <Grid item xs={12} sm={5} className={classes.item} key={index}>
-            <Typography variant='h4' style={{ fontFamily: 'Noto Serif Display' }}>
+            <Typography variant='h4' style={{ fontFamily: 'Noto Serif Display',  fontSize: '1.2rem', }}>
               {item.title}
             </Typography>
             <br />

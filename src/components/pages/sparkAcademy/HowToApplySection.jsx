@@ -14,7 +14,7 @@ const HowToApplySection = () => {
       <div className={classes.container}>
         <img
           src={howToApplySection}
-          width='280px'
+          width='350px'
           height='auto'
           className={classes.image}
           alt='its-time-to-ignite-your-fire'
@@ -71,20 +71,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'strech',
+    alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
       maxWidth: '90%',
     },
     [theme.breakpoints.down('xs')]: {
-        minWidth: '100%',
-      },
+      minWidth: '100%',
+    },
   },
   title: {
     fontFamily: 'Noto Serif Display',
+    paddingLeft: '60px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '1px',
+    },
     [theme.breakpoints.down('xs')]: {
-      marginTop: 20,
+        marginTop: 20,
+        fontSize: '1.5rem',
     },
   },
   applyBtn: {

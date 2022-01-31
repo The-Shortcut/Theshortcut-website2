@@ -1,7 +1,7 @@
 import React from 'react';
 
 // logos
-import googleLogo from '../../../assets/logo/sparkAcademyPartners/google.png';
+import googleLogo from '../../../assets/logo/sparkAcademyPartners/growWithGoogle.png';
 import cityOfHelsinkiLogo from '../../../assets/logo/sparkAcademyPartners/cityOfHelsinkiBlack.png';
 import espooLogo from '../../../assets/logo/sparkAcademyPartners/espooLogo.png';
 
@@ -28,12 +28,12 @@ const Partners = () => {
           <img
             src={googleLogo}
             alt='Google Logo'
-            width='220vw'
+            width='350vw'
             height='auto'
             className={classes.log}
           />
         </div>
-        <Typography variant='h3' style={{ fontFamily: 'Noto Serif Display', textAlign: 'left' }}>
+        <Typography variant='h3' style={{ fontFamily: 'Noto Serif Display', textAlign: 'left', marginTop: 60 }}>
           Ecosystem Partners:{' '}
         </Typography>
         <img
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     margin: 'auto',
-    maxWidth: '70%',
+    maxWidth: '75%',
   },
   logos: {
     margin: '3em auto',
@@ -66,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    [theme.breakpoints.down('xs')]: {
+      minHeight: '260px',
+    },
   },
   logo: {
     maxWidth: '250px',
