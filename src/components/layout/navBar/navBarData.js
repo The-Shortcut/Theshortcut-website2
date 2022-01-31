@@ -72,6 +72,11 @@ export const navBarData = [
     ], */
   },
   {
+    title: 'SPARK ACADEMY',
+    path: '/spark-academy',
+    icon: null,
+  },
+  {
     title: 'FOR PARTNERS',
     path: '/partners',
     icon: null,
@@ -81,11 +86,7 @@ export const navBarData = [
     path: '/community',
     icon: null,
   },
-  {
-    title: 'SPARK ACADEMY',
-    path: '/spark-academy',
-    icon: null,
-  },
+
   {
     title: 'JOIN OUR TALENT POOL',
     path: '/talent-community',
