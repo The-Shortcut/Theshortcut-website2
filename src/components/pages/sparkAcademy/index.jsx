@@ -2,16 +2,22 @@ import React from 'react';
 
 // Hero Image
 import saHero from '../../../assets/photos/sparkAcademy/sparkAcademy.png';
+import saHeroM from '../../../assets/photos/sparkAcademy/sparkAcademyM.png';
 import googleLogo from '../../../assets/logo/sparkAcademyPartners/google.png';
 import cityOfHelsinkiLogo from '../../../assets/logo/sparkAcademyPartners/cityOfHelsinki.png';
 
 // Children
 import FirstSection from './FirstSection';
 import SecondSection from './SecondSection';
+import ModulesSection from './ModulesSection';
+import HowToApplySection from './HowToApplySection';
+import InfoSection from './InfoSection';
+import Partners from './Partners';
+import LastSection from './LastSection';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 // META TAG
 import MetaTag from '../../utils/MetaTag';
@@ -37,25 +43,34 @@ const SparkAcademy = () => {
         screenshot=''
       />
       {window.innerWidth < 960 ? (
-        <img src={saHero} width='100%' height='auto' alt='sparkAcademy-page' />
+        <img src={saHeroM} width='100%' height='400px' alt='sparkAcademy-page' />
       ) : (
         <div className={classes.hero} />
       )}
       <div className={classes.title}>
-        <Typography variant='h1' style={{fontFamily:'Noto Serif Display'}}>Spark Academy</Typography>
-        <Typography variant='h3' style={{fontFamily:'Noto Serif Display'}}>Every Fire starts with a Spark</Typography>
+        <Typography variant='h1' style={{ fontFamily: 'Noto Serif Display' }}>
+          Spark Academy
+        </Typography>
+        <Typography variant='h3' style={{ fontFamily: 'Noto Serif Display' }}>
+          Every Fire starts with a Spark
+        </Typography>
         <div className={classes.logos}>
+          <img src={googleLogo} alt='partner-logo-Google' width='100px' height='auto' />
           <img
             src={cityOfHelsinkiLogo}
             alt='partner-logo-cityOfHelsinki'
             width='100px'
             height='auto'
           />
-          <img src={googleLogo} alt='partner-logo-Google' width='100px' height='auto' />
         </div>
       </div>
       <FirstSection />
       <SecondSection />
+      {/* <ModulesSection /> */}
+      <HowToApplySection />
+      <InfoSection />
+      <Partners />
+      <LastSection />
     </div>
   );
 };
@@ -80,12 +95,13 @@ const useStyles = makeStyles((theme) => ({
     left: '10.5em',
     zIndex: 10,
     [theme.breakpoints.down('sm')]: {
-      top: '18%',
-      left: '10%',
+      top: '16%',
+      left: '2em',
+      maxWidth: '',
     },
-    /*     [theme.breakpoints.down('xs')]: {
-      border: '1px solid blue',
-    }, */
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'left',
+    },
   },
   applyBtn: {
     minWidth: '15em',
@@ -114,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    marginTop: 20
+    marginTop: 20,
   },
   button: {
     display: 'inline',

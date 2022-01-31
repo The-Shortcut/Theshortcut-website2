@@ -1,19 +1,19 @@
 import React from 'react';
 
 // Image
-import firstSection from '../../../assets/photos/sparkAcademy/itsTimeToIgniteYourFire.jpg';
+import howToApplySection from '../../../assets/photos/sparkAcademy/howToApply.jpg';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
-const FirstSection = () => {
+const HowToApplySection = () => {
   const classes = useStyles();
   return (
     <section className={classes.section}>
       <div className={classes.container}>
         <img
-          src={firstSection}
+          src={howToApplySection}
           width='280px'
           height='auto'
           className={classes.image}
@@ -21,23 +21,27 @@ const FirstSection = () => {
         />
         <div>
           <Typography variant='h3' className={classes.title}>
-            It's time to ignite your fire!
+            How to Apply
           </Typography>
           <br />
           <Typography variant='body1' className={classes.text}>
-            Welcome to our program to fight gender imbalance in the startup ecosystem.
+            You can apply to take part in either the full eight-month program or to an individual
+            study module.
             <br />
             <br />
-            Our Spark Academy is pulling back the curtains of the startup ecosystem to get more
-            diversity into the Finnish world of entrepreneurship and innovation.
+            <span style={{ fontWeight: 'bolder' }}>
+              Applications will open on Thursday, 3rd of February 2022.
+            </span>
             <br />
             <br />
-            In our meaningful, practical and intentional program you can learn the most important
-            skills for entrepreneurship, marketing and full-stack development.
+            You can apply to one or all of the academic modules. Running in parallel to the academic
+            modules applicants will also be provided career coaching, emotional resilience training,
+            inspirational keynotes, entrepreneurship mentoring and career clinic sessions, and
+            networking.
             <br />
-            <br />
-            We want to teach the critical skill sets to build a solid pipeline of future female and
-            non-binary founders and team members.
+            After submitting your application, we will do a phone interview to learn more about you.
+            If you qualify, we help you identify which courses make sense for your needs and help
+            you find a schedule that fits you.
           </Typography>
           {/* <Button
         href='#'
@@ -54,7 +58,7 @@ const FirstSection = () => {
   );
 };
 
-export default FirstSection;
+export default HowToApplySection;
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -71,11 +75,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
-      minWidth: '90%',
+      maxWidth: '90%',
     },
     [theme.breakpoints.down('xs')]: {
-      minWidth: '100%',
-    },
+        minWidth: '100%',
+      },
   },
   title: {
     fontFamily: 'Noto Serif Display',

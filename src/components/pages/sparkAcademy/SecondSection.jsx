@@ -13,7 +13,7 @@ const SecondSection = () => {
     <section className={classes.section}>
       <div className={classes.container}>
         <div>
-          <Typography variant='h3' style={{ color: '#fffcfa', fontFamily: 'Noto Serif Display' }}>
+          <Typography variant='h3' className={classes.title}>
             Who Is It For
           </Typography>
           <br />
@@ -27,7 +27,7 @@ const SecondSection = () => {
             towards igniting your spark.
           </Typography>
           <div style={{ textAlign: 'center', color: '#FFFCFA', margin: 30 }}>
-            <Typography variant='h4' style={{fontFamily: 'Raleway'}}>
+            <Typography variant='h4' style={{ fontFamily: 'Raleway' }}>
               “The Finnish startup ecosystem is known worldwide for innovation and bravery. We have
               a responsibility to ensure our ecosystem reflects the world in which we live, holding
               our brand high, and innovations higher.”
@@ -73,9 +73,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'strech',
     textAlign: 'left',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
+      flexDirection: 'column-reverse',
       alignItems: 'center',
       maxWidth: '90%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '100%',
+    },
+  },
+  title: {
+    fontFamily: 'Noto Serif Display',
+    color: '#FFFCFA',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 20,
     },
   },
   text: {
