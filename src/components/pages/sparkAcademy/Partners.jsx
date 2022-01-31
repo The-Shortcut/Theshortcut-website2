@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     margin: 'auto',
-    maxWidth: '80%',
+    maxWidth: '70%',
   },
   logos: {
     margin: '3em auto',

@@ -35,7 +35,7 @@ export const navBarData = [
   },
   {
     title: 'FOR MEDIA',
-    path: '/for-media'
+    path: '/for-media',
   },
   {
     title: 'EVENTS',
@@ -76,13 +76,17 @@ export const navBarData = [
     path: '/partners',
     icon: null,
   },
-
   {
     title: 'COMMUNITY',
     path: '/community',
     icon: null,
   },
-   {
+  {
+    title: 'SPARK ACADEMY',
+    path: '/spark-academy',
+    icon: null,
+  },
+  {
     title: 'JOIN OUR TALENT POOL',
     path: '/talent-community',
     icon: null,
@@ -92,6 +96,7 @@ export const navBarData = [
     path: '/our-impact',
     icon: null,
   },
+
   {
     title: 'BLOG',
     path: '/blog',
