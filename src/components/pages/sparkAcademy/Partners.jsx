@@ -59,11 +59,6 @@ const ecoSystemLogos = [
     name: 'Yksityisyrittäjäin Säätiö logo',
     width: '220vw',
   },
-  {
-    logo: tekLogo,
-    name: 'tekniikan akateemiset logo',
-    width: '220vw',
-  },
 ];
 
 const Partners = () => {

@@ -6,7 +6,7 @@ import { Grid, Typography } from '@material-ui/core';
 
 const infoData = [
   {
-    title: 'A Like-minded Community',
+    title: 'A Like-Minded Community',
     description:
       'The Academy is meant to be an open space to build a community of like-minded people to find meaningful connections and get inspired by each other. You will get to grow together with aspiring entrepreneurs and share your struggles and successes along the way. ',
   },
@@ -30,7 +30,7 @@ const infoData = [
   {
     title: 'Supported by the Ecosystem',
     description:
-      'Our Academy is deeply embedded in the startup ecosystem in Helsinki. Our project partners include the City of Helsinki, Google, NewCo Helsinki, the City of Espoo and many more (see below). With this support we ensure that our Academy attendees are set up for success. ',
+      ' Our Academy is deeply embedded in the startup ecosystem in Helsinki. Our partners include the City of Helsinki, Google, NewCo Helsinki, the City of Espoo and many more (see below). With this support we ensure that our Academy attendees are set up for success.',
   },
 ];
 
@@ -41,7 +41,9 @@ const InfoSection = () => {
       <Grid container spacing={6} className={classes.container}>
         {infoData.map((item, index) => (
           <Grid item xs={12} sm={5} className={classes.item} key={index}>
-            <Typography variant='h4' style={{ fontFamily: 'Noto Serif Display',  fontSize: '1.2rem', }}>
+            <Typography
+              variant='h4'
+              style={{ fontFamily: 'Noto Serif Display', fontSize: '1.2rem' }}>
               {item.title}
             </Typography>
             <br />
@@ -69,10 +71,10 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     margin: 'auto',
-      maxWidth: '80%',
-      [theme.breakpoints.down('xs')]: {
-        minWidth: '100%'
-    }
+    maxWidth: '80%',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '100%',
+    },
   },
   item: {
     color: '#000',
