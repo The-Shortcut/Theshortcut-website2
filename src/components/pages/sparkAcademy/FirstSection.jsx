@@ -14,7 +14,7 @@ const FirstSection = () => {
       <div className={classes.container}>
         <img
           src={firstSection}
-          width='280px'
+          width='350px'
           height='auto'
           className={classes.image}
           alt='its-time-to-ignite-your-fire'

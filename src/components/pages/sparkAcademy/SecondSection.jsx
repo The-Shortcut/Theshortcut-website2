@@ -49,7 +49,7 @@ const SecondSection = () => {
         </div>
         <img
           src={secondSection}
-          width='280px'
+          width='350px'
           height='auto'
           className={classes.image}
           alt='its-time-to-ignite-your-fire'

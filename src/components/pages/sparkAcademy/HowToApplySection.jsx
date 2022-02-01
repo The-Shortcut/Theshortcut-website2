@@ -16,8 +16,7 @@ const HowToApplySection = () => {
           src={howToApplySection}
           width='350px'
           height='auto'
-          className={classes.image}
-          alt='its-time-to-ignite-your-fire'
+          alt='How to apply section'
         />
         <div>
           <Typography variant='h3' className={classes.title}>

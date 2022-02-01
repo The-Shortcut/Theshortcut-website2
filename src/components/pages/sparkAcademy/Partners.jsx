@@ -117,8 +117,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: '220px',
-    height: '220px',
+    minWidth: '220px',
+    maxWidth: '220px',
+    minHeight: '220px',
+    maxHeight: '220px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
