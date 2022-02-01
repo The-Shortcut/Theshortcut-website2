@@ -85,6 +85,27 @@ const OurMedia = () => {
             Zip File with Logos
           </Button>
         </Typography>
+        <br />
+        <br />
+        <Typography variant='h4'>Press Release:</Typography>
+        <ul style={{ listStyleType: 'none' }}>
+          <li>
+            <Button
+              component='button'
+              target='_blank'
+              href='https://theshortcut.org/wp-content/uploads/2022/02/Press-Release_The-Shortcut-Spark-Academy_English.pdf'>
+              The Shortcut Spark Academy English
+            </Button>
+          </li>
+          <li>
+            <Button
+              component='button'
+              target='_blank'
+              href='https://theshortcut.org/wp-content/uploads/2022/02/Press-Release_The-Shortcut-Spark-Academy_Finnish.pdf'>
+              The Shortcut Spark Academy Finnish
+            </Button>
+          </li>
+        </ul>
       </section>
       <section className={classes.lastSection}>
         <Typography variant='h3' style={{ textAlign: 'center' }}>
