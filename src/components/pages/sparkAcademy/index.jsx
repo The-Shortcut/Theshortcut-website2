@@ -5,6 +5,7 @@ import saHero from '../../../assets/photos/sparkAcademy/sparkAcademy.png';
 import saHeroM from '../../../assets/photos/sparkAcademy/sparkAcademyMobile.png';
 import googleLogo from '../../../assets/logo/sparkAcademyPartners/growWithGoogleWhite.png';
 import cityOfHelsinkiLogo from '../../../assets/logo/sparkAcademyPartners/cityOfHelsinki.png';
+import yysLogo from '../../../assets/logo/sparkAcademyPartners/YYS_logoValkoinen.png';
 
 // Children
 import FirstSection from './FirstSection';
@@ -17,7 +18,7 @@ import LastSection from './LastSection';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 // META TAG
 import MetaTag from '../../utils/MetaTag';
@@ -32,6 +33,24 @@ TagManager.dataLayer({
     path: '/spark-academy',
   },
 });
+
+const featuredLogos = [
+  {
+    logo: cityOfHelsinkiLogo,
+    name: 'city Of Helsinki Logo',
+    width: '100vw',
+  },
+  {
+    logo: yysLogo,
+    name: 'Yksityisyrittäjäin Säätiö logo',
+    width: '140vw',
+  },
+  {
+    logo: googleLogo,
+    name: 'grow with google Logo',
+    width: '160vw',
+  },
+];
 
 const SparkAcademy = () => {
   const classes = useStyles();
@@ -55,15 +74,13 @@ const SparkAcademy = () => {
         <Typography variant='h3' className={classes.tagLine}>
           Every Fire starts with a Spark
         </Typography>
-        <div className={classes.logos}>
-          <img
-            src={cityOfHelsinkiLogo}
-            alt='partner-logo-cityOfHelsinki'
-            width='100px'
-            height='auto'
-          />
-          <img src={googleLogo} alt='partner-logo-Google' width='200px' height='auto' />
-        </div>
+        <Grid container spacing={1} className={classes.logos}>
+          {featuredLogos.map((logo, index) => (
+            <Grid item xs={8} sm={6} md className={classes.logo}>
+              <img key={index} src={logo.logo} alt={logo.name} width={logo.width} height='auto' />
+            </Grid>
+          ))}
+        </Grid>
       </div>
       <FirstSection />
       <SecondSection />
@@ -107,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tagLine: {
     fontFamily: 'Noto Serif Display',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
@@ -135,14 +152,24 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logos: {
-    maxWidth: '90%',
+    margin: '2em auto 7em',
+    maxWidth: '80%',
     display: 'flex',
+    flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    margin: '2em auto 0',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
+  },
+  logo: {
+    minWidth: '120px',
+    maxWidth: '120px',
+    minHeight: '120px',
+    maxHeight: '120px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   button: {
     display: 'inline',

@@ -8,8 +8,7 @@ import mimmitKooda from '../../../assets/logo/sparkAcademyPartners/mimmitKoodaa.
 import iwwofLogo from '../../../assets/logo/sparkAcademyPartners/iwwofLogo.png';
 import startupFoundation from '../../../assets/logo/sparkAcademyPartners/startupFoundation.png';
 import techNordicAdvocates from '../../../assets/logo/sparkAcademyPartners/techNordicAdvocates.png';
-import yysLogo from '../../../assets/logo/sparkAcademyPartners/yysLogo.png';
-import tekLogo from '../../../assets/logo/sparkAcademyPartners/tekLogo.png';
+import yysLogo from '../../../assets/logo/sparkAcademyPartners/YYS_logoTransparent.png';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,12 +18,17 @@ const projectLogos = [
   {
     logo: cityOfHelsinkiLogo,
     name: 'city Of Helsinki Logo',
+    width: '200vw',
+  },
+  {
+    logo: yysLogo,
+    name: 'Yksityisyrittäjäin Säätiö logo',
     width: '220vw',
   },
   {
     logo: googleLogo,
     name: 'grow with google Logo',
-    width: '350vw',
+    width: '220vw',
   },
 ];
 
@@ -54,11 +58,6 @@ const ecoSystemLogos = [
     name: 'tech nordic advocates logo',
     width: '160vw',
   },
-  {
-    logo: yysLogo,
-    name: 'Yksityisyrittäjäin Säätiö logo',
-    width: '220vw',
-  },
 ];
 
 const Partners = () => {
@@ -69,11 +68,13 @@ const Partners = () => {
         <Typography variant='h3' className={classes.title}>
           Project Partners:
         </Typography>
-        <div className={classes.logos}>
+        <Grid container spacing={1} className={classes.logos}>
           {projectLogos.map((logo, index) => (
-            <img key={index} src={logo.logo} alt={logo.name} width={logo.width} height='auto' />
+            <Grid item xs={8} sm={6} md className={classes.logo}>
+              <img key={index} src={logo.logo} alt={logo.name} width={logo.width} height='auto' />
+            </Grid>
           ))}
-        </div>
+        </Grid>
         <Typography variant='h3' className={classes.title}>
           Ecosystem Partners:
         </Typography>
