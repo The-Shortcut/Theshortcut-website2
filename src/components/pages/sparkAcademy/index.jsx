@@ -38,7 +38,7 @@ const featuredLogos = [
   {
     logo: cityOfHelsinkiLogo,
     name: 'city Of Helsinki Logo',
-    width: '100vw',
+    width: '80vw',
   },
   {
     logo: yysLogo,

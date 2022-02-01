@@ -12,12 +12,7 @@ const HowToApplySection = () => {
   return (
     <section className={classes.section}>
       <div className={classes.container}>
-        <img
-          src={howToApplySection}
-          width='350px'
-          height='auto'
-          alt='How to apply section'
-        />
+        <img src={howToApplySection} width='350px' height='auto' alt='How to apply section' />
         <div>
           <Typography variant='h3' className={classes.title}>
             How to Apply
@@ -25,7 +20,8 @@ const HowToApplySection = () => {
           <br />
           <Typography variant='body1' className={classes.text}>
             You can apply to take part in either the full eight-month program or to an individual
-            study module.
+            study module. Like all programs at The Shortcut, the Spark Academy is free for all
+            participants.
             <br />
             <br />
             <span style={{ fontWeight: 'bolder' }}>
@@ -87,8 +83,8 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '1px',
     },
     [theme.breakpoints.down('xs')]: {
-        marginTop: 20,
-        fontSize: '1.5rem',
+      marginTop: 20,
+      fontSize: '1.5rem',
     },
   },
   applyBtn: {

@@ -60,12 +60,21 @@ const OurMedia = () => {
       </section>
       <section className={classes.section}>
         <Typography variant='h4'>
-          MediaKit:{' '}
+          Media Kit English:{' '}
           <Button
             component='button'
             target='_blank'
             href='https://theshortcut.org/wp-content/uploads/2021/12/Media-Kit_The-Shortcut.pdf'>
-            Media Kit download
+            Media Kit English download
+          </Button>
+        </Typography>
+        <Typography variant='h4'>
+          Media Kit Finnish:
+          <Button
+            component='button'
+            target='_blank'
+            href='https://theshortcut.org/wp-content/uploads/2022/02/Media-Kit-Finnish.pdf'>
+            Media Kit Finnish download
           </Button>
         </Typography>
         <Typography variant='h4'>

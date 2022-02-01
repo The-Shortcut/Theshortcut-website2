@@ -18,7 +18,7 @@ const projectLogos = [
   {
     logo: cityOfHelsinkiLogo,
     name: 'city Of Helsinki Logo',
-    width: '200vw',
+    width: '140vw',
   },
   {
     logo: yysLogo,
