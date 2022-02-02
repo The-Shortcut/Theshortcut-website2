@@ -65,7 +65,7 @@ const InfoSection = () => {
       <br />
       <br />
       <Button
-        href='#'
+        href='https://theshortcut1.typeform.com/to/HaY1NdEJ'
         target='_blank'
         rel='noopener noreferrer'
         variant='contained'

@@ -41,7 +41,7 @@ const HowToApplySection = () => {
           <br />
           <br />
           <Button
-            href='#'
+            href='https://theshortcut1.typeform.com/to/HaY1NdEJ'
             target='_blank'
             rel='noopener noreferrer'
             variant='contained'
@@ -108,6 +108,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '60px',
     [theme.breakpoints.down('sm')]: {
       marginLeft: '1px',
+    },
+    '&:hover': {
+      backgroundColor: '#60aba8',
     },
   },
 }));
