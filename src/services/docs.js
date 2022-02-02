@@ -23,13 +23,23 @@ const getTermsData = async () => {
 };
 
 const getServicesFAQData = async () => {
-  const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/services_faq/?per_page=100');
+  const response = await axios.get(
+    'https://theshortcut.org/wp-json/wp/v2/services_faq/?per_page=100'
+  );
   return response.data;
 };
 
 const getByobFAQData = async () => {
   const response = await axios.get('https://theshortcut.org/wp-json/wp/v2/byob_faq/?per_page=100');
-  console.log('response.data')
+  console.log('response.data');
+  return response.data;
+};
+
+const getSparkAcademyFAQData = async () => {
+  const response = await axios.get(
+    'https://theshortcut.org/wp-json/wp/v2/spark_academy_faq/?per_page=100'
+  );
+  console.log(response);
   return response.data;
 };
 
@@ -41,4 +51,5 @@ export default {
   getTermsData,
   getServicesFAQData,
   getByobFAQData,
+  getSparkAcademyFAQData,
 };

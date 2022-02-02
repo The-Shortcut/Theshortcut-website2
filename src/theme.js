@@ -49,7 +49,11 @@ const theme = createMuiTheme({
       main: '#00A99D',
     },
     secondary: {
+      light: '#FDEFE4',
       main: '#434343',
+    },
+    accent: {
+      main: '#FDEFE4',
     },
     error: {
       main: '#dc3545',
@@ -62,12 +66,6 @@ const theme = createMuiTheme({
     },
     background: {
       default: '#000000',
-    },
-    sparkAcademyPrimary: {
-      main: '#497C7A',
-    },
-    sparkAcademySecondary: {
-      main: '#992C30',
     },
   },
   typography: {

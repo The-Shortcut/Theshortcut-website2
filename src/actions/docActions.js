@@ -4,7 +4,8 @@ import {
   INIT_CODE_OF_CONDUCT,
   INIT_TERMS,
   SERVICES_FAQ_DATA,
-  BYOB_FAQ_DATA
+  BYOB_FAQ_DATA,
+  SPARK_ACADEMY_FAQ,
 } from './types';
 
 import docServices from '../services/docs';
@@ -57,3 +58,11 @@ export const getByobFAQ = () => async (dispatch) => {
   });
 };
 
+export const getSparkAcademyFAQ = () => async (dispatch) => {
+  console.log('sparkAcademy_faq');
+  const sparkAcademy_faq = await docServices.getSparkAcademyFAQData();
+  dispatch({
+    type: SPARK_ACADEMY_FAQ,
+    payload: sparkAcademy_faq,
+  });
+};

@@ -1,42 +1,36 @@
 import React from 'react';
 
 // Image
-import secondSection from '../../../assets/photos/sparkAcademy/whoIsItFor.jpg';
+import secondSection from '../../../assets/photos/sparkAcademy/whatIsSparkAcademy.jpg';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 
-const SecondSection = () => {
+const WhatIsSA = () => {
   const classes = useStyles();
   return (
     <section className={classes.section}>
       <div className={classes.container}>
         <div>
           <Typography variant='h3' className={classes.title}>
-            Who Is It For
+            What is the Spark Academy?
           </Typography>
           <br />
           <Typography variant='body1' className={classes.text}>
-            If you ever felt like there is no entry point for you in a male-dominated startup
-            ecosystem, this is the program for you. We give you the skills, tools and network you
-            need to start your own business or work with innovative products and services as a team
-            member.
+            The Shortcut Spark Academy is a free eight-month program for women and non-binary people
+            who are interested in the world of entrepreneurship and innovation starting in March
+            2022.
             <br />
             <br />
-            We invite anyone who identifies as a woman or non-binary person to join this journey
-            towards igniting your spark.
+            We’ll be teaching the necessary entrepreneurial skills to open up the door to two paths:
+            entrepreneurship and employment in the startup ecosystem.
+            <br />
+            <br />
+            Our participants will get the tools to start their own business but we are aware that
+            entrepreneurship might not be for everyone. The skills we are teaching will also give
+            our attendees a higher chance of getting employed in the innovation and tech industry.
           </Typography>
-          <div style={{ textAlign: 'center', color: '#FFFCFA', margin: 30 }}>
-            <Typography variant='h4' style={{ fontFamily: 'Raleway' }}>
-              “The Finnish startup ecosystem is known worldwide for innovation and bravery. We have
-              a responsibility to ensure our ecosystem reflects the world in which we live, holding
-              our brand high, and innovations higher.”
-            </Typography>
-            <Typography variant='subtitle1' style={{ fontFamily: 'Raleway' }}>
-              - Kristina Sweet, CEO of The Shortcut
-            </Typography>
-          </div>
           {/* <Button
         href='#'
         target='_blank'
@@ -58,8 +52,7 @@ const SecondSection = () => {
     </section>
   );
 };
-
-export default SecondSection;
+export default WhatIsSA;
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -72,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    textAlign: 'left',
+    textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
       alignItems: 'center',
@@ -85,6 +78,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontFamily: 'Noto Serif Display',
     color: '#FFFCFA',
+    paddingRight: '60px',
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: '1px',
+    },
     [theme.breakpoints.down('xs')]: {
       marginTop: 20,
       fontSize: '1.5rem',

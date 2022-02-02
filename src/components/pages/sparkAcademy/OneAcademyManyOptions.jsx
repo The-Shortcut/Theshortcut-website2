@@ -1,42 +1,35 @@
 import React from 'react';
 
 // Image
-import howToApplySection from '../../../assets/photos/sparkAcademy/howToApply.jpg';
+import secondSection from '../../../assets/photos/sparkAcademy/manyOptions.jpg';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button } from '@material-ui/core';
 
-const HowToApplySection = () => {
+const OneAcademyManyOptions = () => {
   const classes = useStyles();
   return (
     <section className={classes.section}>
       <div className={classes.container}>
-        <img src={howToApplySection} width='350px' height='auto' alt='How to apply section' />
         <div>
           <Typography variant='h3' className={classes.title}>
-            How to Apply
+            One Academy - Many Options
           </Typography>
           <br />
           <Typography variant='body1' className={classes.text}>
-            You can apply to take part in either the full eight-month program or to an individual
-            study module. Like all programs at The Shortcut, the Spark Academy is free for all
-            participants.
+            The Shortcut Spark Academy is a free eight-month program for women and non-binary people
+            who are interested in the world of entrepreneurship and innovation starting in March
+            2022.
             <br />
             <br />
-            <span style={{ fontWeight: 'bolder' }}>
-              Applications will open on Thursday, 3rd of February 2022.
-            </span>
+            We’ll be teaching the necessary entrepreneurial skills to open up the door to two paths:
+            entrepreneurship and employment in the startup ecosystem.
             <br />
             <br />
-            You can apply to one or all of the academic modules. Running in parallel to the academic
-            modules applicants will also be provided career coaching, emotional resilience training,
-            inspirational keynotes, entrepreneurship mentoring and career clinic sessions, and
-            networking.
-            <br />
-            After submitting your application, we will do a phone interview to learn more about you.
-            If you qualify, we help you identify which courses make sense for your needs and help
-            you find a schedule that fits you.
+            Our participants will get the tools to start their own business but we are aware that
+            entrepreneurship might not be for everyone. The skills we are teaching will also give
+            our attendees a higher chance of getting employed in the innovation and tech industry.
           </Typography>
           <br />
           <br />
@@ -49,27 +42,33 @@ const HowToApplySection = () => {
             APPLY NOW
           </Button>
         </div>
+        <img
+          src={secondSection}
+          width='350px'
+          height='auto'
+          className={classes.image}
+          alt='its-time-to-ignite-your-fire'
+        />
       </div>
     </section>
   );
 };
-
-export default HowToApplySection;
+export default OneAcademyManyOptions;
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    backgroundColor: '#FDEFE4',
+    backgroundColor: '#497C7A',
     padding: theme.spacing(11, 5),
   },
   container: {
-    margin: 'auto',
     maxWidth: '80%',
-    textAlign: 'center',
+    margin: 'auto',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
+      flexDirection: 'column-reverse',
       alignItems: 'center',
       maxWidth: '90%',
     },
@@ -79,9 +78,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontFamily: 'Noto Serif Display',
-    paddingLeft: '60px',
+    color: '#FFFCFA',
+    paddingRight: '60px',
     [theme.breakpoints.down('sm')]: {
-      paddingLeft: '1px',
+      paddingRight: '1px',
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: 20,
@@ -89,15 +89,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
+    color: '#fffcfa',
     fontFamily: 'Raleway',
-    paddingLeft: '60px',
+    paddingRight: '60px',
     [theme.breakpoints.down('sm')]: {
-      paddingLeft: '1px',
+      paddingRight: '1px',
     },
   },
   applyBtn: {
-    backgroundColor: '#497C7A',
-    color: '#FDEFE4',
+    color: '#497C7A',
+    backgroundColor: '#FDEFE4',
     width: '40%',
     [theme.breakpoints.up('xs')]: {
       width: '60%',
@@ -105,9 +106,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bolder',
     fontSize: '1.2rem',
     padding: 10,
-    marginLeft: '60px',
+    marginRight: '60px',
     [theme.breakpoints.down('sm')]: {
-      marginLeft: '1px',
+      marginRight: '1px',
     },
   },
 }));

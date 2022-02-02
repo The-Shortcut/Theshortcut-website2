@@ -2,7 +2,7 @@ import React from 'react';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, Button } from '@material-ui/core';
 
 const infoData = [
   {
@@ -38,6 +38,10 @@ const InfoSection = () => {
   const classes = useStyles();
   return (
     <section className={classes.section}>
+      <Typography variant='h3' className={classes.title}>
+        Join Us!
+      </Typography>
+      <br />
       <Grid container spacing={6} className={classes.container}>
         {infoData.map((item, index) => (
           <Grid item xs={12} sm={5} className={classes.item} key={index}>
@@ -58,6 +62,16 @@ const InfoSection = () => {
           </Grid>
         ))}
       </Grid>
+      <br />
+      <br />
+      <Button
+        href='#'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant='contained'
+        className={classes.applyBtn}>
+        APPLY NOW
+      </Button>
     </section>
   );
 };
@@ -68,6 +82,16 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: '#497C7A',
     padding: theme.spacing(11, 5),
+    textAlign: 'center',
+  },
+  title: {
+    fontFamily: 'Noto Serif Display',
+    color: '#FFFCFA',
+    textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 20,
+      fontSize: '1.5rem',
+    },
   },
   container: {
     margin: 'auto',
@@ -86,5 +110,21 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-start',
     margin: theme.spacing(1),
     minWidth: '48%',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '100%',
+    },
+  },
+  applyBtn: {
+    color: '#497C7A',
+    backgroundColor: '#FDEFE4',
+    minWidth: '22em',
+    maxWidth: '22em',
+    [theme.breakpoints.down('xs')]: {
+      minWidth: '13em',
+      maxWidth: '13em',
+    },
+    fontWeight: 'bolder',
+    fontSize: '1.2rem',
+    padding: 10,
   },
 }));

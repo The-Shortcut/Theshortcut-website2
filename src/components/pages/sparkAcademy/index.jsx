@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+// Redux
+import { useSelector, useDispatch } from 'react-redux';
+import { getSparkAcademyFAQ } from '../../../actions/docActions';
 
 // Hero Image
 import saHero from '../../../assets/photos/sparkAcademy/sparkAcademy.png';
@@ -9,12 +13,16 @@ import yysLogo from '../../../assets/logo/sparkAcademyPartners/YYS_logoValkoinen
 
 // Children
 import FirstSection from './FirstSection';
-import SecondSection from './SecondSection';
-import ModulesSection from './ModulesSection';
+import WhatIsSA from './WhatIsSA';
+import SecondSection from './WhoIsItFor';
+import OneAcademyManyOptions from './OneAcademyManyOptions';
 import HowToApplySection from './HowToApplySection';
+import TheSchedule from './TheSchedule';
+import Modules from './Modules';
 import InfoSection from './InfoSection';
 import Partners from './Partners';
 import LastSection from './LastSection';
+import FAQs from './FAQs';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -54,6 +62,15 @@ const featuredLogos = [
 
 const SparkAcademy = () => {
   const classes = useStyles();
+
+  const { sparkAcademyFaqLoaded, sparkAcademy_faq } = useSelector((state) => state.docs);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSparkAcademyFAQ());
+  }, [dispatch]);
+
   return (
     <div>
       <MetaTag
@@ -83,12 +100,16 @@ const SparkAcademy = () => {
         </Grid>
       </div>
       <FirstSection />
+      <WhatIsSA />
       <SecondSection />
-      {/* <ModulesSection /> */}
+      <OneAcademyManyOptions />
       <HowToApplySection />
+      <TheSchedule />
+      <Modules />
       <InfoSection />
       <Partners />
       <LastSection />
+      {/* <FAQs sparkAcademyFaqLoaded={sparkAcademyFaqLoaded} sparkAcademy_FAQ={sparkAcademy_faq} /> */}
     </div>
   );
 };
