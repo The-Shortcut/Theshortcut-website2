@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'strech',
+    alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -83,10 +83,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Noto Serif Display',
     paddingLeft: '60px',
     [theme.breakpoints.down('sm')]: {
+      marginTop: 20,
       paddingLeft: '1px',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: 20,
       fontSize: '1.5rem',
     },
   },

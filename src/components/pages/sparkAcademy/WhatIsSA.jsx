@@ -81,10 +81,10 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFFCFA',
     paddingRight: '60px',
     [theme.breakpoints.down('sm')]: {
+      marginTop: 20,
       paddingRight: '1px',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: 20,
       fontSize: '1.5rem',
     },
   },

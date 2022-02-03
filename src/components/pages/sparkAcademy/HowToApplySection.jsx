@@ -77,10 +77,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Noto Serif Display',
     paddingLeft: '60px',
     [theme.breakpoints.down('sm')]: {
+      marginTop: 20,
       paddingLeft: '1px',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: 20,
       fontSize: '1.5rem',
     },
   },
