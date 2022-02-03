@@ -34,9 +34,13 @@ const HowToApplySection = () => {
             inspirational keynotes, entrepreneurship mentoring and career clinic sessions, and
             networking.
             <br />
+            <br />
             After submitting your application, we will do a phone interview to learn more about you.
             If you qualify, we help you identify which courses make sense for your needs and help
             you find a schedule that fits you.
+            <br />
+            <br />
+            The deadline for the application is <span>27 February, 2022</span>.
           </Typography>
           <br />
           <br />

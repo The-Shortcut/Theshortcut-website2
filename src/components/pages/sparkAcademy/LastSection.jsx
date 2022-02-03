@@ -18,7 +18,7 @@ const LastSection = () => {
         <br />
         <br />
         <Typography variant='body1' style={{ fontFamily: 'Raleway' }}>
-          Applications open on Thursday, 3rd of February 2022.
+          Application deadline: 27 February 2022
         </Typography>
       </div>
     </section>
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: '#497C7A',
     padding: theme.spacing(11, 5),
-    marginBottom: '-4em'
+    marginBottom: '-4em',
   },
   container: {
     color: '#fffcfa',

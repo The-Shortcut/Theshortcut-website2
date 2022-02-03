@@ -16,21 +16,21 @@ const infoData = [
       'We need to create a more inclusive environment for female and non-binary entrepreneurs in Finland. Our Academy offers the necessary skills but also mentoring and crucial networking opportunities for aspiring entrepreneurs to connect with investors and create a repeatable, successful structure to have more female and non-binary founders in the ecosystem. ',
   },
   {
-    title: 'The Schedule',
+    title: 'Pitching competition',
     description:
-      'The Academy will run twice over the span of two years, starting in 2022. Each academic season is eight months. Participants can choose to do the full eight months or pick modules that are relevant to them:',
-    options: [
+      'At the end of the program, those participants starting their own businesses will get the chance to participate in a pitching competition. With a successful pitch, they can win an angel investment to get their venture properly started.',
+    /* options: [
       'Orientation Weeks: March',
       'Entrepreneurship: April',
       ' Digital Marketing: May',
       'Growth Hacking: June',
       'Full-Stack Development: August- December 22',
-    ],
+    ], */
   },
   {
     title: 'Supported by the Ecosystem',
     description:
-      ' Our Academy is deeply embedded in the startup ecosystem in Helsinki. Our partners include the City of Helsinki, Google, NewCo Helsinki, the City of Espoo and many more (see below). With this support we ensure that our Academy attendees are set up for success.',
+      'Our Academy is deeply embedded in the startup ecosystem in Helsinki. Our project partners include the City of Helsinki, Google, NewCo Helsinki, Yksityisyrittäjäin säätiö, the City of Espoo and many more (see below). With this support we ensure that our Academy attendees are set up for success. ',
   },
 ];
 

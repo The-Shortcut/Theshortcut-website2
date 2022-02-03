@@ -18,9 +18,10 @@ const WhatIsSA = () => {
           </Typography>
           <br />
           <Typography variant='body1' className={classes.text}>
-            The Shortcut Spark Academy is a free eight-month program for women and non-binary people
-            who are interested in the world of entrepreneurship and innovation starting in March
-            2022.
+            The Shortcut Spark Academy is a{' '}
+            <span style={{ fontWeight: 'bold' }}>free eight-month program</span> for women and
+            non-binary people who are interested in the world of entrepreneurship and innovation
+            starting in March 2022.
             <br />
             <br />
             We’ll be teaching the necessary entrepreneurial skills to open up the door to two paths:

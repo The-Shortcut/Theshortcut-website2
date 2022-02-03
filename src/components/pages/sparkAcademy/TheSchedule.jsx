@@ -31,6 +31,11 @@ const TheSchedule = () => {
             <span style={{ fontWeight: 'bold' }}>{item.month}:</span> <span>{item.agenda}</span>
           </Typography>
         ))}
+        <br />
+        <br />
+        <Typography variant='body1' className={classes.text}>
+          Soft skill training and coaching sessions will run throughout the program.
+        </Typography>
       </div>
     </section>
   );

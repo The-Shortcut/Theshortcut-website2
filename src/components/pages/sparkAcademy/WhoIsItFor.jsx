@@ -30,7 +30,8 @@ const WhoIsItFor = () => {
             own business or work with innovative products and services as a team member.
             <br />
             <br />
-            We invite anyone who identifies as a woman or non-binary person to join this journey
+            We invite anyone who identifies as{' '}
+            <span style={{ fontWeight: 'bold' }}>female or non-binary</span> to join this journey
             towards igniting your spark.
           </Typography>
           <br />

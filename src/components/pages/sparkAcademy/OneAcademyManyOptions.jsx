@@ -18,18 +18,20 @@ const OneAcademyManyOptions = () => {
           </Typography>
           <br />
           <Typography variant='body1' className={classes.text}>
-            The Shortcut Spark Academy is a free eight-month program for women and non-binary people
-            who are interested in the world of entrepreneurship and innovation starting in March
-            2022.
+            Spark Academy is meant to be fitting to your needs and wants when it comes to
+            entrepreneurship. You can{' '}
+            <span style={{ fontWeight: 'bold' }}>
+              apply to one, several or all of the academic modules.
+            </span>
             <br />
             <br />
-            We’ll be teaching the necessary entrepreneurial skills to open up the door to two paths:
-            entrepreneurship and employment in the startup ecosystem.
+            In parallel with the academic modules, we are also offering career coaching sessions,
+            emotional resiliency training, inspirational keynotes, mentoring and networking. We
+            expect our participants to take part in both - academic modules and soft skill training.
             <br />
             <br />
-            Our participants will get the tools to start their own business but we are aware that
-            entrepreneurship might not be for everyone. The skills we are teaching will also give
-            our attendees a higher chance of getting employed in the innovation and tech industry.
+            All sessions are free of charge and require only your commitment to participate and make
+            the most of the offering available to you.
           </Typography>
           <br />
           <br />

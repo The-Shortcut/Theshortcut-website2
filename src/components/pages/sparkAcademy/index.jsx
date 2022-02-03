@@ -18,6 +18,7 @@ import SecondSection from './WhoIsItFor';
 import OneAcademyManyOptions from './OneAcademyManyOptions';
 import HowToApplySection from './HowToApplySection';
 import TheSchedule from './TheSchedule';
+import TheModules from './TheModules';
 import Modules from './Modules';
 import InfoSection from './InfoSection';
 import Partners from './Partners';
@@ -105,6 +106,7 @@ const SparkAcademy = () => {
       <OneAcademyManyOptions />
       <HowToApplySection />
       <TheSchedule />
+      <TheModules />
       <Modules />
       <InfoSection />
       <Partners />

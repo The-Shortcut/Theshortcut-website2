@@ -25,29 +25,31 @@ const FirstSection = () => {
           </Typography>
           <br />
           <Typography variant='body1' className={classes.text}>
-            Welcome to our program to fight gender imbalance in the startup ecosystem.
+            The Finnish startup world can feel like a closed environment.
             <br />
             <br />
-            Our Spark Academy is pulling back the curtains of the startup ecosystem to get more
-            diversity into the Finnish world of entrepreneurship and innovation.
+            Our Spark Academy is pulling back the curtains of the startup ecosystem to make the
+            world of entrepreneurship and innovation more accessible and inclusive to everyone.
             <br />
             <br />
-            In our meaningful, practical and intentional program you can learn the most important
-            skills for entrepreneurship, marketing and full-stack development.
+            In our meaningful, practical, and intentional program, you can learn the most important
+            skills for entrepreneurship, marketing, and full-stack development to help you start
+            your own business or kickstart your career in a startup or scaleup.
             <br />
             <br />
             We want to teach the critical skill sets to build a solid pipeline of future female and
             non-binary founders and team members.
           </Typography>
-          {/* <Button
-        href='#'
-        target='_blank'
-        rel='noopener noreferrer'
-        variant='contained'
-        color='primary'
-        className={classes.applyBtn}>
-        APPLY NOW
-      </Button> */}
+          <br />
+          <br />
+          <Button
+            href='https://theshortcut1.typeform.com/to/HaY1NdEJ'
+            target='_blank'
+            rel='noopener noreferrer'
+            variant='contained'
+            className={classes.applyBtn}>
+            APPLY NOW
+          </Button>
         </div>
       </div>
     </section>
@@ -85,25 +87,26 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       marginTop: 20,
-      fontSize:'1.5rem'
+      fontSize: '1.5rem',
     },
   },
   applyBtn: {
-    minWidth: '15em',
-    maxWidth: '15em',
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    textTransform: 'none',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '0.8rem',
-      marginTop: 0,
-    },
-    [theme.breakpoints.down('xs')]: {
-      minWidth: '90%',
-      marginTop: 12,
-    },
-    color: '#fff',
     backgroundColor: '#497C7A',
+    color: '#FDEFE4',
+    width: '40%',
+    [theme.breakpoints.up('xs')]: {
+      width: '60%',
+    },
+    fontWeight: 'bolder',
+    fontSize: '1.2rem',
+    padding: 10,
+    marginLeft: '60px',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '1px',
+    },
+    '&:hover': {
+      backgroundColor: '#60aba8',
+    },
   },
   text: {
     fontFamily: 'Raleway',
