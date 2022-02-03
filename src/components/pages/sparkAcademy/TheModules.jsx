@@ -15,7 +15,7 @@ const TheModules = () => {
         <br />
         <br />
         <Typography variant='body1' className={classes.text}>
-          Our Academy is organized into four academic modules and coaching sessions. The academic
+          Our Academy is organized into three academic modules and coaching sessions. The academic
           modules will run Monday to Thursday and require approximately 4 hour per day of
           commitment. Our full-stack development course is more intensive, and will be running
           Monday to Thursday with 6 hours per day plus additional assignments.

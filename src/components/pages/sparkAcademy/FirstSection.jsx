@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Image
-import firstSection from '../../../assets/photos/sparkAcademy/itsTimeToIgniteYourFire.jpg';
+import firstSection from '../../../assets/photos/sparkAcademy/firstSection.jpg';
 
 // Material-UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -93,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
   applyBtn: {
     backgroundColor: '#497C7A',
     color: '#FDEFE4',
+    fontFamily: 'Raleway',
     width: '40%',
     [theme.breakpoints.up('xs')]: {
       width: '60%',

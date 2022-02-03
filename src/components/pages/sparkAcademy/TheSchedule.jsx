@@ -9,9 +9,9 @@ const schedule = [
   { month: 'Beginning of March', agenda: 'Candidate screening and selection' },
   {
     month: '21 March - 1 April',
-    agenda: 'Kick-Off Weeks with Inspirational Coaching and Workshops',
+    agenda: 'Orientation Weeks with Inspirational Coaching and Workshops',
   },
-  { month: '4 - 29 April', agenda: 'Module 1 - Entrepreneurship 101' },
+  { month: '4 - 29 April', agenda: 'Module 1 - Entrepreneurship' },
   { month: '2 May - 17 June', agenda: 'Module 2 - Digital Marketing & Growth Hacking' },
   { month: '15 August - 16 December', agenda: 'Module 3 - Full-stack Development' },
 ];

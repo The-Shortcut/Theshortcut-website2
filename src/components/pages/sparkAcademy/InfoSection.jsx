@@ -117,6 +117,7 @@ const useStyles = makeStyles((theme) => ({
   applyBtn: {
     color: '#497C7A',
     backgroundColor: '#FDEFE4',
+    fontFamily: 'Raleway',
     minWidth: '22em',
     maxWidth: '22em',
     [theme.breakpoints.down('xs')]: {

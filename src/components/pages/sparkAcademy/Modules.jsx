@@ -283,6 +283,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gridItem: {
+    fontFamily: 'Raleway',
     color: '#000',
     backgroundColor: '#fff',
     /* minHeight: '7em', */
@@ -298,6 +299,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '10px 3px',
   },
   applyBtn: {
+    fontFamily: 'Raleway',
     backgroundColor: '#497C7A',
     color: '#FDEFE4',
     width: '16em',
