@@ -19,28 +19,20 @@ const HowToApplySection = () => {
           </Typography>
           <br />
           <Typography variant='body1' className={classes.text}>
-            You can apply to take part in either the full eight-month program or to an individual
-            study module. Like all programs at The Shortcut, the Spark Academy is free for all
-            participants.
-            <br />
-            <br />
-            <span style={{ fontWeight: 'bolder' }}>
-              Applications will open on Thursday, 3rd of February 2022.
-            </span>
-            <br />
-            <br />
-            You can apply to one or all of the academic modules. Running in parallel to the academic
-            modules applicants will also be provided career coaching, emotional resilience training,
-            inspirational keynotes, entrepreneurship mentoring and career clinic sessions, and
-            networking.
+            You can apply to take part in the full eight-month program or apply for individual study
+            modules. The application form is the same in both cases. Regardless of how many modules
+            you take, the soft skill training sessions will be available to you throughout the
+            academic year.
             <br />
             <br />
             After submitting your application, we will do a phone interview to learn more about you.
-            If you qualify, we help you identify which courses make sense for your needs and help
-            you find a schedule that fits you.
+            If you qualify, we will help you identify which modules make sense for your needs and
+            help you build a curriculum that fits those.
             <br />
             <br />
-            The deadline for the application is <span>27 February, 2022</span>.
+            <span style={{ fontWeight: 'bolder' }}>
+              The deadline for the application is 27 February, 2022
+            </span>
           </Typography>
           <br />
           <br />

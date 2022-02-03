@@ -49,7 +49,7 @@ const modules = [
   {
     title: '2 Digital Marketing & Growth Hacking',
     description:
-      'You will learn the fundamental tools to create a viable company in four weeks. Each participant will receive personal mentoring from business experts to develop your own business plan.',
+      'You will learn digital marketing and growth hacking skills to be able to market a product or service to (your) clients.',
     info: [
       {
         subTitle: "What you'll learn",
@@ -135,7 +135,7 @@ const settings = {
   slidesToScroll: 1,
   arrows: true,
   autoplay: true,
-  autoplaySpeed: 4000,
+  autoplaySpeed: 15000,
   responsive: [
     {
       breakpoint: 480,
@@ -201,6 +201,14 @@ const Modules = () => {
           ))}
         </Slider>
       </div>
+      <Button
+        href='https://theshortcut1.typeform.com/to/HaY1NdEJ'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant='contained'
+        className={classes.applyBtn}>
+        APPLY NOW
+      </Button>
     </div>
   );
 };
@@ -288,5 +296,21 @@ const useStyles = makeStyles((theme) => ({
       minWidth: '100%',
     },
     padding: '10px 3px',
+  },
+  applyBtn: {
+    backgroundColor: '#497C7A',
+    color: '#FDEFE4',
+    width: '16em',
+    [theme.breakpoints.down('xs')]: {
+      width: '12em',
+      marginLeft: '25%',
+    },
+    fontWeight: 'bolder',
+    fontSize: '1.2rem',
+    padding: 10,
+    '&:hover': {
+      backgroundColor: '#60aba8',
+    },
+    marginLeft: '38%',
   },
 }));
